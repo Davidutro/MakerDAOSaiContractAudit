@@ -1,5 +1,7 @@
 # MakerDAO Sai Contract Audit
 
+Status: Just starting to look into the MakerDAO system
+
 ## Summary
 
 <br />
@@ -9,6 +11,8 @@
 ## Table Of Contents
 
 * [Scope](#scope)
+* [Terminology](#terminology)
+* [References](#references)
 * [Previous Audit](#previous-audit)
 
 <br />
@@ -19,6 +23,8 @@
 
 From [https://github.com/dapphub/nixpkgs-dapphub/blob/master/known-contracts.nix](https://github.com/dapphub/nixpkgs-dapphub/blob/master/known-contracts.nix)
 only the 2017-12 contracts are in scope:
+
+<br />
 
 ### 2017-12 Contracts
 * [weth-2017-12](deployed-contracts/WETH9-0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2.sol) @ [0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2](https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2#code)
@@ -41,12 +47,60 @@ only the 2017-12 contracts are in scope:
 * dai-tap-2017-12 @ [0xBda109309f9FafA6Dd6A9CB9f1Df4085B27Ee8eF](https://etherscan.io/address/0xBda109309f9FafA6Dd6A9CB9f1Df4085B27Ee8eF#code)
 * dai-top-2017-12 @ [0x9b0ccf7C8994E19F39b2B4CF708e0A7DF65fA8a3](https://etherscan.io/address/0x9b0ccf7C8994E19F39b2B4CF708e0A7DF65fA8a3#code)
 
+<br />
+
 ### Older Contracts
-* mkr-2016-03 @ [0xC66eA802717bFb9833400264Dd12c2bCeAa34a6d](https://etherscan.io/address/#code)
-* mkr-2017-11 @ [0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2](https://etherscan.io/address/#code)
-* weth-2016-06 @ [0xECF8F87f810EcF450940c9f60066b4a7a501d6A7](https://etherscan.io/address/#code)
-* oasis-2017-09 @ [0x3Aa927a97594c3ab7d7bf0d47C71c3877D1DE4A1](https://etherscan.io/address/#code)
-* sai-2017-07 @ [0x59aDCF176ED2f6788A41B8eA4c4904518e62B6A4](https://etherscan.io/address/#code)
+* Old MKR - mkr-2016-03 @ [0xC66eA802717bFb9833400264Dd12c2bCeAa34a6d](https://etherscan.io/address/0xC66eA802717bFb9833400264Dd12c2bCeAa34a6d#code)
+* New MKR - mkr-2017-11 @ [0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2](https://etherscan.io/address/0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2#code)
+* weth-2016-06 @ [0xECF8F87f810EcF450940c9f60066b4a7a501d6A7](https://etherscan.io/address/0xECF8F87f810EcF450940c9f60066b4a7a501d6A7#code)
+* oasis-2017-09 @ [0x3Aa927a97594c3ab7d7bf0d47C71c3877D1DE4A1](https://etherscan.io/address/0x3Aa927a97594c3ab7d7bf0d47C71c3877D1DE4A1#code)
+* sai-2017-07 @ [0x59aDCF176ED2f6788A41B8eA4c4904518e62B6A4](https://etherscan.io/address/0x59aDCF176ED2f6788A41B8eA4c4904518e62B6A4#code)
+
+<br />
+
+### See Also
+
+* [https://github.com/dapphub/dappsys](https://github.com/dapphub/dappsys)
+
+<br />
+
+<hr />
+
+## Terminology
+
+See page 20 of [The Dai Stablecoin System Whitepaper](https://makerdao.com/whitepaper/DaiDec17WP.pdf).
+
+* CDP - Collateralised Debt Position
+* PETH - Pooled Ether (supported in the initial Single-Collateral Dai vs the Multi-Collateral Dai coming later)
+* TRFM - Target Rate Feedback Mechanism
+* Target Rate
+* Target Price
+* TRFM’s Sensitivity Parameter - determines the magnitude of Target Rate change in response to Dai target/market price deviation
+* Keepers
+* Oracles
+* Global Settlers
+* Debt Auctions
+* Collateral Auctions
+* Price Feed Sensitivity Parameter
+
+<br />
+
+<hr />
+
+## References
+
+* [Sai Developer Documentation](../DEVELOPING.md)
+* [MakerDAO](https://makerdao.com/)
+* [What is MKR?](https://medium.com/@MakerDAO/what-is-mkr-e6915d5ca1b3)
+* [The Dai Stablecoin System Whitepaper](https://makerdao.com/whitepaper/DaiDec17WP.pdf)
+* [MKR token upgrade and Oasis redeployment](https://medium.com/@MakerDAO/mkr-token-upgrade-and-oasis-redeployment-2445482437d6)
+* [Redeem New MKR](https://makerdao.com/redeem/)
+  * [Redeemer](https://etherscan.io/address/0x642ae78fafbb8032da552d619ad43f1d81e4dd7c#code)
+  * [MKR token](https://etherscan.io/address/0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2#code)
+  * [DAI Stablecoin v1.0 token](https://etherscan.io/address/0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359#code)
+* [Oasis DEX](https://oasisdex.com/)
+  * [matching_market.sol](https://github.com/makerdao/maker-otc/blob/master/src/matching_market.sol)
+  * [simple_market.sol](https://github.com/makerdao/maker-otc/blob/master/src/simple_market.sol)
 
 <br />
 
