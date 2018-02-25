@@ -51,6 +51,7 @@ only the 2017-12 contracts are in scope:
 
 Name | Address | Code | JS
 --- | --- | --- | ---
+dai-gem-2017-12<br />WETH9 | [0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2](https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2#code) | [WETH9Gem.sol](deployed-contracts/WETH9Gem-0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2.sol) | [WETH9Gem.js](deployed-contracts/WETH9Gem-0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2.js)
 dai-gov-2017-12<br />DSToken | [0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2](https://etherscan.io/address/0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2#code) | [DSTokenGov.sol](deployed-contracts/DSTokenGov-0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2.sol) | [DSTokenGov.js](deployed-contracts/DSTokenGov-0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2.js)
 dai-pip-2017-12<br />Medianizer (May 15) | [0x729D19f657BD0614b4985Cf1D82531c67569197B](https://etherscan.io/address/0x729D19f657BD0614b4985Cf1D82531c67569197B#code) | [MedianizerPip.sol](deployed-contracts/MedianizerPip-0x729D19f657BD0614b4985Cf1D82531c67569197B.sol) | [MedianizerPip.js](deployed-contracts/MedianizerPip-0x729D19f657BD0614b4985Cf1D82531c67569197B.js)
 dai-pep-2017-12<br />Medianizer | [0x99041F808D598B782D5a3e498681C2452A31da08](https://etherscan.io/address/0x99041F808D598B782D5a3e498681C2452A31da08#code) | [MedianizerPep.sol](deployed-contracts/MedianizerPep-0x99041F808D598B782D5a3e498681C2452A31da08.sol) | [MedianizerPep.js](deployed-contracts/MedianizerPep-0x99041F808D598B782D5a3e498681C2452A31da08.js)
