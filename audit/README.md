@@ -49,6 +49,23 @@ only the 2017-12 contracts are in scope:
 
 <br />
 
+Name | Address | Code | JS
+--- | --- | --- | ---
+dai-pep-2017-12<br />Medianizer | [0x99041F808D598B782D5a3e498681C2452A31da08](https://etherscan.io/address/0x99041F808D598B782D5a3e498681C2452A31da08#code) | [MedianizerPep.sol](deployed-contracts/MedianizerPep-0x99041F808D598B782D5a3e498681C2452A31da08.sol) | [MedianizerPep.js](deployed-contracts/MedianizerPep-0x99041F808D598B782D5a3e498681C2452A31da08.js)
+dai-pit-2017-12<br />GemPit | [0x69076e44a9C70a67D5b79d95795Aba299083c275](https://etherscan.io/address/0x69076e44a9C70a67D5b79d95795Aba299083c275#code) | [GemPit.sol](deployed-contracts/GemPit-0x69076e44a9C70a67D5b79d95795Aba299083c275.sol) | [GemPit.js](deployed-contracts/GemPit-0x69076e44a9C70a67D5b79d95795Aba299083c275.js)
+dai-adm-2017-12<br />DSChief | [0x8E2a84D6adE1E7ffFEe039A35EF5F19F13057152](https://etherscan.io/address/0x8E2a84D6adE1E7ffFEe039A35EF5F19F13057152#code) | [DSChiefAdm.sol](deployed-contracts/DSChiefAdm-0x8E2a84D6adE1E7ffFEe039A35EF5F19F13057152.sol) | [DSChiefAdm.js](deployed-contracts/DSChiefAdm-0x8E2a84D6adE1E7ffFEe039A35EF5F19F13057152.js)
+dai-sai-2017-12<br />DSToken | [0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359](https://etherscan.io/address/0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359#code) | [DSTokenSai.sol](deployed-contracts/DSTokenSai-0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359.sol) | [DSTokenSai.js](deployed-contracts/DSTokenSai-0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359.js)
+dai-sin-2017-12<br />DSToken | [0x79F6D0f646706E1261aCF0b93DCB864f357d4680](https://etherscan.io/address/0x79F6D0f646706E1261aCF0b93DCB864f357d4680#code) | [DSTokenSin.sol](deployed-contracts/DSTokenSin-0x79F6D0f646706E1261aCF0b93DCB864f357d4680.sol) | [DSTokenSin.js](deployed-contracts/DSTokenSin-0x79F6D0f646706E1261aCF0b93DCB864f357d4680.js)
+dai-skr-2017-12<br />DSToken | [0xf53AD2c6851052A81B42133467480961B2321C09](https://etherscan.io/address/0xf53AD2c6851052A81B42133467480961B2321C09#code) | [DSTokenSkr.sol](deployed-contracts/DSTokenSkr-0xf53AD2c6851052A81B42133467480961B2321C09.sol) | [DSTokenSkr.js](deployed-contracts/DSTokenSkr-0xf53AD2c6851052A81B42133467480961B2321C09.js)
+dai-dad-2017-12<br />DSGuard | [0x315cBb88168396D12e1a255f9Cb935408fe80710](https://etherscan.io/address/0x315cBb88168396D12e1a255f9Cb935408fe80710#code) | [DSGuardDad.sol](deployed-contracts/DSGuardDad-0x315cBb88168396D12e1a255f9Cb935408fe80710.sol) | [DSGuardDad.js](deployed-contracts/DSGuardDad-0x315cBb88168396D12e1a255f9Cb935408fe80710.js)
+dai-mom-2017-12 | [0xF2C5369cFFb8Ea6284452b0326e326DbFdCb867C](https://etherscan.io/address/0xF2C5369cFFb8Ea6284452b0326e326DbFdCb867C#code) | [SaiMom.sol](deployed-contracts/SaiMom-0xF2C5369cFFb8Ea6284452b0326e326DbFdCb867C.sol) | [SaiMom.js](deployed-contracts/SaiMom-0xF2C5369cFFb8Ea6284452b0326e326DbFdCb867C.js)
+dai-vox-2017-12 | [0x9B0F70Df76165442ca6092939132bBAEA77f2d7A](https://etherscan.io/address/0x9B0F70Df76165442ca6092939132bBAEA77f2d7A#code) | [SaiVox.sol](deployed-contracts/SaiVox-0x9B0F70Df76165442ca6092939132bBAEA77f2d7A.sol) | [SaiVox.js](deployed-contracts/SaiVox-0x9B0F70Df76165442ca6092939132bBAEA77f2d7A.js)
+dai-tub-2017-12 | [0x448a5065aeBB8E423F0896E6c5D525C040f59af3](https://etherscan.io/address/0x448a5065aeBB8E423F0896E6c5D525C040f59af3#code) | [SaiTub.sol](deployed-contracts/SaiTub-0x448a5065aeBB8E423F0896E6c5D525C040f59af3.sol) | [SaiTub.js](deployed-contracts/SaiTub-0x448a5065aeBB8E423F0896E6c5D525C040f59af3.js)
+dai-tap-2017-12 | [0xBda109309f9FafA6Dd6A9CB9f1Df4085B27Ee8eF](https://etherscan.io/address/0xBda109309f9FafA6Dd6A9CB9f1Df4085B27Ee8eF#code) | [SaiTap.sol](deployed-contracts/SaiTap-0xBda109309f9FafA6Dd6A9CB9f1Df4085B27Ee8eF.sol) | [SaiTap.js](deployed-contracts/SaiTap-0xBda109309f9FafA6Dd6A9CB9f1Df4085B27Ee8eF.js)
+dai-top-2017-12 | [0x9b0ccf7C8994E19F39b2B4CF708e0A7DF65fA8a3](https://etherscan.io/address/0x9b0ccf7C8994E19F39b2B4CF708e0A7DF65fA8a3#code) | [SaiTop.sol](deployed-contracts/SaiTop-0x9b0ccf7C8994E19F39b2B4CF708e0A7DF65fA8a3.sol) | [SaiTop.js](deployed-contracts/SaiTop-0x9b0ccf7C8994E19F39b2B4CF708e0A7DF65fA8a3.js)
+
+<br />
+
 ### Older Contracts
 * Old MKR - mkr-2016-03 @ [0xC66eA802717bFb9833400264Dd12c2bCeAa34a6d](https://etherscan.io/address/0xC66eA802717bFb9833400264Dd12c2bCeAa34a6d#code)
 * New MKR - mkr-2017-11 @ [0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2](https://etherscan.io/address/0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2#code)
@@ -101,6 +118,7 @@ See page 20 of [The Dai Stablecoin System Whitepaper](https://makerdao.com/white
 * [Oasis DEX](https://oasisdex.com/)
   * [matching_market.sol](https://github.com/makerdao/maker-otc/blob/master/src/matching_market.sol)
   * [simple_market.sol](https://github.com/makerdao/maker-otc/blob/master/src/simple_market.sol)
+* [MakerDAO and the Dai Stablecoin](https://www.youtube.com/watch?v=ybMFi5UseEs)
 
 <br />
 
