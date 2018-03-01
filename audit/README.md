@@ -123,6 +123,216 @@ export SAI_TOP=0x9b0ccf7c8994e19f39b2b4cf708e0a7df65fa8a3
 
 <hr />
 
+## Code Review
+
+* [ ] [code-review/WETH9Gem-0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2.md](code-review/WETH9Gem-0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2.md)
+  * [ ] contract WETH9
+* [ ] [code-review/DSTokenGov-0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2.md](code-review/DSTokenGov-0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2.md)
+  * [ ] contract DSAuthority
+  * [ ] contract DSAuthEvents
+  * [ ] contract DSAuth is DSAuthEvents
+  * [ ] contract DSMath
+  * [ ] contract DSNote
+  * [ ] contract DSThing is DSAuth, DSNote, DSMath
+  * [ ] contract DSStop is DSNote, DSAuth
+  * [ ] contract ERC20
+  * [ ] contract DSTokenBase is ERC20, DSMath
+  * [ ] contract DSToken is DSTokenBase(0), DSStop
+* [ ] [code-review/MedianizerPip-0x729D19f657BD0614b4985Cf1D82531c67569197B.md](code-review/MedianizerPip-0x729D19f657BD0614b4985Cf1D82531c67569197B.md)
+  * [ ] contract DSAuthority
+  * [ ] contract DSAuthEvents
+  * [ ] contract DSAuth is DSAuthEvents
+  * [ ] contract DSNote
+  * [ ] contract DSMath
+  * [ ] contract DSThing is DSAuth, DSNote, DSMath
+  * [ ] contract DSValue is DSThing
+  * [ ] contract Medianizer is DSValue
+* [ ] [code-review/MedianizerPep-0x99041F808D598B782D5a3e498681C2452A31da08.md](code-review/MedianizerPep-0x99041F808D598B782D5a3e498681C2452A31da08.md)
+  * [ ] contract DSAuthority
+  * [ ] contract DSAuthEvents
+  * [ ] contract DSAuth is DSAuthEvents
+  * [ ] contract DSMath
+  * [ ] contract DSNote
+  * [ ] contract DSThing is DSAuth, DSNote, DSMath
+  * [ ] contract DSValue is DSThing
+  * [ ] contract MedianizerEvents
+  * [ ] contract Medianizer is DSValue, MedianizerEvents
+* [ ] [code-review/GemPit-0x69076e44a9C70a67D5b79d95795Aba299083c275.md](code-review/GemPit-0x69076e44a9C70a67D5b79d95795Aba299083c275.md)
+  * [ ] contract DSMath
+  * [ ] contract DSAuthority
+  * [ ] contract DSAuthEvents
+  * [ ] contract DSAuth is DSAuthEvents
+  * [ ] contract DSNote
+  * [ ] contract DSStop is DSNote, DSAuth
+  * [ ] contract ERC20Events
+  * [ ] contract ERC20 is ERC20Events
+  * [ ] contract DSTokenBase is ERC20, DSMath
+  * [ ] contract DSToken is DSTokenBase(0), DSStop
+  * [ ] contract GemPit
+* [ ] [code-review/DSChiefAdm-0x8E2a84D6adE1E7ffFEe039A35EF5F19F13057152.md](code-review/DSChiefAdm-0x8E2a84D6adE1E7ffFEe039A35EF5F19F13057152.md)
+  * [ ] contract DSAuthority
+  * [ ] contract DSAuthEvents
+  * [ ] contract DSAuth is DSAuthEvents
+  * [ ] contract DSRoles is DSAuth, DSAuthority
+  * [ ] contract DSMath
+  * [ ] contract DSNote
+  * [ ] contract DSThing is DSAuth, DSNote, DSMath
+  * [ ] contract DSStop is DSNote, DSAuth
+  * [ ] contract ERC20Events
+  * [ ] contract ERC20 is ERC20Events
+  * [ ] contract DSTokenBase is ERC20, DSMath
+  * [ ] contract DSToken is DSTokenBase(0), DSStop
+  * [ ] contract DSChiefApprovals is DSThing
+  * [ ] contract DSChief is DSRoles, DSChiefApprovals
+  * [ ] contract DSChiefFab
+* [ ] [code-review/DSTokenSai-0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359.md](code-review/DSTokenSai-0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359.md)
+  * [ ] contract DSMath
+  * [ ] contract DSAuthority
+  * [ ] contract DSAuthEvents
+  * [ ] contract DSAuth is DSAuthEvents
+  * [ ] contract DSNote
+  * [ ] contract DSStop is DSNote, DSAuth
+  * [ ] contract ERC20Events
+  * [ ] contract ERC20 is ERC20Events
+  * [ ] contract DSTokenBase is ERC20, DSMath
+  * [ ] contract DSToken is DSTokenBase(0), DSStop
+* [ ] [code-review/DSTokenSin-0x79F6D0f646706E1261aCF0b93DCB864f357d4680.md](code-review/DSTokenSin-0x79F6D0f646706E1261aCF0b93DCB864f357d4680.md)
+  * [ ] contract DSMath
+  * [ ] contract DSAuthority
+  * [ ] contract DSAuthEvents
+  * [ ] contract DSAuth is DSAuthEvents
+  * [ ] contract DSNote
+  * [ ] contract DSStop is DSNote, DSAuth
+  * [ ] contract ERC20Events
+  * [ ] contract ERC20 is ERC20Events
+  * [ ] contract DSTokenBase is ERC20, DSMath
+  * [ ] contract DSToken is DSTokenBase(0), DSStop
+* [ ] [code-review/DSTokenSkr-0xf53AD2c6851052A81B42133467480961B2321C09.md](code-review/DSTokenSkr-0xf53AD2c6851052A81B42133467480961B2321C09.md)
+  * [ ] contract DSMath
+  * [ ] contract DSAuthority
+  * [ ] contract DSAuthEvents
+  * [ ] contract DSAuth is DSAuthEvents
+  * [ ] contract DSNote
+  * [ ] contract DSStop is DSNote, DSAuth
+  * [ ] contract ERC20Events
+  * [ ] contract ERC20 is ERC20Events
+  * [ ] contract DSTokenBase is ERC20, DSMath
+  * [ ] contract DSToken is DSTokenBase(0), DSStop
+* [ ] [code-review/DSGuardDad-0x315cBb88168396D12e1a255f9Cb935408fe80710.md](code-review/DSGuardDad-0x315cBb88168396D12e1a255f9Cb935408fe80710.md)
+  * [ ] contract DSAuthority
+  * [ ] contract DSAuthEvents
+  * [ ] contract DSAuth is DSAuthEvents
+  * [ ] contract DSGuardEvents
+  * [ ] contract DSGuard is DSAuth, DSAuthority, DSGuardEvents
+  * [ ] contract DSGuardFactory
+* [ ] [code-review/SaiMom-0xF2C5369cFFb8Ea6284452b0326e326DbFdCb867C.md](code-review/SaiMom-0xF2C5369cFFb8Ea6284452b0326e326DbFdCb867C.md)
+  * [ ] contract DSAuthority
+  * [ ] contract DSAuthEvents
+  * [ ] contract DSAuth is DSAuthEvents
+  * [ ] contract DSNote
+  * [ ] contract DSMath
+  * [ ] contract DSThing is DSAuth, DSNote, DSMath
+  * [ ] contract DSStop is DSNote, DSAuth
+  * [ ] contract ERC20Events
+  * [ ] contract ERC20 is ERC20Events
+  * [ ] contract DSTokenBase is ERC20, DSMath
+  * [ ] contract DSToken is DSTokenBase(0), DSStop
+  * [ ] contract DSValue is DSThing
+  * [ ] contract SaiVox is DSThing
+  * [ ] contract SaiTubEvents
+  * [ ] contract SaiTub is DSThing, SaiTubEvents
+  * [ ] contract SaiTap is DSThing
+  * [ ] contract SaiTop is DSThing
+  * [ ] contract SaiMom is DSThing
+* [ ] [code-review/SaiVox-0x9B0F70Df76165442ca6092939132bBAEA77f2d7A.md](code-review/SaiVox-0x9B0F70Df76165442ca6092939132bBAEA77f2d7A.md)
+  * [ ] contract DSAuthority
+  * [ ] contract DSAuthEvents
+  * [ ] contract DSAuth is DSAuthEvents
+  * [ ] contract DSNote
+  * [ ] contract DSMath
+  * [ ] contract DSThing is DSAuth, DSNote, DSMath
+  * [ ] contract SaiVox is DSThing
+* [ ] [code-review/SaiTub-0x448a5065aeBB8E423F0896E6c5D525C040f59af3.md](code-review/SaiTub-0x448a5065aeBB8E423F0896E6c5D525C040f59af3.md)
+  * [ ] contract DSAuthority
+  * [ ] contract DSAuthEvents
+  * [ ] contract DSAuth is DSAuthEvents
+  * [ ] contract DSNote
+  * [ ] contract DSMath
+  * [ ] contract DSThing is DSAuth, DSNote, DSMath
+  * [ ] contract DSStop is DSNote, DSAuth
+  * [ ] contract ERC20Events
+  * [ ] contract ERC20 is ERC20Events
+  * [ ] contract DSTokenBase is ERC20, DSMath
+  * [ ] contract DSToken is DSTokenBase(0), DSStop
+  * [ ] contract DSValue is DSThing
+  * [ ] contract SaiVox is DSThing
+  * [ ] contract SaiTubEvents
+  * [ ] contract SaiTub is DSThing, SaiTubEvents
+* [ ] [code-review/SaiTap-0xBda109309f9FafA6Dd6A9CB9f1Df4085B27Ee8eF.md](code-review/SaiTap-0xBda109309f9FafA6Dd6A9CB9f1Df4085B27Ee8eF.md)
+  * [ ] contract DSAuthority
+  * [ ] contract DSAuthEvents
+  * [ ] contract DSAuth is DSAuthEvents
+  * [ ] contract DSNote
+  * [ ] contract DSMath
+  * [ ] contract DSThing is DSAuth, DSNote, DSMath
+  * [ ] contract DSStop is DSNote, DSAuth
+  * [ ] contract ERC20Events
+  * [ ] contract ERC20 is ERC20Events
+  * [ ] contract DSTokenBase is ERC20, DSMath
+  * [ ] contract DSToken is DSTokenBase(0), DSStop
+  * [ ] contract DSValue is DSThing
+  * [ ] contract SaiVox is DSThing
+  * [ ] contract SaiTubEvents
+  * [ ] contract SaiTub is DSThing, SaiTubEvents
+  * [ ] contract SaiTap is DSThing
+* [ ] [code-review/SaiTop-0x9b0ccf7C8994E19F39b2B4CF708e0A7DF65fA8a3.md](code-review/SaiTop-0x9b0ccf7C8994E19F39b2B4CF708e0A7DF65fA8a3.md)
+  * [ ] contract DSAuthority
+  * [ ] contract DSAuthEvents
+  * [ ] contract DSAuth is DSAuthEvents
+  * [ ] contract DSNote
+  * [ ] contract DSMath
+  * [ ] contract DSThing is DSAuth, DSNote, DSMath
+  * [ ] contract DSStop is DSNote, DSAuth
+  * [ ] contract ERC20Events
+  * [ ] contract ERC20 is ERC20Events
+  * [ ] contract DSTokenBase is ERC20, DSMath
+  * [ ] contract DSToken is DSTokenBase(0), DSStop
+  * [ ] contract DSValue is DSThing
+  * [ ] contract SaiVox is DSThing
+  * [ ] contract SaiTubEvents
+  * [ ] contract SaiTub is DSThing, SaiTubEvents
+  * [ ] contract SaiTap is DSThing
+  * [ ] contract SaiTop is DSThing
+* [ ] [code-review/Redeemer-0x642AE78FAfBB8032Da552D619aD43F1D81E4DD7C.md](code-review/Redeemer-0x642AE78FAfBB8032Da552D619aD43F1D81E4DD7C.md)
+  * [ ] contract DSAuthority
+  * [ ] contract DSAuthEvents
+  * [ ] contract DSAuth is DSAuthEvents
+  * [ ] contract DSMath
+  * [ ] contract DSNote
+  * [ ] contract DSThing is DSAuth, DSNote, DSMath
+  * [ ] contract DSStop is DSNote, DSAuth
+  * [ ] contract ERC20
+  * [ ] contract DSTokenBase is ERC20, DSMath
+  * [ ] contract DSToken is DSTokenBase(0), DSStop
+  * [ ] contract Redeemer is DSStop
+* [ ] [code-review/MatchingMarket-0x14FBCA95be7e99C15Cc2996c6C9d841e54B79425.md](code-review/MatchingMarket-0x14FBCA95be7e99C15Cc2996c6C9d841e54B79425.md)
+  * [ ] contract DSAuthority
+  * [ ] contract DSAuthEvents
+  * [ ] contract DSAuth is DSAuthEvents
+  * [ ] contract DSMath
+  * [ ] contract ERC20Events
+  * [ ] contract ERC20 is ERC20Events
+  * [ ] contract EventfulMarket
+  * [ ] contract SimpleMarket is EventfulMarket, DSMath
+  * [ ] contract ExpiringMarket is DSAuth, SimpleMarket
+  * [ ] contract DSNote
+  * [ ] contract MatchingEvents
+  * [ ] contract MatchingMarket is MatchingEvents, ExpiringMarket, DSNote
+
+<br />
+
+<hr />
+
 ## Terminology
 
 See page 20 of [The Dai Stablecoin System Whitepaper](https://makerdao.com/whitepaper/DaiDec17WP.pdf).
@@ -160,6 +370,8 @@ See page 20 of [The Dai Stablecoin System Whitepaper](https://makerdao.com/white
   * [matching_market.sol](https://github.com/makerdao/maker-otc/blob/master/src/matching_market.sol)
   * [simple_market.sol](https://github.com/makerdao/maker-otc/blob/master/src/simple_market.sol)
 * [MakerDAO and the Dai Stablecoin](https://www.youtube.com/watch?v=ybMFi5UseEs)
+* [An Overview Of Stablecoins](https://multicoin.capital/2018/01/17/an-overview-of-stablecoins/)
+* [#006 - MakerDAO & the Dai stable coin - Founder Rune Christensen](https://blockzero.simplecast.fm/f455ccb1)
 
 <br />
 
