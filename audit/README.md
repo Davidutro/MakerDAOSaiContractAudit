@@ -1,6 +1,6 @@
 # MakerDAO Sai Contract Audit
 
-Status: Just starting to look into the MakerDAO system
+Status: Information gathering commenced
 
 ## Summary
 
@@ -68,7 +68,7 @@ only the 2017-12 contracts are in scope (comments added):
   weth-2017-12 = "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"; // Same as dai-gem-2017-12
   mkr-redeemer-2017-12 = "0x642AE78FAfBB8032Da552D619aD43F1D81E4DD7C"; // In scope
   oasis-2017-09 = "0x3Aa927a97594c3ab7d7bf0d47C71c3877D1DE4A1"; // Old contract
-  oasis-2017-12 = "0x14FBCA95be7e99C15Cc2996c6C9d841e54B79425"; // In scope
+  oasis-2017-12 = "0x14FBCA95be7e99C15Cc2996c6C9d841e54B79425"; // In scope?
   sai-2017-07 = "0x59aDCF176ED2f6788A41B8eA4c4904518e62B6A4"; // Old contract
   dai-2017-12 = "0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359"; // Same as dai-sai-2017-12
 
@@ -88,6 +88,29 @@ only the 2017-12 contracts are in scope (comments added):
   dai-tap-2017-12 = "0xBda109309f9FafA6Dd6A9CB9f1Df4085B27Ee8eF"; // In scope
   dai-top-2017-12 = "0x9b0ccf7C8994E19F39b2B4CF708e0A7DF65fA8a3"; // In scope
 }
+```
+
+The addresses below are from [README.md#dai-v1-current-deployments](../README.md#dai-v1-current-deployments):
+
+```sh
+# sai deployment on ethlive from c2031c0f9f3a186e90b6a3c1905282f7cc58b9f5
+# Mon 18 Dec 03:12:57 GMT 2017
+
+export SAI_GEM=0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2
+export SAI_GOV=0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2
+export SAI_PIP=0x729D19f657BD0614b4985Cf1D82531c67569197B
+export SAI_PEP=0x99041F808D598B782D5a3e498681C2452A31da08
+export SAI_PIT=0x69076e44a9c70a67d5b79d95795aba299083c275
+export SAI_ADM=0x8e2a84d6ade1e7fffee039a35ef5f19f13057152
+export SAI_SAI=0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359
+export SAI_SIN=0x79f6d0f646706e1261acf0b93dcb864f357d4680
+export SAI_SKR=0xf53ad2c6851052a81b42133467480961b2321c09
+export SAI_DAD=0x315cbb88168396d12e1a255f9cb935408fe80710
+export SAI_MOM=0xf2c5369cffb8ea6284452b0326e326dbfdcb867c
+export SAI_VOX=0x9b0f70df76165442ca6092939132bbaea77f2d7a
+export SAI_TUB=0x448a5065aebb8e423f0896e6c5d525c040f59af3
+export SAI_TAP=0xbda109309f9fafa6dd6a9cb9f1df4085b27ee8ef
+export SAI_TOP=0x9b0ccf7c8994e19f39b2b4cf708e0a7df65fa8a3
 ```
 
 <br />
@@ -123,6 +146,7 @@ See page 20 of [The Dai Stablecoin System Whitepaper](https://makerdao.com/white
 
 ## References
 
+* [https://dai.makerdao.com/](https://dai.makerdao.com/)
 * [Sai Developer Documentation](../DEVELOPING.md)
 * [MakerDAO](https://makerdao.com/)
 * [What is MKR?](https://medium.com/@MakerDAO/what-is-mkr-e6915d5ca1b3)
