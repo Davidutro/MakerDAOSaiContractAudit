@@ -1,12 +1,13 @@
 #!/bin/sh
 
 # geth attach << EOF | grep "RESULT: " | sed "s/RESULT: //" > info.txt
+# geth attach << EOF | grep "RESULT: " | sed "s/RESULT: //"
 geth attach << EOF 
 
 loadScript("../deployed-contracts/WETH9Gem-0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2.js");
 loadScript("../deployed-contracts/DSTokenGov-0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2.js");
-// MedianizerPip
-// MedianizerPep
+loadScript("../deployed-contracts/MedianizerPep-0x99041F808D598B782D5a3e498681C2452A31da08.js");
+loadScript("../deployed-contracts/MedianizerPip-0x729D19f657BD0614b4985Cf1D82531c67569197B.js");
 // GemPit - no functions except burn(...)
 loadScript("../deployed-contracts/DSChiefAdm-0x8E2a84D6adE1E7ffFEe039A35EF5F19F13057152.js");
 loadScript("../deployed-contracts/DSTokenSai-0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359.js");
@@ -32,6 +33,16 @@ console.log("RESULT: dsTokenGov.symbol=" + web3.toAscii(dsTokenGov.symbol()));
 console.log("RESULT: dsTokenGov.name=" + web3.toAscii(dsTokenGov.name()));
 console.log("RESULT: dsTokenGov.decimals=" + dsTokenGov.decimals());
 console.log("RESULT: dsTokenGov.totalSupply=" + dsTokenGov.totalSupply() + " " + dsTokenGov.totalSupply().shift(-dsTokenGov.decimals()));
+
+console.log("RESULT: ---------- MedianizerPip ----------");
+console.log("RESULT: medianizerPipAddress=" + medianizerPipAddress);
+console.log("RESULT: medianizerPip.owner=" + medianizerPip.owner());
+console.log("RESULT: medianizerPip.authority=" + medianizerPip.authority());
+
+console.log("RESULT: ---------- MedianizerPep ----------");
+console.log("RESULT: medianizerPepAddress=" + medianizerPepAddress);
+console.log("RESULT: medianizerPep.owner=" + medianizerPep.owner());
+console.log("RESULT: medianizerPep.authority=" + medianizerPep.authority());
 
 console.log("RESULT: ---------- DSChiefAdm ----------");
 console.log("RESULT: dsChiefAdmAddress=" + dsChiefAdmAddress);

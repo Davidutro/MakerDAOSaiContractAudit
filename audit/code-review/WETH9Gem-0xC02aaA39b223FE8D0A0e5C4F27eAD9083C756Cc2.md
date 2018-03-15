@@ -22,65 +22,99 @@ Source file [../deployed-contracts/WETH9Gem-0xC02aaA39b223FE8D0A0e5C4F27eAD9083C
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+// BK Ok
 pragma solidity ^0.4.18;
 
+// BK Ok
 contract WETH9 {
+    // BK Next 3 Ok
     string public name     = "Wrapped Ether";
     string public symbol   = "WETH";
     uint8  public decimals = 18;
 
+    // BK Next 2 Ok - Standard ERC20 events
     event  Approval(address indexed src, address indexed guy, uint wad);
     event  Transfer(address indexed src, address indexed dst, uint wad);
+    // BK Next 2 Ok
     event  Deposit(address indexed dst, uint wad);
     event  Withdrawal(address indexed src, uint wad);
 
+    // BK Ok
     mapping (address => uint)                       public  balanceOf;
+    // BK Ok
     mapping (address => mapping (address => uint))  public  allowance;
 
+    // BK Ok - Fallback function, payable, anyone can call, sending ETH
     function() public payable {
+        // BK Ok
         deposit();
     }
+    // BK Ok - Payable, anyone can call, sending ETH
     function deposit() public payable {
+        // BK Ok - Addition of ETH is restricted to a valid range
         balanceOf[msg.sender] += msg.value;
+        // BK Ok - Log event
         Deposit(msg.sender, msg.value);
     }
+    // BK Ok - Anyone can call, but must have a token balance
     function withdraw(uint wad) public {
+        // BK Ok
         require(balanceOf[msg.sender] >= wad);
+        // BK Ok - Cannot underflow due to check in the previous statement
         balanceOf[msg.sender] -= wad;
+        // BK Ok - transfer(...) function will throw if there is an error, and has restricted gas supplied
         msg.sender.transfer(wad);
+        // BK Ok - Log event
         Withdrawal(msg.sender, wad);
     }
 
+    // BK Ok - View function
     function totalSupply() public view returns (uint) {
+        // BK Ok
         return this.balance;
     }
 
+    // BK Ok - Anyone can call
     function approve(address guy, uint wad) public returns (bool) {
+        // BK Ok
         allowance[msg.sender][guy] = wad;
+        // BK Ok - Log event
         Approval(msg.sender, guy, wad);
+        // BK Ok
         return true;
     }
 
+    // BK Ok - Anyone can call, but must have the token balance to transfer
     function transfer(address dst, uint wad) public returns (bool) {
+        // BK Ok
         return transferFrom(msg.sender, dst, wad);
     }
 
+    // BK Ok - Anyone can call, but source account must have token balance to transfer, and if spender is different from source, allowance must be set
     function transferFrom(address src, address dst, uint wad)
         public
         returns (bool)
     {
+        // BK Ok
         require(balanceOf[src] >= wad);
 
+        // BK Ok - transferFrom(...). There is a special 0xffff...ffff allowance value that will disable the allowance check
         if (src != msg.sender && allowance[src][msg.sender] != uint(-1)) {
+            // BK Ok
             require(allowance[src][msg.sender] >= wad);
+            // BK Ok
             allowance[src][msg.sender] -= wad;
         }
 
+        // BK Ok - Underflow prevented by check above
         balanceOf[src] -= wad;
+        // BK Ok - Overflow prevented by check above
         balanceOf[dst] += wad;
 
+        // BK Ok - Log event
         Transfer(src, dst, wad);
 
+        // BK Ok
         return true;
     }
 }
