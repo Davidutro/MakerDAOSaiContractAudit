@@ -1,0 +1,196 @@
+ # Account                                             EtherBalanceChange                          Token Name
+-- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
+ 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.000000000000000000           0.000000000000000000 Account #0 - Miner
+ 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433        0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
+ 2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976        0.000000000000000000           0.000000000000000000 Account #2
+ 3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0        0.000000000000000000           0.000000000000000000 Account #3
+ 4 0xa44a08d3f6933c69212114bb66e2df1813651844        0.000000000000000000           0.000000000000000000 Account #4
+ 5 0xa55a151eb00fded1634d27d1127b4be4627079ea        0.000000000000000000           0.000000000000000000 Account #5
+ 6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.000000000000000000           0.000000000000000000 Account #6
+ 7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
+ 8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
+ 9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
+-- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
+                                                                                    0.000000000000000000 Total Token Balances
+-- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
+
+
+---------- Deploy Token Contract ----------
+ # Account                                             EtherBalanceChange                          Token Name
+-- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
+ 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.001185862000000000           0.000000000000000000 Account #0 - Miner
+ 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.001185862000000000           0.000000000000000000 Account #1 - Contract Owner
+ 2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976        0.000000000000000000           0.000000000000000000 Account #2
+ 3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0        0.000000000000000000           0.000000000000000000 Account #3
+ 4 0xa44a08d3f6933c69212114bb66e2df1813651844        0.000000000000000000           0.000000000000000000 Account #4
+ 5 0xa55a151eb00fded1634d27d1127b4be4627079ea        0.000000000000000000           0.000000000000000000 Account #5
+ 6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.000000000000000000           0.000000000000000000 Account #6
+ 7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
+ 8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
+ 9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
+10 0xd53380f36e665634cf48ec4745c7095cde2c9d7f        0.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
+-- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
+                                                                                    0.000000000000000000 Total Token Balances
+-- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
+
+PASS Deploy Token Contract
+tokenAddress=0xd53380f36e665634cf48ec4745c7095cde2c9d7f status=0x1 Success gas=6000000 gasUsed=592931 costETH=0.001185862 costUSD=0.7250953199 @ ETH/USD=611.45 gasPrice=2 gwei block=8361 txIx=0 txId=0xc2eaeee75b52bf69e05894f8ae15a28cb7cce1b2c04a9be379796d593eaf89fa @ 1521489469 Mon, 19 Mar 2018 19:57:49 UTC
+tokenContractAddress=0xd53380f36e665634cf48ec4745c7095cde2c9d7f
+token.symbol=WETH
+token.name=Wrapped Ether
+token.decimals=18
+token.totalSupply=0
+
+---------- Wrap Ethers ----------
+ # Account                                             EtherBalanceChange                          Token Name
+-- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
+ 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.001357310000000000           0.000000000000000000 Account #0 - Miner
+ 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.001185862000000000           0.000000000000000000 Account #1 - Contract Owner
+ 2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976     -100.000085724000000000         100.000000000000000000 Account #2
+ 3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0     -100.000085724000000000         100.000000000000000000 Account #3
+ 4 0xa44a08d3f6933c69212114bb66e2df1813651844        0.000000000000000000           0.000000000000000000 Account #4
+ 5 0xa55a151eb00fded1634d27d1127b4be4627079ea        0.000000000000000000           0.000000000000000000 Account #5
+ 6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.000000000000000000           0.000000000000000000 Account #6
+ 7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
+ 8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
+ 9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
+10 0xd53380f36e665634cf48ec4745c7095cde2c9d7f      200.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
+-- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
+                                                                                  200.000000000000000000 Total Token Balances
+-- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
+
+PASS Wrap Ethers - ac2 100 ETH
+PASS Wrap Ethers - ac3 100 ETH
+wrapEther0_1Tx status=0x1 Success gas=400000 gasUsed=42862 costETH=0.000085724 costUSD=0.0524159398 @ ETH/USD=611.45 gasPrice=2 gwei block=8363 txIx=1 txId=0x2e4f9a643caa5da610ded6f61de6dd3ccf0467337b1a72c82a42ffe5bd88f41a @ 1521489471 Mon, 19 Mar 2018 19:57:51 UTC
+wrapEther0_2Tx status=0x1 Success gas=400000 gasUsed=42862 costETH=0.000085724 costUSD=0.0524159398 @ ETH/USD=611.45 gasPrice=2 gwei block=8363 txIx=0 txId=0x3bfeb2b1e72e9a5f2f4c185bd380f68a27b4828e766b252c70c07cc836fa5daa @ 1521489471 Mon, 19 Mar 2018 19:57:51 UTC
+tokenContractAddress=0xd53380f36e665634cf48ec4745c7095cde2c9d7f
+token.symbol=WETH
+token.name=Wrapped Ether
+token.decimals=18
+token.totalSupply=200
+
+---------- Transfer Tokens ---------
+ # Account                                             EtherBalanceChange                          Token Name
+-- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
+ 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.001639972000000000           0.000000000000000000 Account #0 - Miner
+ 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.001185862000000000           0.000000000000000000 Account #1 - Contract Owner
+ 2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976     -100.000188906000000000          99.999999000000000000 Account #2
+ 3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0     -100.000176690000000000          99.970000000000000000 Account #3
+ 4 0xa44a08d3f6933c69212114bb66e2df1813651844        0.000000000000000000           0.000001000000000000 Account #4
+ 5 0xa55a151eb00fded1634d27d1127b4be4627079ea       -0.000088514000000000           0.000000000000000000 Account #5
+ 6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.000000000000000000           0.030000000000000000 Account #6
+ 7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
+ 8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
+ 9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
+10 0xd53380f36e665634cf48ec4745c7095cde2c9d7f      200.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
+-- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
+                                                                                  200.000000000000000000 Total Token Balances
+-- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
+
+PASS Transfer Tokens - transfer 0.000001 tokens ac2 -> ac4. CHECK for movement
+PASS Transfer Tokens - approve 0.03 tokens ac3 -> ac5
+PASS Transfer Tokens - transferFrom 0.03 tokens ac3 -> ac6 by ac5. CHECK for movement
+transfer1_1Tx status=0x1 Success gas=100000 gasUsed=51591 costETH=0.000103182 costUSD=0.0630906339 @ ETH/USD=611.45 gasPrice=2 gwei block=8365 txIx=1 txId=0x5d19b41df20f38335b463764bd1be36024739f2804c4e622c50c5578a0987742 @ 1521489473 Mon, 19 Mar 2018 19:57:53 UTC
+transfer1_2Tx status=0x1 Success gas=100000 gasUsed=45483 costETH=0.000090966 costUSD=0.0556211607 @ ETH/USD=611.45 gasPrice=2 gwei block=8365 txIx=0 txId=0xc5964747d985d564c919168e008861b4393db26950875a41c30406965c3858d3 @ 1521489473 Mon, 19 Mar 2018 19:57:53 UTC
+transfer1_3Tx status=0x1 Success gas=100000 gasUsed=44257 costETH=0.000088514 costUSD=0.0541218853 @ ETH/USD=611.45 gasPrice=2 gwei block=8367 txIx=0 txId=0x13e63fd62a6af94ad3015b7c59c811fd8e9e80c6e07342f1b93ee90a96f6aa61 @ 1521489475 Mon, 19 Mar 2018 19:57:55 UTC
+tokenContractAddress=0xd53380f36e665634cf48ec4745c7095cde2c9d7f
+token.symbol=WETH
+token.name=Wrapped Ether
+token.decimals=18
+token.totalSupply=200
+Approval 0 #8365 src=0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0 guy=0xa55a151eb00fded1634d27d1127b4be4627079ea wad=0.03
+Transfer 0 #8365: src=0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976 dst=0xa44a08d3f6933c69212114bb66e2df1813651844 wad=0.000001
+Transfer 1 #8367: src=0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0 dst=0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9 wad=0.03
+
+---------- Transfer 0 Tokens ---------
+ # Account                                             EtherBalanceChange                          Token Name
+-- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
+ 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.001860842000000000           0.000000000000000000 Account #0 - Miner
+ 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.001185862000000000           0.000000000000000000 Account #1 - Contract Owner
+ 2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976     -100.000261576000000000          99.999999000000000000 Account #2
+ 3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0     -100.000237016000000000          99.970000000000000000 Account #3
+ 4 0xa44a08d3f6933c69212114bb66e2df1813651844        0.000000000000000000           0.000001000000000000 Account #4
+ 5 0xa55a151eb00fded1634d27d1127b4be4627079ea       -0.000176388000000000           0.000000000000000000 Account #5
+ 6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.000000000000000000           0.030000000000000000 Account #6
+ 7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
+ 8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
+ 9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
+10 0xd53380f36e665634cf48ec4745c7095cde2c9d7f      200.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
+-- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
+                                                                                  200.000000000000000000 Total Token Balances
+-- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
+
+PASS Transfer 0 Tokens - transfer 0 tokens ac2 -> ac4. CHECK for movement
+PASS Transfer 0 Tokens - approve 0 tokens ac3 -> ac5
+PASS Transfer 0 Tokens - transferFrom 0 tokens ac3 -> ac6 by ac5. CHECK for movement
+transfer2_1Tx status=0x1 Success gas=100000 gasUsed=36335 costETH=0.00007267 costUSD=0.0444340715 @ ETH/USD=611.45 gasPrice=2 gwei block=8369 txIx=1 txId=0x885c8d317f3b4994312ddddc73ead986312b07ab777c56b06400dd3147ee2a63 @ 1521489477 Mon, 19 Mar 2018 19:57:57 UTC
+transfer2_2Tx status=0x1 Success gas=100000 gasUsed=30163 costETH=0.000060326 costUSD=0.0368863327 @ ETH/USD=611.45 gasPrice=2 gwei block=8369 txIx=0 txId=0xc2fd81f9ea158fa35baaffaa66a9fbfa0ae3395ada93997d261571e051e3bb85 @ 1521489477 Mon, 19 Mar 2018 19:57:57 UTC
+transfer2_3Tx status=0x1 Success gas=100000 gasUsed=43937 costETH=0.000087874 costUSD=0.0537305573 @ ETH/USD=611.45 gasPrice=2 gwei block=8371 txIx=0 txId=0x301bf98d456c1ee333e7b37255c0ca3eafab03762644d1e5d22492639e6ab80f @ 1521489479 Mon, 19 Mar 2018 19:57:59 UTC
+tokenContractAddress=0xd53380f36e665634cf48ec4745c7095cde2c9d7f
+token.symbol=WETH
+token.name=Wrapped Ether
+token.decimals=18
+token.totalSupply=200
+Approval 0 #8369 src=0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0 guy=0xa55a151eb00fded1634d27d1127b4be4627079ea wad=0
+Transfer 0 #8369: src=0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976 dst=0xa44a08d3f6933c69212114bb66e2df1813651844 wad=0
+Transfer 1 #8371: src=0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0 dst=0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9 wad=0
+
+---------- Transfer Too Many Tokens ---------
+ # Account                                             EtherBalanceChange                          Token Name
+-- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
+ 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.002050794000000000           0.000000000000000000 Account #0 - Miner
+ 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.001185862000000000           0.000000000000000000 Account #1 - Contract Owner
+ 2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976     -100.000309654000000000          99.999999000000000000 Account #2
+ 3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0     -100.000328238000000000          99.970000000000000000 Account #3
+ 4 0xa44a08d3f6933c69212114bb66e2df1813651844        0.000000000000000000           0.000001000000000000 Account #4
+ 5 0xa55a151eb00fded1634d27d1127b4be4627079ea       -0.000227040000000000           0.000000000000000000 Account #5
+ 6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.000000000000000000           0.030000000000000000 Account #6
+ 7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
+ 8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
+ 9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
+10 0xd53380f36e665634cf48ec4745c7095cde2c9d7f      200.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
+-- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
+                                                                                  200.000000000000000000 Total Token Balances
+-- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
+
+PASS Transfer Too Many Tokens - transfer 1,000 tokens ac2 -> ac4. CHECK no movement
+PASS Transfer Too Many Tokens - approve 2,000 tokens ac3 -> ac5
+PASS Transfer Too Many Tokens - transferFrom 2,000 tokens ac3 -> ac6 by ac5. CHECK no movement
+transfer3_1Tx status=0x0 Failure gas=100000 gasUsed=24039 costETH=0.000048078 costUSD=0.0293972931 @ ETH/USD=611.45 gasPrice=2 gwei block=8373 txIx=1 txId=0x2bbaaece5b00661e407f809fcdb1e0c8d581ade54e92733d7852d1a2295e7fa6 @ 1521489481 Mon, 19 Mar 2018 19:58:01 UTC
+transfer3_2Tx status=0x1 Success gas=100000 gasUsed=45611 costETH=0.000091222 costUSD=0.0557776919 @ ETH/USD=611.45 gasPrice=2 gwei block=8373 txIx=0 txId=0x7eb115f495381e6d6f9a06b182e2569bf1a5f2427d14b1aec49c6cbb339b512a @ 1521489481 Mon, 19 Mar 2018 19:58:01 UTC
+transfer3_3Tx status=0x0 Failure gas=100000 gasUsed=25326 costETH=0.000050652 costUSD=0.0309711654 @ ETH/USD=611.45 gasPrice=2 gwei block=8375 txIx=0 txId=0x35f64a3eda5f271c49eff0ae56e5d07b2da54127372ce6aedbf32804728dd854 @ 1521489483 Mon, 19 Mar 2018 19:58:03 UTC
+tokenContractAddress=0xd53380f36e665634cf48ec4745c7095cde2c9d7f
+token.symbol=WETH
+token.name=Wrapped Ether
+token.decimals=18
+token.totalSupply=200
+Approval 0 #8373 src=0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0 guy=0xa55a151eb00fded1634d27d1127b4be4627079ea wad=2000
+
+---------- Withdraw Tokens ---------
+ # Account                                             EtherBalanceChange                          Token Name
+-- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
+ 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.002197870000000000           0.000000000000000000 Account #0 - Miner
+ 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.001185862000000000           0.000000000000000000 Account #1 - Contract Owner
+ 2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976      -90.000383128000000000          89.999999000000000000 Account #2
+ 3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0      -80.000401840000000000          79.970000000000000000 Account #3
+ 4 0xa44a08d3f6933c69212114bb66e2df1813651844        0.000000000000000000           0.000001000000000000 Account #4
+ 5 0xa55a151eb00fded1634d27d1127b4be4627079ea       -0.000227040000000000           0.000000000000000000 Account #5
+ 6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.000000000000000000           0.030000000000000000 Account #6
+ 7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
+ 8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
+ 9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
+10 0xd53380f36e665634cf48ec4745c7095cde2c9d7f      170.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
+-- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
+                                                                                  170.000000000000000000 Total Token Balances
+-- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
+
+PASS Withdraw Tokens - ac2 withdraw 10 ETH
+PASS Withdraw Tokens - ac3 withdraw 20 ETH
+withdraw1_1Tx status=0x1 Success gas=100000 gasUsed=36737 costETH=0.000073474 costUSD=0.0449256773 @ ETH/USD=611.45 gasPrice=2 gwei block=8377 txIx=0 txId=0xfe90e86a33c0e29aef02a0f140ea775a7b7425cc9dcb78e61b9ec6ce06b881b9 @ 1521489485 Mon, 19 Mar 2018 19:58:05 UTC
+withdraw1_2Tx status=0x1 Success gas=100000 gasUsed=36801 costETH=0.000073602 costUSD=0.0450039429 @ ETH/USD=611.45 gasPrice=2 gwei block=8377 txIx=1 txId=0xb29169f000a0c0b37e3c19f60ee8b0af8585728002c8638741ee8ab3fc08a5a3 @ 1521489485 Mon, 19 Mar 2018 19:58:05 UTC
+tokenContractAddress=0xd53380f36e665634cf48ec4745c7095cde2c9d7f
+token.symbol=WETH
+token.name=Wrapped Ether
+token.decimals=18
+token.totalSupply=170
+
