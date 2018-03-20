@@ -123,6 +123,45 @@ export SAI_TOP=0x9b0ccf7c8994e19f39b2b4cf708e0a7df65fa8a3
 
 <hr />
 
+## Components
+
+* Gem is a standalone contract.
+* SSS - Sai, Sin and Skr use the same contracts
+* Pip - 10 May 2017. Rest Dec 2017
+
+Component                                               | Gov | Pip | Pep | Pit | Adm | SSS | Dad | Mom | Vox | Tub | Tap | Top
+------------------------------------------------------- |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
+[auth-52c6a32](dappsys-contracts/auth-52c6a32.sol)      |  1  |     |  1  |  2  |  1  |  2  |  1  |  1  |  1  |  1  |  1  |  1
+[auth-ce285fb](dappsys-contracts/auth-ce285fb.sol)      |     |  1  |     |     |     |     |     |     |     |     |     |  
+[base-e637e3f](dappsys-contracts/base-e637e3f.sol)      |  7  |     |     |  6  |  8  |  6  |     |  7  |     |  7  |  7  |  7
+[chief-a06b5e4](dappsys-contracts/chief-a06b5e4.sol)    |     |     |     |     | 10  |     |     |     |     |     |     |  
+[erc20-56f16b3](dappsys-contracts/erc20-56f16b3.sol)    |  6  |     |     |     |     |     |     |     |     |     |     |  
+[erc20-c4f5635](dappsys-contracts/erc20-c4f5635.sol)    |     |     |     |  5  |  7  |  5  |     |  6  |     |  6  |  6  |  6
+[guard-f8b7f58](dappsys-contracts/guard-f8b7f58.sol)    |     |     |     |     |     |     |  2  |     |     |     |     |  
+[math-a01112f](dappsys-contracts/math-a01112f.sol)      |     |  3  |     |     |     |     |     |     |     |     |     |  
+[math-d5acd9c](dappsys-contracts/math-d5acd9c.sol)      |  2  |     |  2  |  1  |  3  |  1  |     |  3  |  3  |  3  |  3  |  3
+[note-7170a08](dappsys-contracts/note-7170a08.sol)      |  3  |  2  |  3  |  3  |  4  |  3  |     |  2  |  2  |  2  |  2  |  2
+[roles-188b3dd](dappsys-contracts/roles-188b3dd.sol)    |     |     |     |     |  2  |     |     |     |     |     |     |  
+[stop-842e350](dappsys-contracts/stop-842e350.sol)      |  5  |     |     |  4  |  6  |  4  |     |  5  |     |  5  |  5  |  5
+[thing-35b2538](dappsys-contracts/thing-35b2538.sol)    |  4  |     |  4  |     |     |     |     |     |     |     |     |  
+[thing-4c86a53](dappsys-contracts/thing-4c86a53.sol)    |     |     |     |     |  5  |     |     |  4  |  4  |  4  |  4  |  4
+[thing-ea63fd3](dappsys-contracts/thing-ea63fd3.sol)    |     |  4  |     |     |     |     |     |     |     |     |     |  
+[token-e637e3f](dappsys-contracts/token-e637e3f.sol)    |  8  |     |     |  7  |  9  |  7  |     |  8  |     |  8  |  8  |  8
+[value-2027f97](dappsys-contracts/value-2027f97.sol)    |     |  5  |     |     |     |     |     |     |     |     |     |  
+[value-faae4cb](dappsys-contracts/value-faae4cb.sol)    |     |     |  5  |     |     |     |     |  9  |     |  9  |  9  |  9
+[medianizer-31cc0a8](medianizer/medianizer-31cc0a8.sol) |     |  6  |     |     |     |     |     |     |     |     |     |  
+[medianizer-6cb859c](medianizer/medianizer-6cb859c.sol) |     |     |  6  |     |     |     |     |     |     |     |     |  
+[pit](../src/pit.sol)                                   |     |     |     |  8  |     |     |     |     |     |     |     |  
+[vox](../src/vox.sol)                                   |     |     |     |     |     |     |     | 10  |  5  | 10  | 10  | 10
+[tub](../src/tub.sol)                                   |     |     |     |     |     |     |     | 11  |     | 11  | 11  | 11
+[tap](../src/tap.sol)                                   |     |     |     |     |     |     |     | 12  |     |     | 12  | 12
+[top](../src/top.sol)                                   |     |     |     |     |     |     |     | 13  |     |     |     | 13
+[mom](../src/mom.sol)                                   |     |     |     |     |     |     |     | 14  |     |     |     |  
+
+<br />
+
+<hr />
+
 ## Code Review
 
 * [x] [code-review/WETH9Gem-0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2.md](code-review/WETH9Gem-0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2.md)
