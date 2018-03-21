@@ -1,7 +1,7 @@
 #!/bin/sh
 
-MDDIR=../../src
-DADIR=../dappsys-contracts
+MDDIR=../contracts/makerdao
+DADIR=../contracts/dappsys
 OUTPUT=gemPit.sol
 
 echo "pragma solidity ^0.4.13;" > $OUTPUT
@@ -35,7 +35,7 @@ echo "////// src/token.sol" >> $OUTPUT
 cat $DADIR/token-e637e3f.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/import/s/^/\/\* /;/import/s/$/ \*\//" >> $OUTPUT
 
 echo "" >> $OUTPUT
-cat $MDDIR/pit.sol | sed "/pragma/d;/import/d;/\/\//d;/^\s*$/d" >> $OUTPUT
+cat $MDDIR/pit-b353893.sol | sed "/pragma/d;/import/d;/\/\//d;/^\s*$/d" >> $OUTPUT
 
 PIT=../deployed-contracts/GemPit-0x69076e44a9C70a67D5b79d95795Aba299083c275.sol
 echo "--- Checking $PIT ---"

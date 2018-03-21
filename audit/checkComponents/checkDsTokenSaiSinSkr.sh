@@ -1,8 +1,8 @@
 #!/bin/sh
 
-MDDIR=../../src
-DADIR=../dappsys-contracts
-OUTPUT=dsToken.sol
+MDDIR=../contracts/makerdao
+DADIR=../contracts/dappsys
+OUTPUT=dsTokenSaiSinSkr.sol
 
 echo "pragma solidity ^0.4.13;" > $OUTPUT
 

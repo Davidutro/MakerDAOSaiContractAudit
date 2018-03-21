@@ -1,7 +1,7 @@
 #!/bin/sh
 
-MDDIR=../../src
-DADIR=../dappsys-contracts
+MDDIR=../contracts/makerdao
+DADIR=../contracts/dappsys
 OUTPUT=saiVox.sol
 
 echo "// hevm: flattened sources of src/vox.sol" > $OUTPUT
@@ -25,7 +25,7 @@ cat $DADIR/thing-4c86a53.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/impor
 
 echo "" >> $OUTPUT
 echo "////// src/vox.sol" >> $OUTPUT
-cat $MDDIR/vox.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/import/s/^/\/\* /;/import/s/$/ \*\//" >> $OUTPUT
+cat $MDDIR/vox-b353893.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/import/s/^/\/\* /;/import/s/$/ \*\//" >> $OUTPUT
 
 VOX=../deployed-contracts/SaiVox-0x9B0F70Df76165442ca6092939132bBAEA77f2d7A.sol
 echo "--- Checking $VOX ---"

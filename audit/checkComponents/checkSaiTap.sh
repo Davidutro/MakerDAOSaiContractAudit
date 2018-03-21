@@ -1,7 +1,7 @@
 #!/bin/sh
 
-MDDIR=../../src
-DADIR=../dappsys-contracts
+MDDIR=../contracts/makerdao
+DADIR=../contracts/dappsys
 OUTPUT=saiTap.sol
 
 echo "// hevm: flattened sources of src/tap.sol" > $OUTPUT
@@ -45,15 +45,15 @@ cat $DADIR/value-faae4cb.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/impor
 
 echo "" >> $OUTPUT
 echo "////// src/vox.sol" >> $OUTPUT
-cat $MDDIR/vox.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/import/s/^/\/\* /;/import/s/$/ \*\//" >> $OUTPUT
+cat $MDDIR/vox-b353893.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/import/s/^/\/\* /;/import/s/$/ \*\//" >> $OUTPUT
 
 echo "" >> $OUTPUT
 echo "////// src/tub.sol" >> $OUTPUT
-cat $MDDIR/tub.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/import/s/^/\/\* /;/import/s/$/ \*\//" >> $OUTPUT
+cat $MDDIR/tub-b353893.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/import/s/^/\/\* /;/import/s/$/ \*\//" >> $OUTPUT
 
 echo "" >> $OUTPUT
 echo "////// src/tap.sol" >> $OUTPUT
-cat $MDDIR/tap.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/import/s/^/\/\* /;/import/s/$/ \*\//" >> $OUTPUT
+cat $MDDIR/tap-b353893.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/import/s/^/\/\* /;/import/s/$/ \*\//" >> $OUTPUT
 
 TAP=../deployed-contracts/SaiTap-0xBda109309f9FafA6Dd6A9CB9f1Df4085B27Ee8eF.sol
 echo "--- Checking $TAP ---"

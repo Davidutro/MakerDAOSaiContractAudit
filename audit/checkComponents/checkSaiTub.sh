@@ -1,7 +1,7 @@
 #!/bin/sh
 
-MDDIR=../../src
-DADIR=../dappsys-contracts
+MDDIR=../contracts/makerdao
+DADIR=../contracts/dappsys
 OUTPUT=saiTub.sol
 
 echo "// hevm: flattened sources of src/tub.sol" > $OUTPUT
@@ -45,11 +45,11 @@ cat $DADIR/value-faae4cb.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/impor
 
 echo "" >> $OUTPUT
 echo "////// src/vox.sol" >> $OUTPUT
-cat $MDDIR/vox.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/import/s/^/\/\* /;/import/s/$/ \*\//" >> $OUTPUT
+cat $MDDIR/vox-b353893.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/import/s/^/\/\* /;/import/s/$/ \*\//" >> $OUTPUT
 
 echo "" >> $OUTPUT
 echo "////// src/tub.sol" >> $OUTPUT
-cat $MDDIR/tub.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/import/s/^/\/\* /;/import/s/$/ \*\//" >> $OUTPUT
+cat $MDDIR/tub-b353893.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/import/s/^/\/\* /;/import/s/$/ \*\//" >> $OUTPUT
 
 TUB=../deployed-contracts/SaiTub-0x448a5065aeBB8E423F0896E6c5D525C040f59af3.sol
 echo "--- Checking $TUB ---"

@@ -1,7 +1,7 @@
 #!/bin/sh
 
-MDDIR=../../src
-DADIR=../dappsys-contracts
+MDDIR=../contracts/makerdao
+DADIR=../contracts/dappsys
 OUTPUT=dsGuardDad.sol
 
 echo "// hevm: flattened sources of src/guard.sol" > $OUTPUT

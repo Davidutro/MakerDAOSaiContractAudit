@@ -1,7 +1,7 @@
 #!/bin/sh
 
-MDDIR=../medianizer
-DADIR=../dappsys-contracts
+MDDIR=../contracts/medianizer
+DADIR=../contracts/dappsys
 OUTPUT=medianizerPep.sol
 
 cat > $OUTPUT << EOF
