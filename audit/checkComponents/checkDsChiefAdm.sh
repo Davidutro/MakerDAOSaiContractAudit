@@ -48,7 +48,7 @@ echo "////// src/chief.sol" >> $OUTPUT
 cat $DADIR/chief-a06b5e4.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/import/s/^/\/\* /;/import/s/$/ \*\//" >> $OUTPUT
 
 ADM=../deployed-contracts/DSChiefAdm-0x8E2a84D6adE1E7ffFEe039A35EF5F19F13057152.sol
-echo "--- Checking $ADM ---"
-diff $OUTPUT $ADM && echo "Good"
+echo "--- Checking the generated $OUTPUT against the deployed $ADM ---"
+diff $OUTPUT $ADM && echo "Matching"
 
 # diff -y -W 200 $OUTPUT $ADM

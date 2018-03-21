@@ -56,7 +56,7 @@ echo "////// src/tap.sol" >> $OUTPUT
 cat $MDDIR/tap-b353893.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/import/s/^/\/\* /;/import/s/$/ \*\//" >> $OUTPUT
 
 TAP=../deployed-contracts/SaiTap-0xBda109309f9FafA6Dd6A9CB9f1Df4085B27Ee8eF.sol
-echo "--- Checking $TAP ---"
-diff $OUTPUT $TAP && echo "Good"
+echo "--- Checking the generated $OUTPUT against the deployed $TAP ---"
+diff $OUTPUT $TAP && echo "Matching"
 
 # diff -y -W 200 $OUTPUT $TAP

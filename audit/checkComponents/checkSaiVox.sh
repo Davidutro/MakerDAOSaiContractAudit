@@ -28,7 +28,7 @@ echo "////// src/vox.sol" >> $OUTPUT
 cat $MDDIR/vox-b353893.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/import/s/^/\/\* /;/import/s/$/ \*\//" >> $OUTPUT
 
 VOX=../deployed-contracts/SaiVox-0x9B0F70Df76165442ca6092939132bBAEA77f2d7A.sol
-echo "--- Checking $VOX ---"
-diff $OUTPUT $VOX && echo "Good"
+echo "--- Checking the generated $OUTPUT against the deployed $VOX ---"
+diff $OUTPUT $VOX && echo "Matching"
 
 # diff -y -W 200 $OUTPUT $VOX

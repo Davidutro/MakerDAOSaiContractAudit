@@ -42,7 +42,7 @@ echo "////// lib/ds-token/src/token.sol" >> $OUTPUT
 cat $DADIR/token-e637e3f.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/import/s/^/\/\* /;/import/s/$/ \*\//" >> $OUTPUT
 
 GOV=../deployed-contracts/DSTokenGov-0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2.sol
-echo "--- Checking $GOV ---"
-diff $OUTPUT $GOV && echo "Good"
+echo "--- Checking the generated $OUTPUT against the deployed $GOV ---"
+diff $OUTPUT $GOV && echo "Matching"
 
 # diff -y -W 200 $OUTPUT $GOV

@@ -50,7 +50,7 @@ echo "////// src/medianizer.sol" >> $OUTPUT
 cat $MDDIR/medianizer-6cb859c.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/import/s/^/\/\* /;/import/s/$/ \*\//" >> $OUTPUT
 
 PEP=../deployed-contracts/MedianizerPep-0x99041F808D598B782D5a3e498681C2452A31da08.sol
-echo "--- Checking $PEP ---"
-diff $OUTPUT $PEP && echo "Good"
+echo "--- Checking the generated $OUTPUT against the deployed $PEP ---"
+diff $OUTPUT $PEP && echo "Matching"
 
 # diff -y -W 200 $OUTPUT $PEP

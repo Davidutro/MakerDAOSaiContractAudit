@@ -38,7 +38,7 @@ echo "" >> $OUTPUT
 cat $MDDIR/pit-b353893.sol | sed "/pragma/d;/import/d;/\/\//d;/^\s*$/d" >> $OUTPUT
 
 PIT=../deployed-contracts/GemPit-0x69076e44a9C70a67D5b79d95795Aba299083c275.sol
-echo "--- Checking $PIT ---"
-diff $OUTPUT $PIT && echo "Good"
+echo "--- Checking the generated $OUTPUT against the deployed $PIT ---"
+diff $OUTPUT $PIT && echo "Matching"
 
 # diff -y -W 200 $OUTPUT $PIT

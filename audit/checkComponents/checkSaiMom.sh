@@ -64,7 +64,7 @@ echo "////// src/mom.sol" >> $OUTPUT
 cat $MDDIR/mom-b353893.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/import/s/^/\/\* /;/import/s/$/ \*\//" >> $OUTPUT
 
 MOM=../deployed-contracts/SaiMom-0xF2C5369cFFb8Ea6284452b0326e326DbFdCb867C.sol
-echo "--- Checking $MOM ---"
-diff $OUTPUT $MOM && echo "Good"
+echo "--- Checking the generated $OUTPUT against the deployed $MOM ---"
+diff $OUTPUT $MOM && echo "Matching"
 
 # diff -y -W 200 $OUTPUT $MOM

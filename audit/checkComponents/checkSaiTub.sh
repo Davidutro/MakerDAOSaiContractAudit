@@ -52,7 +52,7 @@ echo "////// src/tub.sol" >> $OUTPUT
 cat $MDDIR/tub-b353893.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/import/s/^/\/\* /;/import/s/$/ \*\//" >> $OUTPUT
 
 TUB=../deployed-contracts/SaiTub-0x448a5065aeBB8E423F0896E6c5D525C040f59af3.sol
-echo "--- Checking $TUB ---"
-diff $OUTPUT $TUB && echo "Good"
+echo "--- Checking the generated $OUTPUT against the deployed $TUB ---"
+diff $OUTPUT $TUB && echo "Matching"
 
 # diff -y -W 200 $OUTPUT $TUB

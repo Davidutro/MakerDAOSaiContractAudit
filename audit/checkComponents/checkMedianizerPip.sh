@@ -38,7 +38,7 @@ echo "" >> $OUTPUT
 cat $MDDIR/medianizer-31cc0a8.sol | sed "1,4d" >> $OUTPUT
 
 PIP=../deployed-contracts/MedianizerPip-0x729D19f657BD0614b4985Cf1D82531c67569197B.sol
-echo "--- Checking $PIP ---"
-diff -b $OUTPUT $PIP && echo "Good"
+echo "--- Checking the generated $OUTPUT against the deployed $PIP ---"
+diff -b $OUTPUT $PIP && echo "Matching"
 
 # diff -y -W 200 $OUTPUT $PIP

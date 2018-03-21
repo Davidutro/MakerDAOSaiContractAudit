@@ -35,13 +35,13 @@ echo "////// src/token.sol" >> $OUTPUT
 cat $DADIR/token-e637e3f.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/import/s/^/\/\* /;/import/s/$/ \*\//" >> $OUTPUT
 
 SAI=../deployed-contracts/DSTokenSai-0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359.sol
-echo "--- Checking $SAI ---"
-diff $OUTPUT $SAI && echo "Good"
+echo "--- Checking the generated $OUTPUT against the deployed $SAI ---"
+diff $OUTPUT $SAI && echo "Matching"
 
 SIN=../deployed-contracts/DSTokenSin-0x79F6D0f646706E1261aCF0b93DCB864f357d4680.sol
-echo "--- Checking $SIN ---"
-diff $OUTPUT $SIN && echo "Good"
+echo "--- Checking the generated $OUTPUT against the deployed $SIN ---"
+diff $OUTPUT $SIN && echo "Matching"
 
 SKR=../deployed-contracts/DSTokenSkr-0xf53AD2c6851052A81B42133467480961B2321C09.sol
-echo "--- Checking $SKR ---"
-diff $OUTPUT $SKR && echo "Good"
+echo "--- Checking the generated $OUTPUT against the deployed $SKR ---"
+diff $OUTPUT $SKR && echo "Matching"

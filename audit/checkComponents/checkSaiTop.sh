@@ -60,7 +60,7 @@ echo "////// src/top.sol" >> $OUTPUT
 cat $MDDIR/top-b353893.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/import/s/^/\/\* /;/import/s/$/ \*\//" >> $OUTPUT
 
 TOP=../deployed-contracts/SaiTop-0x9b0ccf7C8994E19F39b2B4CF708e0A7DF65fA8a3.sol
-echo "--- Checking $TOP ---"
-diff $OUTPUT $TOP && echo "Good"
+echo "--- Checking the generated $OUTPUT against the deployed $TOP ---"
+diff $OUTPUT $TOP && echo "Matching"
 
 # diff -y -W 200 $OUTPUT $TOP

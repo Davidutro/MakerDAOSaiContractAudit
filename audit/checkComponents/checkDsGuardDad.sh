@@ -16,7 +16,7 @@ echo "////// src/guard.sol" >> $OUTPUT
 cat $DADIR/guard-f8b7f58.sol | sed "/pragma/s/^/\/\* /;/pragma/s/$/ \*\//;/import/s/^/\/\* /;/import/s/$/ \*\//" >> $OUTPUT
 
 DAD=../deployed-contracts/DSGuardDad-0x315cBb88168396D12e1a255f9Cb935408fe80710.sol
-echo "--- Checking $DAD ---"
-diff $OUTPUT $DAD && echo "Good"
+echo "--- Checking the generated $OUTPUT against the deployed $DAD ---"
+diff $OUTPUT $DAD && echo "Matching"
 
 # diff -y -W 200 $OUTPUT $DAD
