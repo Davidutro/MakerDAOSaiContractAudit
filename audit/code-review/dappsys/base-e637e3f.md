@@ -2,6 +2,8 @@
 
 Source file [../../contracts/dappsys/base-e637e3f.sol](../../contracts/dappsys/base-e637e3f.sol).
 
+Repository https://github.com/dapphub/ds-token/blob/e637e3f3aff929ca4e72966015c16df0b235ea2a/src/base.sol
+
 <br />
 
 <hr />

@@ -2,6 +2,8 @@
 
 Source file [../../contracts/medianizer/medianizer-31cc0a8.sol](../../contracts/medianizer/medianizer-31cc0a8.sol).
 
+Repository https://github.com/makerdao/medianizer/blob/31cc0a8b8c5e33dffaeaadc2ff7665c4dc839126/src/medianizer.sol
+
 <br />
 
 <hr />

@@ -2,6 +2,8 @@
 
 Source file [../../contracts/dappsys/auth-52c6a32.sol](../../contracts/dappsys/auth-52c6a32.sol).
 
+Repository https://github.com/dapphub/ds-auth/blob/52c6a32a858601859dd809c718b59fb064fa21a7/src/auth.sol
+
 <br />
 
 <hr />

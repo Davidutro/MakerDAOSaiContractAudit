@@ -2,6 +2,8 @@
 
 Source file [../../contracts/dappsys/value-faae4cb.sol](../../contracts/dappsys/value-faae4cb.sol).
 
+Repository https://github.com/dapphub/ds-value/blob/faae4cb37922fcdb002793a34c7d410b0a23e737/src/value.sol
+
 <br />
 
 <hr />

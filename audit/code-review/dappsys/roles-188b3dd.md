@@ -2,6 +2,8 @@
 
 Source file [../../contracts/dappsys/roles-188b3dd.sol](../../contracts/dappsys/roles-188b3dd.sol).
 
+Repository https://github.com/dapphub/ds-roles/blob/188b3dd6497d1f8c17b5bb381b37bdf238e3d239/src/roles.sol
+
 <br />
 
 <hr />

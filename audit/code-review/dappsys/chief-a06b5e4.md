@@ -2,6 +2,8 @@
 
 Source file [../../contracts/dappsys/chief-a06b5e4.sol](../../contracts/dappsys/chief-a06b5e4.sol).
 
+Repository https://github.com/dapphub/ds-chief/blob/a06b5e426a30e1471b93093857760b85e2fcb93a/src/chief.sol
+
 <br />
 
 <hr />

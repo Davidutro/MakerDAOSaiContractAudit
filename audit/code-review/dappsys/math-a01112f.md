@@ -2,6 +2,8 @@
 
 Source file [../../contracts/dappsys/math-a01112f.sol](../../contracts/dappsys/math-a01112f.sol).
 
+Repository https://github.com/dapphub/ds-math/blob/a01112f73507c42961d497ba18a352aca41474cb/src/math.sol
+
 <br />
 
 <hr />

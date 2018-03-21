@@ -1,6 +1,6 @@
 # MakerDAO Sai Contract Audit
 
-Status: Information gathering commenced
+Status: Work in progress
 
 ## Summary
 
@@ -42,6 +42,8 @@ dai-tap-2017-12 | [0xBda109309f9FafA6Dd6A9CB9f1Df4085B27Ee8eF](https://etherscan
 dai-top-2017-12 | [0x9b0ccf7C8994E19F39b2B4CF708e0A7DF65fA8a3](https://etherscan.io/address/0x9b0ccf7C8994E19F39b2B4CF708e0A7DF65fA8a3#code) | [SaiTop.sol](deployed-contracts/SaiTop-0x9b0ccf7C8994E19F39b2B4CF708e0A7DF65fA8a3.sol) <br /> [SaiTop.js](deployed-contracts/SaiTop-0x9b0ccf7C8994E19F39b2B4CF708e0A7DF65fA8a3.js) |
 mkr-redeemer-2017-12 | [0x642AE78FAfBB8032Da552D619aD43F1D81E4DD7C](https://etherscan.io/address/0x642AE78FAfBB8032Da552D619aD43F1D81E4DD7C#code) | [Redeemer.sol](deployed-contracts/Redeemer-0x642AE78FAfBB8032Da552D619aD43F1D81E4DD7C.sol) <br /> [Redeemer.js](deployed-contracts/Redeemer-0x642AE78FAfBB8032Da552D619aD43F1D81E4DD7C.js) |
 oasis-2017-12 | [0x14FBCA95be7e99C15Cc2996c6C9d841e54B79425](https://etherscan.io/address/0x14FBCA95be7e99C15Cc2996c6C9d841e54B79425#code) | [MatchingMarket.sol](deployed-contracts/MatchingMarket-0x14FBCA95be7e99C15Cc2996c6C9d841e54B79425.sol) <br /> [MatchingMarket.js](deployed-contracts/MatchingMarket-0x14FBCA95be7e99C15Cc2996c6C9d841e54B79425.js) |
+
+Some of the contracts above were deployed from the DaiFab contract at [0xf07674f6ac6632e253c291b694f9c2e2ed69ebbb](https://etherscan.io/address/0xf07674f6ac6632e253c291b694f9c2e2ed69ebbb#code)
 
 <br />
 
@@ -119,7 +121,7 @@ export SAI_TOP=0x9b0ccf7c8994e19f39b2b4cf708e0a7df65fa8a3
 
 ### See Also
 
-* [https://github.com/dapphub/dappsys](https://github.com/dapphub/dappsys)
+* [https://github.com/dapphub/dappsys](https://github.com/dapphub/dappsys) and [https://dapp.tools/dappsys/](https://dapp.tools/dappsys/)
 
 <br />
 

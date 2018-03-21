@@ -2,6 +2,8 @@
 
 Source file [../../contracts/dappsys/auth-ce285fb.sol](../../contracts/dappsys/auth-ce285fb.sol).
 
+Repository https://github.com/dapphub/ds-auth/blob/ce285fba8ac4df04561cef04bab7ce825bd86aca/src/auth.sol
+
 <br />
 
 <hr />

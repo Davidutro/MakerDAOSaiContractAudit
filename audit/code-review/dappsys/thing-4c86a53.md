@@ -2,6 +2,8 @@
 
 Source file [../../contracts/dappsys/thing-4c86a53.sol](../../contracts/dappsys/thing-4c86a53.sol).
 
+Repository https://github.com/dapphub/ds-thing/blob/4c86a534b2cdaf7c7a8564dfd8572ef466615a00/src/thing.sol
+
 <br />
 
 <hr />

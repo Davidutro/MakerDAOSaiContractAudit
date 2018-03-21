@@ -2,6 +2,8 @@
 
 Source file [../../contracts/dappsys/guard-f8b7f58.sol](../../contracts/dappsys/guard-f8b7f58.sol).
 
+Repository https://github.com/dapphub/ds-guard/blob/f8b7f58c0fb5e88bba376e3dfa7a856617fabc0e/src/guard.sol
+
 <br />
 
 <hr />
