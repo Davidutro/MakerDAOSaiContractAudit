@@ -2,17 +2,17 @@ MODE               = 'test'
 GETHATTACHPOINT    = 'ipc:./testchain/geth.ipc'
 PASSWORD           = ''
 SOURCEDIR          = '../deployed-contracts'
-WETH9GEMNAME       = 'WETH9'
-WETH9GEMSOL        = 'WETH9Gem-0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2.sol'
-WETH9GEMJS         = 'WETH9Gem-0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2.js'
+GEMNAME            = 'WETH9'
+GEMSOL             = 'WETH9Gem-0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2.sol'
+GEMJS              = 'WETH9Gem-0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2.js'
 DEPLOYMENTDATA     = 'deploymentData.txt'
 INCLUDEJS          = './include.js'
 TEST1OUTPUT        = 'test1output.txt'
 TEST1RESULTS       = 'test1results.txt'
-CURRENTTIME        = '1521489460' 'Mon 19 Mar 2018 19:57:40 UTC'
-START_DATE         = '1521489490' 'Mon 19 Mar 2018 19:58:10 UTC'
-END_DATE           = '1521489550' 'Mon 19 Mar 2018 19:59:10 UTC'
-REFUND_END_DATE    = '1521489580' 'Mon 19 Mar 2018 19:59:40 UTC'
+CURRENTTIME        = '1521859046' 'Sat 24 Mar 2018 02:37:26 UTC'
+START_DATE         = '1521859076' 'Sat 24 Mar 2018 02:37:56 UTC'
+END_DATE           = '1521859136' 'Sat 24 Mar 2018 02:38:56 UTC'
+REFUND_END_DATE    = '1521859166' 'Sat 24 Mar 2018 02:39:26 UTC'
 --- Differences ../deployed-contracts/DSTokenSai-0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359.sol DSTokenSai-0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359.sol ---
 
 --- Differences ../deployed-contracts/WETH9Gem-0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2.sol WETH9Gem-0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2.sol ---
@@ -23,7 +23,7 @@ Welcome to the Geth JavaScript console!
 
 instance: Geth/v1.7.3-stable-4bb3c89d/darwin-amd64/go1.9.2
 coinbase: 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e
-at block: 8352 (Tue, 20 Mar 2018 06:57:40 AEDT)
+at block: 190 (Sat, 24 Mar 2018 13:37:26 AEDT)
  datadir: /Users/bok/Projects/MakerDAOSaiContractAudit/audit/test/testchain
  modules: admin:1.0 clique:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 shh:1.0 txpool:1.0 web3:1.0
 
@@ -38,7 +38,7 @@ undefined
 undefined
 > 
 > 
-DATA: var weth9Abi=[{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"guy","type":"address"},{"name":"wad","type":"uint256"}],"name":"approve","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"src","type":"address"},{"name":"dst","type":"address"},{"name":"wad","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"wad","type":"uint256"}],"name":"withdraw","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"dst","type":"address"},{"name":"wad","type":"uint256"}],"name":"transfer","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"deposit","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"address"}],"name":"allowance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"src","type":"address"},{"indexed":true,"name":"guy","type":"address"},{"indexed":false,"name":"wad","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"src","type":"address"},{"indexed":true,"name":"dst","type":"address"},{"indexed":false,"name":"wad","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"dst","type":"address"},{"indexed":false,"name":"wad","type":"uint256"}],"name":"Deposit","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"src","type":"address"},{"indexed":false,"name":"wad","type":"uint256"}],"name":"Withdrawal","type":"event"}];
+DATA: var gemAbi=[{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"guy","type":"address"},{"name":"wad","type":"uint256"}],"name":"approve","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"src","type":"address"},{"name":"dst","type":"address"},{"name":"wad","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"wad","type":"uint256"}],"name":"withdraw","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"dst","type":"address"},{"name":"wad","type":"uint256"}],"name":"transfer","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"deposit","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"address"}],"name":"allowance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"src","type":"address"},{"indexed":true,"name":"guy","type":"address"},{"indexed":false,"name":"wad","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"src","type":"address"},{"indexed":true,"name":"dst","type":"address"},{"indexed":false,"name":"wad","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"dst","type":"address"},{"indexed":false,"name":"wad","type":"uint256"}],"name":"Deposit","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"src","type":"address"},{"indexed":false,"name":"wad","type":"uint256"}],"name":"Withdrawal","type":"event"}];
 undefined
 > 
 undefined
@@ -102,7 +102,7 @@ undefined
 ... 
 undefined
 > 
-DATA: var tokenAddress="0xd53380f36e665634cf48ec4745c7095cde2c9d7f";
+DATA: var tokenAddress="0x0e946b999033257976aa5cbe0e3530618ca1582d";
 RESULT:  # Account                                             EtherBalanceChange                          Token Name
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
 RESULT:  0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.001185862000000000           0.000000000000000000 Account #0 - Miner
@@ -115,7 +115,7 @@ RESULT:  6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.00000000000000000
 RESULT:  7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
 RESULT:  8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
 RESULT:  9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
-RESULT: 10 0xd53380f36e665634cf48ec4745c7095cde2c9d7f        0.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
+RESULT: 10 0x0e946b999033257976aa5cbe0e3530618ca1582d        0.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
 RESULT:                                                                                     0.000000000000000000 Total Token Balances
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
@@ -125,10 +125,10 @@ undefined
 RESULT: PASS Deploy Token Contract
 1
 > 
-RESULT: tokenAddress=0xd53380f36e665634cf48ec4745c7095cde2c9d7f status=0x1 Success gas=6000000 gasUsed=592931 costETH=0.001185862 costUSD=0.7250953199 @ ETH/USD=611.45 gasPrice=2 gwei block=8361 txIx=0 txId=0xc2eaeee75b52bf69e05894f8ae15a28cb7cce1b2c04a9be379796d593eaf89fa @ 1521489469 Mon, 19 Mar 2018 19:57:49 UTC
+RESULT: tokenAddress=0x0e946b999033257976aa5cbe0e3530618ca1582d status=0x1 Success gas=6000000 gasUsed=592931 costETH=0.001185862 costUSD=0.7250953199 @ ETH/USD=611.45 gasPrice=2 gwei block=199 txIx=0 txId=0xd0467bac370ad5242f818a4ec7ddbbe04f7a8def38cad4fdbcd25b51bf8e4991 @ 1521859055 Sat, 24 Mar 2018 02:37:35 UTC
 undefined
 > 
-RESULT: tokenContractAddress=0xd53380f36e665634cf48ec4745c7095cde2c9d7f
+RESULT: tokenContractAddress=0x0e946b999033257976aa5cbe0e3530618ca1582d
 RESULT: token.symbol=WETH
 RESULT: token.name=Wrapped Ether
 RESULT: token.decimals=18
@@ -168,7 +168,7 @@ RESULT:  6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.00000000000000000
 RESULT:  7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
 RESULT:  8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
 RESULT:  9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
-RESULT: 10 0xd53380f36e665634cf48ec4745c7095cde2c9d7f      200.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
+RESULT: 10 0x0e946b999033257976aa5cbe0e3530618ca1582d      200.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
 RESULT:                                                                                   200.000000000000000000 Total Token Balances
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
@@ -181,13 +181,13 @@ RESULT: PASS Wrap Ethers - ac2 100 ETH
 RESULT: PASS Wrap Ethers - ac3 100 ETH
 1
 > 
-RESULT: wrapEther0_1Tx status=0x1 Success gas=400000 gasUsed=42862 costETH=0.000085724 costUSD=0.0524159398 @ ETH/USD=611.45 gasPrice=2 gwei block=8363 txIx=1 txId=0x2e4f9a643caa5da610ded6f61de6dd3ccf0467337b1a72c82a42ffe5bd88f41a @ 1521489471 Mon, 19 Mar 2018 19:57:51 UTC
+RESULT: wrapEther0_1Tx status=0x1 Success gas=400000 gasUsed=42862 costETH=0.000085724 costUSD=0.0524159398 @ ETH/USD=611.45 gasPrice=2 gwei block=201 txIx=0 txId=0xec3e69de4c25e44f4d1900b04335f9403be9c49ff736c9f32bf97e0e12e1aa44 @ 1521859057 Sat, 24 Mar 2018 02:37:37 UTC
 undefined
 > 
-RESULT: wrapEther0_2Tx status=0x1 Success gas=400000 gasUsed=42862 costETH=0.000085724 costUSD=0.0524159398 @ ETH/USD=611.45 gasPrice=2 gwei block=8363 txIx=0 txId=0x3bfeb2b1e72e9a5f2f4c185bd380f68a27b4828e766b252c70c07cc836fa5daa @ 1521489471 Mon, 19 Mar 2018 19:57:51 UTC
+RESULT: wrapEther0_2Tx status=0x1 Success gas=400000 gasUsed=42862 costETH=0.000085724 costUSD=0.0524159398 @ ETH/USD=611.45 gasPrice=2 gwei block=201 txIx=1 txId=0xd15e43e97abee340db987c4ac8e241393ceb1e3067699c5da84511d4681a91e9 @ 1521859057 Sat, 24 Mar 2018 02:37:37 UTC
 undefined
 > 
-RESULT: tokenContractAddress=0xd53380f36e665634cf48ec4745c7095cde2c9d7f
+RESULT: tokenContractAddress=0x0e946b999033257976aa5cbe0e3530618ca1582d
 RESULT: token.symbol=WETH
 RESULT: token.name=Wrapped Ether
 RESULT: token.decimals=18
@@ -232,7 +232,7 @@ RESULT:  6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.00000000000000000
 RESULT:  7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
 RESULT:  8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
 RESULT:  9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
-RESULT: 10 0xd53380f36e665634cf48ec4745c7095cde2c9d7f      200.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
+RESULT: 10 0x0e946b999033257976aa5cbe0e3530618ca1582d      200.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
 RESULT:                                                                                   200.000000000000000000 Total Token Balances
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
@@ -248,23 +248,23 @@ RESULT: PASS Transfer Tokens - approve 0.03 tokens ac3 -> ac5
 RESULT: PASS Transfer Tokens - transferFrom 0.03 tokens ac3 -> ac6 by ac5. CHECK for movement
 1
 > 
-RESULT: transfer1_1Tx status=0x1 Success gas=100000 gasUsed=51591 costETH=0.000103182 costUSD=0.0630906339 @ ETH/USD=611.45 gasPrice=2 gwei block=8365 txIx=1 txId=0x5d19b41df20f38335b463764bd1be36024739f2804c4e622c50c5578a0987742 @ 1521489473 Mon, 19 Mar 2018 19:57:53 UTC
+RESULT: transfer1_1Tx status=0x1 Success gas=100000 gasUsed=51591 costETH=0.000103182 costUSD=0.0630906339 @ ETH/USD=611.45 gasPrice=2 gwei block=203 txIx=0 txId=0xf2f19a4d0a5294d5f18d48dd3368315976f58e5cc278e72e322d48a14f4b5599 @ 1521859059 Sat, 24 Mar 2018 02:37:39 UTC
 undefined
 > 
-RESULT: transfer1_2Tx status=0x1 Success gas=100000 gasUsed=45483 costETH=0.000090966 costUSD=0.0556211607 @ ETH/USD=611.45 gasPrice=2 gwei block=8365 txIx=0 txId=0xc5964747d985d564c919168e008861b4393db26950875a41c30406965c3858d3 @ 1521489473 Mon, 19 Mar 2018 19:57:53 UTC
+RESULT: transfer1_2Tx status=0x1 Success gas=100000 gasUsed=45483 costETH=0.000090966 costUSD=0.0556211607 @ ETH/USD=611.45 gasPrice=2 gwei block=203 txIx=1 txId=0x5cae69e770ec1f3a1260095622c43fa5a859955310d629b2e41f4df54156333f @ 1521859059 Sat, 24 Mar 2018 02:37:39 UTC
 undefined
 > 
-RESULT: transfer1_3Tx status=0x1 Success gas=100000 gasUsed=44257 costETH=0.000088514 costUSD=0.0541218853 @ ETH/USD=611.45 gasPrice=2 gwei block=8367 txIx=0 txId=0x13e63fd62a6af94ad3015b7c59c811fd8e9e80c6e07342f1b93ee90a96f6aa61 @ 1521489475 Mon, 19 Mar 2018 19:57:55 UTC
+RESULT: transfer1_3Tx status=0x1 Success gas=100000 gasUsed=44257 costETH=0.000088514 costUSD=0.0541218853 @ ETH/USD=611.45 gasPrice=2 gwei block=205 txIx=0 txId=0xe62ed22bf74b9587af0225acfc906cdcb55aac7f45edcbe0a296a245641b9471 @ 1521859061 Sat, 24 Mar 2018 02:37:41 UTC
 undefined
 > 
-RESULT: tokenContractAddress=0xd53380f36e665634cf48ec4745c7095cde2c9d7f
+RESULT: tokenContractAddress=0x0e946b999033257976aa5cbe0e3530618ca1582d
 RESULT: token.symbol=WETH
 RESULT: token.name=Wrapped Ether
 RESULT: token.decimals=18
 RESULT: token.totalSupply=200
-RESULT: Approval 0 #8365 src=0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0 guy=0xa55a151eb00fded1634d27d1127b4be4627079ea wad=0.03
-RESULT: Transfer 0 #8365: src=0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976 dst=0xa44a08d3f6933c69212114bb66e2df1813651844 wad=0.000001
-RESULT: Transfer 1 #8367: src=0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0 dst=0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9 wad=0.03
+RESULT: Approval 0 #203 src=0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0 guy=0xa55a151eb00fded1634d27d1127b4be4627079ea wad=0.03
+RESULT: Transfer 0 #203: src=0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976 dst=0xa44a08d3f6933c69212114bb66e2df1813651844 wad=0.000001
+RESULT: Transfer 1 #205: src=0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0 dst=0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9 wad=0.03
 undefined
 > 
 RESULT: 
@@ -305,7 +305,7 @@ RESULT:  6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.00000000000000000
 RESULT:  7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
 RESULT:  8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
 RESULT:  9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
-RESULT: 10 0xd53380f36e665634cf48ec4745c7095cde2c9d7f      200.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
+RESULT: 10 0x0e946b999033257976aa5cbe0e3530618ca1582d      200.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
 RESULT:                                                                                   200.000000000000000000 Total Token Balances
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
@@ -321,23 +321,23 @@ RESULT: PASS Transfer 0 Tokens - approve 0 tokens ac3 -> ac5
 RESULT: PASS Transfer 0 Tokens - transferFrom 0 tokens ac3 -> ac6 by ac5. CHECK for movement
 1
 > 
-RESULT: transfer2_1Tx status=0x1 Success gas=100000 gasUsed=36335 costETH=0.00007267 costUSD=0.0444340715 @ ETH/USD=611.45 gasPrice=2 gwei block=8369 txIx=1 txId=0x885c8d317f3b4994312ddddc73ead986312b07ab777c56b06400dd3147ee2a63 @ 1521489477 Mon, 19 Mar 2018 19:57:57 UTC
+RESULT: transfer2_1Tx status=0x1 Success gas=100000 gasUsed=36335 costETH=0.00007267 costUSD=0.0444340715 @ ETH/USD=611.45 gasPrice=2 gwei block=207 txIx=1 txId=0xc7cfda2a6c6a46a03b3c9f6db287c31867b843bf80fc4141b132743558be52bc @ 1521859063 Sat, 24 Mar 2018 02:37:43 UTC
 undefined
 > 
-RESULT: transfer2_2Tx status=0x1 Success gas=100000 gasUsed=30163 costETH=0.000060326 costUSD=0.0368863327 @ ETH/USD=611.45 gasPrice=2 gwei block=8369 txIx=0 txId=0xc2fd81f9ea158fa35baaffaa66a9fbfa0ae3395ada93997d261571e051e3bb85 @ 1521489477 Mon, 19 Mar 2018 19:57:57 UTC
+RESULT: transfer2_2Tx status=0x1 Success gas=100000 gasUsed=30163 costETH=0.000060326 costUSD=0.0368863327 @ ETH/USD=611.45 gasPrice=2 gwei block=207 txIx=0 txId=0xa3d65df8469ff334430525fc98553a31fb3f100d9d16ec7c305b5787b1388eed @ 1521859063 Sat, 24 Mar 2018 02:37:43 UTC
 undefined
 > 
-RESULT: transfer2_3Tx status=0x1 Success gas=100000 gasUsed=43937 costETH=0.000087874 costUSD=0.0537305573 @ ETH/USD=611.45 gasPrice=2 gwei block=8371 txIx=0 txId=0x301bf98d456c1ee333e7b37255c0ca3eafab03762644d1e5d22492639e6ab80f @ 1521489479 Mon, 19 Mar 2018 19:57:59 UTC
+RESULT: transfer2_3Tx status=0x1 Success gas=100000 gasUsed=43937 costETH=0.000087874 costUSD=0.0537305573 @ ETH/USD=611.45 gasPrice=2 gwei block=209 txIx=0 txId=0x2e8013f87ab218a8e893cf1ee3bb451b82f29c687b306cc15f3190964eee096c @ 1521859065 Sat, 24 Mar 2018 02:37:45 UTC
 undefined
 > 
-RESULT: tokenContractAddress=0xd53380f36e665634cf48ec4745c7095cde2c9d7f
+RESULT: tokenContractAddress=0x0e946b999033257976aa5cbe0e3530618ca1582d
 RESULT: token.symbol=WETH
 RESULT: token.name=Wrapped Ether
 RESULT: token.decimals=18
 RESULT: token.totalSupply=200
-RESULT: Approval 0 #8369 src=0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0 guy=0xa55a151eb00fded1634d27d1127b4be4627079ea wad=0
-RESULT: Transfer 0 #8369: src=0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976 dst=0xa44a08d3f6933c69212114bb66e2df1813651844 wad=0
-RESULT: Transfer 1 #8371: src=0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0 dst=0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9 wad=0
+RESULT: Approval 0 #207 src=0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0 guy=0xa55a151eb00fded1634d27d1127b4be4627079ea wad=0
+RESULT: Transfer 0 #207: src=0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976 dst=0xa44a08d3f6933c69212114bb66e2df1813651844 wad=0
+RESULT: Transfer 1 #209: src=0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0 dst=0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9 wad=0
 undefined
 > 
 RESULT: 
@@ -378,7 +378,7 @@ RESULT:  6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.00000000000000000
 RESULT:  7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
 RESULT:  8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
 RESULT:  9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
-RESULT: 10 0xd53380f36e665634cf48ec4745c7095cde2c9d7f      200.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
+RESULT: 10 0x0e946b999033257976aa5cbe0e3530618ca1582d      200.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
 RESULT:                                                                                   200.000000000000000000 Total Token Balances
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
@@ -394,21 +394,21 @@ RESULT: PASS Transfer Too Many Tokens - approve 2,000 tokens ac3 -> ac5
 RESULT: PASS Transfer Too Many Tokens - transferFrom 2,000 tokens ac3 -> ac6 by ac5. CHECK no movement
 1
 > 
-RESULT: transfer3_1Tx status=0x0 Failure gas=100000 gasUsed=24039 costETH=0.000048078 costUSD=0.0293972931 @ ETH/USD=611.45 gasPrice=2 gwei block=8373 txIx=1 txId=0x2bbaaece5b00661e407f809fcdb1e0c8d581ade54e92733d7852d1a2295e7fa6 @ 1521489481 Mon, 19 Mar 2018 19:58:01 UTC
+RESULT: transfer3_1Tx status=0x0 Failure gas=100000 gasUsed=24039 costETH=0.000048078 costUSD=0.0293972931 @ ETH/USD=611.45 gasPrice=2 gwei block=212 txIx=0 txId=0xa0e811c72fc3c2b916b8ed91571dc7d3d6f6b36a9ca7dec6624d58107289777a @ 1521859068 Sat, 24 Mar 2018 02:37:48 UTC
 undefined
 > 
-RESULT: transfer3_2Tx status=0x1 Success gas=100000 gasUsed=45611 costETH=0.000091222 costUSD=0.0557776919 @ ETH/USD=611.45 gasPrice=2 gwei block=8373 txIx=0 txId=0x7eb115f495381e6d6f9a06b182e2569bf1a5f2427d14b1aec49c6cbb339b512a @ 1521489481 Mon, 19 Mar 2018 19:58:01 UTC
+RESULT: transfer3_2Tx status=0x1 Success gas=100000 gasUsed=45611 costETH=0.000091222 costUSD=0.0557776919 @ ETH/USD=611.45 gasPrice=2 gwei block=212 txIx=1 txId=0x86fa736ef10abc68559b2a56d593c849dbedcee5f991401057e96a907d2b674b @ 1521859068 Sat, 24 Mar 2018 02:37:48 UTC
 undefined
 > 
-RESULT: transfer3_3Tx status=0x0 Failure gas=100000 gasUsed=25326 costETH=0.000050652 costUSD=0.0309711654 @ ETH/USD=611.45 gasPrice=2 gwei block=8375 txIx=0 txId=0x35f64a3eda5f271c49eff0ae56e5d07b2da54127372ce6aedbf32804728dd854 @ 1521489483 Mon, 19 Mar 2018 19:58:03 UTC
+RESULT: transfer3_3Tx status=0x0 Failure gas=100000 gasUsed=25326 costETH=0.000050652 costUSD=0.0309711654 @ ETH/USD=611.45 gasPrice=2 gwei block=214 txIx=0 txId=0x10eddf6e9d43dd647c67a72dab4b3f063241c4de1335ff97fc5b8d412e8753fa @ 1521859070 Sat, 24 Mar 2018 02:37:50 UTC
 undefined
 > 
-RESULT: tokenContractAddress=0xd53380f36e665634cf48ec4745c7095cde2c9d7f
+RESULT: tokenContractAddress=0x0e946b999033257976aa5cbe0e3530618ca1582d
 RESULT: token.symbol=WETH
 RESULT: token.name=Wrapped Ether
 RESULT: token.decimals=18
 RESULT: token.totalSupply=200
-RESULT: Approval 0 #8373 src=0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0 guy=0xa55a151eb00fded1634d27d1127b4be4627079ea wad=2000
+RESULT: Approval 0 #212 src=0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0 guy=0xa55a151eb00fded1634d27d1127b4be4627079ea wad=2000
 undefined
 > 
 RESULT: 
@@ -444,7 +444,7 @@ RESULT:  6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.00000000000000000
 RESULT:  7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
 RESULT:  8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
 RESULT:  9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
-RESULT: 10 0xd53380f36e665634cf48ec4745c7095cde2c9d7f      170.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
+RESULT: 10 0x0e946b999033257976aa5cbe0e3530618ca1582d      170.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
 RESULT:                                                                                   170.000000000000000000 Total Token Balances
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
@@ -457,13 +457,13 @@ RESULT: PASS Withdraw Tokens - ac2 withdraw 10 ETH
 RESULT: PASS Withdraw Tokens - ac3 withdraw 20 ETH
 1
 > 
-RESULT: withdraw1_1Tx status=0x1 Success gas=100000 gasUsed=36737 costETH=0.000073474 costUSD=0.0449256773 @ ETH/USD=611.45 gasPrice=2 gwei block=8377 txIx=0 txId=0xfe90e86a33c0e29aef02a0f140ea775a7b7425cc9dcb78e61b9ec6ce06b881b9 @ 1521489485 Mon, 19 Mar 2018 19:58:05 UTC
+RESULT: withdraw1_1Tx status=0x1 Success gas=100000 gasUsed=36737 costETH=0.000073474 costUSD=0.0449256773 @ ETH/USD=611.45 gasPrice=2 gwei block=217 txIx=0 txId=0x3132b91532a69b40cddc01517d15b49635fe1e76c7c2798e090b22504388de33 @ 1521859073 Sat, 24 Mar 2018 02:37:53 UTC
 undefined
 > 
-RESULT: withdraw1_2Tx status=0x1 Success gas=100000 gasUsed=36801 costETH=0.000073602 costUSD=0.0450039429 @ ETH/USD=611.45 gasPrice=2 gwei block=8377 txIx=1 txId=0xb29169f000a0c0b37e3c19f60ee8b0af8585728002c8638741ee8ab3fc08a5a3 @ 1521489485 Mon, 19 Mar 2018 19:58:05 UTC
+RESULT: withdraw1_2Tx status=0x1 Success gas=100000 gasUsed=36801 costETH=0.000073602 costUSD=0.0450039429 @ ETH/USD=611.45 gasPrice=2 gwei block=217 txIx=1 txId=0x70580b63dcc97e2a28f8f082e48040382b4d8df745928a10fc1494f37423eaef @ 1521859073 Sat, 24 Mar 2018 02:37:53 UTC
 undefined
 > 
-RESULT: tokenContractAddress=0xd53380f36e665634cf48ec4745c7095cde2c9d7f
+RESULT: tokenContractAddress=0x0e946b999033257976aa5cbe0e3530618ca1582d
 RESULT: token.symbol=WETH
 RESULT: token.name=Wrapped Ether
 RESULT: token.decimals=18

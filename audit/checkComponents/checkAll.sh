@@ -2,7 +2,8 @@
 
 OUTPUT=results.txt
 
-./checkDsChiefAdm.sh > $OUTPUT
+./checkDaiFab.sh > $OUTPUT
+./checkDsChiefAdm.sh >> $OUTPUT
 ./checkDsGuardDad.sh >> $OUTPUT
 ./checkDsTokenGov.sh >> $OUTPUT
 ./checkDsTokenSaiSinSkr.sh >> $OUTPUT

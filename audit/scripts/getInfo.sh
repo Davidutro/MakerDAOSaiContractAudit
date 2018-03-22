@@ -42,55 +42,20 @@ console.log("RESULT: saiTub.air=" + saiTub.air() + " " + saiTub.air().shift(-18)
 console.log("RESULT: saiTub.era=" + saiTub.era() + " " + new Date(saiTub.era() * 1000).toUTCString() + " " + new Date(saiTub.era() * 1000).toString());
 
 console.log("RESULT: saiTub.cupi=" + saiTub.cupi());
-for (var i = 0 /*saiTub.cupi() - 20*/; i < saiTub.cupi(); i++) {
+for (var i = saiTub.cupi() - 20; i < saiTub.cupi(); i++) {
   var h = "0x" + web3.padLeft(web3.toHex(i).substring(2), 64);
   var data = saiTub.cups(h);
-  if (data[0] != "0x0000000000000000000000000000000000000000") {
+  var lad = data[0];
+  var ink = data[1];
+  var art = data[2];
+  var ire = data[3];
+  if (lad != "0x0000000000000000000000000000000000000000" && ink != "0" && art != "0" && ire != "0") {
     console.log("RESULT: saiTub.cups(" + i + ")=" + JSON.stringify(data));
   }
 }
 
 
 EOF
-
-exit;
-
-    DSToken  public  sai;  // Stablecoin
-    DSToken  public  sin;  // Debt (negative sai)
-
-    DSToken  public  skr;  // Abstracted collateral
-    ERC20    public  gem;  // Underlying collateral
-
-    DSToken  public  gov;  // Governance token
-
-    SaiVox   public  vox;  // Target price feed
-    DSValue  public  pip;  // Reference price feed
-    DSValue  public  pep;  // Governance price feed
-
-    address  public  tap;  // Liquidator
-    address  public  pit;  // Governance Vault
-
-    uint256  public  axe;  // Liquidation penalty
-    uint256  public  cap;  // Debt ceiling
-    uint256  public  mat;  // Liquidation ratio
-    uint256  public  tax;  // Stability fee
-    uint256  public  fee;  // Governance fee
-    uint256  public  gap;  // Join-Exit Spread
-
-    bool     public  off;  // Cage flag
-    bool     public  out;  // Post cage exit
-
-    uint256  public  fit;  // REF per SKR (just before settlement)
-
-    uint256  public  rho;  // Time of last drip
-    uint256         _chi;  // Accumulated Tax Rates
-    uint256         _rhi;  // Accumulated Tax + Fee Rates
-    uint256  public  rum;  // Total normalised debt
-
-    uint256                   public  cupi;
-    mapping (bytes32 => Cup)  public  cups;
-
-
 
 exit;
 

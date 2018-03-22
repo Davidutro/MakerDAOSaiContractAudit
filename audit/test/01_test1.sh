@@ -12,9 +12,9 @@ PASSWORD=`grep ^PASSWORD= settings.txt | sed "s/^.*=//"`
 
 SOURCEDIR=`grep ^SOURCEDIR= settings.txt | sed "s/^.*=//"`
 
-WETH9GEMNAME=`grep ^WETH9GEMNAME= settings.txt | sed "s/^.*=//"`
-WETH9GEMSOL=`grep ^WETH9GEMSOL= settings.txt | sed "s/^.*=//"`
-WETH9GEMJS=`grep ^WETH9GEMJS= settings.txt | sed "s/^.*=//"`
+GEMNAME=`grep ^GEMNAME= settings.txt | sed "s/^.*=//"`
+GEMSOL=`grep ^GEMSOL= settings.txt | sed "s/^.*=//"`
+GEMJS=`grep ^GEMJS= settings.txt | sed "s/^.*=//"`
 
 DEPLOYMENTDATA=`grep ^DEPLOYMENTDATA= settings.txt | sed "s/^.*=//"`
 
@@ -36,9 +36,9 @@ printf "MODE               = '$MODE'\n" | tee $TEST1OUTPUT
 printf "GETHATTACHPOINT    = '$GETHATTACHPOINT'\n" | tee -a $TEST1OUTPUT
 printf "PASSWORD           = '$PASSWORD'\n" | tee -a $TEST1OUTPUT
 printf "SOURCEDIR          = '$SOURCEDIR'\n" | tee -a $TEST1OUTPUT
-printf "WETH9GEMNAME       = '$WETH9GEMNAME'\n" | tee -a $TEST1OUTPUT
-printf "WETH9GEMSOL        = '$WETH9GEMSOL'\n" | tee -a $TEST1OUTPUT
-printf "WETH9GEMJS         = '$WETH9GEMJS'\n" | tee -a $TEST1OUTPUT
+printf "GEMNAME            = '$GEMNAME'\n" | tee -a $TEST1OUTPUT
+printf "GEMSOL             = '$GEMSOL'\n" | tee -a $TEST1OUTPUT
+printf "GEMJS              = '$GEMJS'\n" | tee -a $TEST1OUTPUT
 printf "DEPLOYMENTDATA     = '$DEPLOYMENTDATA'\n" | tee -a $TEST1OUTPUT
 printf "INCLUDEJS          = '$INCLUDEJS'\n" | tee -a $TEST1OUTPUT
 printf "TEST1OUTPUT        = '$TEST1OUTPUT'\n" | tee -a $TEST1OUTPUT
@@ -50,7 +50,7 @@ printf "REFUND_END_DATE    = '$REFUND_END_DATE' '$REFUND_END_DATE_S'\n" | tee -a
 
 # Make copy of SOL file and modify start and end times ---
 # `cp modifiedContracts/SnipCoin.sol .`
-`cp $SOURCEDIR/$WETH9GEMSOL .`
+`cp $SOURCEDIR/$GEMSOL .`
 
 # --- Modify parameters ---
 #`perl -pi -e "s/ROUND_DURATION \= 3 days;/ROUND_DURATION \= 10 seconds;/" *.sol`
@@ -64,17 +64,17 @@ done
 
 solc_0.4.18 --version | tee -a $TEST1OUTPUT
 
-echo "var weth9Output=`solc_0.4.18 --optimize --pretty-json --combined-json abi,bin,interface $WETH9GEMSOL`;" > $WETH9GEMJS
+echo "var gemOutput=`solc_0.4.18 --optimize --pretty-json --combined-json abi,bin,interface $GEMSOL`;" > $GEMJS
 
 geth --verbosity 3 attach $GETHATTACHPOINT << EOF | tee -a $TEST1OUTPUT
-loadScript("$WETH9GEMJS");
+loadScript("$GEMJS");
 loadScript("functions.js");
 
-var weth9Abi = JSON.parse(weth9Output.contracts["$WETH9GEMSOL:$WETH9GEMNAME"].abi);
-var weth9Bin = "0x" + weth9Output.contracts["$WETH9GEMSOL:$WETH9GEMNAME"].bin;
+var gemAbi = JSON.parse(gemOutput.contracts["$GEMSOL:$GEMNAME"].abi);
+var gemBin = "0x" + gemOutput.contracts["$GEMSOL:$GEMNAME"].bin;
 
-console.log("DATA: var weth9Abi=" + JSON.stringify(weth9Abi) + ";");
-// console.log("DATA: weth9Bin=" + JSON.stringify(weth9Bin));
+console.log("DATA: var gemAbi=" + JSON.stringify(gemAbi) + ";");
+// console.log("DATA: gemBin=" + JSON.stringify(gemBin));
 
 unlockAccounts("$PASSWORD");
 printBalances();
@@ -85,10 +85,10 @@ console.log("RESULT: ");
 var deployTokenMessage = "Deploy Token Contract";
 // -----------------------------------------------------------------------------
 console.log("RESULT: ---------- " + deployTokenMessage + " ----------");
-var tokenContract = web3.eth.contract(weth9Abi);
+var tokenContract = web3.eth.contract(gemAbi);
 var tokenTx = null;
 var tokenAddress = null;
-var token = tokenContract.new({from: contractOwnerAccount, data: weth9Bin, gas: 6000000, gasPrice: defaultGasPrice},
+var token = tokenContract.new({from: contractOwnerAccount, data: gemBin, gas: 6000000, gasPrice: defaultGasPrice},
   function(e, contract) {
     if (!e) {
       if (!contract.address) {
@@ -96,7 +96,7 @@ var token = tokenContract.new({from: contractOwnerAccount, data: weth9Bin, gas: 
       } else {
         tokenAddress = contract.address;
         addAccount(tokenAddress, "Token '" + token.symbol() + "' '" + token.name() + "'");
-        addTokenContractAddressAndAbi(tokenAddress, weth9Abi);
+        addTokenContractAddressAndAbi(tokenAddress, gemAbi);
         console.log("DATA: var tokenAddress=\"" + tokenAddress + "\";");
       }
     }

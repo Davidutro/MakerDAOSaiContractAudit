@@ -137,34 +137,35 @@ contracts against the component contracts.
 * SSS represents the Sai, Sin and Skr contracts that are all identical, except for the deployment parameters
 * Pip - 10 May 2017. Rest Dec 2017
 
-Component                                                          | Gov | Pip | Pep | Pit | Adm | SSS | Dad | Mom | Vox | Tub | Tap | Top
------------------------------------------------------------------- |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
-[auth-52c6a32](code-review/dappsys/auth-52c6a32.md)                |  1  |     |  1  |  2  |  1  |  2  |  1  |  1  |  1  |  1  |  1  |  1
-[auth-ce285fb](code-review/dappsys/auth-ce285fb.md)                |     |  1  |     |     |     |     |     |     |     |     |     |  
-[base-e637e3f](code-review/dappsys/base-e637e3f.md)                |  7  |     |     |  6  |  8  |  6  |     |  7  |     |  7  |  7  |  7
-[chief-a06b5e4](code-review/dappsys/chief-a06b5e4.md)              |     |     |     |     | 10  |     |     |     |     |     |     |  
-[erc20-56f16b3](code-review/dappsys/erc20-56f16b3.md)              |  6  |     |     |     |     |     |     |     |     |     |     |  
-[erc20-c4f5635](code-review/dappsys/erc20-c4f5635.md)              |     |     |     |  5  |  7  |  5  |     |  6  |     |  6  |  6  |  6
-[guard-f8b7f58](code-review/dappsys/guard-f8b7f58.md)              |     |     |     |     |     |     |  2  |     |     |     |     |  
-[math-a01112f](code-review/dappsys/math-a01112f.md)                |     |  3  |     |     |     |     |     |     |     |     |     |  
-[math-d5acd9c](code-review/dappsys/math-d5acd9c.md)                |  2  |     |  2  |  1  |  3  |  1  |     |  3  |  3  |  3  |  3  |  3
-[note-7170a08](code-review/dappsys/note-7170a08.md)                |  3  |  2  |  3  |  3  |  4  |  3  |     |  2  |  2  |  2  |  2  |  2
-[roles-188b3dd](code-review/dappsys/roles-188b3dd.md)              |     |     |     |     |  2  |     |     |     |     |     |     |  
-[stop-842e350](code-review/dappsys/stop-842e350.md)                |  5  |     |     |  4  |  6  |  4  |     |  5  |     |  5  |  5  |  5
-[thing-35b2538](code-review/dappsys/thing-35b2538.md)              |  4  |     |  4  |     |     |     |     |     |     |     |     |  
-[thing-4c86a53](code-review/dappsys/thing-4c86a53.md)              |     |     |     |     |  5  |     |     |  4  |  4  |  4  |  4  |  4
-[thing-ea63fd3](code-review/dappsys/thing-ea63fd3.md)              |     |  4  |     |     |     |     |     |     |     |     |     |  
-[token-e637e3f](code-review/dappsys/token-e637e3f.md)              |  8  |     |     |  7  |  9  |  7  |     |  8  |     |  8  |  8  |  8
-[value-2027f97](code-review/dappsys/value-2027f97.md)              |     |  5  |     |     |     |     |     |     |     |     |     |  
-[value-faae4cb](code-review/dappsys/value-faae4cb.md)              |     |     |  5  |     |     |     |     |  9  |     |  9  |  9  |  9
-[medianizer-31cc0a8](code-review/medianizer/medianizer-31cc0a8.md) |     |  6  |     |     |     |     |     |     |     |     |     |  
-[medianizer-6cb859c](code-review/medianizer/medianizer-6cb859c.md) |     |     |  6  |     |     |     |     |     |     |     |     |  
-[pit-b353893](code-review/makerdao/pit-b353893.md)                 |     |     |     |  8  |     |     |     |     |     |     |     |  
-[vox-b353893](code-review/makerdao/vox-b353893.md)                 |     |     |     |     |     |     |     | 10  |  5  | 10  | 10  | 10
-[tub-b353893](code-review/makerdao/tub-b353893.md)                 |     |     |     |     |     |     |     | 11  |     | 11  | 11  | 11
-[tap-b353893](code-review/makerdao/tap-b353893.md)                 |     |     |     |     |     |     |     | 12  |     |     | 12  | 12
-[top-b353893](code-review/makerdao/top-b353893.md)                 |     |     |     |     |     |     |     | 13  |     |     |     | 13
-[mom-b353893](code-review/makerdao/mom-b353893.md)                 |     |     |     |     |     |     |     | 14  |     |     |     |  
+Component                                                          | Gov | Pip | Pep | Pit | Adm | SSS | Dad | Mom | Vox | Tub | Tap | Top | Fab
+------------------------------------------------------------------ |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
+[auth-52c6a32](code-review/dappsys/auth-52c6a32.md)                |  1  |     |  1  |  2  |  1  |  2  |  1  |  1  |  1  |  1  |  1  |  1  |  1
+[auth-ce285fb](code-review/dappsys/auth-ce285fb.md)                |     |  1  |     |     |     |     |     |     |     |     |     |     |  
+[base-e637e3f](code-review/dappsys/base-e637e3f.md)                |  7  |     |     |  6  |  8  |  6  |     |  7  |     |  7  |  7  |  7  |  9
+[chief-a06b5e4](code-review/dappsys/chief-a06b5e4.md)              |     |     |     |     | 10  |     |     |     |     |     |     |     |  
+[erc20-56f16b3](code-review/dappsys/erc20-56f16b3.md)              |  6  |     |     |     |     |     |     |     |     |     |     |     |  
+[erc20-c4f5635](code-review/dappsys/erc20-c4f5635.md)              |     |     |     |  5  |  7  |  5  |     |  6  |     |  6  |  6  |  6  |  8
+[guard-f8b7f58](code-review/dappsys/guard-f8b7f58.md)              |     |     |     |     |     |     |  2  |     |     |     |     |     |  2
+[math-a01112f](code-review/dappsys/math-a01112f.md)                |     |  3  |     |     |     |     |     |     |     |     |     |     |  
+[math-d5acd9c](code-review/dappsys/math-d5acd9c.md)                |  2  |     |  2  |  1  |  3  |  1  |     |  3  |  3  |  3  |  3  |  3  |  5
+[note-7170a08](code-review/dappsys/note-7170a08.md)                |  3  |  2  |  3  |  3  |  4  |  3  |     |  2  |  2  |  2  |  2  |  2  |  4
+[roles-188b3dd](code-review/dappsys/roles-188b3dd.md)              |     |     |     |     |  2  |     |     |     |     |     |     |     |  3
+[stop-842e350](code-review/dappsys/stop-842e350.md)                |  5  |     |     |  4  |  6  |  4  |     |  5  |     |  5  |  5  |  5  |  7
+[thing-35b2538](code-review/dappsys/thing-35b2538.md)              |  4  |     |  4  |     |     |     |     |     |     |     |     |     |  
+[thing-4c86a53](code-review/dappsys/thing-4c86a53.md)              |     |     |     |     |  5  |     |     |  4  |  4  |  4  |  4  |  4  |  6
+[thing-ea63fd3](code-review/dappsys/thing-ea63fd3.md)              |     |  4  |     |     |     |     |     |     |     |     |     |     |  
+[token-e637e3f](code-review/dappsys/token-e637e3f.md)              |  8  |     |     |  7  |  9  |  7  |     |  8  |     |  8  |  8  |  8  | 10
+[value-2027f97](code-review/dappsys/value-2027f97.md)              |     |  5  |     |     |     |     |     |     |     |     |     |     |  
+[value-faae4cb](code-review/dappsys/value-faae4cb.md)              |     |     |  5  |     |     |     |     |  9  |     |  9  |  9  |  9  | 11
+[medianizer-31cc0a8](code-review/medianizer/medianizer-31cc0a8.md) |     |  6  |     |     |     |     |     |     |     |     |     |     |  
+[medianizer-6cb859c](code-review/medianizer/medianizer-6cb859c.md) |     |     |  6  |     |     |     |     |     |     |     |     |     |  
+[pit-b353893](code-review/makerdao/pit-b353893.md)                 |     |     |     |  8  |     |     |     |     |     |     |     |     |  
+[vox-b353893](code-review/makerdao/vox-b353893.md)                 |     |     |     |     |     |     |     | 10  |  5  | 10  | 10  | 10  | 12
+[tub-b353893](code-review/makerdao/tub-b353893.md)                 |     |     |     |     |     |     |     | 11  |     | 11  | 11  | 11  | 13
+[tap-b353893](code-review/makerdao/tap-b353893.md)                 |     |     |     |     |     |     |     | 12  |     |     | 12  | 12  | 14
+[top-b353893](code-review/makerdao/top-b353893.md)                 |     |     |     |     |     |     |     | 13  |     |     |     | 13  | 15
+[mom-b353893](code-review/makerdao/mom-b353893.md)                 |     |     |     |     |     |     |     | 14  |     |     |     |     | 16
+[fab-b353893](code-review/makerdao/fab-b353893.md)                 |     |     |     |     |     |     |     |     |     |     |     |     | 17
 
 <br />
 

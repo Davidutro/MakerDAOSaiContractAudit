@@ -1,3 +1,5 @@
+--- Checking the generated daiFab.sol against the deployed ../deployed-contracts/DaiFab-0xF07674F6AC6632e253C291B694f9C2e2ED69eBBB.sol ---
+Matching
 --- Checking the generated dsChiefAdm.sol against the deployed ../deployed-contracts/DSChiefAdm-0x8E2a84D6adE1E7ffFEe039A35EF5F19F13057152.sol ---
 Matching
 --- Checking the generated dsGuardDad.sol against the deployed ../deployed-contracts/DSGuardDad-0x315cBb88168396D12e1a255f9Cb935408fe80710.sol ---
