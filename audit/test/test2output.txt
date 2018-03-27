@@ -9,188 +9,35 @@ DEPLOYMENTDATA     = 'deploymentData.txt'
 INCLUDEJS          = './include.js'
 TEST2OUTPUT        = 'test2output.txt'
 TEST2RESULTS       = 'test2results.txt'
-CURRENTTIME        = '1521489515' 'Mon 19 Mar 2018 19:58:35 UTC'
-START_DATE         = '1521489545' 'Mon 19 Mar 2018 19:59:05 UTC'
-END_DATE           = '1521489605' 'Mon 19 Mar 2018 20:00:05 UTC'
-REFUND_END_DATE    = '1521489635' 'Mon 19 Mar 2018 20:00:35 UTC'
---- Differences ../deployed-contracts/DSTokenSai-0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359.sol DSTokenSai-0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359.sol ---
-
-solc, the solidity compiler commandline interface
-Version: 0.4.18+commit.9cf6e910.Darwin.appleclang
-Welcome to the Geth JavaScript console!
-
-instance: Geth/v1.7.3-stable-4bb3c89d/darwin-amd64/go1.9.2
-coinbase: 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e
-at block: 8407 (Tue, 20 Mar 2018 06:58:35 AEDT)
- datadir: /Users/bok/Projects/MakerDAOSaiContractAudit/audit/test/testchain
- modules: admin:1.0 clique:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 shh:1.0 txpool:1.0 web3:1.0
-
-> 
-true
-> 
-true
-> 
-> 
-undefined
-> 
-undefined
-> 
-> 
-DATA: var saiAbi=[{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"stop","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"guy","type":"address"},{"name":"wad","type":"uint256"}],"name":"approve","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"owner_","type":"address"}],"name":"setOwner","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"src","type":"address"},{"name":"dst","type":"address"},{"name":"wad","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"guy","type":"address"},{"name":"wad","type":"uint256"}],"name":"mint","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"wad","type":"uint256"}],"name":"burn","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"name_","type":"bytes32"}],"name":"setName","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"src","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"stopped","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"authority_","type":"address"}],"name":"setAuthority","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"guy","type":"address"},{"name":"wad","type":"uint256"}],"name":"burn","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"wad","type":"uint256"}],"name":"mint","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"dst","type":"address"},{"name":"wad","type":"uint256"}],"name":"transfer","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"dst","type":"address"},{"name":"wad","type":"uint256"}],"name":"push","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"src","type":"address"},{"name":"dst","type":"address"},{"name":"wad","type":"uint256"}],"name":"move","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"start","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"authority","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"guy","type":"address"}],"name":"approve","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"src","type":"address"},{"name":"guy","type":"address"}],"name":"allowance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"src","type":"address"},{"name":"wad","type":"uint256"}],"name":"pull","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[{"name":"symbol_","type":"bytes32"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"name":"guy","type":"address"},{"indexed":false,"name":"wad","type":"uint256"}],"name":"Mint","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"guy","type":"address"},{"indexed":false,"name":"wad","type":"uint256"}],"name":"Burn","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"authority","type":"address"}],"name":"LogSetAuthority","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"owner","type":"address"}],"name":"LogSetOwner","type":"event"},{"anonymous":true,"inputs":[{"indexed":true,"name":"sig","type":"bytes4"},{"indexed":true,"name":"guy","type":"address"},{"indexed":true,"name":"foo","type":"bytes32"},{"indexed":true,"name":"bar","type":"bytes32"},{"indexed":false,"name":"wad","type":"uint256"},{"indexed":false,"name":"fax","type":"bytes"}],"name":"LogNote","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"src","type":"address"},{"indexed":true,"name":"guy","type":"address"},{"indexed":false,"name":"wad","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"src","type":"address"},{"indexed":true,"name":"dst","type":"address"},{"indexed":false,"name":"wad","type":"uint256"}],"name":"Transfer","type":"event"}];
-undefined
-> 
-undefined
-> 
-> 
-> 
-undefined
-> 
-RESULT:  # Account                                             EtherBalanceChange                          Token Name
-RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
-RESULT:  0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.000000000000000000           0.000000000000000000 Account #0 - Miner
-RESULT:  1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433        0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
-RESULT:  2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976        0.000000000000000000           0.000000000000000000 Account #2
-RESULT:  3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0        0.000000000000000000           0.000000000000000000 Account #3
-RESULT:  4 0xa44a08d3f6933c69212114bb66e2df1813651844        0.000000000000000000           0.000000000000000000 Account #4
-RESULT:  5 0xa55a151eb00fded1634d27d1127b4be4627079ea        0.000000000000000000           0.000000000000000000 Account #5
-RESULT:  6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.000000000000000000           0.000000000000000000 Account #6
-RESULT:  7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
-RESULT:  8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
-RESULT:  9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
-RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
-RESULT:                                                                                     0.000000000000000000 Total Token Balances
-RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
-RESULT: 
-undefined
-> 
-RESULT: 
-undefined
-> 
-> 
-> 
-undefined
-> 
-undefined
-> 
-undefined
-> 
-undefined
-> 
-undefined
-> 
-RESULT: ---------- Deploy Token Contract ----------
-undefined
-> 
-undefined
-> 
-undefined
-> 
-undefined
-> 
-... 
-...... 
-......... 
-............ 
-............ 
-............ 
-............ 
-............ 
-............ 
-......... 
-...... 
-... 
-undefined
-> 
-... 
-undefined
-> 
-DATA: var tokenAddress="0x12322cf0575d3ce515765d134d7dd9d2725530ae";
-RESULT:  # Account                                             EtherBalanceChange                          Token Name
-RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
-RESULT:  0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.002069724000000000           0.000000000000000000 Account #0 - Miner
-RESULT:  1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.002069724000000000           0.000000000000000000 Account #1 - Contract Owner
-RESULT:  2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976        0.000000000000000000           0.000000000000000000 Account #2
-RESULT:  3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0        0.000000000000000000           0.000000000000000000 Account #3
-RESULT:  4 0xa44a08d3f6933c69212114bb66e2df1813651844        0.000000000000000000           0.000000000000000000 Account #4
-RESULT:  5 0xa55a151eb00fded1634d27d1127b4be4627079ea        0.000000000000000000           0.000000000000000000 Account #5
-RESULT:  6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.000000000000000000           0.000000000000000000 Account #6
-RESULT:  7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
-RESULT:  8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
-RESULT:  9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
-RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
-RESULT:                                                                                     0.000000000000000000 Total Token Balances
-RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
-RESULT: 
-undefined
-> 
-RESULT: PASS Deploy Token Contract
-1
-> 
-RESULT: tokenAddress=0x12322cf0575d3ce515765d134d7dd9d2725530ae status=0x1 Success gas=6000000 gasUsed=1034862 costETH=0.002069724 costUSD=1.2655327398 @ ETH/USD=611.45 gasPrice=2 gwei block=8416 txIx=0 txId=0x945741f3ef7c2c80661a6588ac4d54c679521d0983aa4806231bac16730f6fd5 @ 1521489524 Mon, 19 Mar 2018 19:58:44 UTC
-undefined
-> 
-RESULT: tokenContractAddress=0x12322cf0575d3ce515765d134d7dd9d2725530ae
-RESULT: token.symbol=DAI
-RESULT: token.name=
-RESULT: token.decimals=18
-RESULT: token.totalSupply=0
-undefined
-> 
-RESULT: 
-undefined
-> 
-> 
-> 
-undefined
-> 
-undefined
-> 
-undefined
-> 
-RESULT: ---------- Set Name ----------
-undefined
-> 
-undefined
-> 
-... 
-undefined
-> 
-undefined
-> 
-RESULT:  # Account                                             EtherBalanceChange                          Token Name
-RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
-RESULT:  0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.002156908000000000           0.000000000000000000 Account #0 - Miner
-RESULT:  1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.002156908000000000           0.000000000000000000 Account #1 - Contract Owner
-RESULT:  2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976        0.000000000000000000           0.000000000000000000 Account #2
-RESULT:  3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0        0.000000000000000000           0.000000000000000000 Account #3
-RESULT:  4 0xa44a08d3f6933c69212114bb66e2df1813651844        0.000000000000000000           0.000000000000000000 Account #4
-RESULT:  5 0xa55a151eb00fded1634d27d1127b4be4627079ea        0.000000000000000000           0.000000000000000000 Account #5
-RESULT:  6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.000000000000000000           0.000000000000000000 Account #6
-RESULT:  7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
-RESULT:  8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
-RESULT:  9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
-RESULT: 10 0x12322cf0575d3ce515765d134d7dd9d2725530ae        0.000000000000000000           0.000000000000000000 Token 'DAI' 'Dai Stablecoin v1.0'
-RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
-RESULT:                                                                                     0.000000000000000000 Total Token Balances
-RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
-RESULT: 
-undefined
-> 
-RESULT: PASS Set Name
-1
-> 
-RESULT: setName0_1Tx status=0x1 Success gas=400000 gasUsed=43592 costETH=0.000087184 costUSD=0.0533086568 @ ETH/USD=611.45 gasPrice=2 gwei block=8418 txIx=0 txId=0x03740e28dc67a8486e9eeb355e38e5b83c358f09af0005c99cb02810c419856d @ 1521489526 Mon, 19 Mar 2018 19:58:46 UTC
-undefined
-> 
-RESULT: tokenContractAddress=0x12322cf0575d3ce515765d134d7dd9d2725530ae
-RESULT: token.symbol=DAI
-RESULT: token.name=Dai Stablecoin v1.0
-RESULT: token.decimals=18
-RESULT: token.totalSupply=0
-undefined
-> 
-RESULT: 
-undefined
-> 
-> 
-> 
+CURRENTTIME        = '1522118112' 'Tue 27 Mar 2018 02:35:12 UTC'
+START_DATE         = '1522118142' 'Tue 27 Mar 2018 02:35:42 UTC'
+END_DATE           = '1522118202' 'Tue 27 Mar 2018 02:36:42 UTC'
+REFUND_END_DATE    = '1522118232' 'Tue 27 Mar 2018 02:37:12 UTC'
+GETHATTACHPOINT    = ''
+PASSWORD           = ''
+SOURCEDIR          = '../deployed-contracts'
+SAINAME            = 'DSToken'
+SAISOL             = 'DSTokenSai-0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359.sol'
+SAIJS              = 'DSTokenSai-0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359.js'
+DEPLOYMENTDATA     = 'deploymentData.txt'
+INCLUDEJS          = './include.js'
+TEST2OUTPUT        = 'test2output.txt'
+TEST2RESULTS       = 'test2results.txt'
+CURRENTTIME        = '1522118173' 'Tue 27 Mar 2018 02:36:13 UTC'
+START_DATE         = '1522118203' 'Tue 27 Mar 2018 02:36:43 UTC'
+END_DATE           = '1522118263' 'Tue 27 Mar 2018 02:37:43 UTC'
+REFUND_END_DATE    = '1522118293' 'Tue 27 Mar 2018 02:38:13 UTC'
+GETHATTACHPOINT    = 'ipc:./testchain/geth.ipc'
+PASSWORD           = ''
+SOURCEDIR          = '../deployed-contracts'
+SAINAME            = 'DSToken'
+SAISOL             = 'DSTokenSai-0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359.sol'
+SAIJS              = 'DSTokenSai-0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359.js'
+DEPLOYMENTDATA     = 'deploymentData.txt'
+INCLUDEJS          = './include.js'
+TEST2OUTPUT        = 'test2output.txt'
+TEST2RESULTS       = 'test2results.txt'
+CURRENTTIME        = '1522118236' 'Tue 27 Mar 2018 02:37:16 UTC'
+START_DATE         = '1522118266' 'Tue 27 Mar 2018 02:37:46 UTC'
+END_DATE           = '1522118326' 'Tue 27 Mar 2018 02:38:46 UTC'
+REFUND_END_DATE    = '1522118356' 'Tue 27 Mar 2018 02:39:16 UTC'

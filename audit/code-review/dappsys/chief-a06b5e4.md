@@ -154,23 +154,33 @@ contract DSChiefApprovals is DSThing {
 
 // `hat` address is unique root user (has every role) and the
 // unique owner of role 0 (typically 'sys' or 'internal')
+// BK Ok
 contract DSChief is DSRoles, DSChiefApprovals {
 
+    // BK Ok - Constructor
     function DSChief(DSToken GOV, DSToken IOU, uint MAX_YAYS)
              DSChiefApprovals (GOV, IOU, MAX_YAYS)
         public
     {
+        // Set this contract as the authority
         authority = this;
+        // And invalidate owner
         owner = 0;
     }
 
+    // BK Ok - Anyone can execute this function, but it will throw
     function setOwner(address owner_) public {
+        // BK Ok
         owner_;
+        // BK Ok
         revert();
     }
 
+    // BK Ok - Anyone can execute this function, but it will throw
     function setAuthority(DSAuthority authority_) public {
+        // BK Ok
         authority_;
+        // BK Ok
         revert();
     }
 

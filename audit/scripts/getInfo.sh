@@ -1,6 +1,7 @@
 #!/bin/sh
 
 JSDIR=../deployed-contracts
+FAB=$JSDIR/DaiFab-0xF07674F6AC6632e253C291B694f9C2e2ED69eBBB.js
 TUB=$JSDIR/SaiTub-0x448a5065aeBB8E423F0896E6c5D525C040f59af3.js
 
 echo $TUB
@@ -8,9 +9,20 @@ echo $TUB
 # geth attach << EOF | grep "RESULT: " | sed "s/RESULT: //" > info.txt
 # geth attach << EOF | grep "RESULT: " | sed "s/RESULT: //"
 geth attach << EOF
+loadScript("$FAB");
 loadScript("$TUB");
 
-// console.log(JSON.stringify(saiTub));
+console.log("RESULT: ---------- DaiFab ----------");
+console.log("RESULT: daiFab.address=" + daiFabAddress);
+console.log("RESULT: daiFab.sai=" + daiFab.sai());
+console.log("RESULT: daiFab.sin=" + daiFab.sin());
+console.log("RESULT: daiFab.skr=" + daiFab.skr());
+console.log("RESULT: daiFab.vox=" + daiFab.vox());
+console.log("RESULT: daiFab.tub=" + daiFab.tub());
+console.log("RESULT: daiFab.tap=" + daiFab.tap());
+console.log("RESULT: daiFab.top=" + daiFab.top());
+console.log("RESULT: daiFab.mom=" + daiFab.mom());
+console.log("RESULT: daiFab.dad=" + daiFab.dad());
 
 console.log("RESULT: ---------- SaiTub ----------");
 console.log("RESULT: saiTub.address=" + saiTubAddress);

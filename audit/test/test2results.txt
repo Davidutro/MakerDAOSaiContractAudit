@@ -15,11 +15,11 @@
 -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
 
 
----------- Deploy Token Contract ----------
+---------- Deploy Fabs ----------
  # Account                                             EtherBalanceChange                          Token Name
 -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
- 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.002069724000000000           0.000000000000000000 Account #0 - Miner
- 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.002069724000000000           0.000000000000000000 Account #1 - Contract Owner
+ 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.027671734000000000           0.000000000000000000 Account #0 - Miner
+ 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.027671734000000000           0.000000000000000000 Account #1 - Contract Owner
  2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976        0.000000000000000000           0.000000000000000000 Account #2
  3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0        0.000000000000000000           0.000000000000000000 Account #3
  4 0xa44a08d3f6933c69212114bb66e2df1813651844        0.000000000000000000           0.000000000000000000 Account #4
@@ -28,41 +28,32 @@
  7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
  8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
  9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
+10 0x5814d864719f7a70e2465a53d07d9709fc44d464        0.000000000000000000           0.000000000000000000 GemFab
+11 0x94ed3af45741cb4d67d12006373ecbbe265f958d        0.000000000000000000           0.000000000000000000 VoxFab
+12 0xe6faa6fd9baba50ebb05eadc8fad293e4d30d32d        0.000000000000000000           0.000000000000000000 TapFab
+13 0xf235febef748bc1586d8aea01f093012eea7b3c8        0.000000000000000000           0.000000000000000000 VoxFab
+14 0x27daa9fe81944d721dc95e09f54c8bd3a90a5603        0.000000000000000000           0.000000000000000000 TopFab
+15 0x5029cacf1799deb161dc3ab611b2b368c06f15e8        0.000000000000000000           0.000000000000000000 MomFab
+16 0x332ceb425309f4ab99839300329a9626983323be        0.000000000000000000           0.000000000000000000 DadFab
+17 0xd8dc1b690f36cf38e8032d751343c9e4df9bdf87        0.000000000000000000           0.000000000000000000 DaiFab
 -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
                                                                                     0.000000000000000000 Total Token Balances
 -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
 
-PASS Deploy Token Contract
-tokenAddress=0x12322cf0575d3ce515765d134d7dd9d2725530ae status=0x1 Success gas=6000000 gasUsed=1034862 costETH=0.002069724 costUSD=1.2655327398 @ ETH/USD=611.45 gasPrice=2 gwei block=8416 txIx=0 txId=0x945741f3ef7c2c80661a6588ac4d54c679521d0983aa4806231bac16730f6fd5 @ 1521489524 Mon, 19 Mar 2018 19:58:44 UTC
-tokenContractAddress=0x12322cf0575d3ce515765d134d7dd9d2725530ae
-token.symbol=DAI
-token.name=
-token.decimals=18
-token.totalSupply=0
-
----------- Set Name ----------
- # Account                                             EtherBalanceChange                          Token Name
--- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
- 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.002156908000000000           0.000000000000000000 Account #0 - Miner
- 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.002156908000000000           0.000000000000000000 Account #1 - Contract Owner
- 2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976        0.000000000000000000           0.000000000000000000 Account #2
- 3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0        0.000000000000000000           0.000000000000000000 Account #3
- 4 0xa44a08d3f6933c69212114bb66e2df1813651844        0.000000000000000000           0.000000000000000000 Account #4
- 5 0xa55a151eb00fded1634d27d1127b4be4627079ea        0.000000000000000000           0.000000000000000000 Account #5
- 6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.000000000000000000           0.000000000000000000 Account #6
- 7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
- 8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
- 9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
-10 0x12322cf0575d3ce515765d134d7dd9d2725530ae        0.000000000000000000           0.000000000000000000 Token 'DAI' 'Dai Stablecoin v1.0'
--- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
-                                                                                    0.000000000000000000 Total Token Balances
--- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
-
-PASS Set Name
-setName0_1Tx status=0x1 Success gas=400000 gasUsed=43592 costETH=0.000087184 costUSD=0.0533086568 @ ETH/USD=611.45 gasPrice=2 gwei block=8418 txIx=0 txId=0x03740e28dc67a8486e9eeb355e38e5b83c358f09af0005c99cb02810c419856d @ 1521489526 Mon, 19 Mar 2018 19:58:46 UTC
-tokenContractAddress=0x12322cf0575d3ce515765d134d7dd9d2725530ae
-token.symbol=DAI
-token.name=Dai Stablecoin v1.0
-token.decimals=18
-token.totalSupply=0
+PASS Deploy Fabs - GemFab
+PASS Deploy Fabs - VoxFab
+PASS Deploy Fabs - TapFab
+PASS Deploy Fabs - TubFab
+PASS Deploy Fabs - TopFab
+PASS Deploy Fabs - MomFab
+PASS Deploy Fabs - DadFab
+PASS Deploy Fabs - DaiFab
+gemFabAddress=0x5814d864719f7a70e2465a53d07d9709fc44d464 status=0x1 Success gas=6000000 gasUsed=1090409 costETH=0.002180818 costUSD=1.3334611661 @ ETH/USD=611.45 gasPrice=2 gwei block=1295 txIx=0 txId=0xb4a88b87781c871cccbe356145983439011333be833a0639e24dcaf4fb9e6a08 @ 1522128342 Tue, 27 Mar 2018 05:25:42 UTC
+voxFabAddress=0x94ed3af45741cb4d67d12006373ecbbe265f958d status=0x1 Success gas=6000000 gasUsed=810116 costETH=0.001620232 costUSD=0.9906908564 @ ETH/USD=611.45 gasPrice=2 gwei block=1295 txIx=1 txId=0xf071f6325a009eefab5fe3ea5fa6045e3e40616964aa8deb10a76e946c0bfd2d @ 1522128342 Tue, 27 Mar 2018 05:25:42 UTC
+tapFabAddress=0xe6faa6fd9baba50ebb05eadc8fad293e4d30d32d status=0x1 Success gas=6000000 gasUsed=1703897 costETH=0.003407794 costUSD=2.0836956413 @ ETH/USD=611.45 gasPrice=2 gwei block=1295 txIx=2 txId=0xbc50c979c7ebe4adfbfa962605d2dae8f82d53c73315c2a026235a342576a413 @ 1522128342 Tue, 27 Mar 2018 05:25:42 UTC
+tubFabAddress=0xf235febef748bc1586d8aea01f093012eea7b3c8 status=0x1 Success gas=6000000 gasUsed=3060094 costETH=0.006120188 costUSD=3.7421889526 @ ETH/USD=611.45 gasPrice=2 gwei block=1295 txIx=3 txId=0x360a7f054f5ded0e0c5bdc98a80550e49b6cfd4c467e496987314c03f49c9248 @ 1522128342 Tue, 27 Mar 2018 05:25:42 UTC
+topFabAddress=0x27daa9fe81944d721dc95e09f54c8bd3a90a5603 status=0x1 Success gas=6000000 gasUsed=1423963 costETH=0.002847926 costUSD=1.7413643527 @ ETH/USD=611.45 gasPrice=2 gwei block=1295 txIx=4 txId=0x9d6861500ca43de27a9c33819039bec2ced17f37d260305a7aab28c744ef791d @ 1522128342 Tue, 27 Mar 2018 05:25:42 UTC
+momFabAddress=0x5029cacf1799deb161dc3ab611b2b368c06f15e8 status=0x1 Success gas=6000000 gasUsed=1473975 costETH=0.00294795 costUSD=1.8025240275 @ ETH/USD=611.45 gasPrice=2 gwei block=1295 txIx=5 txId=0x43a862a5bef4532e054e6725d729c62cce71b24e7da3790c27e6fd3e738c059c @ 1522128342 Tue, 27 Mar 2018 05:25:42 UTC
+dadFabAddress=0x332ceb425309f4ab99839300329a9626983323be status=0x1 Success gas=6000000 gasUsed=698235 costETH=0.00139647 costUSD=0.8538715815 @ ETH/USD=611.45 gasPrice=2 gwei block=1295 txIx=6 txId=0x4d8a8adc7385b0f9e0f52784b48c068789e869665a2472988faf2e749b69f68c @ 1522128342 Tue, 27 Mar 2018 05:25:42 UTC
+daiFabAddress=0xd8dc1b690f36cf38e8032d751343c9e4df9bdf87 status=0x1 Success gas=6000000 gasUsed=3575178 costETH=0.007150356 costUSD=4.3720851762 @ ETH/USD=611.45 gasPrice=2 gwei block=1297 txIx=0 txId=0x141d12866731c7d78f8bc5fc8a4f7189a7f3e3bb2ed20d26a0c56c073804f76d @ 1522128344 Tue, 27 Mar 2018 05:25:44 UTC
 

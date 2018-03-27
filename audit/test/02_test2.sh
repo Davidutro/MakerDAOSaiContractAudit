@@ -12,15 +12,15 @@ PASSWORD=`grep ^PASSWORD= settings.txt | sed "s/^.*=//"`
 
 SOURCEDIR=`grep ^SOURCEDIR= settings.txt | sed "s/^.*=//"`
 
-SAINAME=`grep ^SAINAME= settings.txt | sed "s/^.*=//"`
-SAISOL=`grep ^SAISOL= settings.txt | sed "s/^.*=//"`
-SAIJS=`grep ^SAIJS= settings.txt | sed "s/^.*=//"`
+GEMNAME=`grep ^GEMNAME= settings.txt | sed "s/^.*=//"`
+GEMSOL=`grep ^GEMSOL= settings.txt | sed "s/^.*=//"`
+GEMJS=`grep ^GEMJS= settings.txt | sed "s/^.*=//"`
 
 DEPLOYMENTDATA=`grep ^DEPLOYMENTDATA= settings.txt | sed "s/^.*=//"`
 
 INCLUDEJS=`grep ^INCLUDEJS= settings.txt | sed "s/^.*=//"`
-TEST2OUTPUT=`grep ^TEST2OUTPUT= settings.txt | sed "s/^.*=//"`
-TEST2RESULTS=`grep ^TEST2RESULTS= settings.txt | sed "s/^.*=//"`
+TEST1OUTPUT=`grep ^TEST1OUTPUT= settings.txt | sed "s/^.*=//"`
+TEST1RESULTS=`grep ^TEST1RESULTS= settings.txt | sed "s/^.*=//"`
 
 CURRENTTIME=`date +%s`
 CURRENTTIMES=`date -r $CURRENTTIME -u`
@@ -32,50 +32,49 @@ END_DATE_S=`date -r $END_DATE -u`
 REFUND_END_DATE=`echo "$CURRENTTIME+60*2" | bc`
 REFUND_END_DATE_S=`date -r $REFUND_END_DATE -u`
 
-printf "MODE               = '$MODE'\n" | tee $TEST2OUTPUT
-printf "GETHATTACHPOINT    = '$GETHATTACHPOINT'\n" | tee -a $TEST2OUTPUT
-printf "PASSWORD           = '$PASSWORD'\n" | tee -a $TEST2OUTPUT
-printf "SOURCEDIR          = '$SOURCEDIR'\n" | tee -a $TEST2OUTPUT
-printf "SAINAME            = '$SAINAME'\n" | tee -a $TEST2OUTPUT
-printf "SAISOL             = '$SAISOL'\n" | tee -a $TEST2OUTPUT
-printf "SAIJS              = '$SAIJS'\n" | tee -a $TEST2OUTPUT
-printf "DEPLOYMENTDATA     = '$DEPLOYMENTDATA'\n" | tee -a $TEST2OUTPUT
-printf "INCLUDEJS          = '$INCLUDEJS'\n" | tee -a $TEST2OUTPUT
-printf "TEST2OUTPUT        = '$TEST2OUTPUT'\n" | tee -a $TEST2OUTPUT
-printf "TEST2RESULTS       = '$TEST2RESULTS'\n" | tee -a $TEST2OUTPUT
-printf "CURRENTTIME        = '$CURRENTTIME' '$CURRENTTIMES'\n" | tee -a $TEST2OUTPUT
-printf "START_DATE         = '$START_DATE' '$START_DATE_S'\n" | tee -a $TEST2OUTPUT
-printf "END_DATE           = '$END_DATE' '$END_DATE_S'\n" | tee -a $TEST2OUTPUT
-printf "REFUND_END_DATE    = '$REFUND_END_DATE' '$REFUND_END_DATE_S'\n" | tee -a $TEST2OUTPUT
+printf "MODE               = '$MODE'\n" | tee $TEST1OUTPUT
+printf "GETHATTACHPOINT    = '$GETHATTACHPOINT'\n" | tee -a $TEST1OUTPUT
+printf "PASSWORD           = '$PASSWORD'\n" | tee -a $TEST1OUTPUT
+printf "SOURCEDIR          = '$SOURCEDIR'\n" | tee -a $TEST1OUTPUT
+printf "GEMNAME            = '$GEMNAME'\n" | tee -a $TEST1OUTPUT
+printf "GEMSOL             = '$GEMSOL'\n" | tee -a $TEST1OUTPUT
+printf "GEMJS              = '$GEMJS'\n" | tee -a $TEST1OUTPUT
+printf "DEPLOYMENTDATA     = '$DEPLOYMENTDATA'\n" | tee -a $TEST1OUTPUT
+printf "INCLUDEJS          = '$INCLUDEJS'\n" | tee -a $TEST1OUTPUT
+printf "TEST1OUTPUT        = '$TEST1OUTPUT'\n" | tee -a $TEST1OUTPUT
+printf "TEST1RESULTS       = '$TEST1RESULTS'\n" | tee -a $TEST1OUTPUT
+printf "CURRENTTIME        = '$CURRENTTIME' '$CURRENTTIMES'\n" | tee -a $TEST1OUTPUT
+printf "START_DATE         = '$START_DATE' '$START_DATE_S'\n" | tee -a $TEST1OUTPUT
+printf "END_DATE           = '$END_DATE' '$END_DATE_S'\n" | tee -a $TEST1OUTPUT
+printf "REFUND_END_DATE    = '$REFUND_END_DATE' '$REFUND_END_DATE_S'\n" | tee -a $TEST1OUTPUT
 
 # Make copy of SOL file and modify start and end times ---
 # `cp modifiedContracts/SnipCoin.sol .`
-`cp $SOURCEDIR/$SAISOL .`
+`cp $SOURCEDIR/$GEMSOL .`
 
 # --- Modify parameters ---
 #`perl -pi -e "s/ROUND_DURATION \= 3 days;/ROUND_DURATION \= 10 seconds;/" *.sol`
 
-for FILE in $SAISOL
+for FILE in *.sol
 do
   DIFFS1=`diff $SOURCEDIR/$FILE $FILE`
-  echo "--- Differences $SOURCEDIR/$FILE $FILE ---" | tee -a $TEST2OUTPUT
-  echo "$DIFFS1" | tee -a $TEST2OUTPUT
+  echo "--- Differences $SOURCEDIR/$FILE $FILE ---" | tee -a $TEST1OUTPUT
+  echo "$DIFFS1" | tee -a $TEST1OUTPUT
 done
 
-solc_0.4.18 --version | tee -a $TEST2OUTPUT
+solc_0.4.18 --version | tee -a $TEST1OUTPUT
 
-echo "var saiOutput=`solc_0.4.18 --optimize --pretty-json --combined-json abi,bin,interface $SAISOL`;" > $SAIJS
+echo "var gemOutput=`solc_0.4.18 --optimize --pretty-json --combined-json abi,bin,interface $GEMSOL`;" > $GEMJS
 
-geth --verbosity 3 attach $GETHATTACHPOINT << EOF | tee -a $TEST2OUTPUT
-loadScript("$SAIJS");
+geth --verbosity 3 attach $GETHATTACHPOINT << EOF | tee -a $TEST1OUTPUT
+loadScript("$GEMJS");
 loadScript("functions.js");
 
-var saiAbi = JSON.parse(saiOutput.contracts["$SAISOL:$SAINAME"].abi);
-var saiBin = "0x" + saiOutput.contracts["$SAISOL:$SAINAME"].bin;
+var gemAbi = JSON.parse(gemOutput.contracts["$GEMSOL:$GEMNAME"].abi);
+var gemBin = "0x" + gemOutput.contracts["$GEMSOL:$GEMNAME"].bin;
 
-console.log("DATA: var saiAbi=" + JSON.stringify(saiAbi) + ";");
-// console.log("DATA: saiBin=" + JSON.stringify(saiBin));
-
+console.log("DATA: var gemAbi=" + JSON.stringify(gemAbi) + ";");
+// console.log("DATA: gemBin=" + JSON.stringify(gemBin));
 
 unlockAccounts("$PASSWORD");
 printBalances();
@@ -84,21 +83,20 @@ console.log("RESULT: ");
 
 // -----------------------------------------------------------------------------
 var deployTokenMessage = "Deploy Token Contract";
-var saiSymbol="0x4441490000000000000000000000000000000000000000000000000000000000";
-var saiName="0x44616920537461626c65636f696e2076312e3000000000000000000000000000";
 // -----------------------------------------------------------------------------
 console.log("RESULT: ---------- " + deployTokenMessage + " ----------");
-var tokenContract = web3.eth.contract(saiAbi);
+var tokenContract = web3.eth.contract(gemAbi);
 var tokenTx = null;
 var tokenAddress = null;
-var token = tokenContract.new(saiSymbol, {from: contractOwnerAccount, data: saiBin, gas: 6000000, gasPrice: defaultGasPrice},
+var token = tokenContract.new({from: contractOwnerAccount, data: gemBin, gas: 6000000, gasPrice: defaultGasPrice},
   function(e, contract) {
     if (!e) {
       if (!contract.address) {
         tokenTx = contract.transactionHash;
       } else {
         tokenAddress = contract.address;
-        addTokenContractAddressAndAbi(tokenAddress, saiAbi);
+        addAccount(tokenAddress, "Token '" + token.symbol() + "' '" + token.name() + "'");
+        addTokenContractAddressAndAbi(tokenAddress, gemAbi);
         console.log("DATA: var tokenAddress=\"" + tokenAddress + "\";");
       }
     }
@@ -114,23 +112,6 @@ console.log("RESULT: ");
 
 
 // -----------------------------------------------------------------------------
-var setName0Message = "Set Name";
-// -----------------------------------------------------------------------------
-console.log("RESULT: ---------- " + setName0Message + " ----------");
-var setName0_1Tx = token.setName(saiName, {from: contractOwnerAccount, gas: 400000, gasPrice: defaultGasPrice});
-while (txpool.status.pending > 0) {
-}
-addAccount(tokenAddress, "Token '" + web3.toUtf8(token.symbol()) + "' '" + web3.toUtf8(token.name()) + "'");
-printBalances();
-failIfTxStatusError(setName0_1Tx, setName0Message);
-printTxData("setName0_1Tx", setName0_1Tx);
-printTokenContractDetails();
-console.log("RESULT: ");
-
-
-exit;
-
-// -----------------------------------------------------------------------------
 var wrapEther0Message = "Wrap Ethers";
 // -----------------------------------------------------------------------------
 console.log("RESULT: ---------- " + wrapEther0Message + " ----------");
@@ -143,7 +124,6 @@ failIfTxStatusError(wrapEther0_1Tx, wrapEther0Message + " - ac2 100 ETH");
 failIfTxStatusError(wrapEther0_2Tx, wrapEther0Message + " - ac3 100 ETH");
 printTxData("wrapEther0_1Tx", wrapEther0_1Tx);
 printTxData("wrapEther0_2Tx", wrapEther0_2Tx);
-printCrowdsaleContractDetails();
 printTokenContractDetails();
 console.log("RESULT: ");
 
@@ -651,7 +631,7 @@ console.log("RESULT: ");
 
 
 EOF
-grep "DATA: " $TEST2OUTPUT | sed "s/DATA: //" > $DEPLOYMENTDATA
+grep "DATA: " $TEST1OUTPUT | sed "s/DATA: //" > $DEPLOYMENTDATA
 cat $DEPLOYMENTDATA
-grep "RESULT: " $TEST2OUTPUT | sed "s/RESULT: //" > $TEST2RESULTS
-cat $TEST2RESULTS
+grep "RESULT: " $TEST1OUTPUT | sed "s/RESULT: //" > $TEST1RESULTS
+cat $TEST1RESULTS

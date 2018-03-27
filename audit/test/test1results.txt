@@ -15,11 +15,11 @@
 -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
 
 
----------- Deploy Token Contract ----------
+---------- Deploy Fabs ----------
  # Account                                             EtherBalanceChange                          Token Name
 -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
- 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.001185862000000000           0.000000000000000000 Account #0 - Miner
- 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.001185862000000000           0.000000000000000000 Account #1 - Contract Owner
+ 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.027671862000000000           0.000000000000000000 Account #0 - Miner
+ 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.027671862000000000           0.000000000000000000 Account #1 - Contract Owner
  2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976        0.000000000000000000           0.000000000000000000 Account #2
  3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0        0.000000000000000000           0.000000000000000000 Account #3
  4 0xa44a08d3f6933c69212114bb66e2df1813651844        0.000000000000000000           0.000000000000000000 Account #4
@@ -28,169 +28,148 @@
  7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
  8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
  9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
-10 0x0e946b999033257976aa5cbe0e3530618ca1582d        0.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
+10 0xad6aade39f177eafbfb68f153968abe1569977b6        0.000000000000000000           0.000000000000000000 GemFab
+11 0x5246a2e00c4889b39d89be463295fbccde082ac1        0.000000000000000000           0.000000000000000000 VoxFab
+12 0x0971e26d20e01fe632c91fca60eb6c92a6e522b9        0.000000000000000000           0.000000000000000000 TapFab
+13 0x33bb5c8775992a8eefbf2b3adb559a5f0e417308        0.000000000000000000           0.000000000000000000 VoxFab
+14 0x2cc5f7b1e0c8f7ecb4be28ef39e90c43aa80cfe3        0.000000000000000000           0.000000000000000000 TopFab
+15 0xd35673f3da122cff35e99d353e3c55a296594b7a        0.000000000000000000           0.000000000000000000 MomFab
+16 0xea8fbb2bfd0c5729874f0a029ff50c23a771ec28        0.000000000000000000           0.000000000000000000 DadFab
+17 0x6619e17bdab3f3b0c53cf8b945bde204f77de465        0.000000000000000000           0.000000000000000000 DaiFab
 -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
                                                                                     0.000000000000000000 Total Token Balances
 -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
 
-PASS Deploy Token Contract
-tokenAddress=0x0e946b999033257976aa5cbe0e3530618ca1582d status=0x1 Success gas=6000000 gasUsed=592931 costETH=0.001185862 costUSD=0.7250953199 @ ETH/USD=611.45 gasPrice=2 gwei block=199 txIx=0 txId=0xd0467bac370ad5242f818a4ec7ddbbe04f7a8def38cad4fdbcd25b51bf8e4991 @ 1521859055 Sat, 24 Mar 2018 02:37:35 UTC
-tokenContractAddress=0x0e946b999033257976aa5cbe0e3530618ca1582d
-token.symbol=WETH
-token.name=Wrapped Ether
-token.decimals=18
-token.totalSupply=0
+PASS Deploy Fabs - GemFab
+PASS Deploy Fabs - VoxFab
+PASS Deploy Fabs - TapFab
+PASS Deploy Fabs - TubFab
+PASS Deploy Fabs - TopFab
+PASS Deploy Fabs - MomFab
+PASS Deploy Fabs - DadFab
+PASS Deploy Fabs - DaiFab
+gemFabAddress=0xad6aade39f177eafbfb68f153968abe1569977b6 status=0x1 Success gas=6000000 gasUsed=1090409 costETH=0.002180818 costUSD=1.3334611661 @ ETH/USD=611.45 gasPrice=2 gwei block=49050 txIx=0 txId=0x7229bf1b5809c66f91c83deeadf55d44feacb8e7198794a60928c400b8e90153 @ 1522237567 Wed, 28 Mar 2018 11:46:07 UTC
+voxFabAddress=0x5246a2e00c4889b39d89be463295fbccde082ac1 status=0x1 Success gas=6000000 gasUsed=810116 costETH=0.001620232 costUSD=0.9906908564 @ ETH/USD=611.45 gasPrice=2 gwei block=49050 txIx=1 txId=0x40667cacfb321d719b4004ba679a7d27c7a683f4c1771222a248d7344ca6f7f3 @ 1522237567 Wed, 28 Mar 2018 11:46:07 UTC
+tapFabAddress=0x0971e26d20e01fe632c91fca60eb6c92a6e522b9 status=0x1 Success gas=6000000 gasUsed=1703897 costETH=0.003407794 costUSD=2.0836956413 @ ETH/USD=611.45 gasPrice=2 gwei block=49050 txIx=2 txId=0x464a9dc11b81bcaa7bee268d06bf1c6d438f343dbe91f9337bb862d823d10a74 @ 1522237567 Wed, 28 Mar 2018 11:46:07 UTC
+tubFabAddress=0x33bb5c8775992a8eefbf2b3adb559a5f0e417308 status=0x1 Success gas=6000000 gasUsed=3060094 costETH=0.006120188 costUSD=3.7421889526 @ ETH/USD=611.45 gasPrice=2 gwei block=49050 txIx=3 txId=0x226e960896327fe582b91516316a9ec3865cdbb9f28f524e6f6fef94498cb8ed @ 1522237567 Wed, 28 Mar 2018 11:46:07 UTC
+topFabAddress=0x2cc5f7b1e0c8f7ecb4be28ef39e90c43aa80cfe3 status=0x1 Success gas=6000000 gasUsed=1423963 costETH=0.002847926 costUSD=1.7413643527 @ ETH/USD=611.45 gasPrice=2 gwei block=49050 txIx=4 txId=0x39ca4d571ae77219f68913bc1ebe14f7209eb641148ac5ffeba3ae41529a1d55 @ 1522237567 Wed, 28 Mar 2018 11:46:07 UTC
+momFabAddress=0xd35673f3da122cff35e99d353e3c55a296594b7a status=0x1 Success gas=6000000 gasUsed=1473975 costETH=0.00294795 costUSD=1.8025240275 @ ETH/USD=611.45 gasPrice=2 gwei block=49050 txIx=5 txId=0xf3e4ea8c6475c867993e4b7868f86d183fcb8c21597b4db15c875574786cfb87 @ 1522237567 Wed, 28 Mar 2018 11:46:07 UTC
+dadFabAddress=0xea8fbb2bfd0c5729874f0a029ff50c23a771ec28 status=0x1 Success gas=6000000 gasUsed=698235 costETH=0.00139647 costUSD=0.8538715815 @ ETH/USD=611.45 gasPrice=2 gwei block=49050 txIx=6 txId=0x1629fd36f7d0d7445b5501ff03360f2c73098c9844304284e9519e5e481e7a4f @ 1522237567 Wed, 28 Mar 2018 11:46:07 UTC
+daiFabAddress=0x6619e17bdab3f3b0c53cf8b945bde204f77de465 status=0x1 Success gas=6000000 gasUsed=3575242 costETH=0.007150484 costUSD=4.3721634418 @ ETH/USD=611.45 gasPrice=2 gwei block=49052 txIx=0 txId=0xf9a5fe9438ab59cbf12e0639bde0d18fa76268d9594482873395c6e786b0de9e @ 1522237569 Wed, 28 Mar 2018 11:46:09 UTC
 
----------- Wrap Ethers ----------
+---------- Deploy Gem, Gov, Pip, Pep, Pit, Adm ----------
  # Account                                             EtherBalanceChange                          Token Name
 -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
- 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.001357310000000000           0.000000000000000000 Account #0 - Miner
- 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.001185862000000000           0.000000000000000000 Account #1 - Contract Owner
- 2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976     -100.000085724000000000         100.000000000000000000 Account #2
- 3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0     -100.000085724000000000         100.000000000000000000 Account #3
+ 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.038972142000000000           0.000000000000000000 Account #0 - Miner
+ 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.038972142000000000           0.000000000000000000 Account #1 - Contract Owner
+ 2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976        0.000000000000000000           0.000000000000000000 Account #2
+ 3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0        0.000000000000000000           0.000000000000000000 Account #3
  4 0xa44a08d3f6933c69212114bb66e2df1813651844        0.000000000000000000           0.000000000000000000 Account #4
  5 0xa55a151eb00fded1634d27d1127b4be4627079ea        0.000000000000000000           0.000000000000000000 Account #5
  6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.000000000000000000           0.000000000000000000 Account #6
  7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
  8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
  9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
-10 0x0e946b999033257976aa5cbe0e3530618ca1582d      200.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
+10 0xad6aade39f177eafbfb68f153968abe1569977b6        0.000000000000000000           0.000000000000000000 GemFab
+11 0x5246a2e00c4889b39d89be463295fbccde082ac1        0.000000000000000000           0.000000000000000000 VoxFab
+12 0x0971e26d20e01fe632c91fca60eb6c92a6e522b9        0.000000000000000000           0.000000000000000000 TapFab
+13 0x33bb5c8775992a8eefbf2b3adb559a5f0e417308        0.000000000000000000           0.000000000000000000 VoxFab
+14 0x2cc5f7b1e0c8f7ecb4be28ef39e90c43aa80cfe3        0.000000000000000000           0.000000000000000000 TopFab
+15 0xd35673f3da122cff35e99d353e3c55a296594b7a        0.000000000000000000           0.000000000000000000 MomFab
+16 0xea8fbb2bfd0c5729874f0a029ff50c23a771ec28        0.000000000000000000           0.000000000000000000 DadFab
+17 0x6619e17bdab3f3b0c53cf8b945bde204f77de465        0.000000000000000000           0.000000000000000000 DaiFab
+18 0x2a6ae5a5344a68af3aa872452156495a6c1b3bcc        0.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
+19 0xe109291d961bf1aeb6e6863ecbff6a1a14decd31        0.000000000000000000           0.000000000000000000 Pip
+20 0x982726470e67251aa3ba4bada0f72b86930eb350        0.000000000000000000           0.000000000000000000 Pep
+21 0x87d58b27a582f399192647e69ead286ee9965e49        0.000000000000000000           0.000000000000000000 Pit
+22 0x5e1605bc01a9a349068db461756559926f21649c        0.000000000000000000           0.000000000000000000 Adm
+23 0xc983c4d46c95b5fc183b3e11aa80c578cf6fb227        0.000000000000000000           0.000000000000000000 Token 'MKR' 'Maker'
 -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
-                                                                                  200.000000000000000000 Total Token Balances
+                                                                                    0.000000000000000000 Total Token Balances
 -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
 
-PASS Wrap Ethers - ac2 100 ETH
-PASS Wrap Ethers - ac3 100 ETH
-wrapEther0_1Tx status=0x1 Success gas=400000 gasUsed=42862 costETH=0.000085724 costUSD=0.0524159398 @ ETH/USD=611.45 gasPrice=2 gwei block=201 txIx=0 txId=0xec3e69de4c25e44f4d1900b04335f9403be9c49ff736c9f32bf97e0e12e1aa44 @ 1521859057 Sat, 24 Mar 2018 02:37:37 UTC
-wrapEther0_2Tx status=0x1 Success gas=400000 gasUsed=42862 costETH=0.000085724 costUSD=0.0524159398 @ ETH/USD=611.45 gasPrice=2 gwei block=201 txIx=1 txId=0xd15e43e97abee340db987c4ac8e241393ceb1e3067699c5da84511d4681a91e9 @ 1521859057 Sat, 24 Mar 2018 02:37:37 UTC
-tokenContractAddress=0x0e946b999033257976aa5cbe0e3530618ca1582d
-token.symbol=WETH
-token.name=Wrapped Ether
-token.decimals=18
-token.totalSupply=200
+PASS Deploy Gem, Gov, Pip, Pep, Pit, Adm - Gem
+PASS Deploy Gem, Gov, Pip, Pep, Pit, Adm - Gov
+PASS Deploy Gem, Gov, Pip, Pep, Pit, Adm - Gov Name
+PASS Deploy Gem, Gov, Pip, Pep, Pit, Adm - Gov Mint 1,000,000
+PASS Deploy Gem, Gov, Pip, Pep, Pit, Adm - Pip
+PASS Deploy Gem, Gov, Pip, Pep, Pit, Adm - Pep
+PASS Deploy Gem, Gov, Pip, Pep, Pit, Adm - Pit
+PASS Deploy Gem, Gov, Pip, Pep, Pit, Adm - Adm
+gemAddress=0x2a6ae5a5344a68af3aa872452156495a6c1b3bcc status=0x1 Success gas=6000000 gasUsed=592931 costETH=0.001185862 costUSD=0.7250953199 @ ETH/USD=611.45 gasPrice=2 gwei block=49054 txIx=0 txId=0x6213ce0e84f95a1064291b1fc791a0536514fd72081e5d3ecc74989bc56b882d @ 1522237571 Wed, 28 Mar 2018 11:46:11 UTC
+govAddress=0xc983c4d46c95b5fc183b3e11aa80c578cf6fb227 status=0x1 Success gas=6000000 gasUsed=1034926 costETH=0.002069852 costUSD=1.2656110054 @ ETH/USD=611.45 gasPrice=2 gwei block=49054 txIx=1 txId=0x1ee3a444aba3d3048d138a37a7dde8f0b25aacf294551bd5d5ed74b297f5a4c8 @ 1522237571 Wed, 28 Mar 2018 11:46:11 UTC
+govAddress=0xc983c4d46c95b5fc183b3e11aa80c578cf6fb227 status=0x1 Success gas=400000 gasUsed=42696 costETH=0.000085392 costUSD=0.0522129384 @ ETH/USD=611.45 gasPrice=2 gwei block=49056 txIx=0 txId=0x06cb28d5d1bcecfc342d2b28a02af7d2d6097d39b120d7b08be25bb9ca717fc0 @ 1522237573 Wed, 28 Mar 2018 11:46:13 UTC
+govAddress=0xc983c4d46c95b5fc183b3e11aa80c578cf6fb227 status=0x1 Success gas=400000 gasUsed=66933 costETH=0.000133866 costUSD=0.0818523657 @ ETH/USD=611.45 gasPrice=2 gwei block=49056 txIx=1 txId=0x55de1107391dd2689bfc759c5b858a1549cac232000c6f7c20247f13de6b55a9 @ 1522237573 Wed, 28 Mar 2018 11:46:13 UTC
+pipAddress=0xe109291d961bf1aeb6e6863ecbff6a1a14decd31 status=0x1 Success gas=6000000 gasUsed=1157869 costETH=0.002315738 costUSD=1.4159580001 @ ETH/USD=611.45 gasPrice=2 gwei block=49054 txIx=2 txId=0xe4caaa0ff6c271275b2de79f860a0db8336b27549a785b44f895c8593fa5a4a3 @ 1522237571 Wed, 28 Mar 2018 11:46:11 UTC
+pepAddress=0x982726470e67251aa3ba4bada0f72b86930eb350 status=0x1 Success gas=6000000 gasUsed=1255233 costETH=0.002510466 costUSD=1.5350244357 @ ETH/USD=611.45 gasPrice=2 gwei block=49054 txIx=3 txId=0x7bf0db89bf0abc546d91191462477b3d49d2036972130a52cd5bc72e0d2f9916 @ 1522237571 Wed, 28 Mar 2018 11:46:11 UTC
+pitAddress=0x982726470e67251aa3ba4bada0f72b86930eb350 status=0x1 Success gas=6000000 gasUsed=149106 costETH=0.000298212 costUSD=0.1823417274 @ ETH/USD=611.45 gasPrice=2 gwei block=49054 txIx=4 txId=0xdbe3282649a04cffb2d588d690fe1ff12c9848305cec872cb5a30d6928a8ca0d @ 1522237571 Wed, 28 Mar 2018 11:46:11 UTC
+admAddress=0x5e1605bc01a9a349068db461756559926f21649c status=0x1 Success gas=6000000 gasUsed=1350446 costETH=0.002700892 costUSD=1.6514604134 @ ETH/USD=611.45 gasPrice=2 gwei block=49054 txIx=5 txId=0x69a4ffad17bae5e63b05c5206890bdc064110a42f69db9d57ab0a86cbc5b19b4 @ 1522237571 Wed, 28 Mar 2018 11:46:11 UTC
+addresses['adm']=0x5e1605bc01a9a349068db461756559926f21649c
+adm.owner=0x0000000000000000000000000000000000000000
+adm.authority=0x5e1605bc01a9a349068db461756559926f21649c
+adm.GOV=0x0000000000000000000000000000000000000000
+adm.IOU=0x0000000000000000000000000000000000000000
+adm.hat=0x0000000000000000000000000000000000000000
+adm.MAX_YAYS=0
+LogSetOwner 0 #49054 {"owner":"0xa11aae29840fbb5c86e6fd4cf809eba183aef433"}
 
----------- Transfer Tokens ---------
+---------- Init Fab ----------
  # Account                                             EtherBalanceChange                          Token Name
 -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
- 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.001639972000000000           0.000000000000000000 Account #0 - Miner
- 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.001185862000000000           0.000000000000000000 Account #1 - Contract Owner
- 2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976     -100.000188906000000000          99.999999000000000000 Account #2
- 3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0     -100.000176690000000000          99.970000000000000000 Account #3
- 4 0xa44a08d3f6933c69212114bb66e2df1813651844        0.000000000000000000           0.000001000000000000 Account #4
- 5 0xa55a151eb00fded1634d27d1127b4be4627079ea       -0.000088514000000000           0.000000000000000000 Account #5
- 6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.000000000000000000           0.030000000000000000 Account #6
+ 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.060070170000000000           0.000000000000000000 Account #0 - Miner
+ 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.060070170000000000           0.000000000000000000 Account #1 - Contract Owner
+ 2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976        0.000000000000000000           0.000000000000000000 Account #2
+ 3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0        0.000000000000000000           0.000000000000000000 Account #3
+ 4 0xa44a08d3f6933c69212114bb66e2df1813651844        0.000000000000000000           0.000000000000000000 Account #4
+ 5 0xa55a151eb00fded1634d27d1127b4be4627079ea        0.000000000000000000           0.000000000000000000 Account #5
+ 6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.000000000000000000           0.000000000000000000 Account #6
  7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
  8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
  9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
-10 0x0e946b999033257976aa5cbe0e3530618ca1582d      200.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
+10 0xad6aade39f177eafbfb68f153968abe1569977b6        0.000000000000000000           0.000000000000000000 GemFab
+11 0x5246a2e00c4889b39d89be463295fbccde082ac1        0.000000000000000000           0.000000000000000000 VoxFab
+12 0x0971e26d20e01fe632c91fca60eb6c92a6e522b9        0.000000000000000000           0.000000000000000000 TapFab
+13 0x33bb5c8775992a8eefbf2b3adb559a5f0e417308        0.000000000000000000           0.000000000000000000 VoxFab
+14 0x2cc5f7b1e0c8f7ecb4be28ef39e90c43aa80cfe3        0.000000000000000000           0.000000000000000000 TopFab
+15 0xd35673f3da122cff35e99d353e3c55a296594b7a        0.000000000000000000           0.000000000000000000 MomFab
+16 0xea8fbb2bfd0c5729874f0a029ff50c23a771ec28        0.000000000000000000           0.000000000000000000 DadFab
+17 0x6619e17bdab3f3b0c53cf8b945bde204f77de465        0.000000000000000000           0.000000000000000000 DaiFab
+18 0x2a6ae5a5344a68af3aa872452156495a6c1b3bcc        0.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
+19 0xe109291d961bf1aeb6e6863ecbff6a1a14decd31        0.000000000000000000           0.000000000000000000 Pip
+20 0x982726470e67251aa3ba4bada0f72b86930eb350        0.000000000000000000           0.000000000000000000 Pep
+21 0x87d58b27a582f399192647e69ead286ee9965e49        0.000000000000000000           0.000000000000000000 Pit
+22 0x5e1605bc01a9a349068db461756559926f21649c        0.000000000000000000           0.000000000000000000 Adm
+23 0xc983c4d46c95b5fc183b3e11aa80c578cf6fb227        0.000000000000000000           0.000000000000000000 Token 'MKR' 'Maker'
+24 0xa9260d5084c7de88d26b855439a6704278e3ced4        0.000000000000000000           0.000000000000000000 Sai
+25 0xaf1dbb33950cb85db3c2d2a50cbbe4f4cd18c385        0.000000000000000000           0.000000000000000000 Sin
+26 0x86ec5dea84953ba47f9c28e3b42ec813beba4866        0.000000000000000000           0.000000000000000000 Skr
+27 0x185c2743f3b0aeb5ed6ed0eaa5afb7880086e066        0.000000000000000000           0.000000000000000000 Vox
+28 0xd731d47210993a0e3e578667709d5e006e702683        0.000000000000000000           0.000000000000000000 Tub
+29 0x05a111feed8a7bb3aa637b016a62b72c417099a1        0.000000000000000000           0.000000000000000000 Tap
+30 0x940b753afb48bd9e85bdfc1097c106daba42761a        0.000000000000000000           0.000000000000000000 Top
+31 0xe67741ee97f0b29552c70a85e39f6eb01c7e1a97        0.000000000000000000           0.000000000000000000 Mom
+32 0xcd14e8e1a42e17df537a80ede96cfb0aa79e5988        0.000000000000000000           0.000000000000000000 Dad
 -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
-                                                                                  200.000000000000000000 Total Token Balances
--- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
-
-PASS Transfer Tokens - transfer 0.000001 tokens ac2 -> ac4. CHECK for movement
-PASS Transfer Tokens - approve 0.03 tokens ac3 -> ac5
-PASS Transfer Tokens - transferFrom 0.03 tokens ac3 -> ac6 by ac5. CHECK for movement
-transfer1_1Tx status=0x1 Success gas=100000 gasUsed=51591 costETH=0.000103182 costUSD=0.0630906339 @ ETH/USD=611.45 gasPrice=2 gwei block=203 txIx=0 txId=0xf2f19a4d0a5294d5f18d48dd3368315976f58e5cc278e72e322d48a14f4b5599 @ 1521859059 Sat, 24 Mar 2018 02:37:39 UTC
-transfer1_2Tx status=0x1 Success gas=100000 gasUsed=45483 costETH=0.000090966 costUSD=0.0556211607 @ ETH/USD=611.45 gasPrice=2 gwei block=203 txIx=1 txId=0x5cae69e770ec1f3a1260095622c43fa5a859955310d629b2e41f4df54156333f @ 1521859059 Sat, 24 Mar 2018 02:37:39 UTC
-transfer1_3Tx status=0x1 Success gas=100000 gasUsed=44257 costETH=0.000088514 costUSD=0.0541218853 @ ETH/USD=611.45 gasPrice=2 gwei block=205 txIx=0 txId=0xe62ed22bf74b9587af0225acfc906cdcb55aac7f45edcbe0a296a245641b9471 @ 1521859061 Sat, 24 Mar 2018 02:37:41 UTC
-tokenContractAddress=0x0e946b999033257976aa5cbe0e3530618ca1582d
-token.symbol=WETH
-token.name=Wrapped Ether
-token.decimals=18
-token.totalSupply=200
-Approval 0 #203 src=0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0 guy=0xa55a151eb00fded1634d27d1127b4be4627079ea wad=0.03
-Transfer 0 #203: src=0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976 dst=0xa44a08d3f6933c69212114bb66e2df1813651844 wad=0.000001
-Transfer 1 #205: src=0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0 dst=0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9 wad=0.03
-
----------- Transfer 0 Tokens ---------
- # Account                                             EtherBalanceChange                          Token Name
--- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
- 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.001860842000000000           0.000000000000000000 Account #0 - Miner
- 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.001185862000000000           0.000000000000000000 Account #1 - Contract Owner
- 2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976     -100.000261576000000000          99.999999000000000000 Account #2
- 3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0     -100.000237016000000000          99.970000000000000000 Account #3
- 4 0xa44a08d3f6933c69212114bb66e2df1813651844        0.000000000000000000           0.000001000000000000 Account #4
- 5 0xa55a151eb00fded1634d27d1127b4be4627079ea       -0.000176388000000000           0.000000000000000000 Account #5
- 6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.000000000000000000           0.030000000000000000 Account #6
- 7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
- 8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
- 9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
-10 0x0e946b999033257976aa5cbe0e3530618ca1582d      200.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
--- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
-                                                                                  200.000000000000000000 Total Token Balances
+                                                                                    0.000000000000000000 Total Token Balances
 -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
 
-PASS Transfer 0 Tokens - transfer 0 tokens ac2 -> ac4. CHECK for movement
-PASS Transfer 0 Tokens - approve 0 tokens ac3 -> ac5
-PASS Transfer 0 Tokens - transferFrom 0 tokens ac3 -> ac6 by ac5. CHECK for movement
-transfer2_1Tx status=0x1 Success gas=100000 gasUsed=36335 costETH=0.00007267 costUSD=0.0444340715 @ ETH/USD=611.45 gasPrice=2 gwei block=207 txIx=1 txId=0xc7cfda2a6c6a46a03b3c9f6db287c31867b843bf80fc4141b132743558be52bc @ 1521859063 Sat, 24 Mar 2018 02:37:43 UTC
-transfer2_2Tx status=0x1 Success gas=100000 gasUsed=30163 costETH=0.000060326 costUSD=0.0368863327 @ ETH/USD=611.45 gasPrice=2 gwei block=207 txIx=0 txId=0xa3d65df8469ff334430525fc98553a31fb3f100d9d16ec7c305b5787b1388eed @ 1521859063 Sat, 24 Mar 2018 02:37:43 UTC
-transfer2_3Tx status=0x1 Success gas=100000 gasUsed=43937 costETH=0.000087874 costUSD=0.0537305573 @ ETH/USD=611.45 gasPrice=2 gwei block=209 txIx=0 txId=0x2e8013f87ab218a8e893cf1ee3bb451b82f29c687b306cc15f3190964eee096c @ 1521859065 Sat, 24 Mar 2018 02:37:45 UTC
-tokenContractAddress=0x0e946b999033257976aa5cbe0e3530618ca1582d
-token.symbol=WETH
-token.name=Wrapped Ether
-token.decimals=18
-token.totalSupply=200
-Approval 0 #207 src=0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0 guy=0xa55a151eb00fded1634d27d1127b4be4627079ea wad=0
-Transfer 0 #207: src=0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976 dst=0xa44a08d3f6933c69212114bb66e2df1813651844 wad=0
-Transfer 1 #209: src=0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0 dst=0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9 wad=0
-
----------- Transfer Too Many Tokens ---------
- # Account                                             EtherBalanceChange                          Token Name
--- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
- 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.002050794000000000           0.000000000000000000 Account #0 - Miner
- 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.001185862000000000           0.000000000000000000 Account #1 - Contract Owner
- 2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976     -100.000309654000000000          99.999999000000000000 Account #2
- 3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0     -100.000328238000000000          99.970000000000000000 Account #3
- 4 0xa44a08d3f6933c69212114bb66e2df1813651844        0.000000000000000000           0.000001000000000000 Account #4
- 5 0xa55a151eb00fded1634d27d1127b4be4627079ea       -0.000227040000000000           0.000000000000000000 Account #5
- 6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.000000000000000000           0.030000000000000000 Account #6
- 7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
- 8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
- 9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
-10 0x0e946b999033257976aa5cbe0e3530618ca1582d      200.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
--- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
-                                                                                  200.000000000000000000 Total Token Balances
--- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
-
-PASS Transfer Too Many Tokens - transfer 1,000 tokens ac2 -> ac4. CHECK no movement
-PASS Transfer Too Many Tokens - approve 2,000 tokens ac3 -> ac5
-PASS Transfer Too Many Tokens - transferFrom 2,000 tokens ac3 -> ac6 by ac5. CHECK no movement
-transfer3_1Tx status=0x0 Failure gas=100000 gasUsed=24039 costETH=0.000048078 costUSD=0.0293972931 @ ETH/USD=611.45 gasPrice=2 gwei block=212 txIx=0 txId=0xa0e811c72fc3c2b916b8ed91571dc7d3d6f6b36a9ca7dec6624d58107289777a @ 1521859068 Sat, 24 Mar 2018 02:37:48 UTC
-transfer3_2Tx status=0x1 Success gas=100000 gasUsed=45611 costETH=0.000091222 costUSD=0.0557776919 @ ETH/USD=611.45 gasPrice=2 gwei block=212 txIx=1 txId=0x86fa736ef10abc68559b2a56d593c849dbedcee5f991401057e96a907d2b674b @ 1521859068 Sat, 24 Mar 2018 02:37:48 UTC
-transfer3_3Tx status=0x0 Failure gas=100000 gasUsed=25326 costETH=0.000050652 costUSD=0.0309711654 @ ETH/USD=611.45 gasPrice=2 gwei block=214 txIx=0 txId=0x10eddf6e9d43dd647c67a72dab4b3f063241c4de1335ff97fc5b8d412e8753fa @ 1521859070 Sat, 24 Mar 2018 02:37:50 UTC
-tokenContractAddress=0x0e946b999033257976aa5cbe0e3530618ca1582d
-token.symbol=WETH
-token.name=Wrapped Ether
-token.decimals=18
-token.totalSupply=200
-Approval 0 #212 src=0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0 guy=0xa55a151eb00fded1634d27d1127b4be4627079ea wad=2000
-
----------- Withdraw Tokens ---------
- # Account                                             EtherBalanceChange                          Token Name
--- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
- 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.002197870000000000           0.000000000000000000 Account #0 - Miner
- 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.001185862000000000           0.000000000000000000 Account #1 - Contract Owner
- 2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976      -90.000383128000000000          89.999999000000000000 Account #2
- 3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0      -80.000401840000000000          79.970000000000000000 Account #3
- 4 0xa44a08d3f6933c69212114bb66e2df1813651844        0.000000000000000000           0.000001000000000000 Account #4
- 5 0xa55a151eb00fded1634d27d1127b4be4627079ea       -0.000227040000000000           0.000000000000000000 Account #5
- 6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.000000000000000000           0.030000000000000000 Account #6
- 7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000 Account #7
- 8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000 Account #8
- 9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000 Account #9
-10 0x0e946b999033257976aa5cbe0e3530618ca1582d      170.000000000000000000           0.000000000000000000 Token 'WETH' 'Wrapped Ether'
--- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
-                                                                                  170.000000000000000000 Total Token Balances
--- ------------------------------------------ --------------------------- ------------------------------ ---------------------------
-
-PASS Withdraw Tokens - ac2 withdraw 10 ETH
-PASS Withdraw Tokens - ac3 withdraw 20 ETH
-withdraw1_1Tx status=0x1 Success gas=100000 gasUsed=36737 costETH=0.000073474 costUSD=0.0449256773 @ ETH/USD=611.45 gasPrice=2 gwei block=217 txIx=0 txId=0x3132b91532a69b40cddc01517d15b49635fe1e76c7c2798e090b22504388de33 @ 1521859073 Sat, 24 Mar 2018 02:37:53 UTC
-withdraw1_2Tx status=0x1 Success gas=100000 gasUsed=36801 costETH=0.000073602 costUSD=0.0450039429 @ ETH/USD=611.45 gasPrice=2 gwei block=217 txIx=1 txId=0x70580b63dcc97e2a28f8f082e48040382b4d8df745928a10fc1494f37423eaef @ 1521859073 Sat, 24 Mar 2018 02:37:53 UTC
-tokenContractAddress=0x0e946b999033257976aa5cbe0e3530618ca1582d
-token.symbol=WETH
-token.name=Wrapped Ether
-token.decimals=18
-token.totalSupply=170
+PASS Init Fab - makeTokens
+PASS Init Fab - makeVoxTub
+PASS Init Fab - makeTapTop
+PASS Init Fab - configParams
+PASS Init Fab - verifyParams
+PASS Init Fab - configAuth
+initFab0_1Tx status=0x1 Success gas=4000000 gasUsed=2563780 costETH=0.00512756 costUSD=3.135246562 @ ETH/USD=611.45 gasPrice=2 gwei block=49058 txIx=0 txId=0xb57661525d43031e747851a9e3b1f923c2b05ed8824668c58a866f70f3d93548 @ 1522237575 Wed, 28 Mar 2018 11:46:15 UTC
+initFab0_2Tx status=0x1 Success gas=4000000 gasUsed=3169812 costETH=0.006339624 costUSD=3.8763630948 @ ETH/USD=611.45 gasPrice=2 gwei block=49058 txIx=1 txId=0x297d3127c38447c22a2d768ab5c0b75402d16023e8f5735438c4a8de6d88a246 @ 1522237575 Wed, 28 Mar 2018 11:46:15 UTC
+initFab0_3Tx status=0x1 Success gas=4000000 gasUsed=2318755 costETH=0.00463751 costUSD=2.8356054895 @ ETH/USD=611.45 gasPrice=2 gwei block=49058 txIx=2 txId=0xb4a668195a99d6957329f42abf0d954065973ec41ffd2e6c38aad1f1b8131789 @ 1522237575 Wed, 28 Mar 2018 11:46:15 UTC
+initFab0_4Tx status=0x1 Success gas=4000000 gasUsed=121066 costETH=0.000242132 costUSD=0.1480516114 @ ETH/USD=611.45 gasPrice=2 gwei block=49058 txIx=3 txId=0xb21a385d4b0c5d8cbb8ca9e82ef1ea1b5784dd0c4b6a02eedadc4f4f6b302fc5 @ 1522237575 Wed, 28 Mar 2018 11:46:15 UTC
+initFab0_5Tx status=0x1 Success gas=4000000 gasUsed=56427 costETH=0.000112854 costUSD=0.0690045783 @ ETH/USD=611.45 gasPrice=2 gwei block=49058 txIx=4 txId=0xcf1b96e63fa25ce926482ea27fd519e59f7f5af8439d779fe0a093c4c1e52ef6 @ 1522237575 Wed, 28 Mar 2018 11:46:15 UTC
+initFab0_6Tx status=0x1 Success gas=4000000 gasUsed=2319174 costETH=0.004638348 costUSD=2.8361178846 @ ETH/USD=611.45 gasPrice=2 gwei block=49058 txIx=5 txId=0x33519cc56074e9e6028f740be329d4d11052e8745d92f904334db64b6603a6f4 @ 1522237575 Wed, 28 Mar 2018 11:46:15 UTC
+addresses['adm']=0x5e1605bc01a9a349068db461756559926f21649c
+adm.owner=0x0000000000000000000000000000000000000000
+adm.authority=0x5e1605bc01a9a349068db461756559926f21649c
+adm.GOV=0x0000000000000000000000000000000000000000
+adm.IOU=0x0000000000000000000000000000000000000000
+adm.hat=0x0000000000000000000000000000000000000000
+adm.MAX_YAYS=0
 
