@@ -509,6 +509,7 @@ See page 20 of [The Dai Stablecoin System Whitepaper](https://makerdao.com/white
 * [MakerDAO and the Dai Stablecoin](https://www.youtube.com/watch?v=ybMFi5UseEs)
 * [An Overview Of Stablecoins](https://multicoin.capital/2018/01/17/an-overview-of-stablecoins/)
 * [#006 - MakerDAO & the Dai stable coin - Founder Rune Christensen](https://blockzero.simplecast.fm/f455ccb1)
+* [Measuring Maker-Dai stability](https://medium.com/tokenanalyst/measuring-maker-dai-stability-f74c23108128)
 
 <br />
 

@@ -170,8 +170,7 @@ var gemFab = gemFabContract.new({from: contractOwnerAccount, data: gemFabBin, ga
         gemFabTx = contract.transactionHash;
       } else {
         gemFabAddress = contract.address;
-        // addTokenContractAddressAndAbi(tokenAddress, saiAbi);
-        addAccount(gemFabAddress, "GemFab");
+        // Only used for fab addAccount(gemFabAddress, "GemDaiFab");
         console.log("DATA: var gemFabAddress=\"" + gemFabAddress + "\";");
       }
     }
@@ -187,8 +186,7 @@ var voxFab = voxFabContract.new({from: contractOwnerAccount, data: voxFabBin, ga
         voxFabTx = contract.transactionHash;
       } else {
         voxFabAddress = contract.address;
-        // addTokenContractAddressAndAbi(tokenAddress, saiAbi);
-        addAccount(voxFabAddress, "VoxFab");
+        // Only used for fab addAccount(voxFabAddress, "VoxDaiFab");
         console.log("DATA: var voxFabAddress=\"" + voxFabAddress + "\";");
       }
     }
@@ -204,8 +202,7 @@ var tapFab = tapFabContract.new({from: contractOwnerAccount, data: tapFabBin, ga
         tapFabTx = contract.transactionHash;
       } else {
         tapFabAddress = contract.address;
-        // addTokenContractAddressAndAbi(tokenAddress, saiAbi);
-        addAccount(tapFabAddress, "TapFab");
+        // Only used for fab addAccount(tapFabAddress, "TapDaiFab");
         console.log("DATA: var tapFabAddress=\"" + tapFabAddress + "\";");
       }
     }
@@ -221,8 +218,7 @@ var tubFab = tubFabContract.new({from: contractOwnerAccount, data: tubFabBin, ga
         tubFabTx = contract.transactionHash;
       } else {
         tubFabAddress = contract.address;
-        // addTokenContractAddressAndAbi(tokenAddress, saiAbi);
-        addAccount(tubFabAddress, "VoxFab");
+        // Only used for fab addAccount(tubFabAddress, "TubDaiFab");
         console.log("DATA: var tubFabAddress=\"" + tubFabAddress + "\";");
       }
     }
@@ -238,8 +234,7 @@ var topFab = topFabContract.new({from: contractOwnerAccount, data: topFabBin, ga
         topFabTx = contract.transactionHash;
       } else {
         topFabAddress = contract.address;
-        // addTokenContractAddressAndAbi(tokenAddress, saiAbi);
-        addAccount(topFabAddress, "TopFab");
+        // Only used for fab addAccount(topFabAddress, "TopDaiFab");
         console.log("DATA: var topFabAddress=\"" + topFabAddress + "\";");
       }
     }
@@ -255,8 +250,7 @@ var momFab = momFabContract.new({from: contractOwnerAccount, data: momFabBin, ga
         momFabTx = contract.transactionHash;
       } else {
         momFabAddress = contract.address;
-        // addTokenContractAddressAndAbi(tokenAddress, saiAbi);
-        addAccount(momFabAddress, "MomFab");
+        // Only used for fab addAccount(momFabAddress, "MomDaiFab");
         console.log("DATA: var momFabAddress=\"" + momFabAddress + "\";");
       }
     }
@@ -272,8 +266,7 @@ var dadFab = dadFabContract.new({from: contractOwnerAccount, data: dadFabBin, ga
         dadFabTx = contract.transactionHash;
       } else {
         dadFabAddress = contract.address;
-        // addTokenContractAddressAndAbi(tokenAddress, saiAbi);
-        addAccount(dadFabAddress, "DadFab");
+        // Only used for fab addAccount(dadFabAddress, "DadDaiFab");
         console.log("DATA: var dadFabAddress=\"" + dadFabAddress + "\";");
       }
     }
@@ -292,8 +285,8 @@ var daiFab = daiFabContract.new(gemFabAddress, voxFabAddress, tubFabAddress, tap
         daiFabTx = contract.transactionHash;
       } else {
         daiFabAddress = contract.address;
-        // addTokenContractAddressAndAbi(tokenAddress, saiAbi);
-        addAccount(daiFabAddress, "DaiFab");
+        addAddressAndAbi('daiFab', daiFabAddress, daiFabAbi);
+        // Only used for fab addAccount(daiFabAddress, "DaiFab");
         console.log("DATA: var daiFabAddress=\"" + daiFabAddress + "\";");
       }
     }
@@ -318,7 +311,6 @@ printTxData("topFabAddress=" + topFabAddress, topFabTx);
 printTxData("momFabAddress=" + momFabAddress, momFabTx);
 printTxData("dadFabAddress=" + dadFabAddress, dadFabTx);
 printTxData("daiFabAddress=" + daiFabAddress, daiFabTx);
-// printTokenContractDetails();
 console.log("RESULT: ");
 
 
@@ -339,8 +331,8 @@ var gem = gemContract.new({from: contractOwnerAccount, data: gemBin, gas: 600000
         gemTx = contract.transactionHash;
       } else {
         gemAddress = contract.address;
-        addAccount(gemAddress, "Token '" + gem.symbol() + "' '" + gem.name() + "'");
-        // addTokenContractAddressAndAbi(tokenAddress, gemAbi);
+        addAccount(gemAddress, "Gem - Token '" + gem.symbol() + "' '" + gem.name() + "'");
+        addAddressAndAbi('gem', gemAddress, gemAbi);
         console.log("DATA: var gemAddress=\"" + gemAddress + "\";");
       }
     }
@@ -356,8 +348,7 @@ var gov = govContract.new(govSymbol, {from: contractOwnerAccount, data: govBin, 
         govTx = contract.transactionHash;
       } else {
         govAddress = contract.address;
-        // addAccount(govAddress, "Token '" + web3.toAscii(gov.symbol()) + "' '" + web3.toAscii(gov.name()) + "'");
-        // addTokenContractAddressAndAbi(tokenAddress, gemAbi);
+        addAddressAndAbi('gov', govAddress, govAbi);
         console.log("DATA: var govAddress=\"" + govAddress + "\";");
       }
     }
@@ -374,7 +365,7 @@ var pip = pipContract.new({from: contractOwnerAccount, data: pipBin, gas: 600000
       } else {
         pipAddress = contract.address;
         addAccount(pipAddress, "Pip");
-        // addTokenContractAddressAndAbi(tokenAddress, gemAbi);
+        addAddressAndAbi('pip', pipAddress, pipAbi);
         console.log("DATA: var pipAddress=\"" + pipAddress + "\";");
       }
     }
@@ -391,7 +382,7 @@ var pep = pepContract.new({from: contractOwnerAccount, data: pepBin, gas: 600000
       } else {
         pepAddress = contract.address;
         addAccount(pepAddress, "Pep");
-        // addTokenContractAddressAndAbi(tokenAddress, gemAbi);
+        addAddressAndAbi('pep', pepAddress, pepAbi);
         console.log("DATA: var pepAddress=\"" + pepAddress + "\";");
       }
     }
@@ -408,7 +399,7 @@ var pit = pitContract.new({from: contractOwnerAccount, data: pitBin, gas: 600000
       } else {
         pitAddress = contract.address;
         addAccount(pitAddress, "Pit");
-        // addTokenContractAddressAndAbi(tokenAddress, gemAbi);
+        addAddressAndAbi('pit', pitAddress, pitAbi);
         console.log("DATA: var pitAddress=\"" + pitAddress + "\";");
       }
     }
@@ -437,7 +428,7 @@ var govNameTx = gov.setName(govName, {from: contractOwnerAccount, gas: 400000, g
 var govMintTx = gov.mint(contractOwnerAccount, govTotalSupply, {from: contractOwnerAccount, gas: 400000, gasPrice: defaultGasPrice});
 while (txpool.status.pending > 0) {
 }
-addAccount(govAddress, "Token '" + web3.toUtf8(gov.symbol()) + "' '" + web3.toUtf8(gov.name()) + "'");
+addAccount(govAddress, "Gov - Token '" + web3.toUtf8(gov.symbol()) + "' '" + web3.toUtf8(gov.name()) + "'");
 printBalances();
 failIfTxStatusError(gemTx, deployGemGovMessage + " - Gem");
 failIfTxStatusError(govTx, deployGemGovMessage + " - Gov");
@@ -480,9 +471,27 @@ var tapAddress = daiFab.tap();
 var topAddress = daiFab.top();
 var momAddress = daiFab.mom();
 var dadAddress = daiFab.dad();
-addAccount(saiAddress, "Sai");
-addAccount(sinAddress, "Sin");
-addAccount(skrAddress, "Skr");
+var sai = eth.contract(saiAbi).at(saiAddress);
+var sin = eth.contract(sinAbi).at(sinAddress);
+var skr = eth.contract(skrAbi).at(skrAddress);
+var vox = eth.contract(voxAbi).at(voxAddress);
+var tub = eth.contract(tubAbi).at(tubAddress);
+var tap = eth.contract(tapAbi).at(tapAddress);
+var top = eth.contract(topAbi).at(topAddress);
+var mom = eth.contract(momAbi).at(momAddress);
+var dad = eth.contract(dadAbi).at(dadAddress);
+addAddressAndAbi("sai", saiAddress, saiAbi);
+addAddressAndAbi("sin", sinAddress, sinAbi);
+addAddressAndAbi("skr", skrAddress, skrAbi);
+addAddressAndAbi("vox", voxAddress, voxAbi);
+addAddressAndAbi("tub", tubAddress, tubAbi);
+addAddressAndAbi("tap", tapAddress, tapAbi);
+addAddressAndAbi("top", topAddress, topAbi);
+addAddressAndAbi("mom", momAddress, momAbi);
+addAddressAndAbi("dad", dadAddress, dadAbi);
+addAccount(saiAddress, "Sai - Token '" + web3.toUtf8(sai.symbol()) + "' '" + web3.toUtf8(sai.name()) + "'");
+addAccount(sinAddress, "Sin - Token '" + web3.toUtf8(sin.symbol()) + "' '" + web3.toUtf8(sin.name()) + "'");
+addAccount(skrAddress, "Skr - Token '" + web3.toUtf8(skr.symbol()) + "' '" + web3.toUtf8(skr.name()) + "'");
 addAccount(voxAddress, "Vox");
 addAccount(tubAddress, "Tub");
 addAccount(tapAddress, "Tap");
@@ -504,6 +513,56 @@ printTxData("initFab0_5Tx", initFab0_5Tx);
 printTxData("initFab0_6Tx", initFab0_6Tx);
 printAdmContractDetails();
 console.log("RESULT: ");
+
+
+// -----------------------------------------------------------------------------
+var wrapEther0Message = "Wrap Ethers";
+// -----------------------------------------------------------------------------
+console.log("RESULT: ---------- " + wrapEther0Message + " ----------");
+var wrapEther0_1Tx = eth.sendTransaction({from: account2, to: gemAddress, value: web3.toWei("100", "ether"), gas: 400000, gasPrice: defaultGasPrice});
+var wrapEther0_2Tx = eth.sendTransaction({from: account3, to: gemAddress, value: web3.toWei("100", "ether"), gas: 400000, gasPrice: defaultGasPrice});
+while (txpool.status.pending > 0) {
+}
+var wrapEther0_3Tx = gem.approve(tubAddress, new BigNumber(10).shift(18), {from: account2, gas: 400000, gasPrice: defaultGasPrice});
+while (txpool.status.pending > 0) {
+}
+var wrapEther0_4Tx = tub.join(new BigNumber(10).shift(18), {from: account2, gas: 400000, gasPrice: defaultGasPrice});
+while (txpool.status.pending > 0) {
+}
+printBalances();
+failIfTxStatusError(wrapEther0_1Tx, wrapEther0Message + " - ac2 100 ETH");
+failIfTxStatusError(wrapEther0_2Tx, wrapEther0Message + " - ac3 100 ETH");
+failIfTxStatusError(wrapEther0_3Tx, wrapEther0Message + " - ac2 gem.approve(tub, 10 WETH)");
+failIfTxStatusError(wrapEther0_4Tx, wrapEther0Message + " - ac3 tub.join(10 WETH)");
+printTxData("wrapEther0_1Tx", wrapEther0_1Tx);
+printTxData("wrapEther0_2Tx", wrapEther0_2Tx);
+printTxData("wrapEther0_3Tx", wrapEther0_3Tx);
+printTxData("wrapEther0_4Tx", wrapEther0_4Tx);
+// printCrowdsaleContractDetails();
+// printTokenContractDetails();
+console.log("RESULT: ");
+
+
+// -----------------------------------------------------------------------------
+var openCup0Message = "Open Cup";
+// -----------------------------------------------------------------------------
+console.log("RESULT: ---------- " + openCup0Message + " ----------");
+var openCup0_1Tx = tub.open({from: account2, gas: 400000, gasPrice: defaultGasPrice});
+while (txpool.status.pending > 0) {
+}
+var cup = "0x" + web3.padLeft(web3.toHex(1).substring(2), 64);
+var openCup0_2Tx = tub.lock(cup, new BigNumber(10).shift(18), {from: account2, gas: 400000, gasPrice: defaultGasPrice});
+while (txpool.status.pending > 0) {
+}
+printBalances();
+failIfTxStatusError(openCup0_1Tx, openCup0Message + " - tub.open()");
+failIfTxStatusError(openCup0_2Tx, openCup0Message + " - tub.lock(0x1, 10 WETH)");
+printTxData("openCup0_1Tx", openCup0_1Tx);
+printTxData("openCup0_2Tx", openCup0_2Tx);
+printTubContractDetails();
+console.log("RESULT: ");
+
+
 
 
 exit;
@@ -556,24 +615,6 @@ console.log("RESULT: ");
 
 
 exit;
-
-// -----------------------------------------------------------------------------
-var wrapEther0Message = "Wrap Ethers";
-// -----------------------------------------------------------------------------
-console.log("RESULT: ---------- " + wrapEther0Message + " ----------");
-var wrapEther0_1Tx = eth.sendTransaction({from: account2, to: tokenAddress, value: web3.toWei("100", "ether"), gas: 400000, gasPrice: defaultGasPrice});
-var wrapEther0_2Tx = eth.sendTransaction({from: account3, to: tokenAddress, value: web3.toWei("100", "ether"), gas: 400000, gasPrice: defaultGasPrice});
-while (txpool.status.pending > 0) {
-}
-printBalances();
-failIfTxStatusError(wrapEther0_1Tx, wrapEther0Message + " - ac2 100 ETH");
-failIfTxStatusError(wrapEther0_2Tx, wrapEther0Message + " - ac3 100 ETH");
-printTxData("wrapEther0_1Tx", wrapEther0_1Tx);
-printTxData("wrapEther0_2Tx", wrapEther0_2Tx);
-printCrowdsaleContractDetails();
-printTokenContractDetails();
-console.log("RESULT: ");
-
 
 // -----------------------------------------------------------------------------
 var transfer1_Message = "Transfer Tokens";

@@ -12,12 +12,12 @@ addAccount(eth.accounts[0], "Account #0 - Miner");
 addAccount(eth.accounts[1], "Account #1 - Contract Owner");
 addAccount(eth.accounts[2], "Account #2");
 addAccount(eth.accounts[3], "Account #3");
-addAccount(eth.accounts[4], "Account #4");
-addAccount(eth.accounts[5], "Account #5");
-addAccount(eth.accounts[6], "Account #6");
-addAccount(eth.accounts[7], "Account #7");
-addAccount(eth.accounts[8], "Account #8");
-addAccount(eth.accounts[9], "Account #9");
+// addAccount(eth.accounts[4], "Account #4");
+// addAccount(eth.accounts[5], "Account #5");
+// addAccount(eth.accounts[6], "Account #6");
+// addAccount(eth.accounts[7], "Account #7");
+// addAccount(eth.accounts[8], "Account #8");
+// addAccount(eth.accounts[9], "Account #9");
 // addAccount(eth.accounts[10], "Account #10");
 // addAccount(eth.accounts[11], "Account #11");
 // addAccount(eth.accounts[12], "Account #12");
@@ -67,28 +67,59 @@ function addTokenContractAddressAndAbi(address, tokenAbi) {
   tokenContractAbi = tokenAbi;
 }
 
+var addresses = {};
+var abis = {};
+var tokens = {};
+var decimals = {};
+var tokenCodes = ["gem", "gov", "sai", "sin", "skr"];
+var fromBlock = {};
+
+function addAddressAndAbi(key, address, abi) {
+  addresses[key] = address;
+  abis[key] = abi;
+  fromBlock[key] = 0;
+}
+
 
 // -----------------------------------------------------------------------------
 // Account ETH and token balances
 // -----------------------------------------------------------------------------
 function printBalances() {
-  var token = tokenContractAddress == null || tokenContractAbi == null ? null : web3.eth.contract(tokenContractAbi).at(tokenContractAddress);
-  var decimals = token == null ? 18 : token.decimals();
+  var tokenTotals = {};
+  var separator = "-- ------------------------------------------ ---------------------------";
+  var header = " # Account                                                      ETHChange";
+  tokenCodes.forEach(function(t) {
+    separator = separator + " ------------------------------";
+    header = header + "                            " + t.toUpperCase();
+    tokens[t] = addresses[t] == null || abis[t] == null ? null : web3.eth.contract(abis[t]).at(addresses[t]);
+    decimals[t] = 18; // tokens[t] == null ? 18 : tokens[t].decimals();
+    tokenTotals[t] = new BigNumber(0);
+  });
+  separator = separator + " ---------------------------";
+  header = header + " Name";
+  console.log("RESULT: " + header);
+  console.log("RESULT: " + separator);
   var i = 0;
-  var totalTokenBalance = new BigNumber(0);
-  console.log("RESULT:  # Account                                             EtherBalanceChange                          Token Name");
-  console.log("RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------");
   accounts.forEach(function(e) {
     var etherBalanceBaseBlock = eth.getBalance(e, baseBlock);
     var etherBalance = web3.fromWei(eth.getBalance(e).minus(etherBalanceBaseBlock), "ether");
-    var tokenBalance = token == null ? new BigNumber(0) : token.balanceOf(e).shift(-decimals);
-    totalTokenBalance = totalTokenBalance.add(tokenBalance);
-    console.log("RESULT: " + pad2(i) + " " + e  + " " + pad(etherBalance) + " " + padToken(tokenBalance, decimals) + " " + accountNames[e]);
+    var line = pad2(i) + " " + e  + " " + pad(etherBalance);
+    tokenCodes.forEach(function(t) {
+      var tokenBalance = tokens[t] == null ? new BigNumber(0) : tokens[t].balanceOf(e).shift(-decimals[t]);
+      tokenTotals[t] = tokenTotals[t].add(tokenBalance);
+      line = line + " " + padToken(tokenBalance, decimals[t]);
+    });
+    line = line + " " + accountNames[e];
+    console.log("RESULT: " + line);
     i++;
   });
-  console.log("RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------");
-  console.log("RESULT:                                                                           " + padToken(totalTokenBalance, decimals) + " Total Token Balances");
-  console.log("RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ---------------------------");
+  console.log("RESULT: " + separator);
+  var line = "                                                                         ";
+  tokenCodes.forEach(function(t) {
+    line = line + " " + padToken(tokenTotals[t], decimals[t]);
+  });
+  console.log("RESULT: " + line);
+  console.log("RESULT: " + separator);
   console.log("RESULT: ");
 }
 
@@ -328,16 +359,6 @@ function printTokenContractDetails() {
 }
 
 
-var addresses = {};
-var abis = {};
-var fromBlock = {};
-
-function addAddressAndAbi(key, address, abi) {
-  addresses[key] = address;
-  abis[key] = abi;
-  fromBlock[key] = 0;
-}
-
 // -----------------------------------------------------------------------------
 // Adm
 // -----------------------------------------------------------------------------
@@ -388,3 +409,56 @@ function printAdmContractDetails() {
     fromBlock[key] = latestBlock + 1;
   }
 }
+
+
+// -----------------------------------------------------------------------------
+// Tub
+// -----------------------------------------------------------------------------
+function printTubContractDetails() {
+  var key = 'tub';
+  console.log("RESULT: addresses['" + key + "']=" + addresses[key]);
+  // console.log("RESULT: abis['" + key + "']=" + JSON.stringify(abis[key]));
+  if (addresses[key] != null && abis[key] != null) {
+    var contract = eth.contract(abis[key]).at(addresses[key]);
+    console.log("RESULT: adm.owner=" + contract.owner());
+    console.log("RESULT: adm.authority=" + contract.authority());
+    // console.log("RESULT: adm.GOV=" + contract.GOV());
+    // console.log("RESULT: adm.IOU=" + contract.IOU());
+    // console.log("RESULT: adm.hat=" + contract.hat());
+    // console.log("RESULT: adm.MAX_YAYS=" + contract.MAX_YAYS());
+
+    var latestBlock = eth.blockNumber;
+    var i;
+
+    var logSetAuthorityEvents = contract.LogSetAuthority({}, { fromBlock: fromBlock[key], toBlock: latestBlock });
+    i = 0;
+    logSetAuthorityEvents.watch(function (error, result) {
+      console.log("RESULT: LogSetAuthority " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
+    });
+    logSetAuthorityEvents.stopWatching();
+
+    var logSetOwnerEvents = contract.LogSetOwner({}, { fromBlock: fromBlock[key], toBlock: latestBlock });
+    i = 0;
+    logSetOwnerEvents.watch(function (error, result) {
+      console.log("RESULT: LogSetOwner " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
+    });
+    logSetOwnerEvents.stopWatching();
+
+    var logNoteEvents = contract.LogNote({}, { fromBlock: fromBlock[key], toBlock: latestBlock });
+    i = 0;
+    logNoteEvents.watch(function (error, result) {
+      console.log("RESULT: LogNote " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
+    });
+    logNoteEvents.stopWatching();
+
+    var logNewCupEvents = contract.LogNewCup({}, { fromBlock: fromBlock[key], toBlock: latestBlock });
+    i = 0;
+    logNewCupEvents.watch(function (error, result) {
+      console.log("RESULT: LogNewCup " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
+    });
+    logNewCupEvents.stopWatching();
+
+    fromBlock[key] = latestBlock + 1;
+  }
+}
+
