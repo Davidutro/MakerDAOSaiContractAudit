@@ -420,12 +420,47 @@ function printTubContractDetails() {
   // console.log("RESULT: abis['" + key + "']=" + JSON.stringify(abis[key]));
   if (addresses[key] != null && abis[key] != null) {
     var contract = eth.contract(abis[key]).at(addresses[key]);
-    console.log("RESULT: adm.owner=" + contract.owner());
-    console.log("RESULT: adm.authority=" + contract.authority());
-    // console.log("RESULT: adm.GOV=" + contract.GOV());
-    // console.log("RESULT: adm.IOU=" + contract.IOU());
-    // console.log("RESULT: adm.hat=" + contract.hat());
-    // console.log("RESULT: adm.MAX_YAYS=" + contract.MAX_YAYS());
+    console.log("RESULT: tub.owner=" + contract.owner());
+    console.log("RESULT: tub.authority=" + contract.authority());
+    console.log("RESULT: tub.sai=" + contract.sai());
+    console.log("RESULT: tub.sin=" + contract.sin());
+    console.log("RESULT: tub.skr=" + contract.skr());
+    console.log("RESULT: tub.gem=" + contract.gem());
+    console.log("RESULT: tub.gov=" + contract.gov());
+    console.log("RESULT: tub.vox=" + contract.vox());
+    console.log("RESULT: tub.pip=" + contract.pip());
+    console.log("RESULT: tub.pep=" + contract.pep());
+    console.log("RESULT: tub.tap=" + contract.tap());
+    console.log("RESULT: tub.pit=" + contract.pit());
+    console.log("RESULT: tub.axe=" + contract.axe());
+    console.log("RESULT: tub.cap=" + contract.cap());
+    console.log("RESULT: tub.mat=" + contract.mat());
+    console.log("RESULT: tub.tax=" + contract.tax());
+    console.log("RESULT: tub.fee=" + contract.fee());
+    console.log("RESULT: tub.gap=" + contract.gap());
+    console.log("RESULT: tub.off=" + contract.off());
+    console.log("RESULT: tub.out=" + contract.out());
+    console.log("RESULT: tub.fit=" + contract.fit());
+    console.log("RESULT: tub.rho=" + contract.rho() + " " + new Date(contract.rho() * 1000).toUTCString() + " " + new Date(contract.rho() * 1000).toString());
+    // console.log("RESULT: tub.chi=" + contract.chi());
+    // console.log("RESULT: tub.rhi=" + contract.rhi());
+    console.log("RESULT: tub.rum=" + contract.rum());
+    // console.log("RESULT: tub.din=" + contract.din());
+    console.log("RESULT: tub.air=" + contract.air() + " " + contract.air().shift(-18));
+    console.log("RESULT: tub.era=" + contract.era() + " " + new Date(contract.era() * 1000).toUTCString() + " " + new Date(contract.era() * 1000).toString());
+
+    console.log("RESULT: tub.cupi=" + contract.cupi());
+    for (var i = 1; i <= contract.cupi(); i++) {
+      var h = "0x" + web3.padLeft(web3.toHex(i).substring(2), 64);
+      var data = contract.cups(h);
+      var lad = data[0];
+      var ink = data[1];
+      var art = data[2];
+      var ire = data[3];
+      // if (lad != "0x0000000000000000000000000000000000000000" && ink != "0" && art != "0" && ire != "0") {
+        console.log("RESULT: tub.cups(" + i + ")=" + JSON.stringify(data));
+      // }
+    }
 
     var latestBlock = eth.blockNumber;
     var i;

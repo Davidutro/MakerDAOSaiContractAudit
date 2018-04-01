@@ -68,9 +68,9 @@ TEST4OUTPUT=test4output.txt
 TEST4RESULTS=test4results.txt
 
 ---------- Variables ----------
-CURRENTTIME='1522617328' 'Sun  1 Apr 2018 21:15:28 UTC'
-START_DATE='1522617358' 'Sun  1 Apr 2018 21:15:58 UTC'
-END_DATE='1522617418' 'Sun  1 Apr 2018 21:16:58 UTC'
+CURRENTTIME='1522630078' 'Mon  2 Apr 2018 00:47:58 UTC'
+START_DATE='1522630108' 'Mon  2 Apr 2018 00:48:28 UTC'
+END_DATE='1522630168' 'Mon  2 Apr 2018 00:49:28 UTC'
 
 ---------- Copy Files ----------
 
@@ -119,7 +119,7 @@ Welcome to the Geth JavaScript console!
 
 instance: Geth/v1.8.3-stable-329ac18e/darwin-amd64/go1.10
 coinbase: 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e
-at block: 50440 (Mon, 02 Apr 2018 07:15:30 AEST)
+at block: 56706 (Mon, 02 Apr 2018 10:48:01 AEST)
  datadir: /Users/bok/Projects/MakerDAOSaiContractAudit/audit/test/testchain
  modules: admin:1.0 clique:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 shh:1.0 txpool:1.0 web3:1.0
 
@@ -472,13 +472,13 @@ undefined
 ... 
 undefined
 > 
-DATA: var gemFabAddress="0x0cf5bf4d1a86422dbfb6f22c8b862c58e68727e0";
-DATA: var voxFabAddress="0x88f926e1177ad15bd58c17e1ed517275dd6f0b84";
-DATA: var tapFabAddress="0xaae955a482e748ce2c1861ac8d9a17b8beb49ede";
-DATA: var tubFabAddress="0x6a6e351fa5ca91478464e00932859ecacc6c311d";
-DATA: var topFabAddress="0x569ed37823504eec6aae4ce0fd5dc98bd5056b47";
-DATA: var momFabAddress="0xccd70f533d47fae5925459d9ff33e0eb8c48a109";
-DATA: var dadFabAddress="0x03e4a6038b932d2580241b4d8b0dab30bf6b3084";
+DATA: var gemFabAddress="0x77c01d7093f7d6c8999e4df0c1d63ad575fa3618";
+DATA: var voxFabAddress="0xf37716ba98fd376b666265859974887271a57833";
+DATA: var tapFabAddress="0x9d9651f16f37d386f36a00143941d2ee8f1745c1";
+DATA: var tubFabAddress="0x02249ebd4d2e220db0d58ba1356b9e6c695f550f";
+DATA: var topFabAddress="0x0fa480de47fef3146739cd6cf88f2803b412ecd3";
+DATA: var momFabAddress="0x3e3e152f1e3afbc2c4fd51f2e95a8d1b9969df6c";
+DATA: var dadFabAddress="0x3d157b007d81feef10178b42c926137d96cbe2e0";
 undefined
 > 
 undefined
@@ -504,11 +504,11 @@ undefined
 ... 
 undefined
 > 
-DATA: var daiFabAddress="0x20fc3da918317012590707db85be0ee23bd3fc4b";
+DATA: var daiFabAddress="0x023d4e9fb8e838885931dea6da2bddb887e16121";
 RESULT:  # Account                                                      ETHChange                            GEM                            GOV                            SAI                            SIN                            SKR Name
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ------------------------------ ------------------------------ ------------------------------ ---------------------------
-RESULT:  0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.027671862000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #0 - Miner
-RESULT:  1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.027671862000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
+RESULT:  0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.027671606000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #0 - Miner
+RESULT:  1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.027671606000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
 RESULT:  2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #2
 RESULT:  3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #3
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ------------------------------ ------------------------------ ------------------------------ ---------------------------
@@ -541,28 +541,28 @@ RESULT: PASS Deploy Fabs - DadFab
 RESULT: PASS Deploy Fabs - DaiFab
 1
 > 
-RESULT: gemFabAddress=0x0cf5bf4d1a86422dbfb6f22c8b862c58e68727e0 status=0x1 Success gas=6000000 gasUsed=1090409 costETH=0.002180818 costUSD=1.3334611661 @ ETH/USD=611.45 gasPrice=2 gwei block=50445 txIx=0 txId=0x39202313c9e9c9acfc9e6c503152a2a59bd05cec5b45c13009f1b8da33b58443 @ 1522617335 Sun, 01 Apr 2018 21:15:35 UTC
+RESULT: gemFabAddress=0x77c01d7093f7d6c8999e4df0c1d63ad575fa3618 status=0x1 Success gas=6000000 gasUsed=1090409 costETH=0.002180818 costUSD=1.3334611661 @ ETH/USD=611.45 gasPrice=2 gwei block=56711 txIx=0 txId=0x0143a7c19941c80bbfbe6fc40be1fd3c21eff60c18a2ac9055f81fc075f55a09 @ 1522630086 Mon, 02 Apr 2018 00:48:06 UTC
 undefined
 > 
-RESULT: voxFabAddress=0x88f926e1177ad15bd58c17e1ed517275dd6f0b84 status=0x1 Success gas=6000000 gasUsed=810116 costETH=0.001620232 costUSD=0.9906908564 @ ETH/USD=611.45 gasPrice=2 gwei block=50445 txIx=1 txId=0xcfc91ed6972933ea0b2e1dec22f3ffdac3665bdcadf488d770bcd87271c92b27 @ 1522617335 Sun, 01 Apr 2018 21:15:35 UTC
+RESULT: voxFabAddress=0xf37716ba98fd376b666265859974887271a57833 status=0x1 Success gas=6000000 gasUsed=810116 costETH=0.001620232 costUSD=0.9906908564 @ ETH/USD=611.45 gasPrice=2 gwei block=56711 txIx=1 txId=0xf57ec87ae58bc5659345e651d5be2a392c84bfb715806511a201073b300f0ca9 @ 1522630086 Mon, 02 Apr 2018 00:48:06 UTC
 undefined
 > 
-RESULT: tapFabAddress=0xaae955a482e748ce2c1861ac8d9a17b8beb49ede status=0x1 Success gas=6000000 gasUsed=1703897 costETH=0.003407794 costUSD=2.0836956413 @ ETH/USD=611.45 gasPrice=2 gwei block=50445 txIx=2 txId=0xb0dc4bd8dd8743b6da1ced67c6239fe16a2d52787681572d442851e154bfd81b @ 1522617335 Sun, 01 Apr 2018 21:15:35 UTC
+RESULT: tapFabAddress=0x9d9651f16f37d386f36a00143941d2ee8f1745c1 status=0x1 Success gas=6000000 gasUsed=1703897 costETH=0.003407794 costUSD=2.0836956413 @ ETH/USD=611.45 gasPrice=2 gwei block=56711 txIx=2 txId=0x454a9b11772204fb09a19917af08c63dbe70f2f6a008c018f76e814322511ac6 @ 1522630086 Mon, 02 Apr 2018 00:48:06 UTC
 undefined
 > 
-RESULT: tubFabAddress=0x6a6e351fa5ca91478464e00932859ecacc6c311d status=0x1 Success gas=6000000 gasUsed=3060094 costETH=0.006120188 costUSD=3.7421889526 @ ETH/USD=611.45 gasPrice=2 gwei block=50445 txIx=3 txId=0x1854ca99d34d8c7730ca792f0a0365210465ece128ccf185dd4dea7851dfa114 @ 1522617335 Sun, 01 Apr 2018 21:15:35 UTC
+RESULT: tubFabAddress=0x02249ebd4d2e220db0d58ba1356b9e6c695f550f status=0x1 Success gas=6000000 gasUsed=3060094 costETH=0.006120188 costUSD=3.7421889526 @ ETH/USD=611.45 gasPrice=2 gwei block=56711 txIx=3 txId=0x244116ef82ffcccfc471c8889daedd74a688bccb27e864cbbedcf17a5156b32a @ 1522630086 Mon, 02 Apr 2018 00:48:06 UTC
 undefined
 > 
-RESULT: topFabAddress=0x569ed37823504eec6aae4ce0fd5dc98bd5056b47 status=0x1 Success gas=6000000 gasUsed=1423963 costETH=0.002847926 costUSD=1.7413643527 @ ETH/USD=611.45 gasPrice=2 gwei block=50445 txIx=4 txId=0xfe4123b5e3b3e572f05de990929d5ff237ddbd07ee434865747f84bb45af4a25 @ 1522617335 Sun, 01 Apr 2018 21:15:35 UTC
+RESULT: topFabAddress=0x0fa480de47fef3146739cd6cf88f2803b412ecd3 status=0x1 Success gas=6000000 gasUsed=1423963 costETH=0.002847926 costUSD=1.7413643527 @ ETH/USD=611.45 gasPrice=2 gwei block=56711 txIx=4 txId=0x18fbbf4a560b8dda74901be919cd39456351ee350d10e759eb87af40c84730e5 @ 1522630086 Mon, 02 Apr 2018 00:48:06 UTC
 undefined
 > 
-RESULT: momFabAddress=0xccd70f533d47fae5925459d9ff33e0eb8c48a109 status=0x1 Success gas=6000000 gasUsed=1473975 costETH=0.00294795 costUSD=1.8025240275 @ ETH/USD=611.45 gasPrice=2 gwei block=50445 txIx=5 txId=0x902956faf3ff017a3a68eae5bd335f96a3d219b71c368d84ca5f9a847ef85c60 @ 1522617335 Sun, 01 Apr 2018 21:15:35 UTC
+RESULT: momFabAddress=0x3e3e152f1e3afbc2c4fd51f2e95a8d1b9969df6c status=0x1 Success gas=6000000 gasUsed=1473975 costETH=0.00294795 costUSD=1.8025240275 @ ETH/USD=611.45 gasPrice=2 gwei block=56711 txIx=5 txId=0x7028a965aca9867a963fcaa73a49a027287a73ec529b7413372e5d2c2552ae4c @ 1522630086 Mon, 02 Apr 2018 00:48:06 UTC
 undefined
 > 
-RESULT: dadFabAddress=0x03e4a6038b932d2580241b4d8b0dab30bf6b3084 status=0x1 Success gas=6000000 gasUsed=698235 costETH=0.00139647 costUSD=0.8538715815 @ ETH/USD=611.45 gasPrice=2 gwei block=50445 txIx=6 txId=0xb7d662d2de684471f1b35dd35b870488a08ec7591303c6f75d217aca871c89db @ 1522617335 Sun, 01 Apr 2018 21:15:35 UTC
+RESULT: dadFabAddress=0x3d157b007d81feef10178b42c926137d96cbe2e0 status=0x1 Success gas=6000000 gasUsed=698235 costETH=0.00139647 costUSD=0.8538715815 @ ETH/USD=611.45 gasPrice=2 gwei block=56711 txIx=6 txId=0x4d3b5a7d17dda44b87a51a3d3b4827c9e3fbee23a7982a696aae16a1cea5e1ea @ 1522630086 Mon, 02 Apr 2018 00:48:06 UTC
 undefined
 > 
-RESULT: daiFabAddress=0x20fc3da918317012590707db85be0ee23bd3fc4b status=0x1 Success gas=6000000 gasUsed=3575242 costETH=0.007150484 costUSD=4.3721634418 @ ETH/USD=611.45 gasPrice=2 gwei block=50447 txIx=0 txId=0xd8ae92aa0163940c467bc0f3a3f81e1f671092b66da0db9bc3b81551e120fd4c @ 1522617337 Sun, 01 Apr 2018 21:15:37 UTC
+RESULT: daiFabAddress=0x023d4e9fb8e838885931dea6da2bddb887e16121 status=0x1 Success gas=6000000 gasUsed=3575114 costETH=0.007150228 costUSD=4.3720069106 @ ETH/USD=611.45 gasPrice=2 gwei block=56713 txIx=0 txId=0xf6b53f08af62fd0c776a197ec9677f2df87703b0ce942da381596c208fe30871 @ 1522630088 Mon, 02 Apr 2018 00:48:08 UTC
 undefined
 > 
 RESULT: 
@@ -713,12 +713,12 @@ undefined
 ... 
 undefined
 > 
-DATA: var gemAddress="0x2aee1609b2fa5442a9ad995078a6af06208a100b";
-DATA: var govAddress="0x0b491019c90dbb9c4881cca51dcce5822a3418d9";
-DATA: var pipAddress="0x5e0798d733fbbe85b6a92e95b896a9480afedc89";
-DATA: var pepAddress="0x64cab750c2a3151858c0a50e14ee676bf638ce85";
-DATA: var pitAddress="0x730c53ce7797caf1ac6539f99eb819638771670a";
-DATA: var admAddress="0xfd44c0c1a49f8944c053939cc2dfea86def1c7f6";
+DATA: var gemAddress="0x8725221991bd455a07992618566b6fd7d040503c";
+DATA: var govAddress="0x2402d412a1a06ea20fadad0661aa455b6b14bdde";
+DATA: var pipAddress="0x83d0550599618d360631edf35a69acc152e36a3b";
+DATA: var pepAddress="0x1f1b6121d97e04a0af03727dbc08ee71c539ed8e";
+DATA: var pitAddress="0x405d10c9e028efb0d804cb84f7f260e3701e3a4f";
+DATA: var admAddress="0x48049f5d9700abc8a9c5fbeeaf4728f8cdfd2fa4";
 undefined
 > 
 undefined
@@ -730,16 +730,16 @@ undefined
 > 
 RESULT:  # Account                                                      ETHChange                            GEM                            GOV                            SAI                            SIN                            SKR Name
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ------------------------------ ------------------------------ ------------------------------ ---------------------------
-RESULT:  0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.038972142000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #0 - Miner
-RESULT:  1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.038972142000000000           0.000000000000000000     1000000.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
+RESULT:  0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.038971886000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #0 - Miner
+RESULT:  1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.038971886000000000           0.000000000000000000     1000000.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
 RESULT:  2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #2
 RESULT:  3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #3
-RESULT:  4 0x2aee1609b2fa5442a9ad995078a6af06208a100b        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Gem - Token 'WETH' 'Wrapped Ether'
-RESULT:  5 0x5e0798d733fbbe85b6a92e95b896a9480afedc89        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pip
-RESULT:  6 0x64cab750c2a3151858c0a50e14ee676bf638ce85        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pep
-RESULT:  7 0x730c53ce7797caf1ac6539f99eb819638771670a        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pit
-RESULT:  8 0xfd44c0c1a49f8944c053939cc2dfea86def1c7f6        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Adm
-RESULT:  9 0x0b491019c90dbb9c4881cca51dcce5822a3418d9        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Gov - Token 'MKR' 'Maker'
+RESULT:  4 0x8725221991bd455a07992618566b6fd7d040503c        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Gem - Token 'WETH' 'Wrapped Ether'
+RESULT:  5 0x83d0550599618d360631edf35a69acc152e36a3b        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pip
+RESULT:  6 0x1f1b6121d97e04a0af03727dbc08ee71c539ed8e        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pep
+RESULT:  7 0x405d10c9e028efb0d804cb84f7f260e3701e3a4f        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pit
+RESULT:  8 0x48049f5d9700abc8a9c5fbeeaf4728f8cdfd2fa4        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Adm
+RESULT:  9 0x2402d412a1a06ea20fadad0661aa455b6b14bdde        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Gov - Token 'MKR' 'Maker'
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ------------------------------ ------------------------------ ------------------------------ ---------------------------
 RESULT:                                                                                     0.000000000000000000     1000000.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ------------------------------ ------------------------------ ------------------------------ ---------------------------
@@ -770,38 +770,38 @@ RESULT: PASS Deploy Gem, Gov, Pip, Pep, Pit, Adm - Pit
 RESULT: PASS Deploy Gem, Gov, Pip, Pep, Pit, Adm - Adm
 1
 > 
-RESULT: gemAddress=0x2aee1609b2fa5442a9ad995078a6af06208a100b status=0x1 Success gas=6000000 gasUsed=592931 costETH=0.001185862 costUSD=0.7250953199 @ ETH/USD=611.45 gasPrice=2 gwei block=50449 txIx=0 txId=0xb4694ec580be26e252888353e024d851672eadd81dfb25311dd993d55b033825 @ 1522617339 Sun, 01 Apr 2018 21:15:39 UTC
+RESULT: gemAddress=0x8725221991bd455a07992618566b6fd7d040503c status=0x1 Success gas=6000000 gasUsed=592931 costETH=0.001185862 costUSD=0.7250953199 @ ETH/USD=611.45 gasPrice=2 gwei block=56715 txIx=0 txId=0x10d3b063e8df33a301e231d68f7541666875205a5a423a9101a85c67a91c22c0 @ 1522630090 Mon, 02 Apr 2018 00:48:10 UTC
 undefined
 > 
-RESULT: govAddress=0x0b491019c90dbb9c4881cca51dcce5822a3418d9 status=0x1 Success gas=6000000 gasUsed=1034926 costETH=0.002069852 costUSD=1.2656110054 @ ETH/USD=611.45 gasPrice=2 gwei block=50449 txIx=1 txId=0xb0eab40fee6c9d9045b0fdd02e75cf097ddbf0dea7e0e5cf6c20be8903ce3f15 @ 1522617339 Sun, 01 Apr 2018 21:15:39 UTC
+RESULT: govAddress=0x2402d412a1a06ea20fadad0661aa455b6b14bdde status=0x1 Success gas=6000000 gasUsed=1034926 costETH=0.002069852 costUSD=1.2656110054 @ ETH/USD=611.45 gasPrice=2 gwei block=56715 txIx=1 txId=0x966ea4fe7a8b2e10eb6b6229ec499e60118bf7f07ff954b6ec9c5c9502a6d7fd @ 1522630090 Mon, 02 Apr 2018 00:48:10 UTC
 undefined
 > 
-RESULT: govAddress=0x0b491019c90dbb9c4881cca51dcce5822a3418d9 status=0x1 Success gas=400000 gasUsed=42696 costETH=0.000085392 costUSD=0.0522129384 @ ETH/USD=611.45 gasPrice=2 gwei block=50451 txIx=0 txId=0x39ccd4b6e7ca939f868b81d6fe4738ee7fe1b8c08e3c707976c6314d135a15b5 @ 1522617341 Sun, 01 Apr 2018 21:15:41 UTC
+RESULT: govAddress=0x2402d412a1a06ea20fadad0661aa455b6b14bdde status=0x1 Success gas=400000 gasUsed=42696 costETH=0.000085392 costUSD=0.0522129384 @ ETH/USD=611.45 gasPrice=2 gwei block=56717 txIx=0 txId=0x54c22bcac4cc3be03308597201ad02170434d122c9fd34cc618f15a0b8d5044c @ 1522630092 Mon, 02 Apr 2018 00:48:12 UTC
 undefined
 > 
-RESULT: govAddress=0x0b491019c90dbb9c4881cca51dcce5822a3418d9 status=0x1 Success gas=400000 gasUsed=66933 costETH=0.000133866 costUSD=0.0818523657 @ ETH/USD=611.45 gasPrice=2 gwei block=50451 txIx=1 txId=0x0dc7cace4de148197cf5f445d48a2e907ab1a73ada16e14d9954157f6738f69b @ 1522617341 Sun, 01 Apr 2018 21:15:41 UTC
+RESULT: govAddress=0x2402d412a1a06ea20fadad0661aa455b6b14bdde status=0x1 Success gas=400000 gasUsed=66933 costETH=0.000133866 costUSD=0.0818523657 @ ETH/USD=611.45 gasPrice=2 gwei block=56717 txIx=1 txId=0x2a3f66a3ba41d6fa21d35ccc2166907c36d2ee5d82970637cd23846ca8021adb @ 1522630092 Mon, 02 Apr 2018 00:48:12 UTC
 undefined
 > 
-RESULT: pipAddress=0x5e0798d733fbbe85b6a92e95b896a9480afedc89 status=0x1 Success gas=6000000 gasUsed=1157869 costETH=0.002315738 costUSD=1.4159580001 @ ETH/USD=611.45 gasPrice=2 gwei block=50449 txIx=2 txId=0x07398133f40043e5d2247f1d66cb102f25be7388f1aacd258f90c8b70e84c4bf @ 1522617339 Sun, 01 Apr 2018 21:15:39 UTC
+RESULT: pipAddress=0x83d0550599618d360631edf35a69acc152e36a3b status=0x1 Success gas=6000000 gasUsed=1157869 costETH=0.002315738 costUSD=1.4159580001 @ ETH/USD=611.45 gasPrice=2 gwei block=56715 txIx=2 txId=0x9251facb66a035ab808b4c2bdf6d0d3357a44d5672037236fa759e9a09c273fd @ 1522630090 Mon, 02 Apr 2018 00:48:10 UTC
 undefined
 > 
-RESULT: pepAddress=0x64cab750c2a3151858c0a50e14ee676bf638ce85 status=0x1 Success gas=6000000 gasUsed=1255233 costETH=0.002510466 costUSD=1.5350244357 @ ETH/USD=611.45 gasPrice=2 gwei block=50449 txIx=3 txId=0x86d5fb6b607a72639bc0c87490463e840df9f7aaf9330bd1dde9ca272fd299b3 @ 1522617339 Sun, 01 Apr 2018 21:15:39 UTC
+RESULT: pepAddress=0x1f1b6121d97e04a0af03727dbc08ee71c539ed8e status=0x1 Success gas=6000000 gasUsed=1255233 costETH=0.002510466 costUSD=1.5350244357 @ ETH/USD=611.45 gasPrice=2 gwei block=56715 txIx=3 txId=0x0f40c0f53c29d5d58dfdd4da627ff734de5079e6405b753ad86e116085043b41 @ 1522630090 Mon, 02 Apr 2018 00:48:10 UTC
 undefined
 > 
-RESULT: pitAddress=0x64cab750c2a3151858c0a50e14ee676bf638ce85 status=0x1 Success gas=6000000 gasUsed=149106 costETH=0.000298212 costUSD=0.1823417274 @ ETH/USD=611.45 gasPrice=2 gwei block=50449 txIx=4 txId=0xd756ecf1e65ae7acd31a1959a343f25127c6a56771ed45966a12b4a7aa6905bf @ 1522617339 Sun, 01 Apr 2018 21:15:39 UTC
+RESULT: pitAddress=0x1f1b6121d97e04a0af03727dbc08ee71c539ed8e status=0x1 Success gas=6000000 gasUsed=149106 costETH=0.000298212 costUSD=0.1823417274 @ ETH/USD=611.45 gasPrice=2 gwei block=56715 txIx=4 txId=0x25c63dfc1a8637f5fcbde233157112f69347ef427d91ea9834ede55d4302326f @ 1522630090 Mon, 02 Apr 2018 00:48:10 UTC
 undefined
 > 
-RESULT: admAddress=0xfd44c0c1a49f8944c053939cc2dfea86def1c7f6 status=0x1 Success gas=6000000 gasUsed=1350446 costETH=0.002700892 costUSD=1.6514604134 @ ETH/USD=611.45 gasPrice=2 gwei block=50449 txIx=5 txId=0x05bcfa2250c23b78466b71457726f32cf404acc15f46730e1e61dddc67db5816 @ 1522617339 Sun, 01 Apr 2018 21:15:39 UTC
+RESULT: admAddress=0x48049f5d9700abc8a9c5fbeeaf4728f8cdfd2fa4 status=0x1 Success gas=6000000 gasUsed=1350446 costETH=0.002700892 costUSD=1.6514604134 @ ETH/USD=611.45 gasPrice=2 gwei block=56715 txIx=5 txId=0x8130ae715b112b4000ef8e4152de27215f45b22f46f24f4dcf98575b44b0eb80 @ 1522630090 Mon, 02 Apr 2018 00:48:10 UTC
 undefined
 > 
-RESULT: addresses['adm']=0xfd44c0c1a49f8944c053939cc2dfea86def1c7f6
+RESULT: addresses['adm']=0x48049f5d9700abc8a9c5fbeeaf4728f8cdfd2fa4
 RESULT: adm.owner=0x0000000000000000000000000000000000000000
-RESULT: adm.authority=0xfd44c0c1a49f8944c053939cc2dfea86def1c7f6
+RESULT: adm.authority=0x48049f5d9700abc8a9c5fbeeaf4728f8cdfd2fa4
 RESULT: adm.GOV=0x0000000000000000000000000000000000000000
 RESULT: adm.IOU=0x0000000000000000000000000000000000000000
 RESULT: adm.hat=0x0000000000000000000000000000000000000000
 RESULT: adm.MAX_YAYS=0
-RESULT: LogSetOwner 0 #50449 {"owner":"0xa11aae29840fbb5c86e6fd4cf809eba183aef433"}
+RESULT: LogSetOwner 0 #56715 {"owner":"0xa11aae29840fbb5c86e6fd4cf809eba183aef433"}
 undefined
 > 
 RESULT: 
@@ -907,25 +907,25 @@ undefined
 > 
 RESULT:  # Account                                                      ETHChange                            GEM                            GOV                            SAI                            SIN                            SKR Name
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ------------------------------ ------------------------------ ------------------------------ ---------------------------
-RESULT:  0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.060070170000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #0 - Miner
-RESULT:  1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.060070170000000000           0.000000000000000000     1000000.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
+RESULT:  0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.060069786000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #0 - Miner
+RESULT:  1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.060069786000000000           0.000000000000000000     1000000.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
 RESULT:  2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #2
 RESULT:  3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #3
-RESULT:  4 0x2aee1609b2fa5442a9ad995078a6af06208a100b        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Gem - Token 'WETH' 'Wrapped Ether'
-RESULT:  5 0x5e0798d733fbbe85b6a92e95b896a9480afedc89        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pip
-RESULT:  6 0x64cab750c2a3151858c0a50e14ee676bf638ce85        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pep
-RESULT:  7 0x730c53ce7797caf1ac6539f99eb819638771670a        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pit
-RESULT:  8 0xfd44c0c1a49f8944c053939cc2dfea86def1c7f6        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Adm
-RESULT:  9 0x0b491019c90dbb9c4881cca51dcce5822a3418d9        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Gov - Token 'MKR' 'Maker'
-RESULT: 10 0xe4ccc93451c77073491802bc7aba63f7dcdfaaec        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Sai - Token 'DAI' 'Dai Stablecoin v1.0'
-RESULT: 11 0x5f6ca9eec1418a55891af65cf0e13e2e2d6b04ab        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Sin - Token 'SIN' 'SIN'
-RESULT: 12 0xbfc329cf8164922434a956ab072f6c36db83e0b5        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Skr - Token 'PETH' 'Pooled Ether'
-RESULT: 13 0x7fb341d4a15ac080a554f075f7cb3c19da10ca09        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Vox
-RESULT: 14 0x5517d50444cb6badfaaf046b658eb6bfcf312d56        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Tub
-RESULT: 15 0xb2012de1e1ea63bdfcc58888fceaca98c335b1f9        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Tap
-RESULT: 16 0xd509fdb45a6a28ea37ca70604ed9e458abf57b12        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Top
-RESULT: 17 0xd6e4035a04017492e99d7076068854b2c07814a8        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Mom
-RESULT: 18 0x6362fa81e81cbadb660deb3e04ea31bc9cbd5530        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Dad
+RESULT:  4 0x8725221991bd455a07992618566b6fd7d040503c        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Gem - Token 'WETH' 'Wrapped Ether'
+RESULT:  5 0x83d0550599618d360631edf35a69acc152e36a3b        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pip
+RESULT:  6 0x1f1b6121d97e04a0af03727dbc08ee71c539ed8e        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pep
+RESULT:  7 0x405d10c9e028efb0d804cb84f7f260e3701e3a4f        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pit
+RESULT:  8 0x48049f5d9700abc8a9c5fbeeaf4728f8cdfd2fa4        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Adm
+RESULT:  9 0x2402d412a1a06ea20fadad0661aa455b6b14bdde        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Gov - Token 'MKR' 'Maker'
+RESULT: 10 0xf8906c66293fa5831d908c5c488e883a44ed321c        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Sai - Token 'DAI' 'Dai Stablecoin v1.0'
+RESULT: 11 0x2cdc425d0445fbf1be07da20baa59852f1ad6f12        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Sin - Token 'SIN' 'SIN'
+RESULT: 12 0x71b3af1ed618aa237c3c4f0d80412b7db055a7af        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Skr - Token 'PETH' 'Pooled Ether'
+RESULT: 13 0xf32b337fa74fb1156c410ca7becfa938e81c9137        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Vox
+RESULT: 14 0xbb00d42a150bd4e4e81dfcfef8603b9b9e2017a9        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Tub
+RESULT: 15 0x4a5e1db7e98740b72ea38e8e9dd8d1adcf8843f3        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Tap
+RESULT: 16 0x3170ffb07d04adc8f2028cb93ac395a3a2571291        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Top
+RESULT: 17 0x5566b813007c790c25beb559f9f339debb446799        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Mom
+RESULT: 18 0x9abc1a65956b3933510fdde7091aa501695f7375        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Dad
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ------------------------------ ------------------------------ ------------------------------ ---------------------------
 RESULT:                                                                                     0.000000000000000000     1000000.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ------------------------------ ------------------------------ ------------------------------ ---------------------------
@@ -950,27 +950,27 @@ RESULT: PASS Init Fab - verifyParams
 RESULT: PASS Init Fab - configAuth
 1
 > 
-RESULT: initFab0_1Tx status=0x1 Success gas=4000000 gasUsed=2563780 costETH=0.00512756 costUSD=3.135246562 @ ETH/USD=611.45 gasPrice=2 gwei block=50454 txIx=0 txId=0xf9018537d91e65daf5a1c5af8537fc7de9ce7ca3e9ac48264c7ed5c219f067d9 @ 1522617344 Sun, 01 Apr 2018 21:15:44 UTC
+RESULT: initFab0_1Tx status=0x1 Success gas=4000000 gasUsed=2563780 costETH=0.00512756 costUSD=3.135246562 @ ETH/USD=611.45 gasPrice=2 gwei block=56720 txIx=0 txId=0xba9fdfb15be20fef8901c0806dab554883481f849400a4fd1d1e97cc11fec507 @ 1522630095 Mon, 02 Apr 2018 00:48:15 UTC
 undefined
 > 
-RESULT: initFab0_2Tx status=0x1 Success gas=4000000 gasUsed=3169812 costETH=0.006339624 costUSD=3.8763630948 @ ETH/USD=611.45 gasPrice=2 gwei block=50454 txIx=1 txId=0xd2e855b77d913f7038bacf351d96512fbf5a9a3aa618420671f686473c947833 @ 1522617344 Sun, 01 Apr 2018 21:15:44 UTC
+RESULT: initFab0_2Tx status=0x1 Success gas=4000000 gasUsed=3169812 costETH=0.006339624 costUSD=3.8763630948 @ ETH/USD=611.45 gasPrice=2 gwei block=56720 txIx=1 txId=0xefe064b7f9c265048a1ee959752d72e8002d13a43f421eae27a6046ddb89d309 @ 1522630095 Mon, 02 Apr 2018 00:48:15 UTC
 undefined
 > 
-RESULT: initFab0_3Tx status=0x1 Success gas=4000000 gasUsed=2318755 costETH=0.00463751 costUSD=2.8356054895 @ ETH/USD=611.45 gasPrice=2 gwei block=50454 txIx=2 txId=0x3fa62ca868dfc58bee0da30147dc48c1b1032070fc0462381047e3a2e90fb3d5 @ 1522617344 Sun, 01 Apr 2018 21:15:44 UTC
+RESULT: initFab0_3Tx status=0x1 Success gas=4000000 gasUsed=2318755 costETH=0.00463751 costUSD=2.8356054895 @ ETH/USD=611.45 gasPrice=2 gwei block=56720 txIx=2 txId=0x3ec6941cb2da50716e8de635cd31831d78a1749d8ba31d8bd1accdcd038ce0bc @ 1522630095 Mon, 02 Apr 2018 00:48:15 UTC
 undefined
 > 
-RESULT: initFab0_4Tx status=0x1 Success gas=4000000 gasUsed=121066 costETH=0.000242132 costUSD=0.1480516114 @ ETH/USD=611.45 gasPrice=2 gwei block=50454 txIx=3 txId=0xd9f1ee1f452e448f0fdbff603f25ab40aee169799928aad71473cae2dc7ba9c8 @ 1522617344 Sun, 01 Apr 2018 21:15:44 UTC
+RESULT: initFab0_4Tx status=0x1 Success gas=4000000 gasUsed=121066 costETH=0.000242132 costUSD=0.1480516114 @ ETH/USD=611.45 gasPrice=2 gwei block=56720 txIx=3 txId=0xc88a3026d7b16e833fe2a855a4b237367853092515922d21057090ba6dc5cb24 @ 1522630095 Mon, 02 Apr 2018 00:48:15 UTC
 undefined
 > 
-RESULT: initFab0_5Tx status=0x1 Success gas=4000000 gasUsed=56427 costETH=0.000112854 costUSD=0.0690045783 @ ETH/USD=611.45 gasPrice=2 gwei block=50454 txIx=4 txId=0xf7a632be0a8eb4ac7715c178d85b49236bb34cbe9e6ec262e665bfdf6d5ee413 @ 1522617344 Sun, 01 Apr 2018 21:15:44 UTC
+RESULT: initFab0_5Tx status=0x1 Success gas=4000000 gasUsed=56427 costETH=0.000112854 costUSD=0.0690045783 @ ETH/USD=611.45 gasPrice=2 gwei block=56720 txIx=4 txId=0xaf67a798670e3e7bbf7f16836cbb83ceae52682c72e47b7327ea12951052c41a @ 1522630095 Mon, 02 Apr 2018 00:48:15 UTC
 undefined
 > 
-RESULT: initFab0_6Tx status=0x1 Success gas=4000000 gasUsed=2319174 costETH=0.004638348 costUSD=2.8361178846 @ ETH/USD=611.45 gasPrice=2 gwei block=50454 txIx=5 txId=0xd9a6dfb2ea9cfd9661a9e5cd55c90f8d2d51e85c031d5547a056cd21bd0b625d @ 1522617344 Sun, 01 Apr 2018 21:15:44 UTC
+RESULT: initFab0_6Tx status=0x1 Success gas=4000000 gasUsed=2319110 costETH=0.00463822 costUSD=2.836039619 @ ETH/USD=611.45 gasPrice=2 gwei block=56720 txIx=5 txId=0x2f42ed7fefa56cfa5e8ea5b29e12ef3bd0e86723e4fd47031f1ee210dc4da193 @ 1522630095 Mon, 02 Apr 2018 00:48:15 UTC
 undefined
 > 
-RESULT: addresses['adm']=0xfd44c0c1a49f8944c053939cc2dfea86def1c7f6
+RESULT: addresses['adm']=0x48049f5d9700abc8a9c5fbeeaf4728f8cdfd2fa4
 RESULT: adm.owner=0x0000000000000000000000000000000000000000
-RESULT: adm.authority=0xfd44c0c1a49f8944c053939cc2dfea86def1c7f6
+RESULT: adm.authority=0x48049f5d9700abc8a9c5fbeeaf4728f8cdfd2fa4
 RESULT: adm.GOV=0x0000000000000000000000000000000000000000
 RESULT: adm.IOU=0x0000000000000000000000000000000000000000
 RESULT: adm.hat=0x0000000000000000000000000000000000000000
@@ -1010,25 +1010,25 @@ undefined
 > 
 RESULT:  # Account                                                      ETHChange                            GEM                            GOV                            SAI                            SIN                            SKR Name
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ------------------------------ ------------------------------ ------------------------------ ---------------------------
-RESULT:  0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.060538744000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #0 - Miner
-RESULT:  1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.060070170000000000           0.000000000000000000     1000000.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
-RESULT:  2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976     -100.000382850000000000          90.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000          10.000000000000000000 Account #2
+RESULT:  0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.060538232000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #0 - Miner
+RESULT:  1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.060069786000000000           0.000000000000000000     1000000.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
+RESULT:  2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976     -100.000382722000000000          90.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000          10.000000000000000000 Account #2
 RESULT:  3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0     -100.000085724000000000         100.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #3
-RESULT:  4 0x2aee1609b2fa5442a9ad995078a6af06208a100b      200.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Gem - Token 'WETH' 'Wrapped Ether'
-RESULT:  5 0x5e0798d733fbbe85b6a92e95b896a9480afedc89        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pip
-RESULT:  6 0x64cab750c2a3151858c0a50e14ee676bf638ce85        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pep
-RESULT:  7 0x730c53ce7797caf1ac6539f99eb819638771670a        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pit
-RESULT:  8 0xfd44c0c1a49f8944c053939cc2dfea86def1c7f6        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Adm
-RESULT:  9 0x0b491019c90dbb9c4881cca51dcce5822a3418d9        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Gov - Token 'MKR' 'Maker'
-RESULT: 10 0xe4ccc93451c77073491802bc7aba63f7dcdfaaec        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Sai - Token 'DAI' 'Dai Stablecoin v1.0'
-RESULT: 11 0x5f6ca9eec1418a55891af65cf0e13e2e2d6b04ab        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Sin - Token 'SIN' 'SIN'
-RESULT: 12 0xbfc329cf8164922434a956ab072f6c36db83e0b5        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Skr - Token 'PETH' 'Pooled Ether'
-RESULT: 13 0x7fb341d4a15ac080a554f075f7cb3c19da10ca09        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Vox
-RESULT: 14 0x5517d50444cb6badfaaf046b658eb6bfcf312d56        0.000000000000000000          10.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Tub
-RESULT: 15 0xb2012de1e1ea63bdfcc58888fceaca98c335b1f9        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Tap
-RESULT: 16 0xd509fdb45a6a28ea37ca70604ed9e458abf57b12        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Top
-RESULT: 17 0xd6e4035a04017492e99d7076068854b2c07814a8        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Mom
-RESULT: 18 0x6362fa81e81cbadb660deb3e04ea31bc9cbd5530        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Dad
+RESULT:  4 0x8725221991bd455a07992618566b6fd7d040503c      200.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Gem - Token 'WETH' 'Wrapped Ether'
+RESULT:  5 0x83d0550599618d360631edf35a69acc152e36a3b        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pip
+RESULT:  6 0x1f1b6121d97e04a0af03727dbc08ee71c539ed8e        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pep
+RESULT:  7 0x405d10c9e028efb0d804cb84f7f260e3701e3a4f        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pit
+RESULT:  8 0x48049f5d9700abc8a9c5fbeeaf4728f8cdfd2fa4        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Adm
+RESULT:  9 0x2402d412a1a06ea20fadad0661aa455b6b14bdde        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Gov - Token 'MKR' 'Maker'
+RESULT: 10 0xf8906c66293fa5831d908c5c488e883a44ed321c        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Sai - Token 'DAI' 'Dai Stablecoin v1.0'
+RESULT: 11 0x2cdc425d0445fbf1be07da20baa59852f1ad6f12        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Sin - Token 'SIN' 'SIN'
+RESULT: 12 0x71b3af1ed618aa237c3c4f0d80412b7db055a7af        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Skr - Token 'PETH' 'Pooled Ether'
+RESULT: 13 0xf32b337fa74fb1156c410ca7becfa938e81c9137        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Vox
+RESULT: 14 0xbb00d42a150bd4e4e81dfcfef8603b9b9e2017a9        0.000000000000000000          10.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Tub
+RESULT: 15 0x4a5e1db7e98740b72ea38e8e9dd8d1adcf8843f3        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Tap
+RESULT: 16 0x3170ffb07d04adc8f2028cb93ac395a3a2571291        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Top
+RESULT: 17 0x5566b813007c790c25beb559f9f339debb446799        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Mom
+RESULT: 18 0x9abc1a65956b3933510fdde7091aa501695f7375        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Dad
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ------------------------------ ------------------------------ ------------------------------ ---------------------------
 RESULT:                                                                                   200.000000000000000000     1000000.000000000000000000           0.000000000000000000           0.000000000000000000          10.000000000000000000
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ------------------------------ ------------------------------ ------------------------------ ---------------------------
@@ -1047,16 +1047,16 @@ RESULT: PASS Wrap Ethers - ac2 gem.approve(tub, 10 WETH)
 RESULT: PASS Wrap Ethers - ac3 tub.join(10 WETH)
 1
 > 
-RESULT: wrapEther0_1Tx status=0x1 Success gas=400000 gasUsed=42862 costETH=0.000085724 costUSD=0.0524159398 @ ETH/USD=611.45 gasPrice=2 gwei block=50460 txIx=0 txId=0xf5b28fa6c80a044b397a3092d06d2dd0fee7e50efe1ddd9f3f114a5f7713ed43 @ 1522617350 Sun, 01 Apr 2018 21:15:50 UTC
+RESULT: wrapEther0_1Tx status=0x1 Success gas=400000 gasUsed=42862 costETH=0.000085724 costUSD=0.0524159398 @ ETH/USD=611.45 gasPrice=2 gwei block=56726 txIx=1 txId=0xdfb7c5fa1a43c74f80d3ae44ae5e9ef2c17a523b8e18e0801cf0909eb0ad0c76 @ 1522630101 Mon, 02 Apr 2018 00:48:21 UTC
 undefined
 > 
-RESULT: wrapEther0_2Tx status=0x1 Success gas=400000 gasUsed=42862 costETH=0.000085724 costUSD=0.0524159398 @ ETH/USD=611.45 gasPrice=2 gwei block=50460 txIx=1 txId=0xb474acd9927deac741e15ebe34f583437b6b84126a4941a4e029d5b6b0b89bab @ 1522617350 Sun, 01 Apr 2018 21:15:50 UTC
+RESULT: wrapEther0_2Tx status=0x1 Success gas=400000 gasUsed=42862 costETH=0.000085724 costUSD=0.0524159398 @ ETH/USD=611.45 gasPrice=2 gwei block=56726 txIx=0 txId=0xe2d53d9821076c20f9a25465499e1c77ae4c61887e5b90d2609b0c7511a1785d @ 1522630101 Mon, 02 Apr 2018 00:48:21 UTC
 undefined
 > 
-RESULT: wrapEther0_3Tx status=0x1 Success gas=400000 gasUsed=45547 costETH=0.000091094 costUSD=0.0556994263 @ ETH/USD=611.45 gasPrice=2 gwei block=50462 txIx=0 txId=0x045f82ae34c455745047ef5e54f98264acca5b5cb4bc75fc472a585f9332b793 @ 1522617352 Sun, 01 Apr 2018 21:15:52 UTC
+RESULT: wrapEther0_3Tx status=0x1 Success gas=400000 gasUsed=45483 costETH=0.000090966 costUSD=0.0556211607 @ ETH/USD=611.45 gasPrice=2 gwei block=56728 txIx=0 txId=0xe42a17e220b6fe4219b6d5ff6d09f9fd1ed1138950a1c614a1a5eced812e25a9 @ 1522630103 Mon, 02 Apr 2018 00:48:23 UTC
 undefined
 > 
-RESULT: wrapEther0_4Tx status=0x1 Success gas=400000 gasUsed=103016 costETH=0.000206032 costUSD=0.1259782664 @ ETH/USD=611.45 gasPrice=2 gwei block=50464 txIx=0 txId=0x825424715a9974ced84fbdc14ede0b54b0382f71aba255ff19b0d8bda3bed4aa @ 1522617354 Sun, 01 Apr 2018 21:15:54 UTC
+RESULT: wrapEther0_4Tx status=0x1 Success gas=400000 gasUsed=103016 costETH=0.000206032 costUSD=0.1259782664 @ ETH/USD=611.45 gasPrice=2 gwei block=56730 txIx=0 txId=0xb6869fe06065a4c347ce5f518296bd691ede9940345f19e5034f711987953f8f @ 1522630105 Mon, 02 Apr 2018 00:48:25 UTC
 undefined
 > 
 undefined
@@ -1079,9 +1079,19 @@ undefined
 > 
 undefined
 > 
+undefined
+> 
 ... 
 undefined
 > 
+undefined
+> 
+undefined
+> 
+... 
+undefined
+> 
+RESULT: ask(ac2)=9.25809222624928220689460700822646927152773949814e+47
 undefined
 > 
 undefined
@@ -1091,25 +1101,25 @@ undefined
 > 
 RESULT:  # Account                                                      ETHChange                            GEM                            GOV                            SAI                            SIN                            SKR Name
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ------------------------------ ------------------------------ ------------------------------ ---------------------------
-RESULT:  0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.060777928000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #0 - Miner
-RESULT:  1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.060070170000000000           0.000000000000000000     1000000.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
-RESULT:  2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976     -100.000622034000000000          90.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000          10.000000000000000000 Account #2
+RESULT:  0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.061237124000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #0 - Miner
+RESULT:  1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.060069786000000000           0.000000000000000000     1000000.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
+RESULT:  2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976     -100.001081614000000000          90.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #2
 RESULT:  3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0     -100.000085724000000000         100.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #3
-RESULT:  4 0x2aee1609b2fa5442a9ad995078a6af06208a100b      200.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Gem - Token 'WETH' 'Wrapped Ether'
-RESULT:  5 0x5e0798d733fbbe85b6a92e95b896a9480afedc89        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pip
-RESULT:  6 0x64cab750c2a3151858c0a50e14ee676bf638ce85        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pep
-RESULT:  7 0x730c53ce7797caf1ac6539f99eb819638771670a        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pit
-RESULT:  8 0xfd44c0c1a49f8944c053939cc2dfea86def1c7f6        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Adm
-RESULT:  9 0x0b491019c90dbb9c4881cca51dcce5822a3418d9        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Gov - Token 'MKR' 'Maker'
-RESULT: 10 0xe4ccc93451c77073491802bc7aba63f7dcdfaaec        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Sai - Token 'DAI' 'Dai Stablecoin v1.0'
-RESULT: 11 0x5f6ca9eec1418a55891af65cf0e13e2e2d6b04ab        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Sin - Token 'SIN' 'SIN'
-RESULT: 12 0xbfc329cf8164922434a956ab072f6c36db83e0b5        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Skr - Token 'PETH' 'Pooled Ether'
-RESULT: 13 0x7fb341d4a15ac080a554f075f7cb3c19da10ca09        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Vox
-RESULT: 14 0x5517d50444cb6badfaaf046b658eb6bfcf312d56        0.000000000000000000          10.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Tub
-RESULT: 15 0xb2012de1e1ea63bdfcc58888fceaca98c335b1f9        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Tap
-RESULT: 16 0xd509fdb45a6a28ea37ca70604ed9e458abf57b12        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Top
-RESULT: 17 0xd6e4035a04017492e99d7076068854b2c07814a8        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Mom
-RESULT: 18 0x6362fa81e81cbadb660deb3e04ea31bc9cbd5530        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Dad
+RESULT:  4 0x8725221991bd455a07992618566b6fd7d040503c      200.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Gem - Token 'WETH' 'Wrapped Ether'
+RESULT:  5 0x83d0550599618d360631edf35a69acc152e36a3b        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pip
+RESULT:  6 0x1f1b6121d97e04a0af03727dbc08ee71c539ed8e        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pep
+RESULT:  7 0x405d10c9e028efb0d804cb84f7f260e3701e3a4f        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Pit
+RESULT:  8 0x48049f5d9700abc8a9c5fbeeaf4728f8cdfd2fa4        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Adm
+RESULT:  9 0x2402d412a1a06ea20fadad0661aa455b6b14bdde        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Gov - Token 'MKR' 'Maker'
+RESULT: 10 0xf8906c66293fa5831d908c5c488e883a44ed321c        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Sai - Token 'DAI' 'Dai Stablecoin v1.0'
+RESULT: 11 0x2cdc425d0445fbf1be07da20baa59852f1ad6f12        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Sin - Token 'SIN' 'SIN'
+RESULT: 12 0x71b3af1ed618aa237c3c4f0d80412b7db055a7af        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Skr - Token 'PETH' 'Pooled Ether'
+RESULT: 13 0xf32b337fa74fb1156c410ca7becfa938e81c9137        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Vox
+RESULT: 14 0xbb00d42a150bd4e4e81dfcfef8603b9b9e2017a9        0.000000000000000000          10.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000          10.000000000000000000 Tub
+RESULT: 15 0x4a5e1db7e98740b72ea38e8e9dd8d1adcf8843f3        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Tap
+RESULT: 16 0x3170ffb07d04adc8f2028cb93ac395a3a2571291        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Top
+RESULT: 17 0x5566b813007c790c25beb559f9f339debb446799        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Mom
+RESULT: 18 0x9abc1a65956b3933510fdde7091aa501695f7375        0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000           0.000000000000000000 Dad
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ------------------------------ ------------------------------ ------------------------------ ---------------------------
 RESULT:                                                                                   200.000000000000000000     1000000.000000000000000000           0.000000000000000000           0.000000000000000000          10.000000000000000000
 RESULT: -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ------------------------------ ------------------------------ ------------------------------ ---------------------------
@@ -1119,34 +1129,72 @@ undefined
 RESULT: PASS Open Cup - tub.open()
 1
 > 
-RESULT: FAIL Open Cup - tub.lock(0x1, 10 WETH)
+RESULT: PASS Open Cup - ac2 skr.approve(tub, 10 SKR)
+1
+> 
+RESULT: PASS Open Cup - tub.lock(0x1, 10 WETH)
+1
+> 
+RESULT: FAIL Open Cup - tub.draw(0x1, 10 WETH)
 0
 > 
-RESULT: openCup0_1Tx status=0x1 Success gas=400000 gasUsed=68159 costETH=0.000136318 costUSD=0.0833516411 @ ETH/USD=611.45 gasPrice=2 gwei block=50469 txIx=0 txId=0xc1f52cc820dced6ff5224d2a132003c80669afcd07ed150db5a1e4297ab735ba @ 1522617359 Sun, 01 Apr 2018 21:15:59 UTC
+RESULT: openCup0_1Tx status=0x1 Success gas=400000 gasUsed=68159 costETH=0.000136318 costUSD=0.0833516411 @ ETH/USD=611.45 gasPrice=2 gwei block=56735 txIx=0 txId=0xf73a2a1689a3ccef60228f53eda63c5e0a47881130d8309ad4fe5024e386ae8b @ 1522630110 Mon, 02 Apr 2018 00:48:30 UTC
 undefined
 > 
-RESULT: openCup0_2Tx status=0x0 Failure gas=400000 gasUsed=51433 costETH=0.000102866 costUSD=0.0628974157 @ ETH/USD=611.45 gasPrice=2 gwei block=50471 txIx=0 txId=0x7ce582f5ae5a720009062223ba2fc7264dccb78986ef8f7ebd1a20218f0af418 @ 1522617361 Sun, 01 Apr 2018 21:16:01 UTC
+RESULT: openCup0_2Tx status=0x1 Success gas=400000 gasUsed=45857 costETH=0.000091714 costUSD=0.0560785253 @ ETH/USD=611.45 gasPrice=2 gwei block=56735 txIx=1 txId=0xfcce8445a4baa419d93ba9913c81e4f3bd3ae7d6b152a82f05769ceb80615a83 @ 1522630110 Mon, 02 Apr 2018 00:48:30 UTC
 undefined
 > 
-RESULT: addresses['tub']=0x5517d50444cb6badfaaf046b658eb6bfcf312d56
-RESULT: adm.owner=0x0000000000000000000000000000000000000000
-RESULT: adm.authority=0x6362fa81e81cbadb660deb3e04ea31bc9cbd5530
-RESULT: LogSetAuthority 0 #50454 {"authority":"0x6362fa81e81cbadb660deb3e04ea31bc9cbd5530"}
-RESULT: LogSetOwner 0 #50454 {"owner":"0x6a6e351fa5ca91478464e00932859ecacc6c311d"}
-RESULT: LogSetOwner 1 #50454 {"owner":"0x20fc3da918317012590707db85be0ee23bd3fc4b"}
-RESULT: LogSetOwner 2 #50454 {"owner":"0x0000000000000000000000000000000000000000"}
-RESULT: LogNote 0 #50454 {"bar":"0x0000000000000000000000000000000000000000000000000000000000000000","fax":"0x7e74325f000000000000000000000000b2012de1e1ea63bdfcc58888fceaca98c335b1f9","foo":"0x000000000000000000000000b2012de1e1ea63bdfcc58888fceaca98c335b1f9","guy":"0x20fc3da918317012590707db85be0ee23bd3fc4b","sig":"0x7e74325f","wad":"0"}
-RESULT: LogNote 1 #50454 {"bar":"0x0000000000000000000000000000000000000000000000000000000000000000","fax":"0x92b0d72163617000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","foo":"0x6361700000000000000000000000000000000000000000000000000000000000","guy":"0x20fc3da918317012590707db85be0ee23bd3fc4b","sig":"0x92b0d721","wad":"0"}
-RESULT: LogNote 2 #50454 {"bar":"0x000000000000000000000000000000000000000004d8c55aefb8c05b5c000000","fax":"0x92b0d7216d61740000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004d8c55aefb8c05b5c000000","foo":"0x6d61740000000000000000000000000000000000000000000000000000000000","guy":"0x20fc3da918317012590707db85be0ee23bd3fc4b","sig":"0x92b0d721","wad":"0"}
-RESULT: LogNote 3 #50454 {"bar":"0x000000000000000000000000000000000000000003a6b6cebed490e8aa000000","fax":"0x92b0d7216178650000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003a6b6cebed490e8aa000000","foo":"0x6178650000000000000000000000000000000000000000000000000000000000","guy":"0x20fc3da918317012590707db85be0ee23bd3fc4b","sig":"0x92b0d721","wad":"0"}
-RESULT: LogNote 4 #50454 {"bar":"0x0000000000000000000000000000000000000000033b2e3ca2026060221a2191","fax":"0x92b0d72166656500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000033b2e3ca2026060221a2191","foo":"0x6665650000000000000000000000000000000000000000000000000000000000","guy":"0x20fc3da918317012590707db85be0ee23bd3fc4b","sig":"0x92b0d721","wad":"0"}
-RESULT: LogNote 5 #50454 {"bar":"0x0000000000000000000000000000000000000000033b2e3ca2026060221a2191","fax":"0x92b0d72166656500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000033b2e3ca2026060221a2191","foo":"0x6665650000000000000000000000000000000000000000000000000000000000","guy":"0x20fc3da918317012590707db85be0ee23bd3fc4b","sig":"0x92b0d721","wad":"0"}
-RESULT: LogNote 6 #50454 {"bar":"0x0000000000000000000000000000000000000000033b2e3c9fd0803ce8000000","fax":"0x92b0d72174617800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000033b2e3c9fd0803ce8000000","foo":"0x7461780000000000000000000000000000000000000000000000000000000000","guy":"0x20fc3da918317012590707db85be0ee23bd3fc4b","sig":"0x92b0d721","wad":"0"}
-RESULT: LogNote 7 #50454 {"bar":"0x0000000000000000000000000000000000000000033b2e3c9fd0803ce8000000","fax":"0x92b0d72174617800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000033b2e3c9fd0803ce8000000","foo":"0x7461780000000000000000000000000000000000000000000000000000000000","guy":"0x20fc3da918317012590707db85be0ee23bd3fc4b","sig":"0x92b0d721","wad":"0"}
-RESULT: LogNote 8 #50454 {"bar":"0x0000000000000000000000000000000000000000000000000de0b6b3a7640000","fax":"0x92b0d72167617000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000de0b6b3a7640000","foo":"0x6761700000000000000000000000000000000000000000000000000000000000","guy":"0x20fc3da918317012590707db85be0ee23bd3fc4b","sig":"0x92b0d721","wad":"0"}
-RESULT: LogNote 9 #50464 {"bar":"0x0000000000000000000000000000000000000000000000000000000000000000","fax":"0x049878f30000000000000000000000000000000000000000000000008ac7230489e80000","foo":"0x0000000000000000000000000000000000000000000000008ac7230489e80000","guy":"0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976","sig":"0x049878f3","wad":"0"}
-RESULT: LogNote 10 #50469 {"bar":"0x0000000000000000000000000000000000000000000000000000000000000000","fax":"0xfcfff16f","foo":"0x0000000000000000000000000000000000000000000000000000000000000000","guy":"0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976","sig":"0xfcfff16f","wad":"0"}
-RESULT: LogNewCup 0 #50469 {"cup":"0x0000000000000000000000000000000000000000000000000000000000000001","lad":"0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976"}
+RESULT: openCup0_3Tx status=0x1 Success gas=400000 gasUsed=55231 costETH=0.000110462 costUSD=0.0675419899 @ ETH/USD=611.45 gasPrice=2 gwei block=56737 txIx=0 txId=0x2258dd7d3ef58497160b5f70f970245c7694bfd8667f7925c083e35181a13b27 @ 1522630112 Mon, 02 Apr 2018 00:48:32 UTC
+undefined
+> 
+RESULT: openCup0_4Tx status=0x0 Failure gas=400000 gasUsed=180199 costETH=0.000360398 costUSD=0.2203653571 @ ETH/USD=611.45 gasPrice=2 gwei block=56739 txIx=0 txId=0x08c3221f1d0bf5cd45875b8d2f10bd8367f12c99a98af7d61206785afde0c998 @ 1522630114 Mon, 02 Apr 2018 00:48:34 UTC
+undefined
+> 
+RESULT: addresses['tub']=0xbb00d42a150bd4e4e81dfcfef8603b9b9e2017a9
+RESULT: tub.owner=0x0000000000000000000000000000000000000000
+RESULT: tub.authority=0x9abc1a65956b3933510fdde7091aa501695f7375
+RESULT: tub.sai=0xf8906c66293fa5831d908c5c488e883a44ed321c
+RESULT: tub.sin=0x2cdc425d0445fbf1be07da20baa59852f1ad6f12
+RESULT: tub.skr=0x71b3af1ed618aa237c3c4f0d80412b7db055a7af
+RESULT: tub.gem=0x8725221991bd455a07992618566b6fd7d040503c
+RESULT: tub.gov=0x2402d412a1a06ea20fadad0661aa455b6b14bdde
+RESULT: tub.vox=0xf32b337fa74fb1156c410ca7becfa938e81c9137
+RESULT: tub.pip=0x83d0550599618d360631edf35a69acc152e36a3b
+RESULT: tub.pep=0x1f1b6121d97e04a0af03727dbc08ee71c539ed8e
+RESULT: tub.tap=0x4a5e1db7e98740b72ea38e8e9dd8d1adcf8843f3
+RESULT: tub.pit=0x405d10c9e028efb0d804cb84f7f260e3701e3a4f
+RESULT: tub.axe=1.13e+27
+RESULT: tub.cap=0
+RESULT: tub.mat=1.5e+27
+RESULT: tub.tax=1e+27
+RESULT: tub.fee=1.000000000158153903837946257e+27
+RESULT: tub.gap=1000000000000000000
+RESULT: tub.off=false
+RESULT: tub.out=false
+RESULT: tub.fit=0
+RESULT: tub.rho=1522630095 Mon, 02 Apr 2018 00:48:15 UTC Mon, 02 Apr 2018 10:48:15 AEST
+RESULT: tub.rum=0
+RESULT: tub.air=10000000000000000000 10
+RESULT: tub.era=1522630118 Mon, 02 Apr 2018 00:48:38 UTC Mon, 02 Apr 2018 10:48:38 AEST
+RESULT: tub.cupi=1
+RESULT: tub.cups(1)=["0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976","10000000000000000000","0","0"]
+RESULT: LogSetAuthority 0 #56720 {"authority":"0x9abc1a65956b3933510fdde7091aa501695f7375"}
+RESULT: LogSetOwner 0 #56720 {"owner":"0x02249ebd4d2e220db0d58ba1356b9e6c695f550f"}
+RESULT: LogSetOwner 1 #56720 {"owner":"0x023d4e9fb8e838885931dea6da2bddb887e16121"}
+RESULT: LogSetOwner 2 #56720 {"owner":"0x0000000000000000000000000000000000000000"}
+RESULT: LogNote 0 #56720 {"bar":"0x0000000000000000000000000000000000000000000000000000000000000000","fax":"0x7e74325f0000000000000000000000004a5e1db7e98740b72ea38e8e9dd8d1adcf8843f3","foo":"0x0000000000000000000000004a5e1db7e98740b72ea38e8e9dd8d1adcf8843f3","guy":"0x023d4e9fb8e838885931dea6da2bddb887e16121","sig":"0x7e74325f","wad":"0"}
+RESULT: LogNote 1 #56720 {"bar":"0x0000000000000000000000000000000000000000000000000000000000000000","fax":"0x92b0d72163617000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","foo":"0x6361700000000000000000000000000000000000000000000000000000000000","guy":"0x023d4e9fb8e838885931dea6da2bddb887e16121","sig":"0x92b0d721","wad":"0"}
+RESULT: LogNote 2 #56720 {"bar":"0x000000000000000000000000000000000000000004d8c55aefb8c05b5c000000","fax":"0x92b0d7216d61740000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004d8c55aefb8c05b5c000000","foo":"0x6d61740000000000000000000000000000000000000000000000000000000000","guy":"0x023d4e9fb8e838885931dea6da2bddb887e16121","sig":"0x92b0d721","wad":"0"}
+RESULT: LogNote 3 #56720 {"bar":"0x000000000000000000000000000000000000000003a6b6cebed490e8aa000000","fax":"0x92b0d7216178650000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003a6b6cebed490e8aa000000","foo":"0x6178650000000000000000000000000000000000000000000000000000000000","guy":"0x023d4e9fb8e838885931dea6da2bddb887e16121","sig":"0x92b0d721","wad":"0"}
+RESULT: LogNote 4 #56720 {"bar":"0x0000000000000000000000000000000000000000033b2e3ca2026060221a2191","fax":"0x92b0d72166656500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000033b2e3ca2026060221a2191","foo":"0x6665650000000000000000000000000000000000000000000000000000000000","guy":"0x023d4e9fb8e838885931dea6da2bddb887e16121","sig":"0x92b0d721","wad":"0"}
+RESULT: LogNote 5 #56720 {"bar":"0x0000000000000000000000000000000000000000033b2e3ca2026060221a2191","fax":"0x92b0d72166656500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000033b2e3ca2026060221a2191","foo":"0x6665650000000000000000000000000000000000000000000000000000000000","guy":"0x023d4e9fb8e838885931dea6da2bddb887e16121","sig":"0x92b0d721","wad":"0"}
+RESULT: LogNote 6 #56720 {"bar":"0x0000000000000000000000000000000000000000033b2e3c9fd0803ce8000000","fax":"0x92b0d72174617800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000033b2e3c9fd0803ce8000000","foo":"0x7461780000000000000000000000000000000000000000000000000000000000","guy":"0x023d4e9fb8e838885931dea6da2bddb887e16121","sig":"0x92b0d721","wad":"0"}
+RESULT: LogNote 7 #56720 {"bar":"0x0000000000000000000000000000000000000000033b2e3c9fd0803ce8000000","fax":"0x92b0d72174617800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000033b2e3c9fd0803ce8000000","foo":"0x7461780000000000000000000000000000000000000000000000000000000000","guy":"0x023d4e9fb8e838885931dea6da2bddb887e16121","sig":"0x92b0d721","wad":"0"}
+RESULT: LogNote 8 #56720 {"bar":"0x0000000000000000000000000000000000000000000000000de0b6b3a7640000","fax":"0x92b0d72167617000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000de0b6b3a7640000","foo":"0x6761700000000000000000000000000000000000000000000000000000000000","guy":"0x023d4e9fb8e838885931dea6da2bddb887e16121","sig":"0x92b0d721","wad":"0"}
+RESULT: LogNote 9 #56730 {"bar":"0x0000000000000000000000000000000000000000000000000000000000000000","fax":"0x049878f30000000000000000000000000000000000000000000000008ac7230489e80000","foo":"0x0000000000000000000000000000000000000000000000008ac7230489e80000","guy":"0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976","sig":"0x049878f3","wad":"0"}
+RESULT: LogNote 10 #56735 {"bar":"0x0000000000000000000000000000000000000000000000000000000000000000","fax":"0xfcfff16f","foo":"0x0000000000000000000000000000000000000000000000000000000000000000","guy":"0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976","sig":"0xfcfff16f","wad":"0"}
+RESULT: LogNote 11 #56737 {"bar":"0x0000000000000000000000000000000000000000000000008ac7230489e80000","fax":"0xb3b77a5100000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000008ac7230489e80000","foo":"0x0000000000000000000000000000000000000000000000000000000000000001","guy":"0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976","sig":"0xb3b77a51","wad":"0"}
+RESULT: LogNewCup 0 #56735 {"cup":"0x0000000000000000000000000000000000000000000000000000000000000001","lad":"0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976"}
 undefined
 > 
 RESULT: 

@@ -29,6 +29,7 @@ rm -f $CONTRACTS/*.sol
 rmdir $CONTRACTS
 mkdir $CONTRACTS
 cp -v $SOURCEDIR/*.sol $CONTRACTS/
+cp -v modifiedContracts/*.sol $CONTRACTS/
 echo "" | tee -a $TEST1OUTPUT
 
 echo "---------- Modifications To Files ----------" | tee -a $TEST1OUTPUT
@@ -548,17 +549,26 @@ var openCup0Message = "Open Cup";
 // -----------------------------------------------------------------------------
 console.log("RESULT: ---------- " + openCup0Message + " ----------");
 var openCup0_1Tx = tub.open({from: account2, gas: 400000, gasPrice: defaultGasPrice});
+var openCup0_2Tx = skr.approve(tubAddress, new BigNumber(10).shift(18), {from: account2, gas: 400000, gasPrice: defaultGasPrice});
 while (txpool.status.pending > 0) {
 }
 var cup = "0x" + web3.padLeft(web3.toHex(1).substring(2), 64);
-var openCup0_2Tx = tub.lock(cup, new BigNumber(10).shift(18), {from: account2, gas: 400000, gasPrice: defaultGasPrice});
+var openCup0_3Tx = tub.lock(cup, new BigNumber(10).shift(18), {from: account2, gas: 400000, gasPrice: defaultGasPrice});
+while (txpool.status.pending > 0) {
+}
+console.log("RESULT: ask(ac2)=" + tub.ask(account2));
+var openCup0_4Tx = tub.draw(cup, new BigNumber(5).shift(18), {from: account2, gas: 400000, gasPrice: defaultGasPrice});
 while (txpool.status.pending > 0) {
 }
 printBalances();
 failIfTxStatusError(openCup0_1Tx, openCup0Message + " - tub.open()");
-failIfTxStatusError(openCup0_2Tx, openCup0Message + " - tub.lock(0x1, 10 WETH)");
+failIfTxStatusError(openCup0_2Tx, openCup0Message + " - ac2 skr.approve(tub, 10 SKR)");
+failIfTxStatusError(openCup0_3Tx, openCup0Message + " - tub.lock(0x1, 10 WETH)");
+failIfTxStatusError(openCup0_4Tx, openCup0Message + " - tub.draw(0x1, 10 WETH)");
 printTxData("openCup0_1Tx", openCup0_1Tx);
 printTxData("openCup0_2Tx", openCup0_2Tx);
+printTxData("openCup0_3Tx", openCup0_3Tx);
+printTxData("openCup0_4Tx", openCup0_4Tx);
 printTubContractDetails();
 console.log("RESULT: ");
 
