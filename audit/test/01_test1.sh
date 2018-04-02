@@ -460,7 +460,8 @@ var initFab0_2Tx = daiFab.makeVoxTub(gemAddress, govAddress, pipAddress, pepAddr
 var initFab0_3Tx = daiFab.makeTapTop({from: contractOwnerAccount, gas: 4000000, gasPrice: defaultGasPrice});
 var initFab0_4Tx = daiFab.configParams({from: contractOwnerAccount, gas: 4000000, gasPrice: defaultGasPrice});
 var initFab0_5Tx = daiFab.verifyParams({from: contractOwnerAccount, gas: 4000000, gasPrice: defaultGasPrice});
-var initFab0_6Tx = daiFab.configAuth(admAddress, {from: contractOwnerAccount, gas: 4000000, gasPrice: defaultGasPrice});
+// var initFab0_6Tx = daiFab.configAuth(admAddress, {from: contractOwnerAccount, gas: 4000000, gasPrice: defaultGasPrice});
+var initFab0_6Tx = daiFab.configAuth(contractOwnerAccount, {from: contractOwnerAccount, gas: 4000000, gasPrice: defaultGasPrice});
 while (txpool.status.pending > 0) {
 }
 var saiAddress = daiFab.sai();
@@ -513,6 +514,8 @@ printTxData("initFab0_4Tx", initFab0_4Tx);
 printTxData("initFab0_5Tx", initFab0_5Tx);
 printTxData("initFab0_6Tx", initFab0_6Tx);
 printAdmContractDetails();
+printPipContractDetails();
+printMomContractDetails();
 console.log("RESULT: ");
 
 
@@ -548,28 +551,37 @@ console.log("RESULT: ");
 var openCup0Message = "Open Cup";
 // -----------------------------------------------------------------------------
 console.log("RESULT: ---------- " + openCup0Message + " ----------");
-var openCup0_1Tx = tub.open({from: account2, gas: 400000, gasPrice: defaultGasPrice});
-var openCup0_2Tx = skr.approve(tubAddress, new BigNumber(10).shift(18), {from: account2, gas: 400000, gasPrice: defaultGasPrice});
+var openCup0_1Tx = mom.setCap(new BigNumber(1000000).shift(18), {from: contractOwnerAccount, gas: 400000, gasPrice: defaultGasPrice});
+// 382872500000000000000 = 382.725
+var openCup0_2Tx = pip.poke("0x000000000000000000000000000000000000000000000014c16c5e345dbf4000", {from: contractOwnerAccount, gas: 400000, gasPrice: defaultGasPrice});
+var openCup0_3Tx = tub.open({from: account2, gas: 400000, gasPrice: defaultGasPrice});
+var openCup0_4Tx = skr.approve(tubAddress, new BigNumber(10).shift(18), {from: account2, gas: 400000, gasPrice: defaultGasPrice});
 while (txpool.status.pending > 0) {
 }
 var cup = "0x" + web3.padLeft(web3.toHex(1).substring(2), 64);
-var openCup0_3Tx = tub.lock(cup, new BigNumber(10).shift(18), {from: account2, gas: 400000, gasPrice: defaultGasPrice});
+var openCup0_5Tx = tub.lock(cup, new BigNumber(10).shift(18), {from: account2, gas: 400000, gasPrice: defaultGasPrice});
 while (txpool.status.pending > 0) {
 }
 console.log("RESULT: ask(ac2)=" + tub.ask(account2));
-var openCup0_4Tx = tub.draw(cup, new BigNumber(5).shift(18), {from: account2, gas: 400000, gasPrice: defaultGasPrice});
+var openCup0_6Tx = tub.draw(cup, new BigNumber("2551.5").shift(18), {from: account2, gas: 400000, gasPrice: defaultGasPrice});
 while (txpool.status.pending > 0) {
 }
 printBalances();
-failIfTxStatusError(openCup0_1Tx, openCup0Message + " - tub.open()");
-failIfTxStatusError(openCup0_2Tx, openCup0Message + " - ac2 skr.approve(tub, 10 SKR)");
-failIfTxStatusError(openCup0_3Tx, openCup0Message + " - tub.lock(0x1, 10 WETH)");
-failIfTxStatusError(openCup0_4Tx, openCup0Message + " - tub.draw(0x1, 10 WETH)");
+failIfTxStatusError(openCup0_1Tx, openCup0Message + " - owner mom.setCap(1,000,000 DAI)");
+failIfTxStatusError(openCup0_2Tx, openCup0Message + " - owner pip.poke(382.725)");
+failIfTxStatusError(openCup0_3Tx, openCup0Message + " - ac2 tub.open()");
+failIfTxStatusError(openCup0_4Tx, openCup0Message + " - ac2 skr.approve(tub, 10 SKR)");
+failIfTxStatusError(openCup0_5Tx, openCup0Message + " - ac2 tub.lock(0x1, 10 WETH)");
+failIfTxStatusError(openCup0_6Tx, openCup0Message + " - ac2 tub.draw(0x1, 2,551.5 DAI)");
 printTxData("openCup0_1Tx", openCup0_1Tx);
 printTxData("openCup0_2Tx", openCup0_2Tx);
 printTxData("openCup0_3Tx", openCup0_3Tx);
 printTxData("openCup0_4Tx", openCup0_4Tx);
+printTxData("openCup0_5Tx", openCup0_5Tx);
+printTxData("openCup0_6Tx", openCup0_6Tx);
 printTubContractDetails();
+printPipContractDetails();
+printMomContractDetails();
 console.log("RESULT: ");
 
 

@@ -850,6 +850,10 @@ contract SaiTubEvents {
 }
 
 contract SaiTub is DSThing, SaiTubEvents {
+    // BK Logging
+    event LogBool(bytes32 label, bool value);
+    event LogUint256(bytes32 label, uint256 value);
+
     DSToken  public  sai;  // Stablecoin
     DSToken  public  sin;  // Debt (negative sai)
 
@@ -1059,9 +1063,20 @@ contract SaiTub is DSThing, SaiTubEvents {
     }
     // Returns true if cup is well-collateralized
     function safe(bytes32 cup) public returns (bool) {
+        LogUint256("safe.tag()", tag());
+        LogUint256("safe.ink(cup)", ink(cup));
+        LogUint256("safe.per()", per());
+        LogUint256("safe.pip.read()", uint(pip.read()));
         var pro = rmul(tag(), ink(cup));
+        LogUint256("safe.pro", pro);
+        LogUint256("safe.vox.par()", vox.par());
+        LogUint256("safe.tab(cup)", tab(cup));
         var con = rmul(vox.par(), tab(cup));
+        LogUint256("safe.con", con);
+        LogUint256("safe.mat", mat);
         var min = rmul(con, mat);
+        LogUint256("safe.min", min);
+        LogBool("safe.(pro >= min)", pro >= min);
         return pro >= min;
     }
 
@@ -1097,15 +1112,26 @@ contract SaiTub is DSThing, SaiTubEvents {
 
     function draw(bytes32 cup, uint wad) public note {
         require(!off);
+        // BK DEBUG Cage flag
+        LogBool("draw.off", off);
         require(msg.sender == cups[cup].lad);
+        LogUint256("draw.wad", wad);
+        LogUint256("draw.chi()", chi());
+        LogUint256("draw.rdiv(wad, chi())", rdiv(wad, chi()));
         require(rdiv(wad, chi()) > 0);
 
+        LogUint256("draw.cups[cup].art before", cups[cup].art);
         cups[cup].art = add(cups[cup].art, rdiv(wad, chi()));
+        LogUint256("draw.cups[cup].art after", cups[cup].art);
+        LogUint256("draw.rum before", rum);
         rum = add(rum, rdiv(wad, chi()));
-
+        LogUint256("draw.rum after", rum);
+        LogUint256("draw.rhi()", rhi());
+        LogUint256("draw.rdiv(wad, rhi())", rdiv(wad, rhi()));
+        LogUint256("draw.cups[cup].ire before", cups[cup].ire);
         cups[cup].ire = add(cups[cup].ire, rdiv(wad, rhi()));
+        LogUint256("draw.cups[cup].ire after", cups[cup].ire);
         sai.mint(cups[cup].lad, wad);
-
         require(safe(cup));
         require(sai.totalSupply() <= cap);
     }
@@ -1703,7 +1729,8 @@ contract DaiFab is DSAuth {
         top.setAuthority(authority);
         top.setOwner(0);
         mom.setAuthority(authority);
-        mom.setOwner(0);
+        // mom.setOwner(0);
+        mom.setOwner(msg.sender);
 
         dad.permit(top, tub, S("cage(uint256,uint256)"));
         dad.permit(top, tub, S("flow()"));

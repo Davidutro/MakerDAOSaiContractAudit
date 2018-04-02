@@ -381,28 +381,111 @@ function printAdmContractDetails() {
     var etchEvents = contract.Etch({}, { fromBlock: fromBlock[key], toBlock: latestBlock });
     i = 0;
     etchEvents.watch(function (error, result) {
-      console.log("RESULT: Etch " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
+      console.log("RESULT: adm.Etch " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
     });
     etchEvents.stopWatching();
 
     var logSetAuthorityEvents = contract.LogSetAuthority({}, { fromBlock: fromBlock[key], toBlock: latestBlock });
     i = 0;
     logSetAuthorityEvents.watch(function (error, result) {
-      console.log("RESULT: LogSetAuthority " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
+      console.log("RESULT: adm.LogSetAuthority " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
     });
     logSetAuthorityEvents.stopWatching();
 
     var logSetOwnerEvents = contract.LogSetOwner({}, { fromBlock: fromBlock[key], toBlock: latestBlock });
     i = 0;
     logSetOwnerEvents.watch(function (error, result) {
-      console.log("RESULT: LogSetOwner " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
+      console.log("RESULT: adm.LogSetOwner " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
     });
     logSetOwnerEvents.stopWatching();
 
     var logNoteEvents = contract.LogNote({}, { fromBlock: fromBlock[key], toBlock: latestBlock });
     i = 0;
     logNoteEvents.watch(function (error, result) {
-      console.log("RESULT: LogNote " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
+      console.log("RESULT: adm.LogNote " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
+    });
+    logNoteEvents.stopWatching();
+
+    fromBlock[key] = latestBlock + 1;
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// Pip
+// -----------------------------------------------------------------------------
+function printPipContractDetails() {
+  var key = 'pip';
+  console.log("RESULT: addresses['" + key + "']=" + addresses[key]);
+  // console.log("RESULT: abis['" + key + "']=" + JSON.stringify(abis[key]));
+  if (addresses[key] != null && abis[key] != null) {
+    var contract = eth.contract(abis[key]).at(addresses[key]);
+    console.log("RESULT: pip.owner=" + contract.owner());
+    console.log("RESULT: pip.authority=" + contract.authority());
+    console.log("RESULT: pip.peek=" + JSON.stringify(contract.peek()));
+
+    var latestBlock = eth.blockNumber;
+    var i;
+
+    var logSetAuthorityEvents = contract.LogSetAuthority({}, { fromBlock: fromBlock[key], toBlock: latestBlock });
+    i = 0;
+    logSetAuthorityEvents.watch(function (error, result) {
+      console.log("RESULT: pip.LogSetAuthority " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
+    });
+    logSetAuthorityEvents.stopWatching();
+
+    var logSetOwnerEvents = contract.LogSetOwner({}, { fromBlock: fromBlock[key], toBlock: latestBlock });
+    i = 0;
+    logSetOwnerEvents.watch(function (error, result) {
+      console.log("RESULT: pip.LogSetOwner " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
+    });
+    logSetOwnerEvents.stopWatching();
+
+    var logNoteEvents = contract.LogNote({}, { fromBlock: fromBlock[key], toBlock: latestBlock });
+    i = 0;
+    logNoteEvents.watch(function (error, result) {
+      console.log("RESULT: pip.LogNote " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
+    });
+    logNoteEvents.stopWatching();
+
+    fromBlock[key] = latestBlock + 1;
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// Mom
+// -----------------------------------------------------------------------------
+function printMomContractDetails() {
+  var key = 'mom';
+  console.log("RESULT: addresses['" + key + "']=" + addresses[key]);
+  // console.log("RESULT: abis['" + key + "']=" + JSON.stringify(abis[key]));
+  if (addresses[key] != null && abis[key] != null) {
+    var contract = eth.contract(abis[key]).at(addresses[key]);
+    console.log("RESULT: mom.owner=" + contract.owner());
+    console.log("RESULT: mom.authority=" + contract.authority());
+
+    var latestBlock = eth.blockNumber;
+    var i;
+
+    var logSetAuthorityEvents = contract.LogSetAuthority({}, { fromBlock: fromBlock[key], toBlock: latestBlock });
+    i = 0;
+    logSetAuthorityEvents.watch(function (error, result) {
+      console.log("RESULT: mom.LogSetAuthority " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
+    });
+    logSetAuthorityEvents.stopWatching();
+
+    var logSetOwnerEvents = contract.LogSetOwner({}, { fromBlock: fromBlock[key], toBlock: latestBlock });
+    i = 0;
+    logSetOwnerEvents.watch(function (error, result) {
+      console.log("RESULT: mom.LogSetOwner " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
+    });
+    logSetOwnerEvents.stopWatching();
+
+    var logNoteEvents = contract.LogNote({}, { fromBlock: fromBlock[key], toBlock: latestBlock });
+    i = 0;
+    logNoteEvents.watch(function (error, result) {
+      console.log("RESULT: mom.LogNote " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
     });
     logNoteEvents.stopWatching();
 
@@ -468,30 +551,44 @@ function printTubContractDetails() {
     var logSetAuthorityEvents = contract.LogSetAuthority({}, { fromBlock: fromBlock[key], toBlock: latestBlock });
     i = 0;
     logSetAuthorityEvents.watch(function (error, result) {
-      console.log("RESULT: LogSetAuthority " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
+      console.log("RESULT: tub.LogSetAuthority " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
     });
     logSetAuthorityEvents.stopWatching();
 
     var logSetOwnerEvents = contract.LogSetOwner({}, { fromBlock: fromBlock[key], toBlock: latestBlock });
     i = 0;
     logSetOwnerEvents.watch(function (error, result) {
-      console.log("RESULT: LogSetOwner " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
+      console.log("RESULT: tub.LogSetOwner " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
     });
     logSetOwnerEvents.stopWatching();
 
     var logNoteEvents = contract.LogNote({}, { fromBlock: fromBlock[key], toBlock: latestBlock });
     i = 0;
     logNoteEvents.watch(function (error, result) {
-      console.log("RESULT: LogNote " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
+      console.log("RESULT: tub.LogNote " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
     });
     logNoteEvents.stopWatching();
 
     var logNewCupEvents = contract.LogNewCup({}, { fromBlock: fromBlock[key], toBlock: latestBlock });
     i = 0;
     logNewCupEvents.watch(function (error, result) {
-      console.log("RESULT: LogNewCup " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
+      console.log("RESULT: tub.LogNewCup " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
     });
     logNewCupEvents.stopWatching();
+
+    var logUint256Events = contract.LogUint256({}, { fromBlock: fromBlock[key], toBlock: latestBlock });
+    i = 0;
+    logUint256Events.watch(function (error, result) {
+      console.log("RESULT: tub.LogUint256 " + i++ + " #" + result.blockNumber + " " + web3.toAscii(result.args.label) + "=" + result.args.value + " " + result.args.value.shift(-18));
+    });
+    logUint256Events.stopWatching();
+
+    var logBoolEvents = contract.LogBool({}, { fromBlock: fromBlock[key], toBlock: latestBlock });
+    i = 0;
+    logBoolEvents.watch(function (error, result) {
+      console.log("RESULT: tub.LogBool " + i++ + " #" + result.blockNumber + " " + web3.toAscii(result.args.label) + "=" + result.args.value);
+    });
+    logBoolEvents.stopWatching();
 
     fromBlock[key] = latestBlock + 1;
   }
