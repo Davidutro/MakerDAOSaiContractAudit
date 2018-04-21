@@ -4,8 +4,10 @@
 
 * [Contracts And Objects](#contracts-and-objects)
 * [Notes](#notes)
+* [Vox: Target Price Feed](#vox-target-price-feed)
 * [Tub: Store of Collateralised Debt Position](#tub-store-of-collateralised-debt-position)
 
+<br />
 
 ### Contracts And Objects
 
@@ -39,6 +41,18 @@
 Note:
 * 0.9999988 ^ (24 * 60 * 60) = 0.901513679582627 ~ 10% decrease per day
 * 1.0000011 ^ (24 * 60 * 60) = 1.099702784876423 ~ 10% increase per day
+
+<br />
+
+### Vox: Target Price Feed
+
+* `uint256` _par: 
+* `uint256`  _way:
+* `uint256` fix:
+* `uint256` how:
+* `uint256` tau:
+* `era()`: 
+* 
 
 <br />
 

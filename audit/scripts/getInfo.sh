@@ -67,9 +67,9 @@ for (var i = saiTub.cupi() - 20; i < saiTub.cupi(); i++) {
 }
 
 
-EOF
+// EOF
 
-exit;
+// exit;
 
 loadScript("../deployed-contracts/WETH9Gem-0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2.js");
 loadScript("../deployed-contracts/DSTokenGov-0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2.js");
