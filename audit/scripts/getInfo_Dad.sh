@@ -18,6 +18,9 @@ console.log("RESULT: dadAddress=" + getAddressName(dsGuardDadAddress));
 console.log("RESULT: dad.owner=" + getAddressName(dsGuardDad.owner()));
 console.log("RESULT: dad.authority=" + getAddressName(dsGuardDad.authority()));
 
+console.log("RESULT: TEST=" + getAddressName("0xf723251896454458d4a78f1026d0155f23e853b9"));
+
+
 var latestBlock = eth.blockNumber;
 var fromBlockPip = parseInt(latestBlock) - 2000000;
 // var fromBlockPip = 4755932;
@@ -25,7 +28,7 @@ var fromBlockPip = parseInt(latestBlock) - 2000000;
 var logSetAuthorityEvents = dsGuardDad.LogSetAuthority({}, { fromBlock: fromBlockPip, toBlock: latestBlock });
 i = 0;
 logSetAuthorityEvents.watch(function (error, result) {
-  console.log("RESULT: dad.LogSetAuthority " + i++ + " #" + result.blockNumber + " " + JSON.stringify(result.args));
+  console.log("RESULT: dad.LogSetAuthority " + i++ + " #" + result.blockNumber + " authority=" + getAddressName(result.args.authority));
 });
 logSetAuthorityEvents.stopWatching();
 

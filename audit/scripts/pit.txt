@@ -1,0 +1,5 @@
+---------- State ----------
+eth.blockNumber=5492718
+eth.block.timestamp=Tue, 24 Apr 2018 02:41:37 AEST
+---------- Pit ----------
+pitAddress=pit:0x69076e44a9C70a67D5b79d95795Aba299083c275

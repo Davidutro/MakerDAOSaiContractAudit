@@ -22,27 +22,109 @@ addSig("setPip(address)");
 addSig("setPep(address)");
 addSig("setVox(address)");
 
+// Pep
+addSig("set(address)");
+addSig("set(bytes12,address)");
+addSig("setMin(uint96)");
+addSig("setNext(bytes12)");
+addSig("unset(bytes12)");
+addSig("unset(address)");
+addSig("poke()");
+addSig("poke(bytes32)");
+addSig("void()");
+addSig("setVox(address)");
+addSig("post(uint128,uint32,address)");
+
+// Redeemer
+addSig("stop()");
+addSig("start()");
+
+// Tap
+addSig("heal()");
+addSig("bust(uint256)");
+addSig("boom(uint256)");
+addSig("cage(uint256)");
+addSig("cash(uint256)");
+addSig("mock(uint256)");
+addSig("vent()");
+
+// Mom
+addSig("setCap(uint256)");
+addSig("setMat(uint256)");
+addSig("setTax(uint256)");
+addSig("setFee(uint256)");
+addSig("setAxe(uint256)");
+addSig("setTubGap(uint256)");
+addSig("setPip(address)");
+addSig("setPep(address)");
+addSig("setVox(address)");
+addSig("setTapGap(uint256)");
+addSig("setWay(uint256)");
+addSig("setHow(uint256)");
 
 var addressNames = {};
+var nameAddresses = {};
 
 function addAddressNames(address, name) {
   var a = address.toLowerCase();
   addressNames[a] = name;
+  nameAddresses[name] = a;
 }
 
 function getAddressName(address) {
   var a = address.toLowerCase();
   var n = addressNames[a];
   if (n !== undefined) {
-    return n + " (" + address + ")";
+    return n + ":" + address;
   } else {
     return address;
+  }
+}
+
+function getNameFromAddress(address) {
+  var a = address.toLowerCase();
+  var n = addressNames[a];
+  if (n !== undefined) {
+    return address;
+  } else {
+    return "";
+  }
+}
+
+function getAddressFromName(name) {
+  var a = nameAddresses[name];
+  if (a !== undefined) {
+    return a;
+  } else {
+    return "";
   }
 }
 
 // Additional list
 addAddressNames("0x01C1103d765f62a0D909499d7b615C382Cdb072d", "dadFab");
 addAddressNames("0xF07674F6AC6632e253C291B694f9C2e2ED69eBBB", "fab");
+addAddressNames("0x642AE78FAfBB8032Da552D619aD43F1D81E4DD7C", "redeemer");
+addAddressNames("0x347e94e12c623d7b9d51b3f143ff42b73d619773", "spell");
+
+var pipPriceFeeds = [
+  "0x137fdd00e9a866631d8daf1a2116fb8df1ed07a7", "0x20ed77585be1b2bfd6056c64aebad41341e35907", "0x0d0ca466b85bae24ad9680840de07b094799b99f",
+  "0x5e5430b97b4797cbc7adba329d7740fb31a09a11", "0x4a87875774799e2d3f15733bdab511092057d222", "0xbe4a09d4661f631f7e13aa2d5719efc476fb211c",
+  "0xf63a899daf5f486131600ea31cbdd55c186b2e8b", "0xe3774af455602c5a0eacc1b0f93e3ce0f65236ce", "0x7b01f2e680eeb3c7aac02eb3e47bb5ea9a555e12",
+  "0xda4cc8c36e6abef5d309e9fc3ae0209cabd078c0", "0xab6f43607f6551cdf96b95b90b44a0b7445e8934", "0xae79b12205d8d35720fff4b89584e986ccd7607a",
+  "0x222eddf60e3af681dc4cf4290f95efa78237ba4a", "0xf723251896454458d4a78f1026d0155f23e853b9"
+];
+var iPipPriceFeeds = 0;
+pipPriceFeeds.forEach(function (e) {
+  iPipPriceFeeds++;
+  addAddressNames(e, "pipPriceFeed-" + iPipPriceFeeds);
+});
+
+var pepPriceFeeds = ["0x8a4774fe82c63484afef97ca8d89a6ea5e21f973", "0xc442f165d9cd3ef30c555742cfb20897040ff72a", "0x712539f3491ef4dcf99f4a9b3cacd695631407cd"];
+var iPepPriceFeeds = 0;
+pepPriceFeeds.forEach(function (e) {
+  iPepPriceFeeds++;
+  addAddressNames(e, "pepPriceFeed-" + iPepPriceFeeds);
+});
 
 // Original list
 addAddressNames("0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2", "gem");
