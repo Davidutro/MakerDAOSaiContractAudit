@@ -62,6 +62,21 @@ addSig("setTapGap(uint256)");
 addSig("setWay(uint256)");
 addSig("setHow(uint256)");
 
+// Tub
+addSig("turn(address)");
+addSig("join(uint256)");
+addSig("exit(uint256)");
+addSig("drip()");
+addSig("open()");
+addSig("give(bytes32,address)");
+addSig("lock(bytes32,uint256)");
+addSig("free(bytes32,uint256)");
+addSig("draw(bytes32,uint256)");
+addSig("wipe(bytes32,uint256)");
+addSig("shut(bytes32)");
+addSig("bite(bytes32)");
+
+
 var addressNames = {};
 var nameAddresses = {};
 
