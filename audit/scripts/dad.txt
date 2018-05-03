@@ -1,11 +1,10 @@
 ---------- State ----------
-eth.blockNumber=5480309
-eth.block.timestamp=Sat, 21 Apr 2018 23:55:22 AEST
+eth.blockNumber=5547711
+eth.block.timestamp=Thu, 03 May 2018 16:29:50 AEST
 ---------- Dad ----------
 dadAddress=dad:0x315cBb88168396D12e1a255f9Cb935408fe80710
 dad.owner=0x0000000000000000000000000000000000000000
 dad.authority=0x0000000000000000000000000000000000000000
-TEST=pipPriceFeed-14:0xf723251896454458d4a78f1026d0155f23e853b9
 dad.LogSetOwner 0 #4752020 owner=dadFab:0x01c1103d765f62a0d909499d7b615c382cdb072d
 dad.LogSetOwner 1 #4752020 owner=fab:0xf07674f6ac6632e253c291b694f9c2e2ed69ebbb
 dad.LogSetOwner 2 #4752020 owner=0x0000000000000000000000000000000000000000
