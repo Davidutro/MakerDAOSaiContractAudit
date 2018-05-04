@@ -20,12 +20,15 @@ Repository https://github.com/dapphub/ds-thing/blob/ea63fd311d3a6018401eb2ef84c9
 // distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND (express or implied).
 
+// BK Ok
 pragma solidity ^0.4.8;
 
+// BK Next 3 Ok
 import 'ds-auth/auth.sol';
 import 'ds-note/note.sol';
 import 'ds-math/math.sol';
 
+// BK Ok
 contract DSThing is DSAuth, DSNote, DSMath {
 }
 

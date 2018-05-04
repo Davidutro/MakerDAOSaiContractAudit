@@ -26,15 +26,20 @@ Repository https://github.com/dapphub/ds-thing/blob/4c86a534b2cdaf7c7a8564dfd857
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+// BK Ok
 pragma solidity ^0.4.13;
 
+// BK Next 3 Ok
 import 'ds-auth/auth.sol';
 import 'ds-note/note.sol';
 import 'ds-math/math.sol';
 
+// BK Ok
 contract DSThing is DSAuth, DSNote, DSMath {
 
+    // BK Ok - Internal pure function
     function S(string s) internal pure returns (bytes4) {
+        // BK Ok
         return bytes4(keccak256(s));
     }
 
