@@ -133,14 +133,14 @@ Source code for the deployed contracts have been matched against the component c
 [Scripts](checkComponents/checkAll.sh) and [results](checkComponents/results.txt) were used to confirm the match of the deployed
 contracts against the component contracts.
 
-* Gem ([weth9-b353893](code-review/makerdao/weth9-b353893.md)) is a standalone contract.
+* &#10003; Gem ([weth9-b353893](code-review/makerdao/weth9-b353893.md)) is a standalone contract.
 * SSS represents the Sai, Sin and Skr contracts that are all identical, except for the deployment parameters
 * Pip - 10 May 2017. Rest Dec 2017
 
 Component                                                          | Gov | Pip | Pep | Pit | Adm | SSS | Dad | Mom | Vox | Tub | Tap | Top | Fab
 ------------------------------------------------------------------ |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
-[auth-52c6a32](code-review/dappsys/auth-52c6a32.md)                |  1  |     |  1  |  2  |  1  |  2  |  1  |  1  |  1  |  1  |  1  |  1  |  1
-[auth-ce285fb](code-review/dappsys/auth-ce285fb.md)                |     |  1  |     |     |     |     |     |     |     |     |     |     |  
+&#10003; [auth-52c6a32](code-review/dappsys/auth-52c6a32.md)                |  1  |     |  1  |  2  |  1  |  2  |  1  |  1  |  1  |  1  |  1  |  1  |  1
+&#10003; [auth-ce285fb](code-review/dappsys/auth-ce285fb.md)                |     |  1  |     |     |     |     |     |     |     |     |     |     |  
 [base-e637e3f](code-review/dappsys/base-e637e3f.md)                |  7  |     |     |  6  |  8  |  6  |     |  7  |     |  7  |  7  |  7  |  9
 [chief-a06b5e4](code-review/dappsys/chief-a06b5e4.md)              |     |     |     |     | 10  |     |     |     |     |     |     |     |  
 [erc20-56f16b3](code-review/dappsys/erc20-56f16b3.md)              |  6  |     |     |     |     |     |     |     |     |     |     |     |  
@@ -243,8 +243,8 @@ Component                                                          | Gov | Pip |
   * [ ] contract SaiTub is DSThing, SaiTubEvents
 * [ ] [code-review/makerdao/vox-b353893.md](code-review/makerdao/vox-b353893.md)
   * [ ] contract SaiVox is DSThing
-* [ ] [code-review/makerdao/weth9-b353893.md](code-review/makerdao/weth9-b353893.md)
-  * [ ] contract WETH9
+* [x] [code-review/makerdao/weth9-b353893.md](code-review/makerdao/weth9-b353893.md)
+  * [x] contract WETH9
 
 <br />
 
