@@ -142,6 +142,45 @@ export SAI_TOP=0x9b0ccf7c8994e19f39b2b4cf708e0a7df65fa8a3
 
 <hr />
 
+## Contract Permissions
+
+### Dad
+
+The *dad* contract is set as the authority for many of the MakerDao smart contracts.
+
+From the script [getInfo_Dad.sh](scripts/getInfo_Dad.sh) and results [dad.txt](scripts/dad.txt), `owner` and `authority` for the *dad* contract are both set to `0x0` - no new rules can be added to the list in the following table.
+
+The following table shows the whitelist rules created during the deployment of the *dad* contract:
+
+Permit From      | Permit To        | Function
+---------------- | ---------------- | ---------------------
+[top:0x9b0ccf7c] | [tub:0x448a5065] | cage(uint256,uint256)
+[top:0x9b0ccf7c] | [tub:0x448a5065] | flow()
+[top:0x9b0ccf7c] | [tap:0xbda10930] | cage(uint256)
+[tub:0x448a5065] | [skr:0xf53ad2c6] | mint(address,uint256)
+[tub:0x448a5065] | [skr:0xf53ad2c6] | burn(address,uint256)
+[tub:0x448a5065] | [sai:0x89d24a6b] | mint(address,uint256)
+[tub:0x448a5065] | [sai:0x89d24a6b] | burn(address,uint256)
+[tub:0x448a5065] | [sin:0x79f6d0f6] | mint(address,uint256)
+[tap:0xbda10930] | [sai:0x89d24a6b] | mint(address,uint256)
+[tap:0xbda10930] | [sai:0x89d24a6b] | burn(address,uint256)
+[tap:0xbda10930] | [sai:0x89d24a6b] | burn(uint256)
+[tap:0xbda10930] | [sin:0x79f6d0f6] | burn(uint256)
+[tap:0xbda10930] | [skr:0xf53ad2c6] | mint(uint256)
+[tap:0xbda10930] | [skr:0xf53ad2c6] | burn(uint256)
+[tap:0xbda10930] | [skr:0xf53ad2c6] | burn(address,uint256)
+[mom:0xf2c5369c] | [vox:0x9b0f70df] | mold(bytes32,uint256)
+[mom:0xf2c5369c] | [vox:0x9b0f70df] | tune(uint256)
+[mom:0xf2c5369c] | [tub:0x448a5065] | mold(bytes32,uint256)
+[mom:0xf2c5369c] | [tap:0xbda10930] | mold(bytes32,uint256)
+[mom:0xf2c5369c] | [tub:0x448a5065] | setPip(address)
+[mom:0xf2c5369c] | [tub:0x448a5065] | setPep(address)
+[mom:0xf2c5369c] | [tub:0x448a5065] | setVox(address)
+
+<br />
+
+<hr />
+
 ## Code Review Of Components
 
 Source code for the deployed contracts have been matched against the component contracts from the MakerDAO and DappSys source code repository.
@@ -535,3 +574,13 @@ See page 20 of [The Dai Stablecoin System Whitepaper](https://makerdao.com/white
 * [Single-Collateral Dai source code and security reviews](https://medium.com/@MakerDAO/single-collateral-dai-source-code-and-security-reviews-523e1a01a3c8)
   * [SAI Coin Code Review](previous-audit/SAICoinCode_Review_v1_3.pdf)
   * [Sai Security Assessment](previous-audit/Sai_Final_Report.pdf)
+
+
+[mom:0xf2c5369c]: https://etherscan.io/address/0xf2c5369cffb8ea6284452b0326e326dbfdcb867c#code
+[sai:0x89d24a6b]: https://etherscan.io/address/0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359#code
+[sin:0x79f6d0f6]: https://etherscan.io/address/0x79f6d0f646706e1261acf0b93dcb864f357d4680#code
+[skr:0xf53ad2c6]: https://etherscan.io/address/0xf53ad2c6851052a81b42133467480961b2321c09#code
+[tap:0xbda10930]: https://etherscan.io/address/0xbda109309f9fafa6dd6a9cb9f1df4085b27ee8ef#code
+[top:0x9b0ccf7c]: https://etherscan.io/address/0x9b0ccf7c8994e19f39b2b4cf708e0a7df65fa8a3#code
+[tub:0x448a5065]: https://etherscan.io/address/0x448a5065aebb8e423f0896e6c5d525c040f59af3#code
+[vox:0x9b0f70df]: https://etherscan.io/address/0x9b0f70df76165442ca6092939132bbaea77f2d7a#code
