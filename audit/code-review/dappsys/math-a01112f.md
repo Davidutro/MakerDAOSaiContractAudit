@@ -20,34 +20,48 @@ Repository https://github.com/dapphub/ds-math/blob/a01112f73507c42961d497ba18a35
 // distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND (express or implied).
 
+// BK Ok
 pragma solidity ^0.4.10;
 
+// BK Ok
 contract DSMath {
     
     /*
     standard uint256 functions
      */
 
+    // BK Ok - Constant internal function
     function add(uint256 x, uint256 y) constant internal returns (uint256 z) {
+        // BK Ok
         assert((z = x + y) >= x);
     }
 
+    // BK Ok - Constant internal function
     function sub(uint256 x, uint256 y) constant internal returns (uint256 z) {
+        // BK Ok
         assert((z = x - y) <= x);
     }
 
+    // BK Ok - Constant internal function
     function mul(uint256 x, uint256 y) constant internal returns (uint256 z) {
+        // BK CHECK THIS
         assert((z = x * y) >= x);
     }
 
+    // BK Ok - Constant internal function
     function div(uint256 x, uint256 y) constant internal returns (uint256 z) {
+        // BK Ok - EVM will throw on a divide by zero
         z = x / y;
     }
 
+    // BK Ok - Constant internal function
     function min(uint256 x, uint256 y) constant internal returns (uint256 z) {
+        // BK Ok
         return x <= y ? x : y;
     }
+    // BK Ok - Constant internal function
     function max(uint256 x, uint256 y) constant internal returns (uint256 z) {
+        // BK Ok
         return x >= y ? x : y;
     }
 

@@ -11,6 +11,8 @@ Status: Work in progress
 ## Table Of Contents
 
 * [Scope](#scope)
+* [Recommendations](#recommendations)
+* [Code Review Of Components](#code-review-of-components)
 * [Terminology](#terminology)
 * [References](#references)
 * [Previous Audit](#previous-audit)
@@ -127,7 +129,20 @@ export SAI_TOP=0x9b0ccf7c8994e19f39b2b4cf708e0a7df65fa8a3
 
 <hr />
 
-## Components
+## Recommendations
+
+### Low Importance
+
+* [token-e637e3f](code-review/dappsys/token-e637e3f.md) - The `name()` and `symbol()` functions return the `bytes32` data type instead of `string` as recommended in the [ERC20 token standard](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md)
+* [token-e637e3f](code-review/dappsys/token-e637e3f.md) - The `decimals()` function returns the `uint256` data type instead of `uint8` as recommended in the [ERC20 token standard](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md)
+* [token-e637e3f](code-review/dappsys/token-e637e3f.md) - The `mint(...)` function should emit the `Transfer(address(0), guy, wad)` event as the blockchain token explorers will pick this event up
+* [token-e637e3f](code-review/dappsys/token-e637e3f.md) - The `burn(...)` function should emit the `Transfer(guy, address(0), wad)` event as the blockchain token explorers will pick this event up
+
+<br />
+
+<hr />
+
+## Code Review Of Components
 
 Source code for the deployed contracts have been matched against the component contracts from the MakerDAO and DappSys source code repository.
 [Scripts](checkComponents/checkAll.sh) and [results](checkComponents/results.txt) were used to confirm the match of the deployed
@@ -157,8 +172,8 @@ Component                                                          | Gov | Pip |
 &#10003; [token-e637e3f](code-review/dappsys/token-e637e3f.md)              |  8  |     |     |  7  |  9  |  7  |     |  8  |     |  8  |  8  |  8  | 10
 &#10003; [value-2027f97](code-review/dappsys/value-2027f97.md)              |     |  5  |     |     |     |     |     |     |     |     |     |     |  
 &#10003; [value-faae4cb](code-review/dappsys/value-faae4cb.md)              |     |     |  5  |     |     |     |     |  9  |     |  9  |  9  |  9  | 11
-[medianizer-31cc0a8](code-review/medianizer/medianizer-31cc0a8.md) |     |  6  |     |     |     |     |     |     |     |     |     |     |  
-[medianizer-6cb859c](code-review/medianizer/medianizer-6cb859c.md) |     |     |  6  |     |     |     |     |     |     |     |     |     |  
+&#10003; [medianizer-31cc0a8](code-review/medianizer/medianizer-31cc0a8.md) |     |  6  |     |     |     |     |     |     |     |     |     |     |  
+&#10003; [medianizer-6cb859c](code-review/medianizer/medianizer-6cb859c.md) |     |     |  6  |     |     |     |     |     |     |     |     |     |  
 [pit-b353893](code-review/makerdao/pit-b353893.md)                 |     |     |     |  8  |     |     |     |     |     |     |     |     |  
 [vox-b353893](code-review/makerdao/vox-b353893.md)                 |     |     |     |     |     |     |     | 10  |  5  | 10  | 10  | 10  | 12
 [tub-b353893](code-review/makerdao/tub-b353893.md)                 |     |     |     |     |     |     |     | 11  |     | 11  | 11  | 11  | 13

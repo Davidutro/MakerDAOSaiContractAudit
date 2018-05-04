@@ -24,32 +24,50 @@ Repository https://github.com/dapphub/ds-math/blob/d5acd9c230361b29817ab31087435
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+// BK Ok
 pragma solidity ^0.4.13;
 
+// BK Ok
 contract DSMath {
+    // BK Ok - Pure internal function
     function add(uint x, uint y) internal pure returns (uint z) {
+        // BK Ok
         require((z = x + y) >= x);
     }
+    // BK Ok - Pure internal function
     function sub(uint x, uint y) internal pure returns (uint z) {
+        // BK Ok
         require((z = x - y) <= x);
     }
+    // BK Ok - Pure internal function
     function mul(uint x, uint y) internal pure returns (uint z) {
+        // BK Ok
         require(y == 0 || (z = x * y) / y == x);
     }
+    // BK NOTE - No div(...), but EVM will throw on a divide by zero
 
+    // BK Ok - Pure internal function
     function min(uint x, uint y) internal pure returns (uint z) {
+        // BK Ok
         return x <= y ? x : y;
     }
+    // BK Ok - Pure internal function
     function max(uint x, uint y) internal pure returns (uint z) {
+        // BK Ok
         return x >= y ? x : y;
     }
+    // BK Ok - Pure internal function
     function imin(int x, int y) internal pure returns (int z) {
+        // BK Ok
         return x <= y ? x : y;
     }
+    // BK Ok - Pure internal function
     function imax(int x, int y) internal pure returns (int z) {
+        // BK Ok
         return x >= y ? x : y;
     }
 
+    // BK Next 2 Ok
     uint constant WAD = 10 ** 18;
     uint constant RAY = 10 ** 27;
 

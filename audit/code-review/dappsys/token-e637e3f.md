@@ -38,7 +38,7 @@ import "./base.sol";
 // BK Ok - ERC20 with name, symbol and decimals, stoppable by authorised account
 contract DSToken is DSTokenBase(0), DSStop {
 
-    // BK Next 2 Ok
+    // BK Ok - Normally a string, but Ok
     bytes32  public  symbol;
     // BK Ok - Should be uint8, but no known problems with other tokens using uint256
     uint256  public  decimals = 18; // standard token precision. override to customize
