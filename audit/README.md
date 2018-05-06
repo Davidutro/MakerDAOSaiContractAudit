@@ -27,7 +27,7 @@ This audit has been conducted on MakerDAO's contract source code for the followi
   * [tap:0xbda10930]
   * [top:0x9b0ccf7c]
 
-TODO: Check that no potential vulnerabilities have been identified in the private presale and token contracts.
+TODO: Check that no potential vulnerabilities have been identified in the smart contracts.
 
 <br />
 
@@ -59,21 +59,87 @@ Token            | Symbol | Name                | Decimals | Owner            | 
 [skr:0xf53ad2c6] | PETH   | Pooled Ether        | 18       | [0x00000000]     | [dad:0x315cbb88]
 
 
+<br />
+
 ### Gem
 
-[gem:0xc02aaa39]
+The WETH (Gem) token contract wraps ethers (ETH) in an ERC20 token contract.
+
+Contract address: [gem:0xc02aaa39]
+Source code: [weth9-b353893](code-review/makerdao/weth9-b353893.md)
+
+#### Potential Vulnerabilities
+
+No potential vulnerabilities have been identified in this smart contract.
+
+#### Issues
+
+* **LOW IMPORTANCE** There is a possibility for the total supply to be larger than the sum of all token balance when the `selfdestruct` opcode is used to transfer ETH to this token contract, and this amount cannot be recovered from this token contract
+* **LOW IMPORTANCE** There is no ability to transfer out any other ERC20 tokens accidentally sent to this token contract
 
 <br />
 
 ### Gov
 
-[gov:0x9f8f72aa]
+This is the MKR (Maker) governance token contract.
+
+Contract address: [gov:0x9f8f72aa]
+Source code: [token-e637e3f](code-review/dappsys/token-e637e3f.md) and dependencies
+Deployed source code: [DSTokenGov.sol](deployed-contracts/DSTokenGov-0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2.sol)
+
+#### Potential Vulnerabilities
+
+No potential vulnerabilities have been identified in this smart contract.
+
+#### Issues
+
+* **MEDIUM IMPORTANCE** The token contract owner [0x7bb0b085] has the ability to `mint(...)` new MKR tokens and `burn(...)` any account's MKR tokens
+* **LOW IMPORTANCE** The `name()` and `symbol()` functions return the `bytes32` data type instead of `string` as recommended in the [ERC20 token standard](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md)
+* **LOW IMPORTANCE** The `decimals()` function returns the `uint256` data type instead of `uint8` as recommended in the [ERC20 token standard](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md)
+* **LOW IMPORTANCE** The `mint(...)` function should emit the `Transfer(address(0), guy, wad)` event as the blockchain token explorers will pick this event up
+* **LOW IMPORTANCE** The `burn(...)` function should emit the `Transfer(guy, address(0), wad)` event as the blockchain token explorers will pick this event up
+* **LOW IMPORTANCE** There is no ability to transfer out any other ERC20 tokens accidentally sent to this token contract
+* **LOW IMPORTANCE** There is no ability to prevent ETH being transferred to this token contract, and no ability to transfer out any ETH accidentally sent to this token contract
 
 <br />
 
 ### Sai, Sin And Skr
 
-[sai:0x89d24a6b], [sin:0x79f6d0f6] and [skr:0xf53ad2c6]
+These are the *sai* stable coin, *sin* anticoin and the *skr* claim on the collateral token contracts.
+
+Contract addresses: [sai:0x89d24a6b], [sin:0x79f6d0f6] and [skr:0xf53ad2c6]
+Source code: [token-e637e3f](code-review/dappsys/token-e637e3f.md) and dependencies
+Deployed source code: [DSTokenSai.sol](deployed-contracts/DSTokenSai-0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359.sol), [DSTokenSin.sol](deployed-contracts/DSTokenSin-0x79F6D0f646706E1261aCF0b93DCB864f357d4680.sol) and [DSTokenSkr.sol](deployed-contracts/DSTokenSkr-0xf53AD2c6851052A81B42133467480961B2321C09.sol)
+
+#### Permissions
+
+These token contracts have `owner` set to [0x00000000] and `authority` set to [dad:0x315cbb88] and this defines the permissions for which other smart contract is able to `mint(...)` and `burn(...)` these tokens. The following table is a whitelist of which smart contract is able to `mint(...)` and `burn(...)` tokens:
+
+Permit From      | Permit To        | Function
+---------------- | ---------------- | ---------------------
+[tub:0x448a5065] | [skr:0xf53ad2c6] | mint(address,uint256)
+[tub:0x448a5065] | [skr:0xf53ad2c6] | burn(address,uint256)
+[tub:0x448a5065] | [sai:0x89d24a6b] | mint(address,uint256)
+[tub:0x448a5065] | [sai:0x89d24a6b] | burn(address,uint256)
+[tub:0x448a5065] | [sin:0x79f6d0f6] | mint(address,uint256)
+[tap:0xbda10930] | [sai:0x89d24a6b] | mint(address,uint256)
+[tap:0xbda10930] | [sai:0x89d24a6b] | burn(address,uint256)
+[tap:0xbda10930] | [sai:0x89d24a6b] | burn(uint256)
+[tap:0xbda10930] | [sin:0x79f6d0f6] | burn(uint256)
+[tap:0xbda10930] | [skr:0xf53ad2c6] | mint(uint256)
+[tap:0xbda10930] | [skr:0xf53ad2c6] | burn(uint256)
+[tap:0xbda10930] | [skr:0xf53ad2c6] | burn(address,uint256)
+
+#### Potential Vulnerabilities
+
+No potential vulnerabilities have been identified in these smart contract.
+
+#### Issues
+
+* **LOW IMPORTANCE** The `name()` and `symbol()` functions return the `bytes32` data type instead of `string` as recommended in the [ERC20 token standard](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md)
+* **LOW IMPORTANCE** The `decimals()` function returns the `uint256` data type instead of `uint8` as recommended in the [ERC20 token standard](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md)
+* **LOW IMPORTANCE** There is no ability to transfer out any other ERC20 tokens accidentally sent to these token contracts
+* **LOW IMPORTANCE** There is no ability to prevent ETH being transferred to these token contracts, and no ability to transfer out any ETH accidentally sent to these token contracts
 
 <br />
 
