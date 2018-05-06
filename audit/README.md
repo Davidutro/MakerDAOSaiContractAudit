@@ -10,13 +10,13 @@ This audit has been conducted on MakerDAO's contract source code for the followi
 
 * Tokens
   * [gem:0xc02aaa39]
-  * [gov:0x9f8F72aA]
+  * [gov:0x9f8f72aa]
   * [sai:0x89d24a6b]
   * [sin:0x79f6d0f6]
   * [skr:0xf53ad2c6]
 * Price Feeds
-  * [pip:0x729D19f6]
-  * [pep:0x99041F80]
+  * [pip:0x729d19f6]
+  * [pep:0x99041f80]
 * Others
   * [pit:0x69076e44]
   * [adm:0x8e2a84d6]
@@ -62,9 +62,9 @@ TODO: Check that no potential vulnerabilities have been identified in the privat
 <hr />
 
 [gem:0xc02aaa39]: https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2#code
-[gov:0x9f8F72aA]: https://etherscan.io/address/0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2#code
-[pip:0x729D19f6]: https://etherscan.io/address/0x729D19f657BD0614b4985Cf1D82531c67569197B#code
-[pep:0x99041F80]: https://etherscan.io/address/0x99041F808D598B782D5a3e498681C2452A31da08#code
+[gov:0x9f8f72aa]: https://etherscan.io/address/0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2#code
+[pip:0x729d19f6]: https://etherscan.io/address/0x729D19f657BD0614b4985Cf1D82531c67569197B#code
+[pep:0x99041f80]: https://etherscan.io/address/0x99041F808D598B782D5a3e498681C2452A31da08#code
 [pit:0x69076e44]: https://etherscan.io/address/0x69076e44a9c70a67d5b79d95795aba299083c275#code
 [adm:0x8e2a84d6]: https://etherscan.io/address/0x8e2a84d6ade1e7fffee039a35ef5f19f13057152#code
 [sai:0x89d24a6b]: https://etherscan.io/address/0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359#code
