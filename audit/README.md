@@ -152,15 +152,17 @@ No potential vulnerabilities have been identified in these smart contract.
 
 ## Price Feeds
 
-These are the ETH/USD *pip* and the MKR/USD *pep* smart contracts to calculate the median prices from multiple [price feed sources](Feeds.md).
+These are the ETH/USD *pip* and the MKR/USD *pep* *Medianizer* smart contracts to calculate the median prices from multiple [price feed sources](Feeds.md).
 
-* Contract address: ETH/USD *pip* [pip:0x729d19f6]; MKR/USD *pep* [pep:0x99041f80]
+Individual price feed providers write to their instances of [PriceFeed](https://github.com/makerdao/price-feed/blob/master/src/price-feed.sol) contracts, which then call the *Medianizer* `poke()` function. This `poke()` function then collects all contributors price feed *DSValue* points to calculate the median price feed value.
+
+* Contract address: ETH/USD [pip:0x729d19f6]; MKR/USD [pep:0x99041f80]
 * Source code: ETH/USD *pip* [medianizer-31cc0a8](code-review/medianizer/medianizer-31cc0a8.md) and dependencies; MKR/USD *pep* [medianizer-6cb859c](code-review/medianizer/medianizer-6cb859c.md) and dependencies
 * Deployed source code: ETH/USD *pip* [MedianizerPip.sol](deployed-contracts/MedianizerPip-0x729D19f657BD0614b4985Cf1D82531c67569197B.sol); MKR/USD *pep* [MedianizerPep.sol](deployed-contracts/MedianizerPep-0x99041F808D598B782D5a3e498681C2452A31da08.sol)
 
 #### Permissions
 
-These token contracts have `owner` set to [0x00000000] and `authority` set to [adm:0x8e2a84d6]
+These token contracts have `owner` set to [0x00000000] and `authority` set to [adm:0x8e2a84d6].
 
 #### Potential Vulnerabilities
 
