@@ -19,31 +19,29 @@ console.log("RESULT: dad.owner=" + getAddressName(dsGuardDad.owner()));
 console.log("RESULT: dad.authority=" + getAddressName(dsGuardDad.authority()));
 
 var latestBlock = eth.blockNumber;
-var fromBlockPip = parseInt(latestBlock) - 2000000;
-// var fromBlockPip = 4755932;
 
-var logSetAuthorityEvents = dsGuardDad.LogSetAuthority({}, { fromBlock: fromBlockPip, toBlock: latestBlock });
+var logSetAuthorityEvents = dsGuardDad.LogSetAuthority({}, { fromBlock: dsGuardDadFromBlock, toBlock: latestBlock });
 i = 0;
 logSetAuthorityEvents.watch(function (error, result) {
   console.log("RESULT: dad.LogSetAuthority " + i++ + " #" + result.blockNumber + " authority=" + getAddressName(result.args.authority));
 });
 logSetAuthorityEvents.stopWatching();
 
-var logSetOwnerEvents = dsGuardDad.LogSetOwner({}, { fromBlock: fromBlockPip, toBlock: latestBlock });
+var logSetOwnerEvents = dsGuardDad.LogSetOwner({}, { fromBlock: dsGuardDadFromBlock, toBlock: latestBlock });
 i = 0;
 logSetOwnerEvents.watch(function (error, result) {
   console.log("RESULT: dad.LogSetOwner " + i++ + " #" + result.blockNumber + " owner=" + getAddressName(result.args.owner));
 });
 logSetOwnerEvents.stopWatching();
 
-var logNoteEvents = dsGuardDad.LogNote({}, { fromBlock: fromBlockPip, toBlock: latestBlock });
+var logNoteEvents = dsGuardDad.LogNote({}, { fromBlock: dsGuardDadFromBlock, toBlock: latestBlock });
 i = 0;
 logNoteEvents.watch(function (error, result) {
   console.log("RESULT: dad.LogNote " + i++ + " #" + result.blockNumber + " " + result.transactionHash + " " + JSON.stringify(result.args));
 });
 logNoteEvents.stopWatching();
 
-var logPermitEvents = dsGuardDad.LogPermit({}, { fromBlock: fromBlockPip, toBlock: latestBlock });
+var logPermitEvents = dsGuardDad.LogPermit({}, { fromBlock: dsGuardDadFromBlock, toBlock: latestBlock });
 i = 0;
 logPermitEvents.watch(function (error, result) {
   var sig = sigs[result.args.sig.substring(0, 10)];
@@ -57,12 +55,11 @@ logPermitEvents.watch(function (error, result) {
 });
 logPermitEvents.stopWatching();
 
-var logForbidEvents = dsGuardDad.LogForbid({}, { fromBlock: fromBlockPip, toBlock: latestBlock });
+var logForbidEvents = dsGuardDad.LogForbid({}, { fromBlock: dsGuardDadFromBlock, toBlock: latestBlock });
 i = 0;
 logForbidEvents.watch(function (error, result) {
   console.log("RESULT: dad.LogForbid " + i++ + " #" + result.blockNumber + " " + result.transactionHash + " " + JSON.stringify(result.args));
 });
 logForbidEvents.stopWatching();
-
 
 EOF
