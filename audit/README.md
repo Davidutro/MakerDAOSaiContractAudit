@@ -40,6 +40,7 @@ TODO: Check that no potential vulnerabilities have been identified in the smart 
   * [Gov](#gov)
   * [Sai, Sin And Skr](#sai-sin-and-skr)
 * [Price Feeds](#price-feeds)
+* [Tub](#tub)
 * [Other](#other)
 * [Contract Permissions](#contract-permissions)
 * [Code Review Of Components](#code-review-of-components)
@@ -50,14 +51,13 @@ TODO: Check that no potential vulnerabilities have been identified in the smart 
 
 ## Tokens
 
-Token            | Symbol | Name                | Decimals | Owner            | Authority
----------------- | ------ | ------------------- | -------- | ---------------- | ---------------------
-[gem:0xc02aaa39] | WETH   | Wrapped Ether       | 18       | n/a              | n/a
-[gov:0x9f8f72aa] | MKR    | Maker               | 18       | [0x7bb0b085]     | [0x00000000]
-[sai:0x89d24a6b] | DAI    | Dai Stablecoin v1.0 | 18       | [0x00000000]     | [dad:0x315cbb88]
-[sin:0x79f6d0f6] | SIN    | SIN                 | 18       | [0x00000000]     | [dad:0x315cbb88]
-[skr:0xf53ad2c6] | PETH   | Pooled Ether        | 18       | [0x00000000]     | [dad:0x315cbb88]
-
+Token            | Symbol | Name                | Decimals | Owner                              | Authority
+---------------- | ------ | ------------------- | -------- | ---------------------------------- | ---------------------
+[gem:0xc02aaa39] | WETH   | Wrapped Ether       | 18       | n/a                                | n/a
+[gov:0x9f8f72aa] | MKR    | Maker               | 18       | [community4of6multisig:0x7bb0b085] | [0x00000000]
+[sai:0x89d24a6b] | DAI    | Dai Stablecoin v1.0 | 18       | [0x00000000]                       | [dad:0x315cbb88]
+[sin:0x79f6d0f6] | SIN    | SIN                 | 18       | [0x00000000]                       | [dad:0x315cbb88]
+[skr:0xf53ad2c6] | PETH   | Pooled Ether        | 18       | [0x00000000]                       | [dad:0x315cbb88]
 
 <br />
 
@@ -87,18 +87,22 @@ This is the MKR (Maker) governance token contract.
 * Contract address: [gov:0x9f8f72aa]
 * Source code: [token-e637e3f](code-review/dappsys/token-e637e3f.md) and dependencies
 * Deployed source code: [DSTokenGov.sol](deployed-contracts/DSTokenGov-0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2.sol)
+* Data: [dad.txt](scripts/dad.txt)
 
 #### Permissions
 
-This token contract has `owner` set to [0x7bb0b085] and `authority` set to [0x00000000].
+This token contract has `owner` set to [community4of6multisig:0x7bb0b085] and `authority` set to [0x00000000].
 
 #### Potential Vulnerabilities
 
 No potential vulnerabilities have been identified in this smart contract.
 
+#### Note
+
+* The token contract owner [community4of6multisig:0x7bb0b085] has the ability to `mint(...)` new MKR tokens and `burn(...)` any account's MKR tokens
+
 #### Issues
 
-* **MEDIUM IMPORTANCE** The token contract owner [0x7bb0b085] has the ability to `mint(...)` new MKR tokens and `burn(...)` any account's MKR tokens
 * **LOW IMPORTANCE** The `name()` and `symbol()` functions return the `bytes32` data type instead of `string` as recommended in the [ERC20 token standard]
 * **LOW IMPORTANCE** The `decimals()` function returns the `uint256` data type instead of `uint8` as recommended in the [ERC20 token standard]
 * **LOW IMPORTANCE** The `mint(...)` function should emit the `Transfer(address(0), guy, wad)` event as the blockchain token explorers will pick this event up
@@ -115,10 +119,11 @@ These are the *sai* stable coin, *sin* anticoin and the *skr* claim on the colla
 * Contract addresses: [sai:0x89d24a6b], [sin:0x79f6d0f6] and [skr:0xf53ad2c6]
 * Source code: [token-e637e3f](code-review/dappsys/token-e637e3f.md) and dependencies
 * Deployed source code: [DSTokenSai.sol](deployed-contracts/DSTokenSai-0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359.sol), [DSTokenSin.sol](deployed-contracts/DSTokenSin-0x79F6D0f646706E1261aCF0b93DCB864f357d4680.sol) and [DSTokenSkr.sol](deployed-contracts/DSTokenSkr-0xf53AD2c6851052A81B42133467480961B2321C09.sol)
+* Data: [saiSinSkr.txt](scripts/saiSinSkr.txt)
 
 #### Permissions
 
-These token contracts have `owner` set to [0x00000000] and `authority` set to [dad:0x315cbb88] and this defines the permissions for which other smart contract are able to `mint(...)` and `burn(...)` these tokens. The following table is a whitelist of which smart contract are able to `mint(...)` and `burn(...)` these tokens:
+These token contracts have `owner` set to [0x00000000] and `authority` set to [dad:0x315cbb88] and this defines the permissions for which other smart contract are able to `mint(...)` and `burn(...)` these tokens. The following table is a whitelist of which smart contracts are able to `mint(...)` and `burn(...)` these tokens:
 
 Permit From      | Permit To        | Function
 ---------------- | ---------------- | ---------------------
@@ -152,13 +157,14 @@ No potential vulnerabilities have been identified in these smart contract.
 
 ## Price Feeds
 
-These are the ETH/USD *pip* and the MKR/USD *pep* *Medianizer* smart contracts to calculate the median prices from multiple [price feed sources](Feeds.md).
+These are the ETH/USD *pip* and the MKR/USD *pep* *Medianizer* smart contracts to calculate the median prices from multiple [price feed sources](Feeds.md). [0x137fdd00](https://etherscan.io/address/0x137fdd00e9a866631d8daf1a2116fb8df1ed07a7#code) is one of the ETH/USD *pip* price feed contributors, and [0x8a4774fe](https://etherscan.io/address/0x8a4774fe82c63484afef97ca8d89a6ea5e21f973#code) is one of the MKR/USD *pep* price feed contributors.
 
 Individual price feed providers write to their instances of [PriceFeed](https://github.com/makerdao/price-feed/blob/master/src/price-feed.sol) contracts, which then call the *Medianizer* `poke()` function. This `poke()` function then collects all contributors price feed *DSValue* points to calculate the median price feed value.
 
 * Contract address: ETH/USD [pip:0x729d19f6]; MKR/USD [pep:0x99041f80]
 * Source code: ETH/USD *pip* [medianizer-31cc0a8](code-review/medianizer/medianizer-31cc0a8.md) and dependencies; MKR/USD *pep* [medianizer-6cb859c](code-review/medianizer/medianizer-6cb859c.md) and dependencies
 * Deployed source code: ETH/USD *pip* [MedianizerPip.sol](deployed-contracts/MedianizerPip-0x729D19f657BD0614b4985Cf1D82531c67569197B.sol); MKR/USD *pep* [MedianizerPep.sol](deployed-contracts/MedianizerPep-0x99041F808D598B782D5a3e498681C2452A31da08.sol)
+* Data: ETH/USD *pip* [pip.txt](scripts/pip.txt); MKR/USD *pep* [pep.txt](scripts/pep.txt)
 
 #### Permissions
 
@@ -172,6 +178,39 @@ No potential vulnerabilities have been identified in these smart contract.
 
 * **LOW IMPORTANCE** There is no ability to transfer out any other ERC20 tokens accidentally sent to these token contracts
 * **LOW IMPORTANCE** There is no ability to prevent ETH being transferred to these token contracts, and no ability to transfer out any ETH accidentally sent to these token contracts
+
+<br />
+
+<hr />
+
+## Tub
+
+The *tub* contract manages the list of *cup*s
+
+* Contract address: [tub:0x448a5065]
+* Source code: [tub-b353893](code-review/makerdao/tub-b353893.md) and dependencies
+* Deployed source code: [SaiTub.sol](deployed-contracts/SaiTub-0x448a5065aeBB8E423F0896E6c5D525C040f59af3.sol)
+* Data: [tub.txt](scripts/tub.txt)
+
+#### Permissions
+
+This contract has `owner` set to [0x00000000] and `authority` set to [dad:0x315cbb88] and this defines the permissions for which other smart contract are able to execute the functions. The following table is a whitelist of which smart contracts are able to execute the functions:
+
+Permit From      | Permit To        | Function              | Notes
+---------------- | ---------------- | --------------------- | ----------------------------
+[top:0x9b0ccf7c] | [tub:0x448a5065] | cage(uint256,uint256) |
+[top:0x9b0ccf7c] | [tub:0x448a5065] | flow()                |
+[top:0x9b0ccf7c] | [tap:0xbda10930] | cage(uint256)         |
+[tub:0x448a5065] | [skr:0xf53ad2c6] | mint(address,uint256) |
+[tub:0x448a5065] | [skr:0xf53ad2c6] | burn(address,uint256) |
+[tub:0x448a5065] | [sai:0x89d24a6b] | mint(address,uint256) |
+[tub:0x448a5065] | [sai:0x89d24a6b] | burn(address,uint256) |
+[tub:0x448a5065] | [sin:0x79f6d0f6] | mint(address,uint256) |
+[mom:0xf2c5369c] | [tub:0x448a5065] | mold(bytes32,uint256) | *mom* can set parameters `cap`, `mat`, `tax`, `fee`, `axe` and `gap`
+[mom:0xf2c5369c] | [tub:0x448a5065] | setPip(address)       | *mom* can set new ETH/USD *pip* price feed
+[mom:0xf2c5369c] | [tub:0x448a5065] | setPep(address)       | *mom* can set new MKR/USD *pep* price feed
+[mom:0xf2c5369c] | [tub:0x448a5065] | setVox(address)       | *mom* can set new *vox*
+
 
 <br />
 
@@ -282,5 +321,5 @@ Component                                                          | Gov | Pip |
 [tap:0xbda10930]: https://etherscan.io/address/0xbda109309f9fafa6dd6a9cb9f1df4085b27ee8ef#code
 [top:0x9b0ccf7c]: https://etherscan.io/address/0x9b0ccf7c8994e19f39b2b4cf708e0a7df65fa8a3#code
 [0x00000000]: https://etherscan.io/address/0x0000000000000000000000000000000000000000#code
-[0x7bb0b085]: https://etherscan.io/address/0x7bb0b08587b8a6b8945e09f1baca426558b0f06a#code
+[community4of6multisig:0x7bb0b085]: https://etherscan.io/address/0x7bb0b08587b8a6b8945e09f1baca426558b0f06a#code
 [ERC20 token standard]: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md
