@@ -21,6 +21,8 @@ addSig("mold(bytes32,uint256)");
 addSig("setPip(address)");
 addSig("setPep(address)");
 addSig("setVox(address)");
+addSig("verifyParams()");
+
 
 // Pep
 addSig("set(address)");
@@ -75,7 +77,17 @@ addSig("draw(bytes32,uint256)");
 addSig("wipe(bytes32,uint256)");
 addSig("shut(bytes32)");
 addSig("bite(bytes32)");
+addSig("cage(uint256,uint256)");
 
+// Top
+addSig("cage()");
+addSig("join(uint256)");
+
+// Vox
+addSig("tell(uint256)");
+addSig("prod()");
+addSig("par()");
+addSig("way()");
 
 var addressNames = {};
 var nameAddresses = {};
