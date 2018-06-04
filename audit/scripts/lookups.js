@@ -89,6 +89,15 @@ addSig("prod()");
 addSig("par()");
 addSig("way()");
 
+// Adm
+addSig("lock(uint256)");
+addSig("etch(address[])");
+addSig("free(uint256)");
+addSig("vote(address[])");
+addSig("vote(bytes32)");
+addSig("lift(address)");
+
+
 var addressNames = {};
 var nameAddresses = {};
 
@@ -133,6 +142,7 @@ addAddressNames("0xF07674F6AC6632e253C291B694f9C2e2ED69eBBB", "fab");
 addAddressNames("0x642AE78FAfBB8032Da552D619aD43F1D81E4DD7C", "redeemer");
 addAddressNames("0x347e94e12c623d7b9d51b3f143ff42b73d619773", "spell");
 addAddressNames("0x7bb0b08587b8a6b8945e09f1baca426558b0f06a", "community4of6multisig");
+addAddressNames("0x9aed7a25f2d928225e6fb2388055c7363ad6727b", "IOU");
 
 var pipPriceFeeds = [
   "0x137fdd00e9a866631d8daf1a2116fb8df1ed07a7", "0x20ed77585be1b2bfd6056c64aebad41341e35907", "0x0d0ca466b85bae24ad9680840de07b094799b99f",

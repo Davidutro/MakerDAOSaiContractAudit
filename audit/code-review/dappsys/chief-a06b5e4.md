@@ -168,7 +168,7 @@ contract DSChief is DSRoles, DSChiefApprovals {
         owner = 0;
     }
 
-    // BK Ok - Anyone can execute this function, but it will throw
+    // BK Ok - Anyone can execute this function, but it will throw. i.e. disabled
     function setOwner(address owner_) public {
         // BK Ok
         owner_;
@@ -176,7 +176,7 @@ contract DSChief is DSRoles, DSChiefApprovals {
         revert();
     }
 
-    // BK Ok - Anyone can execute this function, but it will throw
+    // BK Ok - Anyone can execute this function, but it will throw. i.e. disabled
     function setAuthority(DSAuthority authority_) public {
         // BK Ok
         authority_;
@@ -184,13 +184,16 @@ contract DSChief is DSRoles, DSChiefApprovals {
         revert();
     }
 
+    // BK Ok - Constant function - `hat` is the root user
     function isUserRoot(address who)
         public
         constant
         returns (bool)
     {
+        // BK Ok
         return (who == hat);
     }
+    // BK Ok - Anyone can execute this function, but it will throw. i.e. disabled
     function setRootUser(address who, bool enabled) public {
         who; enabled;
         revert();

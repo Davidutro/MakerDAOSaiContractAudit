@@ -41,7 +41,13 @@ logSetOwnerEvents.stopWatching();
 var logNoteEvents = dsChiefAdm.LogNote({}, { fromBlock: dsChiefAdmFromBlock, toBlock: latestBlock });
 i = 0;
 logNoteEvents.watch(function (error, result) {
-  console.log("RESULT: adm.LogNote " + i++ + " #" + result.blockNumber + " " + result.transactionHash + " " + JSON.stringify(result.args));
+  var sig = sigs[result.args.sig.substring(0, 10)];
+  var foo = new BigNumber(result.args.foo.substring(2), 16).shift(-18).toString();
+  var guy = getAddressName(result.args.guy);
+  var block = eth.getBlock(result.blockNumber);
+  console.log("RESULT: sig=" + sig + " guy=" + guy + " foo=" + foo);
+  console.log("RESULT: adm.LogNote " + i++ + " #" + result.blockNumber + " " + new Date(block.timestamp * 1000).toUTCString() + " " + result.transactionHash + " " + JSON.stringify(result.args));
+  console.log("RESULT: ");
 });
 logNoteEvents.stopWatching();
 

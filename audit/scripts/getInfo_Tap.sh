@@ -17,6 +17,17 @@ console.log("RESULT: ---------- Dad ----------");
 console.log("RESULT: tapAddress=" + getAddressName(saiTapAddress));
 console.log("RESULT: tap.owner=" + getAddressName(saiTap.owner()));
 console.log("RESULT: tap.authority=" + getAddressName(saiTap.authority()));
+console.log("RESULT: tap.sai=" + getAddressName(saiTap.sai()));
+console.log("RESULT: tap.sin=" + getAddressName(saiTap.sin()));
+console.log("RESULT: tap.skr=" + getAddressName(saiTap.skr()));
+console.log("RESULT: tap.vox=" + getAddressName(saiTap.vox()));
+console.log("RESULT: tap.tub=" + getAddressName(saiTap.tub()));
+console.log("RESULT: tap.gap=" + saiTap.gap());
+console.log("RESULT: tap.off=" + saiTap.off());
+console.log("RESULT: tap.fix=" + saiTap.fix());
+console.log("RESULT: tap.joy=" + saiTap.joy());
+console.log("RESULT: tap.woe=" + saiTap.woe());
+console.log("RESULT: tap.fog=" + saiTap.fog());
 
 var latestBlock = eth.blockNumber;
 
