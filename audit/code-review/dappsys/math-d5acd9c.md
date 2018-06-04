@@ -71,16 +71,24 @@ contract DSMath {
     uint constant WAD = 10 ** 18;
     uint constant RAY = 10 ** 27;
 
+    // BK Ok - Pure internal function
     function wmul(uint x, uint y) internal pure returns (uint z) {
+        // BK Ok
         z = add(mul(x, y), WAD / 2) / WAD;
     }
+    // BK Ok - Pure internal function
     function rmul(uint x, uint y) internal pure returns (uint z) {
+        // BK Ok
         z = add(mul(x, y), RAY / 2) / RAY;
     }
+    // BK Ok - Pure internal function
     function wdiv(uint x, uint y) internal pure returns (uint z) {
+        // BK Ok
         z = add(mul(x, WAD), y / 2) / y;
     }
+    // BK Ok - Pure internal function
     function rdiv(uint x, uint y) internal pure returns (uint z) {
+        // BK Ok
         z = add(mul(x, RAY), y / 2) / y;
     }
 
@@ -99,9 +107,24 @@ contract DSMath {
     //  Also, EVM division is flooring and
     //    floor[(n-1) / 2] = floor[n / 2].
     //
+    // BK NOTE - https://mpark.github.io/programming/2014/08/18/exponentiation-by-squaring/
+    // BK NOTE - double exp(double x, int n) {
+    // BK NOTE -   if (n < 0) return 1 / exp(x, -n);
+    // BK NOTE -   double result = 1;
+    // BK NOTE -   while (n > 0) {
+    // BK NOTE -     if (n % 2 == 1) result *= x;
+    // BK NOTE -     x *= x;
+    // BK NOTE -     n /= 2;
+    // BK NOTE -   }  // while
+    // BK NOTE -   return result;
+    // BK NOTE - }
+
+    // BK Ok - Pure internal function
     function rpow(uint x, uint n) internal pure returns (uint z) {
+        // BK Ok
         z = n % 2 != 0 ? x : RAY;
 
+        // BK Next block Ok
         for (n /= 2; n != 0; n /= 2) {
             x = rmul(x, x);
 
