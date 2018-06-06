@@ -1,6 +1,6 @@
 ---------- State ----------
-eth.blockNumber=5742942
-eth.block.timestamp=Thu, 07 Jun 2018 02:17:07 AEST
+eth.blockNumber=5742988
+eth.block.timestamp=Thu, 07 Jun 2018 02:30:25 AEST
 ---------- Dad ----------
 tapAddress=tap:0xBda109309f9FafA6Dd6A9CB9f1Df4085B27Ee8eF
 tap.owner=0x0000000000000000000000000000000000000000
@@ -10,7 +10,7 @@ tap.sin=sin:0x79f6d0f646706e1261acf0b93dcb864f357d4680
 tap.skr=skr:0xf53ad2c6851052a81b42133467480961b2321c09
 tap.vox=vox:0x9b0f70df76165442ca6092939132bbaea77f2d7a
 tap.tub=tub:0x448a5065aebb8e423f0896e6c5d525c040f59af3
-tap.gap=970000000000000000
+tap.gap=970000000000000000 0.97
 tap.off=false
 tap.fix=0
 tap.joy=133

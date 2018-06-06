@@ -40,6 +40,11 @@ console.log("RESULT: tub.fit=" + saiTub.fit());
 console.log("RESULT: tub.rho=" + saiTub.rho());
 console.log("RESULT: tub.rum=" + saiTub.rum().toFixed(0) + " " + saiTub.rum().shift(-27) + " ray");
 console.log("RESULT: tub.cupi=" + saiTub.cupi());
+var wad = new BigNumber(1).shift(18);
+console.log("RESULT: tub.per=" + saiTub.per());
+console.log("RESULT: tub.ask(1e18)=" + saiTub.ask(wad));
+console.log("RESULT: tub.bid(1e18)=" + saiTub.bid(wad));
+
 
 var latestBlock = eth.blockNumber;
 
@@ -73,6 +78,7 @@ var logNewCupEvents = saiTub.LogNewCup({}, { fromBlock: saiTubFromBlock, toBlock
 i = 0;
 logNewCupEvents.watch(function (error, result) {
   console.log("RESULT: tub.LogNewCup " + i++ + " #" + result.blockNumber+ " " + JSON.stringify(result.args));
+  console.log("RESULT:   - current ink=" + saiTub.ink(result.args.cup).shift(-18));
 });
 logNewCupEvents.stopWatching();
 
