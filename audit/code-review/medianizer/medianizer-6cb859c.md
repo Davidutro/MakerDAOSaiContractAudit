@@ -24,6 +24,11 @@ contract MedianizerEvents {
 // BK Ok
 // BK NOTE - medianizerPep.owner=0x0000000000000000000000000000000000000000
 // BK NOTE - medianizerPep.authority=adm:0x8e2a84d6ade1e7fffee039a35ef5f19f13057152
+// BK NOTE - pep read() gives 0x00000000000000000000000000000000000000000000002b6136c6c77b358000
+// BK NOTE - > new BigNumber("00000000000000000000000000000000000000000000002b6136c6c77b358000", 16)
+// BK NOTE - 800215000000000000000
+// BK NOTE - > new BigNumber("00000000000000000000000000000000000000000000002b6136c6c77b358000", 16).shift(-18)
+// BK NOTE - 800.215
 contract Medianizer is DSValue, MedianizerEvents {
     // BK Ok
     mapping (bytes12 => address) public values;
