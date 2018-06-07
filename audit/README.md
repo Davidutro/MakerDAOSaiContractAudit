@@ -269,7 +269,7 @@ contracts against the component contracts.
 
 * &#10003; Gem ([weth9-b353893](code-review/makerdao/weth9-b353893.md)) is a standalone contract.
 * SSS represents the Sai, Sin and Skr contracts that are all identical, except for the deployment parameters
-* Pip - 10 May 2017. Rest Dec 2017
+* Pip deployed on 10 May 2017. The other components were deployed in Dec 2017
 
 Component                                                          | Gov | Pip | Pep | Pit | Adm | SSS | Dad | Mom | Vox | Tub | Tap | Top | Fab
 ------------------------------------------------------------------ |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
