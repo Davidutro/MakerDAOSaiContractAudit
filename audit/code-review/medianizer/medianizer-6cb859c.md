@@ -22,6 +22,8 @@ contract MedianizerEvents {
 }
 
 // BK Ok
+// BK NOTE - medianizerPep.owner=0x0000000000000000000000000000000000000000
+// BK NOTE - medianizerPep.authority=adm:0x8e2a84d6ade1e7fffee039a35ef5f19f13057152
 contract Medianizer is DSValue, MedianizerEvents {
     // BK Ok
     mapping (bytes12 => address) public values;
@@ -33,7 +35,7 @@ contract Medianizer is DSValue, MedianizerEvents {
     // BK Ok
     uint96 public min = 0x1;
 
-    // BK Ok - Authorised account can set the PriceFeed address
+    // BK Ok - Only adm can set the PriceFeed address
     function set(address wat) public auth {
         // BK Ok
         bytes12 nextId = bytes12(uint96(next) + 1);
@@ -45,7 +47,7 @@ contract Medianizer is DSValue, MedianizerEvents {
         next = nextId;
     }
 
-    // BK Ok - Authorised account can set the PriceFeed address
+    // BK Ok - Only adm can set the PriceFeed address
     function set(bytes12 pos, address wat) public note auth {
         // BK Ok
         require(pos != 0x0);
@@ -65,7 +67,7 @@ contract Medianizer is DSValue, MedianizerEvents {
         values[pos] = wat;
     }
 
-    // BK Ok - Authorised account can set minimum value
+    // BK Ok - Only adm can set minimum value
     function setMin(uint96 min_) public note auth {
         // BK Ok
         require(min_ != 0x0);
@@ -73,7 +75,7 @@ contract Medianizer is DSValue, MedianizerEvents {
         min = min_;
     }
 
-    // BK Ok - Authorised account can set next id
+    // BK Ok - Only adm can set next id
     function setNext(bytes12 next_) public note auth {
         // BK Ok
         require(next_ != 0x0);
@@ -81,13 +83,13 @@ contract Medianizer is DSValue, MedianizerEvents {
         next = next_;
     }
 
-    // BK Ok - Authorised account can unset address at pos
+    // BK Ok - Only adm can unset address at pos
     function unset(bytes12 pos) public auth {
         // BK Ok
         this.set(pos, 0);
     }
 
-    // BK Ok - Authorised account can unset address
+    // BK Ok - Only adm can unset address
     function unset(address wat) public auth {
         // BK Ok
         this.set(indexes[wat], 0);
@@ -107,7 +109,7 @@ contract Medianizer is DSValue, MedianizerEvents {
         LogValue(val);
     }
 
-    // BK Ok - Constant function
+    // BK Ok - Constant function, called by poke to compute the median price
     function compute() public constant returns (bytes32, bool) {
         // BK Ok
         bytes32[] memory wuts = new bytes32[](uint96(next) - 1);

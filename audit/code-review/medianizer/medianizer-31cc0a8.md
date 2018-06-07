@@ -16,6 +16,8 @@ pragma solidity ^0.4.8;
 import 'ds-value/value.sol';
 
 // BK Ok
+// BK NOTE - medianizerPip.owner=0x0000000000000000000000000000000000000000
+// BK NOTE - medianizerPip.authority=adm:0x8e2a84d6ade1e7fffee039a35ef5f19f13057152
 contract Medianizer is DSValue {
     // BK Ok
     mapping (bytes12 => address) public values;
@@ -27,7 +29,7 @@ contract Medianizer is DSValue {
     // BK Ok
     uint96 public min = 0x1;
 
-    // BK Ok - Authorised account can set the PriceFeed address
+    // BK Ok - Only adm can set the PriceFeed address
     function set(address wat) auth {
         // BK Ok
         bytes12 nextId = bytes12(uint96(next) + 1);
@@ -39,7 +41,7 @@ contract Medianizer is DSValue {
         next = nextId;
     }
 
-    // BK Ok - Authorised account can set the PriceFeed address
+    // BK Ok - Only adm can set the PriceFeed address
     function set(bytes12 pos, address wat) note auth {
         // BK Ok
         if (pos == 0x0) throw;
@@ -60,7 +62,7 @@ contract Medianizer is DSValue {
         values[pos] = wat;
     }
 
-    // BK Ok - Authorised account can set minimum value
+    // BK Ok - Only adm can set minimum value
     function setMin(uint96 min_) note auth {
         // BK Ok
         if (min_ == 0x0) throw;
@@ -68,7 +70,7 @@ contract Medianizer is DSValue {
         min = min_;
     }
 
-    // BK Ok - Authorised account can set next id
+    // BK Ok - Only adm can set next id
     function setNext(bytes12 next_) note auth {
         // BK Ok
         if (next_ == 0x0) throw;
@@ -76,13 +78,13 @@ contract Medianizer is DSValue {
         next = next_;
     }
 
-    // BK Ok - Authorised account can unset address at pos
+    // BK Ok - Only adm can unset address at pos
     function unset(bytes12 pos) {
         // BK Ok
         set(pos, 0);
     }
 
-    // BK Ok - Authorised account can unset address
+    // BK Ok - Only adm can unset address
     function unset(address wat) {
         // BK Ok
         set(indexes[wat], 0);
@@ -100,7 +102,7 @@ contract Medianizer is DSValue {
         (val, has) = compute();
     }
 
-    // BK Ok - Constant function
+    // BK Ok - Constant function, called by poke to calculate the median price
     function compute() constant returns (bytes32, bool) {
         // BK Ok
         bytes32[] memory wuts = new bytes32[](uint96(next) - 1);

@@ -298,7 +298,7 @@ Component                                                          | Gov | Pip |
 [tub-b353893](code-review/makerdao/tub-b353893.md)                 |     |     |     |     |     |     |     | 11  |     | 11  | 11  | 11  | 13
 [tap-b353893](code-review/makerdao/tap-b353893.md)                 |     |     |     |     |     |     |     | 12  |     |     | 12  | 12  | 14
 [top-b353893](code-review/makerdao/top-b353893.md)                 |     |     |     |     |     |     |     | 13  |     |     |     | 13  | 15
-[mom-b353893](code-review/makerdao/mom-b353893.md)                 |     |     |     |     |     |     |     | 14  |     |     |     |     | 16
+&#10003; [mom-b353893](code-review/makerdao/mom-b353893.md)                 |     |     |     |     |     |     |     | 14  |     |     |     |     | 16
 &#10003; [fab-b353893](code-review/makerdao/fab-b353893.md)                 |     |     |     |     |     |     |     |     |     |     |     |     | 17
 
 <br />
