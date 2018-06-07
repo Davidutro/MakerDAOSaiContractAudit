@@ -37,13 +37,13 @@ console.log("RESULT: tub.gap=" + saiTub.gap());
 console.log("RESULT: tub.off=" + saiTub.off());
 console.log("RESULT: tub.out=" + saiTub.out());
 console.log("RESULT: tub.fit=" + saiTub.fit());
-console.log("RESULT: tub.rho=" + saiTub.rho());
+console.log("RESULT: tub.rho=" + saiTub.rho() + " " + new Date(saiTub.rho() * 1000).toUTCString() + " " + new Date(saiTub.rho() * 1000).toString());
 console.log("RESULT: tub.rum=" + saiTub.rum().toFixed(0) + " " + saiTub.rum().shift(-27) + " ray");
 console.log("RESULT: tub.cupi=" + saiTub.cupi());
 var wad = new BigNumber(1).shift(18);
-console.log("RESULT: tub.per=" + saiTub.per());
-console.log("RESULT: tub.ask(1e18)=" + saiTub.ask(wad));
-console.log("RESULT: tub.bid(1e18)=" + saiTub.bid(wad));
+console.log("RESULT: tub.per=" + saiTub.per().shift(-27));
+console.log("RESULT: tub.ask(1e18)=" + saiTub.ask(wad).shift(-18));
+console.log("RESULT: tub.bid(1e18)=" + saiTub.bid(wad).shift(-18));
 
 
 var latestBlock = eth.blockNumber;

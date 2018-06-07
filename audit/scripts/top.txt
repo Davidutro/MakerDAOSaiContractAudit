@@ -1,10 +1,11 @@
 ---------- State ----------
-eth.blockNumber=5722091
-eth.block.timestamp=Sun, 03 Jun 2018 09:26:15 AEST
+eth.blockNumber=5745422
+eth.block.timestamp=Thu, 07 Jun 2018 12:49:20 AEST
 ---------- Top ----------
 topAddress=top:0x9b0ccf7C8994E19F39b2B4CF708e0A7DF65fA8a3
 top.owner=0x0000000000000000000000000000000000000000
 top.authority=adm:0x8e2a84d6ade1e7fffee039a35ef5f19f13057152
+top.vox=vox:0x9b0f70df76165442ca6092939132bbaea77f2d7a
 top.tub=tub:0x448a5065aebb8e423f0896e6c5d525c040f59af3
 top.tap=tap:0xbda109309f9fafa6dd6a9cb9f1df4085b27ee8ef
 top.sai=sai:0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359

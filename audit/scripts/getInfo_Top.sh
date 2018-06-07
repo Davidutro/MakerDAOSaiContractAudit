@@ -17,6 +17,7 @@ console.log("RESULT: ---------- Top ----------");
 console.log("RESULT: topAddress=" + getAddressName(saiTopAddress));
 console.log("RESULT: top.owner=" + getAddressName(saiTop.owner()));
 console.log("RESULT: top.authority=" + getAddressName(saiTop.authority()));
+console.log("RESULT: top.vox=" + getAddressName(saiTop.vox()));
 console.log("RESULT: top.tub=" + getAddressName(saiTop.tub()));
 console.log("RESULT: top.tap=" + getAddressName(saiTop.tap()));
 console.log("RESULT: top.sai=" + getAddressName(saiTop.sai()));
