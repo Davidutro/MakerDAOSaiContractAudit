@@ -105,16 +105,24 @@ contract DSToken is DSTokenBase(0), DSStop {
     }
 
     // BK Ok - Short form of mint below
+    // BK NOTE - Permit from tap:0xbda109309f9fafa6dd6a9cb9f1df4085b27ee8ef to skr:0xf53ad2c6851052a81b42133467480961b2321c09 for mint(uint256) #4752020 0x5e9650d385807b339446b874125907c110e061f8d458c6f9b753ced5eae5bb26
     function mint(uint wad) public {
         // BK Ok
         mint(msg.sender, wad);
     }
     // BK Ok - Short form of burn below
+    // BK NOTE - Permit from tap:0xbda109309f9fafa6dd6a9cb9f1df4085b27ee8ef to sai:0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359 for burn(uint256) #4752020 0x5e9650d385807b339446b874125907c110e061f8d458c6f9b753ced5eae5bb26
+    // BK NOTE - Permit from tap:0xbda109309f9fafa6dd6a9cb9f1df4085b27ee8ef to sin:0x79f6d0f646706e1261acf0b93dcb864f357d4680 for burn(uint256) #4752020 0x5e9650d385807b339446b874125907c110e061f8d458c6f9b753ced5eae5bb26
+    // BK NOTE - Permit from tap:0xbda109309f9fafa6dd6a9cb9f1df4085b27ee8ef to skr:0xf53ad2c6851052a81b42133467480961b2321c09 for burn(uint256) #4752020 0x5e9650d385807b339446b874125907c110e061f8d458c6f9b753ced5eae5bb26
     function burn(uint wad) public {
         // BK Ok
         burn(msg.sender, wad);
     }
     // BK Ok - Authorised account is able to mint tokens for an account when operations are not stopped
+    // BK NOTE - Permit from tub:0x448a5065aebb8e423f0896e6c5d525c040f59af3 to skr:0xf53ad2c6851052a81b42133467480961b2321c09 for mint(address,uint256) #4752020 0x5e9650d385807b339446b874125907c110e061f8d458c6f9b753ced5eae5bb26
+    // BK NOTE - Permit from tub:0x448a5065aebb8e423f0896e6c5d525c040f59af3 to sai:0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359 for mint(address,uint256) #4752020 0x5e9650d385807b339446b874125907c110e061f8d458c6f9b753ced5eae5bb26
+    // BK NOTE - Permit from tub:0x448a5065aebb8e423f0896e6c5d525c040f59af3 to sin:0x79f6d0f646706e1261acf0b93dcb864f357d4680 for mint(address,uint256) #4752020 0x5e9650d385807b339446b874125907c110e061f8d458c6f9b753ced5eae5bb26
+    // BK NOTE - Permit from tap:0xbda109309f9fafa6dd6a9cb9f1df4085b27ee8ef to sai:0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359 for mint(address,uint256) #4752020 0x5e9650d385807b339446b874125907c110e061f8d458c6f9b753ced5eae5bb26
     function mint(address guy, uint wad) public auth stoppable {
         // BK Ok
         _balances[guy] = add(_balances[guy], wad);
@@ -124,6 +132,10 @@ contract DSToken is DSTokenBase(0), DSStop {
         Mint(guy, wad);
     }
     // BK Ok - Authorised account is able to burn it's own tokens, or tokens approved by another account, when operations are not stopped
+    // BK NOTE - Permit from tub:0x448a5065aebb8e423f0896e6c5d525c040f59af3 to skr:0xf53ad2c6851052a81b42133467480961b2321c09 for burn(address,uint256) #4752020 0x5e9650d385807b339446b874125907c110e061f8d458c6f9b753ced5eae5bb26
+    // BK NOTE - Permit from tub:0x448a5065aebb8e423f0896e6c5d525c040f59af3 to sai:0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359 for burn(address,uint256) #4752020 0x5e9650d385807b339446b874125907c110e061f8d458c6f9b753ced5eae5bb26
+    // BK NOTE - Permit from tap:0xbda109309f9fafa6dd6a9cb9f1df4085b27ee8ef to sai:0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359 for burn(address,uint256) #4752020 0x5e9650d385807b339446b874125907c110e061f8d458c6f9b753ced5eae5bb26
+    // BK NOTE - Permit from tap:0xbda109309f9fafa6dd6a9cb9f1df4085b27ee8ef to skr:0xf53ad2c6851052a81b42133467480961b2321c09 for burn(address,uint256) #4752020 0x5e9650d385807b339446b874125907c110e061f8d458c6f9b753ced5eae5bb26
     function burn(address guy, uint wad) public auth stoppable {
         // BK Ok - Approval of 0xffff...ffff does not get approved amount updated
         if (guy != msg.sender && _approvals[guy][msg.sender] != uint(-1)) {
