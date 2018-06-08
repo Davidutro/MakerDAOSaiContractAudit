@@ -41,9 +41,12 @@ console.log("RESULT: tub.rho=" + saiTub.rho() + " " + new Date(saiTub.rho() * 10
 console.log("RESULT: tub.rum=" + saiTub.rum().toFixed(0) + " " + saiTub.rum().shift(-27) + " ray");
 console.log("RESULT: tub.cupi=" + saiTub.cupi());
 var wad = new BigNumber(1).shift(18);
-console.log("RESULT: tub.per=" + saiTub.per().shift(-27));
+console.log("RESULT: tub.air=" + saiTub.air().toFixed(0) + " " + saiTub.air().shift(-18));
+console.log("RESULT: tub.pie=" + saiTub.pie().toFixed(0) + " " + saiTub.pie().shift(-18));
+console.log("RESULT: tub.per=" + saiTub.per().toFixed(0) + " " + saiTub.per().shift(-27));
 console.log("RESULT: tub.ask(1e18)=" + saiTub.ask(wad).shift(-18));
 console.log("RESULT: tub.bid(1e18)=" + saiTub.bid(wad).shift(-18));
+console.log("RESULT: tub.tag=" + saiTub.tag().toFixed(0) + " " + saiTub.tag().shift(-18));
 
 
 var latestBlock = eth.blockNumber;

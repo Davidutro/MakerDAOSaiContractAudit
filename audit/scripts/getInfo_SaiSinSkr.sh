@@ -21,6 +21,11 @@ names.forEach(function (name) {
   console.log("RESULT: " + name + "Address=" + getAddressName(address));
   console.log("RESULT: " + name + ".owner=" + getAddressName(contract.owner()));
   console.log("RESULT: " + name + ".authority=" + getAddressName(contract.authority()));
+  console.log("RESULT: " + name + ".symbol=" + web3.toAscii(contract.symbol()));
+  console.log("RESULT: " + name + ".name=" + web3.toAscii(contract.name()));
+  console.log("RESULT: " + name + ".decimals=" + contract.decimals());
+  console.log("RESULT: " + name + ".totalSupply=" + contract.totalSupply() + " " + contract.totalSupply().shift(-contract.decimals()));
+
 
   var latestBlock = eth.blockNumber;
   // var fromBlock = parseInt(latestBlock) - 1000000;
