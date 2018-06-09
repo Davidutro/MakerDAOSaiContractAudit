@@ -96,6 +96,12 @@ TODO
 
 <br />
 
+### TODO - Check
+
+* `tub.tag()` is meant to return a wad (10^18) number, but seems to return a ray (10^27) number
+
+<br />
+
 <hr />
 
 ## Tokens
