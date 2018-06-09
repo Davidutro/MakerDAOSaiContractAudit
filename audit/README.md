@@ -1,31 +1,12 @@
 # MakerDAO Sai Contract Audit
 
+Status: Work in progress
+
 ## Summary
 
 The [MakerDAO](https://makerdao.com/) Sai stable currency is currently in use on Mainnet.
 
 Bok Consulting Pty Ltd was commissioned to perform an audit on the Ethereum smart contracts for MakerDAO's Sai stable currency.
-
-This audit has been conducted on MakerDAO's contract source code for the following contracts:
-
-* Tokens
-  * [gem:0xc02aaa39]
-  * [gov:0x9f8f72aa]
-  * [sai:0x89d24a6b]
-  * [sin:0x79f6d0f6]
-  * [skr:0xf53ad2c6]
-* Price Feeds
-  * [pip:0x729d19f6]
-  * [pep:0x99041f80]
-* Others
-  * [pit:0x69076e44]
-  * [adm:0x8e2a84d6]
-  * [dad:0x315cbb88]
-  * [mom:0xf2c5369c]
-  * [vox:0x9b0f70df]
-  * [tub:0x448a5065]
-  * [tap:0xbda10930]
-  * [top:0x9b0ccf7c]
 
 TODO: Check that no potential vulnerabilities have been identified in the smart contracts.
 
@@ -35,6 +16,10 @@ TODO: Check that no potential vulnerabilities have been identified in the smart 
 
 ## Table Of Contents
 
+* [Introduction](#introduction)
+* [Scope](#scope)
+* [Methodology](#methodology)
+* [Results](#results)
 * [Tokens](#tokens)
   * [Gem](#gem)
   * [Gov](#gov)
@@ -44,6 +29,69 @@ TODO: Check that no potential vulnerabilities have been identified in the smart 
 * [Other](#other)
 * [Contract Permissions](#contract-permissions)
 * [Code Review Of Components](#code-review-of-components)
+
+<br />
+
+<hr />
+
+## Introduction
+
+<br />
+
+<hr />
+
+## Scope
+
+TODO
+
+This audit is into the technical aspects of the MakerDAO's Sai stable currency contracts. The primary aim of this audit is to ensure that funds
+represented by these contracts are not easily attacked or stolen by third parties. The secondary aim of this audit is to
+ensure the coded algorithms work as expected. This audit does not guarantee that that the code is bug-free, but intends to
+highlight any areas of weaknesses.
+
+This audit has been conducted on MakerDAO's contract source code for the following contracts:
+
+* Tokens
+  * [gem:0xc02aaa39] - The `WETH` `Wrapped Ether` [token](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2) contract
+  * [gov:0x9f8f72aa] - The `MKR` `Maker` [token](https://etherscan.io/token/0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2) contract
+  * [sai:0x89d24a6b] - The `DAI` `Dai Stablecoin v1.0` [token](https://etherscan.io/token/0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359) contract
+  * [sin:0x79f6d0f6] - The `SIN` `SIN` [token](https://etherscan.io/token/0x79f6d0f646706e1261acf0b93dcb864f357d4680) contract
+  * [skr:0xf53ad2c6] - The `PETH` `Pooled Ether` [token](https://etherscan.io/token/0xf53ad2c6851052a81b42133467480961b2321c09) contract
+* Price Feeds
+  * [pip:0x729d19f6]
+  * [pep:0x99041f80]
+  * [vox:0x9b0f70df]
+* Others
+  * [pit:0x69076e44]
+  * [adm:0x8e2a84d6]
+  * [dad:0x315cbb88]
+  * [mom:0xf2c5369c]
+  * [tub:0x448a5065]
+  * [tap:0xbda10930]
+  * [top:0x9b0ccf7c]
+
+<br />
+
+<hr />
+
+## Methodology
+
+TODO
+
+* Extraction of source code for the deployed contracts from EtherScan
+* Scripts to deploy to a dev environment
+* Matching code components from GitHub to the deployed contracts
+* Extraction of contract state and events for the deployed contracts
+* Code review of the code components
+
+<br />
+
+<hr />
+
+## Results
+
+* 3 letter names, 4 letter actions
+* mix of 18 and 27 decimal places
 
 <br />
 
@@ -168,7 +216,7 @@ Individual price feed providers write to their instances of [PriceFeed](https://
 
 #### Permissions
 
-These token contracts have `owner` set to [0x00000000] and `authority` set to [adm:0x8e2a84d6].
+These contracts have `owner` set to [0x00000000] and `authority` set to [adm:0x8e2a84d6].
 
 #### Potential Vulnerabilities
 
@@ -211,6 +259,52 @@ Permit From      | Permit To        | Function              | Notes
 [mom:0xf2c5369c] | [tub:0x448a5065] | setPep(address)       | *mom* can set new MKR/USD *pep* price feed
 [mom:0xf2c5369c] | [tub:0x448a5065] | setVox(address)       | *mom* can set new *vox*
 
+
+```
+adm.txt:admAddress=adm:0x8E2a84D6adE1E7ffFEe039A35EF5F19F13057152
+adm.txt:adm.owner=0x0000000000000000000000000000000000000000
+adm.txt:adm.authority=adm:0x8e2a84d6ade1e7fffee039a35ef5f19f13057152
+dad.txt:dadAddress=dad:0x315cBb88168396D12e1a255f9Cb935408fe80710
+dad.txt:dad.owner=0x0000000000000000000000000000000000000000
+dad.txt:dad.authority=0x0000000000000000000000000000000000000000
+gov.txt:govAddress=gov:0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2
+gov.txt:gov.owner=community4of6multisig:0x7bb0b08587b8a6b8945e09f1baca426558b0f06a
+gov.txt:gov.authority=0x0000000000000000000000000000000000000000
+mom.txt:momAddress=mom:0xF2C5369cFFb8Ea6284452b0326e326DbFdCb867C
+mom.txt:mom.owner=0x0000000000000000000000000000000000000000
+mom.txt:mom.authority=adm:0x8e2a84d6ade1e7fffee039a35ef5f19f13057152
+pep.txt:medianizerPepAddress=pep:0x99041F808D598B782D5a3e498681C2452A31da08
+pep.txt:medianizerPep.owner=0x0000000000000000000000000000000000000000
+pep.txt:medianizerPep.authority=adm:0x8e2a84d6ade1e7fffee039a35ef5f19f13057152
+pip.txt:medianizerPipAddress=pip:0x729D19f657BD0614b4985Cf1D82531c67569197B
+pip.txt:medianizerPip.owner=0x0000000000000000000000000000000000000000
+pip.txt:medianizerPip.authority=adm:0x8e2a84d6ade1e7fffee039a35ef5f19f13057152
+pit.txt:pitAddress=pit:0x69076e44a9C70a67D5b79d95795Aba299083c275
+redeemer.txt:redeemerAddress=redeemer:0x642ae78fafbb8032da552d619ad43f1d81e4dd7c
+redeemer.txt:redeemer.owner=0x7bb0b08587b8a6b8945e09f1baca426558b0f06a
+redeemer.txt:redeemer.authority=0x0000000000000000000000000000000000000000
+saiSinSkr.txt:saiAddress=sai:0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359
+saiSinSkr.txt:sai.owner=0x0000000000000000000000000000000000000000
+saiSinSkr.txt:sai.authority=dad:0x315cbb88168396d12e1a255f9cb935408fe80710
+saiSinSkr.txt:sinAddress=sin:0x79f6d0f646706e1261acf0b93dcb864f357d4680
+saiSinSkr.txt:sin.owner=0x0000000000000000000000000000000000000000
+saiSinSkr.txt:sin.authority=dad:0x315cbb88168396d12e1a255f9cb935408fe80710
+saiSinSkr.txt:skrAddress=skr:0xf53ad2c6851052a81b42133467480961b2321c09
+saiSinSkr.txt:skr.owner=0x0000000000000000000000000000000000000000
+saiSinSkr.txt:skr.authority=dad:0x315cbb88168396d12e1a255f9cb935408fe80710
+tap.txt:tapAddress=tap:0xBda109309f9FafA6Dd6A9CB9f1Df4085B27Ee8eF
+tap.txt:tap.owner=0x0000000000000000000000000000000000000000
+tap.txt:tap.authority=dad:0x315cbb88168396d12e1a255f9cb935408fe80710
+top.txt:topAddress=top:0x9b0ccf7C8994E19F39b2B4CF708e0A7DF65fA8a3
+top.txt:top.owner=0x0000000000000000000000000000000000000000
+top.txt:top.authority=adm:0x8e2a84d6ade1e7fffee039a35ef5f19f13057152
+tub.txt:tubAddress=tub:0x448a5065aeBB8E423F0896E6c5D525C040f59af3
+tub.txt:tub.owner=0x0000000000000000000000000000000000000000
+tub.txt:tub.authority=dad:0x315cbb88168396d12e1a255f9cb935408fe80710
+vox.txt:voxAddress=vox:0x9B0F70Df76165442ca6092939132bBAEA77f2d7A
+vox.txt:vox.owner=0x0000000000000000000000000000000000000000
+vox.txt:vox.authority=dad:0x315cbb88168396d12e1a255f9cb935408fe80710
+```
 
 <br />
 
@@ -268,10 +362,10 @@ Source code for the deployed contracts have been matched against the component c
 contracts against the component contracts.
 
 * &#10003; Gem ([weth9-b353893](code-review/makerdao/weth9-b353893.md)) is a standalone contract.
-* SSS represents the Sai, Sin and Skr contracts that are all identical in the source code, but with different deployment parameters
+* SSS represents the [Sai], [Sin] and [Skr] contracts that are all identical in the source code, but with different deployment parameters
 * Pip deployed on 10 May 2017. The other components were deployed in Dec 2017
 
-Component                                                          | Gov | Pip | Pep | Pit | Adm | SSS | Dad | Mom | Vox | Tub | Tap | Top | Fab
+Component                                                          | [Gov] | [Pip] | [Pep] | [Pit] | [Adm] | SSS | [Dad] | [Mom] | [Vox] | [Tub] | [Tap] | [Top] | [Fab]
 ------------------------------------------------------------------ |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
 &#10003; [auth-52c6a32](code-review/dappsys/auth-52c6a32.md)                |  1  |     |  1  |  2  |  1  |  2  |  1  |  1  |  1  |  1  |  1  |  1  |  1
 &#10003; [auth-ce285fb](code-review/dappsys/auth-ce285fb.md)                |     |  1  |     |     |     |     |     |     |     |     |     |     |  
@@ -305,6 +399,22 @@ Component                                                          | Gov | Pip |
 
 <br />
 
+[Gem]: https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2#code
+[Gov]: https://etherscan.io/address/0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2#code
+[Pip]: https://etherscan.io/address/0x729D19f657BD0614b4985Cf1D82531c67569197B#code
+[Pep]: https://etherscan.io/address/0x99041F808D598B782D5a3e498681C2452A31da08#code
+[Pit]: https://etherscan.io/address/0x69076e44a9c70a67d5b79d95795aba299083c275#code
+[Adm]: https://etherscan.io/address/0x8e2a84d6ade1e7fffee039a35ef5f19f13057152#code
+[Sai]: https://etherscan.io/address/0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359#code
+[Sin]: https://etherscan.io/address/0x79f6d0f646706e1261acf0b93dcb864f357d4680#code
+[Skr]: https://etherscan.io/address/0xf53ad2c6851052a81b42133467480961b2321c09#code
+[Dad]: https://etherscan.io/address/0x315cbb88168396d12e1a255f9cb935408fe80710#code
+[Mom]: https://etherscan.io/address/0xf2c5369cffb8ea6284452b0326e326dbfdcb867c#code
+[Vox]: https://etherscan.io/address/0x9b0f70df76165442ca6092939132bbaea77f2d7a#code
+[Tub]: https://etherscan.io/address/0x448a5065aebb8e423f0896e6c5d525c040f59af3#code
+[Tap]: https://etherscan.io/address/0xbda109309f9fafa6dd6a9cb9f1df4085b27ee8ef#code
+[Top]: https://etherscan.io/address/0x9b0ccf7c8994e19f39b2b4cf708e0a7df65fa8a3#code
+[Fab]: https://etherscan.io/address/0xF07674F6AC6632e253C291B694f9C2e2ED69eBBB#code
 [gem:0xc02aaa39]: https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2#code
 [gov:0x9f8f72aa]: https://etherscan.io/address/0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2#code
 [pip:0x729d19f6]: https://etherscan.io/address/0x729D19f657BD0614b4985Cf1D82531c67569197B#code
@@ -320,6 +430,7 @@ Component                                                          | Gov | Pip |
 [tub:0x448a5065]: https://etherscan.io/address/0x448a5065aebb8e423f0896e6c5d525c040f59af3#code
 [tap:0xbda10930]: https://etherscan.io/address/0xbda109309f9fafa6dd6a9cb9f1df4085b27ee8ef#code
 [top:0x9b0ccf7c]: https://etherscan.io/address/0x9b0ccf7c8994e19f39b2b4cf708e0a7df65fa8a3#code
+[fab:0xf07674f6]: https://etherscan.io/address/0xF07674F6AC6632e253C291B694f9C2e2ED69eBBB#code
 [0x00000000]: https://etherscan.io/address/0x0000000000000000000000000000000000000000#code
 [community4of6multisig:0x7bb0b085]: https://etherscan.io/address/0x7bb0b08587b8a6b8945e09f1baca426558b0f06a#code
 [ERC20 token standard]: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md
