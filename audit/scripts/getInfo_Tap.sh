@@ -22,12 +22,12 @@ console.log("RESULT: tap.sin=" + getAddressName(saiTap.sin()));
 console.log("RESULT: tap.skr=" + getAddressName(saiTap.skr()));
 console.log("RESULT: tap.vox=" + getAddressName(saiTap.vox()));
 console.log("RESULT: tap.tub=" + getAddressName(saiTap.tub()));
-console.log("RESULT: tap.gap=" + saiTap.gap() + " " + saiTap.gap().shift(-18));
+console.log("RESULT: tap.gap=" + saiTap.gap().toFixed(0) + " " + saiTap.gap().shift(-18) + " wad");
 console.log("RESULT: tap.off=" + saiTap.off());
 console.log("RESULT: tap.fix=" + saiTap.fix());
-console.log("RESULT: tap.joy=" + saiTap.joy());
-console.log("RESULT: tap.woe=" + saiTap.woe());
-console.log("RESULT: tap.fog=" + saiTap.fog());
+console.log("RESULT: tap.joy=" + saiTap.joy().toFixed(0) + " " + saiTap.joy().shift(-18) + " wad");
+console.log("RESULT: tap.woe=" + saiTap.woe().toFixed(0) + " " + saiTap.woe().shift(-18) + " wad");
+console.log("RESULT: tap.fog=" + saiTap.fog().toFixed(0) + " " + saiTap.fog().shift(-18) + " wad");
 
 var latestBlock = eth.blockNumber;
 

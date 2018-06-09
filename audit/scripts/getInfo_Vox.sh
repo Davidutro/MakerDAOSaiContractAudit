@@ -17,7 +17,7 @@ console.log("RESULT: ---------- Dad ----------");
 console.log("RESULT: voxAddress=" + getAddressName(saiVoxAddress));
 console.log("RESULT: vox.owner=" + getAddressName(saiVox.owner()));
 console.log("RESULT: vox.authority=" + getAddressName(saiVox.authority()));
-console.log("RESULT: vox.fix=" + saiVox.fix() + " " + saiVox.fix().shift(-27));
+console.log("RESULT: vox.fix=" + saiVox.fix() + " " + saiVox.fix().shift(-27) + " ray");
 console.log("RESULT: vox.how=" + saiVox.how());
 console.log("RESULT: vox.tau=" + saiVox.tau() + " " + new Date(saiVox.tau() * 1000).toUTCString() + " " + new Date(saiVox.tau() * 1000).toString());
 
