@@ -96,9 +96,9 @@ TODO
 
 <br />
 
-### TODO - Check
+### Issues
 
-* `tub.tag()` is meant to return a wad (10^18) number, but seems to return a ray (10^27) number
+* `tub.tag()` return value is a ray (10^27) and NOT a a wad (10^18) number as implied in the return value `function tag() public view returns (uint wad) {`
 
 <br />
 
