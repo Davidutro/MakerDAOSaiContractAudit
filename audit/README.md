@@ -83,6 +83,7 @@ TODO
 * Matching code components from GitHub to the deployed contracts
 * Extraction of contract state and events for the deployed contracts
 * Code review of the code components
+* Some manual calculations have been calculated using the [math-d5acd9c](https://github.com/dapphub/ds-math/blob/d5acd9c230361b29817ab3108743511747916abd/src/math.sol) with the *internal* functions converted to *public* functions and deployed to [0xc05e27d67021f9fcF2113b51B2F5F9eb88A9FC48](https://ropsten.etherscan.io/address/0xc05e27d67021f9fcF2113b51B2F5F9eb88A9FC48#readContract) on Ropsten
 
 <br />
 
