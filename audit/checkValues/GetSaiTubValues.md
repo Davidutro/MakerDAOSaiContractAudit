@@ -1,6 +1,6 @@
 # GetSaiTubValues
 
-## Web3 Deploy
+## Web3 Deploy #1
 
 ```javascript
 var getsaitubvaluesContract = web3.eth.contract([{"constant":true,"inputs":[],"name":"rhi","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"cup","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"saiTub","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_cup","type":"bytes32"}],"name":"updateTabRap","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"chi","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"updateRest","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"tab","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"din","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"rap","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}]);
@@ -79,5 +79,39 @@ undefined
 // rhi is ray
 > console.log("rhi=" + rhi.toFixed(0) + " " + rhi.shift(-18) + " " + rhi.shift(-27));
 rhi=1002374232345434705158023099 1002374232.345434705158023099 1.002374232345434705158023099
+undefined
+```
+
+## Web3 Deploy #2
+
+```javascript
+var getsaitubvaluesContract = web3.eth.contract([{"constant":true,"inputs":[],"name":"tag","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"saiTub","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"update","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}]);
+var getsaitubvalues = getsaitubvaluesContract.new(
+   {
+     from: web3.eth.accounts[0], 
+     data: '0x608060405260008054600160a060020a03191673448a5065aebb8e423f0896e6c5d525c040f59af317905534801561003657600080fd5b506101db806100466000396000f3006080604052600436106100565763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166351f91066811461005b57806389dcd64f14610082578063a2e62045146100c0575b600080fd5b34801561006757600080fd5b506100706100d7565b60408051918252519081900360200190f35b34801561008e57600080fd5b506100976100dd565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b3480156100cc57600080fd5b506100d56100f9565b005b60015481565b60005473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166351f910666040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401602060405180830381600087803b15801561017e57600080fd5b505af1158015610192573d6000803e3d6000fd5b505050506040513d60208110156101a857600080fd5b50516001555600a165627a7a723058206baa0fcebcf40f16b8e989d8aee427c12467e4f87307af2e73d4188c24c11c190029', 
+     gas: '1000000',
+     gasPrice: web3.toWei(6, "gwei")
+   }, function (e, contract){
+    console.log(e, contract);
+    if (typeof contract.address !== 'undefined') {
+         console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
+    }
+ })
+
+// INFO [06-10|02:59:09] Submitted contract creation              fullhash=0x61cfa0de21401f9bc30fd92204e6f1d43b1204111c9755d0998670c62a9a65bf contract=0x0c3A309bB8d8541EE4F519C8bbc17294b23a462B
+// Contract mined! address: 0x0c3a309bb8d8541ee4f519c8bbc17294b23a462b transactionHash: 0x61cfa0de21401f9bc30fd92204e6f1d43b1204111c9755d0998670c62a9a65bf
+
+
+var tx = getsaitubvalues.update({from: eth.accounts[0], gas: "1000000", gasPrice: web3.toWei(6, "gwei")});
+// INFO [06-10|03:00:37] Submitted transaction                    fullhash=0x05691b044dc43069398be31573ddec5dd6c38a67c2c1cbfdea2775c72e32c834 recipient=0x0c3A309bB8d8541EE4F519C8bbc17294b23a462B
+
+var tag = getsaitubvalues.tag();
+console.log("tag=" + tag.toFixed(0) + " " + tag.shift(-18) + " " + tag.shift(-27));
+
+> var tag = getsaitubvalues.tag();
+undefined
+> console.log("tag=" + tag.toFixed(0) + " " + tag.shift(-18) + " " + tag.shift(-27));
+tag=609407526508371291433306584991 609407526508.371291433306584991 609.407526508371291433306584991
 undefined
 ```
