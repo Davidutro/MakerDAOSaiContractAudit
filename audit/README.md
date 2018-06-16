@@ -1,14 +1,14 @@
 # MakerDAO Sai Contract Audit
 
-Status: Work in progress
+Status: Documenting results
 
 ## Summary
 
-The [MakerDAO](https://makerdao.com/) Sai stable currency is currently in use on Mainnet.
+The [MakerDAO](https://makerdao.com/) Sai stable currency is currently in use on the Ethereum mainnet, and there is a USD 50 million cap on the amount of Sai currency on issue.
 
 Bok Consulting Pty Ltd was commissioned to perform an audit on the Ethereum smart contracts for MakerDAO's Sai stable currency.
 
-TODO: Check that no potential vulnerabilities have been identified in the smart contracts.
+No potential vulnerabilities have been identified in the smart contracts.
 
 <br />
 
@@ -25,7 +25,10 @@ TODO: Check that no potential vulnerabilities have been identified in the smart 
   * [Gov](#gov)
   * [Sai, Sin And Skr](#sai-sin-and-skr)
 * [Price Feeds](#price-feeds)
-* [Tub](#tub)
+* [Target Price Feed](#target-price-feed)
+* [Collateral Debt Position](#collateral-debt-position)
+* [Liquidator](#liquidator)
+* [Global Settlement Manager](#global-settlement-manager)
 * [Other](#other)
 * [Contract Permissions](#contract-permissions)
 * [Code Review Of Components](#code-review-of-components)
@@ -44,10 +47,7 @@ TODO: Check that no potential vulnerabilities have been identified in the smart 
 
 TODO
 
-This audit is into the technical aspects of the MakerDAO's Sai stable currency contracts. The primary aim of this audit is to ensure that funds
-represented by these contracts are not easily attacked or stolen by third parties. The secondary aim of this audit is to
-ensure the coded algorithms work as expected. This audit does not guarantee that that the code is bug-free, but intends to
-highlight any areas of weaknesses.
+This audit is into the technical aspects of the MakerDAO's Sai stable currency contracts. The primary aim of this audit is to ensure that funds represented by these contracts are not easily attacked or stolen by third parties. The secondary aim of this audit is to ensure the coded algorithms work as expected. This audit does not guarantee that that the code is bug-free, but intends to highlight any areas of weaknesses.
 
 This audit has been conducted on MakerDAO's contract source code for the following contracts:
 
@@ -58,17 +58,22 @@ This audit has been conducted on MakerDAO's contract source code for the followi
   * [sin:0x79f6d0f6] - The `SIN` `SIN` [token](https://etherscan.io/token/0x79f6d0f646706e1261acf0b93dcb864f357d4680) contract
   * [skr:0xf53ad2c6] - The `PETH` `Pooled Ether` [token](https://etherscan.io/token/0xf53ad2c6851052a81b42133467480961b2321c09) contract
 * Price Feeds
-  * [pip:0x729d19f6]
-  * [pep:0x99041f80]
-  * [vox:0x9b0f70df]
-* Others
-  * [pit:0x69076e44]
+  * [pip:0x729d19f6] - ETH/USD price feed
+  * [pep:0x99041f80] - MKR/USD price feed
+* Target Price Feed
+  * [vox:0x9b0f70df] - Target price feed
+* Collateral Debt Position
+  * [tub:0x448a5065] - Collateral Debt Position
+* Liquidator
+  * [tap:0xbda10930] - Liquidator
+* Global Settlement Manager
+  * [top:0x9b0ccf7c] - Global Settlement Manager
+* Permissions
   * [adm:0x8e2a84d6]
   * [dad:0x315cbb88]
+* Others
+  * [pit:0x69076e44] - SKR burn address
   * [mom:0xf2c5369c]
-  * [tub:0x448a5065]
-  * [tap:0xbda10930]
-  * [top:0x9b0ccf7c]
 
 <br />
 
@@ -104,6 +109,15 @@ TODO
 
 <hr />
 
+## General
+
+* **LOW IMPORTANCE** There is no ability to transfer out any other ERC20 tokens accidentally sent to these token contracts
+* **LOW IMPORTANCE** There is no ability to prevent ETH being transferred to these token contracts, and no ability to transfer out any ETH accidentally sent to these token contracts
+
+<br />
+
+<hr />
+
 ## Tokens
 
 Token            | Symbol | Name                | Decimals | Owner                              | Authority
@@ -131,7 +145,6 @@ No potential vulnerabilities have been identified in this smart contract.
 #### Issues
 
 * **LOW IMPORTANCE** There is a possibility for the total supply to be larger than the sum of all token balance when the `selfdestruct` opcode is used to transfer ETH to this token contract, and this amount cannot be recovered from this token contract
-* **LOW IMPORTANCE** There is no ability to transfer out any other ERC20 tokens accidentally sent to this token contract
 
 <br />
 
@@ -142,11 +155,11 @@ This is the MKR (Maker) governance token contract.
 * Contract address: [gov:0x9f8f72aa]
 * Source code: [token-e637e3f](code-review/dappsys/token-e637e3f.md) and dependencies
 * Deployed source code: [DSTokenGov.sol](deployed-contracts/DSTokenGov-0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2.sol)
-* Data: [dad.txt](scripts/dad.txt)
+* Data: [gov.txt](scripts/gov.txt)
 
 #### Permissions
 
-This token contract has `owner` set to [community4of6multisig:0x7bb0b085] and `authority` set to [0x00000000].
+This token contract has `owner` set to [community4of6multisig:0x7bb0b085] and `authority` set to [0x00000000]. The 4 of 6 community multisig is able to
 
 #### Potential Vulnerabilities
 
@@ -162,8 +175,6 @@ No potential vulnerabilities have been identified in this smart contract.
 * **LOW IMPORTANCE** The `decimals()` function returns the `uint256` data type instead of `uint8` as recommended in the [ERC20 token standard]
 * **LOW IMPORTANCE** The `mint(...)` function should emit the `Transfer(address(0), guy, wad)` event as the blockchain token explorers will pick this event up
 * **LOW IMPORTANCE** The `burn(...)` function should emit the `Transfer(guy, address(0), wad)` event as the blockchain token explorers will pick this event up
-* **LOW IMPORTANCE** There is no ability to transfer out any other ERC20 tokens accidentally sent to this token contract
-* **LOW IMPORTANCE** There is no ability to prevent ETH being transferred to this token contract, and no ability to transfer out any ETH accidentally sent to this token contract
 
 <br />
 
@@ -203,8 +214,6 @@ No potential vulnerabilities have been identified in these smart contract.
 
 * **LOW IMPORTANCE** The `name()` and `symbol()` functions return the `bytes32` data type instead of `string` as recommended in the [ERC20 token standard]
 * **LOW IMPORTANCE** The `decimals()` function returns the `uint256` data type instead of `uint8` as recommended in the [ERC20 token standard]
-* **LOW IMPORTANCE** There is no ability to transfer out any other ERC20 tokens accidentally sent to these token contracts
-* **LOW IMPORTANCE** There is no ability to prevent ETH being transferred to these token contracts, and no ability to transfer out any ETH accidentally sent to these token contracts
 
 <br />
 
@@ -231,16 +240,45 @@ No potential vulnerabilities have been identified in these smart contract.
 
 #### Issues
 
-* **LOW IMPORTANCE** There is no ability to transfer out any other ERC20 tokens accidentally sent to these token contracts
-* **LOW IMPORTANCE** There is no ability to prevent ETH being transferred to these token contracts, and no ability to transfer out any ETH accidentally sent to these token contracts
+No issues were indentified.
 
 <br />
 
 <hr />
 
-## Tub
+## Target Price Feed
 
-The *tub* contract manages the list of *cup*s
+The *vox* target price feed is the reference rate that the *sai* stable coin targets.
+
+* Contract address: [vox:0x9b0f70df]
+* Source code: ETH/USD *pip* [vox-b353893.sol](code-review/makerdao/vox-b353893.md) and dependencies
+* Deployed source code: [SaiVox.sol](deployed-contracts/SaiVox-0x9B0F70Df76165442ca6092939132bBAEA77f2d7A.sol)
+* Data: [vox.txt](scripts/vox.txt)
+
+#### Permissions
+
+This contracts has `owner` set to [0x00000000] and `authority` set to [dad:0x315cbb88] and this defines the permissions for which other smart contracts (*mom*) are able to tune the *vox* parameters using the `mold(...)` and `tune(...)` functions.
+
+Permit From      | Permit To        | Function
+---------------- | ---------------- | ---------------------
+[mom:0xf2c5369c] | [vox:0x9b0f70df] | mold(bytes32,uint256)
+[mom:0xf2c5369c] | [vox:0x9b0f70df] | tune(uint256)
+
+#### Potential Vulnerabilities
+
+No potential vulnerabilities have been identified in these smart contract.
+
+#### Issues
+
+No issues were indentified.
+
+<br />
+
+<hr />
+
+## Collateral Debt Position
+
+The *tub* contract manages the list of *cup*s representing the individual collateral debt position.
 
 * Contract address: [tub:0x448a5065]
 * Source code: [tub-b353893](code-review/makerdao/tub-b353893.md) and dependencies
@@ -267,6 +305,7 @@ Permit From      | Permit To        | Function              | Notes
 [mom:0xf2c5369c] | [tub:0x448a5065] | setVox(address)       | *mom* can set new *vox*
 
 
+TODO: Delete the following
 ```
 adm.txt:admAddress=adm:0x8E2a84D6adE1E7ffFEe039A35EF5F19F13057152
 adm.txt:adm.owner=0x0000000000000000000000000000000000000000
@@ -312,6 +351,58 @@ vox.txt:voxAddress=vox:0x9B0F70Df76165442ca6092939132bBAEA77f2d7A
 vox.txt:vox.owner=0x0000000000000000000000000000000000000000
 vox.txt:vox.authority=dad:0x315cbb88168396d12e1a255f9cb935408fe80710
 ```
+
+<br />
+
+<hr />
+
+## Liquidator
+
+The *tap* contract is the Liquidator.
+
+* Contract address: [tap:0xbda10930]
+* Source code: [tap-b353893](code-review/makerdao/tap-b353893.md) and dependencies
+* Deployed source code: [SaiTap.sol](deployed-contracts/SaiTap-0xBda109309f9FafA6Dd6A9CB9f1Df4085B27Ee8eF.sol)
+* Data: [tap.txt](scripts/tap.txt)
+
+#### Permissions
+
+This contract has `owner` set to [0x00000000] and `authority` set to [dad:0x315cbb88] and this defines the permissions for which other smart contract are able to execute the functions. The following table is a whitelist of which smart contracts are able to execute the functions:
+
+Permit From      | Permit To        | Function              | Notes
+---------------- | ---------------- | --------------------- | ----------------------------
+[top:0x9b0ccf7c] | [tap:0xbda10930] | cage(uint256)
+[tap:0xbda10930] | [sai:0x89d24a6b] | mint(address,uint256)
+[tap:0xbda10930] | [sai:0x89d24a6b] | burn(address,uint256)
+[tap:0xbda10930] | [sai:0x89d24a6b] | burn(uint256)
+[tap:0xbda10930] | [sin:0x79f6d0f6] | burn(uint256)
+[tap:0xbda10930] | [skr:0xf53ad2c6] | mint(uint256)
+[tap:0xbda10930] | [skr:0xf53ad2c6] | burn(uint256)
+[tap:0xbda10930] | [skr:0xf53ad2c6] | burn(address,uint256)
+[mom:0xf2c5369c] | [tap:0xbda10930] | mold(bytes32,uint256)
+
+<br />
+
+<hr />
+
+## Global Settlement Manager
+
+The *tap* contract is the Global Settlement Manager.
+
+* Contract address: [top:0x9b0ccf7c]
+* Source code: [top-b353893](code-review/makerdao/top-b353893.md) and dependencies
+* Deployed source code: [SaiTop.sol](deployed-contracts/SaiTop-0x9b0ccf7C8994E19F39b2B4CF708e0A7DF65fA8a3.sol)
+* Data: [top.txt](scripts/top.txt)
+
+#### Permissions
+
+This contract has `owner` set to [0x00000000] and `authority` set to [adm:0x8e2a84d6] and this defines the permissions for which other smart contract are able to execute the functions. The following table is a whitelist of which smart contracts are able to execute the functions:
+
+Permit From      | Permit To        | Function              | Notes
+---------------- | ---------------- | --------------------- | ----------------------------
+[top:0x9b0ccf7c] | [tub:0x448a5065] | cage(uint256,uint256)
+[top:0x9b0ccf7c] | [tub:0x448a5065] | flow()
+[top:0x9b0ccf7c] | [tap:0xbda10930] | cage(uint256)
 
 <br />
 
@@ -375,26 +466,26 @@ contracts against the component contracts.
 Component                                                          | [Gov] | [Pip] | [Pep] | [Pit] | [Adm] | SSS | [Dad] | [Mom] | [Vox] | [Tub] | [Tap] | [Top] | [Fab]
 ------------------------------------------------------------------ |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
 &#10003; [auth-52c6a32](code-review/dappsys/auth-52c6a32.md)                |  1  |     |  1  |  2  |  1  |  2  |  1  |  1  |  1  |  1  |  1  |  1  |  1
-&#10003; [auth-ce285fb](code-review/dappsys/auth-ce285fb.md)                |     |  1  |     |     |     |     |     |     |     |     |     |     |  
+&#10003; [auth-ce285fb](code-review/dappsys/auth-ce285fb.md)                |     |  1  |     |     |     |     |     |     |     |     |     |     |
 &#10003; [base-e637e3f](code-review/dappsys/base-e637e3f.md)                |  7  |     |     |  6  |  8  |  6  |     |  7  |     |  7  |  7  |  7  |  9
-&#10003; [chief-a06b5e4](code-review/dappsys/chief-a06b5e4.md)              |     |     |     |     | 10  |     |     |     |     |     |     |     |  
-&#10003; [erc20-56f16b3](code-review/dappsys/erc20-56f16b3.md)              |  6  |     |     |     |     |     |     |     |     |     |     |     |  
+&#10003; [chief-a06b5e4](code-review/dappsys/chief-a06b5e4.md)              |     |     |     |     | 10  |     |     |     |     |     |     |     |
+&#10003; [erc20-56f16b3](code-review/dappsys/erc20-56f16b3.md)              |  6  |     |     |     |     |     |     |     |     |     |     |     |
 &#10003; [erc20-c4f5635](code-review/dappsys/erc20-c4f5635.md)              |     |     |     |  5  |  7  |  5  |     |  6  |     |  6  |  6  |  6  |  8
 &#10003; [guard-f8b7f58](code-review/dappsys/guard-f8b7f58.md)              |     |     |     |     |     |     |  2  |     |     |     |     |     |  2
-&#10003; [math-a01112f](code-review/dappsys/math-a01112f.md)                |     |  3  |     |     |     |     |     |     |     |     |     |     |  
+&#10003; [math-a01112f](code-review/dappsys/math-a01112f.md)                |     |  3  |     |     |     |     |     |     |     |     |     |     |
 &#10003; [math-d5acd9c](code-review/dappsys/math-d5acd9c.md)                |  2  |     |  2  |  1  |  3  |  1  |     |  3  |  3  |  3  |  3  |  3  |  5
 &#10003; [note-7170a08](code-review/dappsys/note-7170a08.md)                |  3  |  2  |  3  |  3  |  4  |  3  |     |  2  |  2  |  2  |  2  |  2  |  4
 &#10003; [roles-188b3dd](code-review/dappsys/roles-188b3dd.md)              |     |     |     |     |  2  |     |     |     |     |     |     |     |  3
 &#10003; [stop-842e350](code-review/dappsys/stop-842e350.md)                |  5  |     |     |  4  |  6  |  4  |     |  5  |     |  5  |  5  |  5  |  7
-&#10003; [thing-35b2538](code-review/dappsys/thing-35b2538.md)              |  4  |     |  4  |     |     |     |     |     |     |     |     |     |  
+&#10003; [thing-35b2538](code-review/dappsys/thing-35b2538.md)              |  4  |     |  4  |     |     |     |     |     |     |     |     |     |
 &#10003; [thing-4c86a53](code-review/dappsys/thing-4c86a53.md)              |     |     |     |     |  5  |     |     |  4  |  4  |  4  |  4  |  4  |  6
-&#10003; [thing-ea63fd3](code-review/dappsys/thing-ea63fd3.md)              |     |  4  |     |     |     |     |     |     |     |     |     |     |  
+&#10003; [thing-ea63fd3](code-review/dappsys/thing-ea63fd3.md)              |     |  4  |     |     |     |     |     |     |     |     |     |     |
 &#10003; [token-e637e3f](code-review/dappsys/token-e637e3f.md)              |  8  |     |     |  7  |  9  |  7  |     |  8  |     |  8  |  8  |  8  | 10
-&#10003; [value-2027f97](code-review/dappsys/value-2027f97.md)              |     |  5  |     |     |     |     |     |     |     |     |     |     |  
+&#10003; [value-2027f97](code-review/dappsys/value-2027f97.md)              |     |  5  |     |     |     |     |     |     |     |     |     |     |
 &#10003; [value-faae4cb](code-review/dappsys/value-faae4cb.md)              |     |     |  5  |     |     |     |     |  9  |     |  9  |  9  |  9  | 11
-&#10003; [medianizer-31cc0a8](code-review/medianizer/medianizer-31cc0a8.md) |     |  6  |     |     |     |     |     |     |     |     |     |     |  
-&#10003; [medianizer-6cb859c](code-review/medianizer/medianizer-6cb859c.md) |     |     |  6  |     |     |     |     |     |     |     |     |     |  
-&#10003; [pit-b353893](code-review/makerdao/pit-b353893.md)                 |     |     |     |  8  |     |     |     |     |     |     |     |     |  
+&#10003; [medianizer-31cc0a8](code-review/medianizer/medianizer-31cc0a8.md) |     |  6  |     |     |     |     |     |     |     |     |     |     |
+&#10003; [medianizer-6cb859c](code-review/medianizer/medianizer-6cb859c.md) |     |     |  6  |     |     |     |     |     |     |     |     |     |
+&#10003; [pit-b353893](code-review/makerdao/pit-b353893.md)                 |     |     |     |  8  |     |     |     |     |     |     |     |     |
 &#10003; [vox-b353893](code-review/makerdao/vox-b353893.md)                 |     |     |     |     |     |     |     | 10  |  5  | 10  | 10  | 10  | 12
 [tub-b353893](code-review/makerdao/tub-b353893.md)                 |     |     |     |     |     |     |     | 11  |     | 11  | 11  | 11  | 13
 &#10003; [tap-b353893](code-review/makerdao/tap-b353893.md)                 |     |     |     |     |     |     |     | 12  |     |     | 12  | 12  | 14
