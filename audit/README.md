@@ -150,7 +150,7 @@ This is the MKR (Maker) governance token contract.
 
 #### Permissions
 
-This token contract has `owner` set to [community4of6multisig:0x7bb0b085] and `authority` set to [0x00000000]. The 4 of 6 community multisig is able to
+This token contract has `owner` set to [community4of6multisig:0x7bb0b085] and `authority` set to [0x00000000]. The 4 of 6 community multisig is able to `mint(...)` new MKR tokens and `burn(...)` any accounts tokens.
 
 #### Potential Vulnerabilities
 
