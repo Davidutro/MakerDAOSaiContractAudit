@@ -25,7 +25,7 @@ pragma solidity ^0.4.8;
 
 // BK Ok
 contract DSAuthority {
-    // BK Ok - Constant function, implemented in guard
+    // BK Ok - Constant function, implemented in guard and roles
     function canCall(
         address src, address dst, bytes4 sig
     ) constant returns (bool);

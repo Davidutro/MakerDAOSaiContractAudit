@@ -27,7 +27,7 @@ pragma solidity ^0.4.13;
 
 // BK Ok
 contract DSAuthority {
-    // BK Ok - View function, implemented in guard
+    // BK Ok - View function, implemented in guard and roles
     function canCall(
         address src, address dst, bytes4 sig
     ) public view returns (bool);

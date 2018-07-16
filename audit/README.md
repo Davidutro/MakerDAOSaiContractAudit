@@ -2,9 +2,9 @@
 
 ## Summary
 
-[MakerDAO](https://makerdao.com/)'s Sai stable currency is currently in use on the Ethereum mainnet, with a USD 50 million cap on the amount of Sai currency on issue.
+[MakerDAO](https://makerdao.com/)'s Sai stable currency is currently in use on the Ethereum mainnet, with a USD 50 million cap on the amount of Sai currency on issue. This cap was raised to USD 100 million on Jun 30 2018 in transaction [0x9da57d15](https://etherscan.io/tx/0x9da57d15a59eba4bc130e5bf4044990636cf65fed9494a30a2765b522a20d960).
 
-Bok Consulting Pty Ltd was commissioned to perform an audit on the Ethereum smart contracts deployed for MakerDAO's Sai stable currency before this cap is raised.
+Bok Consulting Pty Ltd was commissioned to perform an audit on MakerDAO's Sai Ethereum smart contracts.
 
 An audit of MakerDAO's deployed contract has been conducted and no potential vulnerabilities have been identified in the smart contracts.
 
@@ -80,8 +80,8 @@ The following steps has been conducted for this audit:
 
 * The source code for the MakerDAO smart contracts were extracted from EtherScan from the deployed addresses on the Ethereum mainnet
 * Testing scripts were developed to deploy to a dev environment to observe the interactions between the various MakerDAO smart contracts
-* The deployed smart contracts were matched to the source code from the source GitHub repositories to break down the deployed smart contracts into the component smart contracts
-* The state and historical events for the deployed MakerDAO smart contracts where extracted from the mainnet Ethereum blockchain to confirm the deployment parameters, state variables and event logs
+* The deployed smart contracts were matched to the source code from the source GitHub repositories to separate the deployed smart contracts into their component smart contracts
+* The state and historical events for the deployed MakerDAO smart contracts were extracted from the mainnet Ethereum blockchain to confirm the deployment parameters, state variables and event logs
 * A code review of the component smart contracts was conducted
 * Some manual calculations have been calculated using the [math-d5acd9c](https://github.com/dapphub/ds-math/blob/d5acd9c230361b29817ab3108743511747916abd/src/math.sol) with the *internal* functions converted to *public* functions and deployed to [0xc05e27d67021f9fcF2113b51B2F5F9eb88A9FC48](https://ropsten.etherscan.io/address/0xc05e27d67021f9fcF2113b51B2F5F9eb88A9FC48#readContract) on Ropsten
 
@@ -95,11 +95,11 @@ The MakerDAO smart contracts are well written with a logical separation of funct
 
 One difficulty in understanding the smart contracts has been MakerDAO's choice of naming contracts and objects with three letter words like *sai*, *sin*, *tub*, *tap* and *top*, and the naming of actions with four letter words like *cage*, *bite*, *mold* and *drip*.
 
-Another difficulty in tracing through the correctness in the functioning of the smart contracts has been the use of calculations with 18 (*wad*) and 27 (*ray*) decimal place precision. This difficulty is compounded by the use of three letter words for the object names.
+Another difficulty in tracing through the correctness in the functioning of the smart contracts has been the use of calculations with 18 (*wad*) and 27 (*ray*) decimal place precision. This difficulty is compounded by the use of three letter words for the object names mentioned above.
 
 Once the conventions above are understood, the workings of the MakerDAO smart contracts become quite clear.
 
-There are small number of issues of low importance raised by this audit. These are listed in the sections below documenting each deployed smart contract. Across the various smart contracts, there is no ability to transfer out any other ERC20 tokens accidentally sent to these token contracts, but this is of low importance.
+There are small number of issues of low importance raised by this audit. These are listed in the sections below documenting each deployed smart contract. There is also no ability to transfer out any other ERC20 tokens accidentally sent to the MakerDAO contracts, but again this is of low importance.
 
 No potential vulnerabilities have been identified in the smart contracts.
 
@@ -184,18 +184,18 @@ These token contracts have `owner` set to [0x00000000] and `authority` set to [d
 
 Permit From      | Permit To        | Function
 ---------------- | ---------------- | ---------------------
-[tub:0x448a5065] | [skr:0xf53ad2c6] | mint(address,uint256)
-[tub:0x448a5065] | [skr:0xf53ad2c6] | burn(address,uint256)
-[tub:0x448a5065] | [sai:0x89d24a6b] | mint(address,uint256)
-[tub:0x448a5065] | [sai:0x89d24a6b] | burn(address,uint256)
-[tub:0x448a5065] | [sin:0x79f6d0f6] | mint(address,uint256)
 [tap:0xbda10930] | [sai:0x89d24a6b] | mint(address,uint256)
 [tap:0xbda10930] | [sai:0x89d24a6b] | burn(address,uint256)
 [tap:0xbda10930] | [sai:0x89d24a6b] | burn(uint256)
 [tap:0xbda10930] | [sin:0x79f6d0f6] | burn(uint256)
 [tap:0xbda10930] | [skr:0xf53ad2c6] | mint(uint256)
 [tap:0xbda10930] | [skr:0xf53ad2c6] | burn(uint256)
+[tub:0x448a5065] | [sai:0x89d24a6b] | mint(address,uint256)
+[tub:0x448a5065] | [sai:0x89d24a6b] | burn(address,uint256)
+[tub:0x448a5065] | [sin:0x79f6d0f6] | mint(address,uint256)
 [tap:0xbda10930] | [skr:0xf53ad2c6] | burn(address,uint256)
+[tub:0x448a5065] | [skr:0xf53ad2c6] | mint(address,uint256)
+[tub:0x448a5065] | [skr:0xf53ad2c6] | burn(address,uint256)
 
 #### Potential Vulnerabilities
 
@@ -223,7 +223,7 @@ Individual price feed providers write to their instances of [PriceFeed](https://
 
 #### Permissions
 
-Both *pip* and *pep* contracts have `owner` set to [0x00000000] and `authority` set to [adm:0x8e2a84d6].
+Both the *pip* and *pep* contracts have `owner` set to [0x00000000] and `authority` set to [adm:0x8e2a84d6]. The *adm* contract allows multiple parties to vote on a smart contract that will then be executed, and permissioned through the *adm* contract to execute *pip* and *pep* functions.
 
 #### Potential Vulnerabilities
 
@@ -282,18 +282,18 @@ This contract has `owner` set to [0x00000000] and `authority` set to [dad:0x315c
 
 Permit From      | Permit To        | Function              | Notes
 ---------------- | ---------------- | --------------------- | ----------------------------
-[top:0x9b0ccf7c] | [tub:0x448a5065] | cage(uint256,uint256) |
-[top:0x9b0ccf7c] | [tub:0x448a5065] | flow()                |
-[top:0x9b0ccf7c] | [tap:0xbda10930] | cage(uint256)         |
-[tub:0x448a5065] | [skr:0xf53ad2c6] | mint(address,uint256) |
-[tub:0x448a5065] | [skr:0xf53ad2c6] | burn(address,uint256) |
-[tub:0x448a5065] | [sai:0x89d24a6b] | mint(address,uint256) |
-[tub:0x448a5065] | [sai:0x89d24a6b] | burn(address,uint256) |
-[tub:0x448a5065] | [sin:0x79f6d0f6] | mint(address,uint256) |
 [mom:0xf2c5369c] | [tub:0x448a5065] | mold(bytes32,uint256) | *mom* can set parameters `cap`, `mat`, `tax`, `fee`, `axe` and `gap`
 [mom:0xf2c5369c] | [tub:0x448a5065] | setPip(address)       | *mom* can set new ETH/USD *pip* price feed
 [mom:0xf2c5369c] | [tub:0x448a5065] | setPep(address)       | *mom* can set new MKR/USD *pep* price feed
 [mom:0xf2c5369c] | [tub:0x448a5065] | setVox(address)       | *mom* can set new *vox*
+[top:0x9b0ccf7c] | [tub:0x448a5065] | cage(uint256,uint256) |
+[top:0x9b0ccf7c] | [tub:0x448a5065] | flow()                |
+[top:0x9b0ccf7c] | [tap:0xbda10930] | cage(uint256)         |
+[tub:0x448a5065] | [sai:0x89d24a6b] | mint(address,uint256) |
+[tub:0x448a5065] | [sai:0x89d24a6b] | burn(address,uint256) |
+[tub:0x448a5065] | [sin:0x79f6d0f6] | mint(address,uint256) |
+[tub:0x448a5065] | [skr:0xf53ad2c6] | mint(address,uint256) |
+[tub:0x448a5065] | [skr:0xf53ad2c6] | burn(address,uint256) |
 
 #### Potential Vulnerabilities
 
@@ -355,7 +355,9 @@ The *top* contract is the Global Settlement Manager.
 
 #### Permissions
 
-This contract has `owner` set to [0x00000000] and `authority` set to [adm:0x8e2a84d6] and this defines the permissions for which other smart contract are able to execute the functions. The following table is the *dad* whitelist of which smart contracts are able to execute the functions:
+The *top* contract has `owner` set to [0x00000000] and `authority` set to [adm:0x8e2a84d6]. The *adm* contract allows multiple parties to vote on a smart contract that will then be executed, and permissioned through the *adm* contract to execute *top* functions.
+
+Following is the whitelist of permissions from the *dad* contract that allows *top* contract to execute functions in the *tub* and *tap* contracts:
 
 Permit From      | Permit To        | Function              | Notes
 ---------------- | ---------------- | --------------------- | ----------------------------
@@ -442,7 +444,7 @@ The *mom* contract is set up with permissions to execute functions to modify the
 
 The *mom* contract has `owner` set to [0x00000000] and `authority` set to [adm:0x8e2a84d6]. The *adm* contract allows multiple parties to vote on a smart contract that will then be executed, and permissioned through the *adm* contract to execute *mom* functions.
 
-Following are the whitelist of permissions from the *dad* contract that allows *mom* contract to execute functions in the *vox*, *tub* and *tap* contracts:
+Following is the whitelist of permissions from the *dad* contract that allows *mom* contract to execute functions in the *vox*, *tub* and *tap* contracts:
 
 Permit From      | Permit To        | Function
 ---------------- | ---------------- | ---------------------

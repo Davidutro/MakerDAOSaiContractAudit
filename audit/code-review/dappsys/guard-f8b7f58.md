@@ -93,7 +93,7 @@ contract DSGuard is DSAuth, DSAuthority, DSGuardEvents {
         LogForbid(src, dst, sig);
     }
 
-    // BK Ok - Permissioning on this function is enforced in the called `permit(...)` function above 
+    // BK Ok - Permissioning on this function is enforced in the called `permit(...)` function above. Called by fab
     function permit(address src, address dst, bytes32 sig) public {
         // BK Ok
         permit(bytes32(src), bytes32(dst), sig);
